@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:version="2.0">
+  <talendfile:ContextType confirmationNeeded="false" name="Dev" xmi:id="_GExJsVHGEeyYypHR2llg6A">
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_driverClass" prompt="Azure_Portail_Fournisseur_Pilote_connection_driverClass?" promptNeeded="false" type="id_String" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" xmi:id="_GExJslHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl" prompt="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl?" promptNeeded="false" type="id_String" value="jdbc:sqlserver://portailfrsmarjane-dev-sqlsrv.database.windows.net" xmi:id="_GExJs1HGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" type="id_Password" value="enc:system.encryption.key.v1:Mu0NkXNSu4jnBJ5nAzG5owcAxzf7BFAOpl6nmM2a3ioqzqMhLNYj" xmi:id="_GExJtFHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_drivers" prompt="Azure_Portail_Fournisseur_Pilote_drivers?" promptNeeded="false" type="id_String" value="&quot;mvn:org.talend.libraries/sqljdbc42/6.0.0-SNAPSHOT/jar&quot;" xmi:id="_GExJtVHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_mappingFile" prompt="Azure_Portail_Fournisseur_Pilote_mappingFile?" promptNeeded="false" type="id_String" value="mysql_id" xmi:id="_GExJtlHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_userId" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_userId?" promptNeeded="false" type="id_String" value="sqladmin_sa_user" xmi:id="_GExJt1HGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" type="id_String" value="DEV" xmi:id="_ySgqsFHGEeyYypHR2llg6A"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="Prod" xmi:id="_GExJuFHGEeyYypHR2llg6A">
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_driverClass" prompt="Azure_Portail_Fournisseur_Pilote_connection_driverClass?" promptNeeded="false" type="id_String" value="" xmi:id="_GExJuVHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl" prompt="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl?" promptNeeded="false" type="id_String" value="" xmi:id="_GExJulHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" type="id_Password" value="" xmi:id="_GExJu1HGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_drivers" prompt="Azure_Portail_Fournisseur_Pilote_drivers?" promptNeeded="false" type="id_String" value="" xmi:id="_GExJvFHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_mappingFile" prompt="Azure_Portail_Fournisseur_Pilote_mappingFile?" promptNeeded="false" type="id_String" value="" xmi:id="_GExJvVHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_userId" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_userId?" promptNeeded="false" type="id_String" value="" xmi:id="_GExJvlHGEeyYypHR2llg6A"/>
+    <contextParameter comment="" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="false" type="id_String" value="" xmi:id="_ySgqsVHGEeyYypHR2llg6A"/>
+  </talendfile:ContextType>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3cddf3f8-c456-4241-b871-31e9e17a2aed"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>M+xIoHrKqUZj8hgXlbDJEIesX/yv6jY4sh5HMwsgz9SDSHsDcU74jIacoMGSJhP5hhDmQ/gmxk7q&#13;
+6SdjG7Uldg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_882ec5b5-3cae-4893-ac5a-747da0b43949"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5zxBxs2ACh8+ymYtgIeKtLCvq5+Rv+CVoTYF4lWWo9C/ZEMs5KcI/sbd9uC/92cMhRkFPCRGlKtm&#13;
+T2vP42y4Cw==</DigestValue></Reference></SignedInfo><SignatureValue>i3r9P8cM3T+wRPugKJcNdkIJ0qMI1AxMT+ld4eJufgGO5EcS+zdisTvfwDUsh/ztG4ZBJp5U8LqV&#13;
+x7PbdPFZJ7giZjUz6L3rqcby7CEaGmaU+z8npz1IJSbfjIQr9XLakljv87GwtvGwfP6ViXtHEQN1&#13;
+GKSmc14ZuRZ6hcEq0SlmbdeUx0zbVBUUcg0lTQ+YvqvJJDJ7rdBBvQr+Y7iQEG5k9dR24EpctFft&#13;
++DBvFzQrNkX9Dy5A3K3ZFDnnr81CAGnyrF+Z/WM0CHd+hj9Dzn56caH111JGmEAN5b9YLMpSGNtU&#13;
+csxYLVsUjgV9SefL+tO8Jy2Y4xxRphkrN+t8Zg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_882ec5b5-3cae-4893-ac5a-747da0b43949" Target="#_3cddf3f8-c456-4241-b871-31e9e17a2aed"><Timestamp>2022-02-15 14:57:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
