@@ -83,7 +83,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:P2j8NSwM2jD/NwzVUAaH3cWK/0MOCBCo2krLbU7z"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:+RkhLQwzOS3pkNpzvsIrWMaIIjnqMB1IrYapRzMN"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -118,7 +118,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:G2vxfJifFDTmaxS9HQOlyB8AZ6c4MPEsQuS6rTHL"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:3FzV7W3F8mngmknbMaaKuIK9D2aw2O+LxxEe1Gs6"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -164,7 +164,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gZRz+6lAJAEqEtmXs/Q/ZGu/Tv9m9mVFit52BCypIFv1KSxd"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Tdyfu9KGZN1IkQOwQaOzsj1S+hwesz3U8w3R9dy7VNHY+DX9"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -319,7 +319,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Saisonnalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Categorie" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="INT" type="id_BigDecimal" usefulColumn="true"/>
@@ -351,7 +351,7 @@
         <mapperTableEntries expression="row5.Vl " name="Vl" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.Lib_article " name="Lib_article" nullable="true" type="id_String"/>
         <mapperTableEntries expression="((String)globalMap.get(&quot;CurentDate&quot;))" name="DT_JOUR" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row5.Saisonalite " name="Saisonalite" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.Saisonalite " name="Saisonnalite" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.Categorie " name="Categorie" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.Param " name="Param" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.Value_GS " name="Value_GS" nullable="true" type="id_BigDecimal"/>
@@ -400,7 +400,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6uDaPQ85Mn3xAeysJ5H1GCpmtrRk1M1UNywEiS6VZKAxnLlRWwTpQMj11Q=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Ygc6n/Jj2WxWf1Cr9w1XnrqmGl20XQMle5uqFvQbXMdEnmW1WXrBPB6HmA=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_ECART_GS_GC&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -506,7 +506,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Saisonalite"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Saisonnalite"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -578,7 +578,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Saisonnalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Categorie" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -605,7 +605,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Saisonnalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Categorie" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -633,7 +633,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9yrCal/CbprND/PfDLkrL0TC97kxPkJTW4tuvnUFDi56m0V1"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:V2Qzf6JZ3brpiYB63bGr7IBzJ/RT7kbyKsYkfQtt5ioyJf/5"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -744,7 +744,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bwTgK9+GQHPfW8DS8briL3rccBUlUmZK1HdGjHRYprncC5ld"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:8X9d7ZkWXwJ9EqNjJeTsxyGrXWef5+vFX7Cme3Bwrrh1jBva"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -855,7 +855,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vGCoTP4oduTJNLguk0lnHOy5KvfL4XFqxvyYJ2O+iPySgqx8"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:665HLkYtBkLvtlnyxdb2DliewWN/8mseGjb+K26yoWioBKo6"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -973,7 +973,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AhI05Od8RKdwlLlFp8Lz147N+IWGriG9WOc0Fxt4wKDw06WYrjVKVj+dvA=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:KAY2CLIfrqNSTvCNQsCGFHdYQeBdQfSts3pyKYTBgK3sCrfs1euV1A9rAg=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1029,7 +1029,7 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DT_JOUR"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SAISONALITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SAISONNALITE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CATEGORIE"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -1067,7 +1067,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SAISONALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SAISONNALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
@@ -1109,7 +1109,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SAISONALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SAISONNALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
@@ -1139,7 +1139,7 @@
         <mapperTableEntries expression="row6.Vl " name="Vl" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.Lib_article " name="Lib_article" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.DT_JOUR " name="DT_JOUR" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.SAISONALITE " name="SAISONALITE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.SAISONNALITE " name="SAISONNALITE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.CATEGORIE " name="CATEGORIE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.Param " name="Param" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row6.Value_GS " name="Value_GS" nullable="true" type="id_BigDecimal"/>
@@ -1166,7 +1166,7 @@
         <mapperTableEntries name="Vl" nullable="true" type="id_String"/>
         <mapperTableEntries name="Lib_article" nullable="true" type="id_String"/>
         <mapperTableEntries name="DT_JOUR" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SAISONALITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SAISONNALITE" nullable="true" type="id_String"/>
         <mapperTableEntries name="CATEGORIE" nullable="true" type="id_String"/>
         <mapperTableEntries name="Param" nullable="true" type="id_String"/>
         <mapperTableEntries name="Value_GS" nullable="true" type="id_BigDecimal"/>
@@ -1191,7 +1191,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:J5DhCmgSxo7A2QtA2hq23p+1+viUTPV1eukz/B1p3b4BTUugJSEg"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oYPuGKXT4MNZQzBSQIEtPfFL1XACpEcdVvvv5jlKxffelX13zua9"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DWH_ECART_GS_GC&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1297,7 +1297,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SAISONALITE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SAISONNALITE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -1369,7 +1369,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SAISONALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SAISONNALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
@@ -1396,7 +1396,7 @@
       <column comment="" key="false" length="-1" name="Vl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Lib_article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DT_JOUR" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SAISONALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SAISONNALITE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CATEGORIE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
@@ -1422,7 +1422,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="Oracle"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2GLLtFG8MABKVTbIRZB/neE28LMFiPUE3RW/sIRegYIS0f5BurCm"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pDzzIT/IcPca1+6yJ/JY0H7fgdVb/+xprLrHmHyQ9u+4O3+sAZXu"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -1466,7 +1466,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dlZXgbTYSSPpdiESuTOJmXn/IVP13WCRnNcHN2Y2yZyAseqlOdG4"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VL2cdvj0Fx4OSGbPpJm5emuPRlCShAodiwnucqTefAGv19IqNeIe"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1596,7 +1596,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0CdWVaQl01OrBPin39iU5cGeFpPLFVsKR9K1JawkG/XllHx+hQWH"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pG2wcuB7yxCAy5YXnWsRzshIhpKDEg+fCUcyuJZzlmhrdryb98Pk"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DWH_ECART_GS_GC_AGREGAT&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1789,7 +1789,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="Categorie"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="Saisonalite"/>
+      <elementValue elementRef="TRACE_COLUMN" value="Saisonnalite"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="DT_jour"/>
@@ -2023,7 +2023,7 @@
   </connection>
   <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="SAISONALITE"/>
+      <elementValue elementRef="TRACE_COLUMN" value="SAISONNALITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="CATEGORIE"/>
@@ -2038,7 +2038,7 @@
   </connection>
   <connection connectorName="FLOW" label="out_dwh" lineStyle="0" metaname="out_dwh" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="SAISONALITE"/>
+      <elementValue elementRef="TRACE_COLUMN" value="SAISONNALITE"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="CATEGORIE"/>
@@ -2119,13 +2119,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_58efc8c3-52dd-4458-bfe9-b8f65f6d535d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>iPYEinhrcI+LnfZlxst+qa9gw8NkBqbWh5YEyUMO+L4QQ9X+nBK1GvYCbgt8AWDqk6LVGkW7+Fdt&#13;
-0vckDqJWIA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_680b0482-d38f-442f-ac31-3d6574f60bea"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eZ0ym1tyaL82OPnCJqpZOcnHbKjFJofDbNGfPNg5IDQtCfTCFNZqW2ceE3bVRxP7CzyVtaX4rHS7&#13;
-66driJIOtQ==</DigestValue></Reference></SignedInfo><SignatureValue>m/HrOwlKaI3nqrzbB/GBzuchgwfnfrtXw505HY2K830ntYdhpAUOd2zwEWka4B9vyrMOcTSRqtv6&#13;
-x180bmiDlWRTC8n8tkqFA443oLgkzcaboalKnnrp4IhMxlDcBWmPTAfP0mDrKiykTZp4nY4Ugbtv&#13;
-ZZW61RzzBdpd9nVgbVchO2e1CdfT+tNijhPjqyn0xJzNrbtkT0SGKYTC+pbJ8LwVuFOrErCPBoEk&#13;
-eb0UpNVWj9UvdDePcbHTRuruIwqyRvhKOQG9bmMW9V+8k2Jwk5ZB1M/pkxyCbws8YNrfvQfaCPAR&#13;
-2eTdzWGVXs4//CGACKbYGWPYo9LDC6eX+NQqxw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e2b42c91-aaae-4a23-890b-885a401b9433"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Of7wSqmJJetOotHvpyB/p4Up2IKXWY8pqNvvFwQydIKxoP+DfJ+7ig1xJCaIrsWZTvdhfS0wS7fL&#13;
+OllSaOWpjg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f2f07d7d-0304-45da-b0a0-f0bff69473f0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ktgMAyuKNVbHzYamlIpZzrOEmmj0PdJDx+yk0gfYHWMLiYANfyrM4MAl2ZoHjpWDsbtoBAaZA1ev&#13;
+cSH7V/XPmw==</DigestValue></Reference></SignedInfo><SignatureValue>G1Yf1zHt334WgRkcqAJ0+gSpj4iU/ENPe5Y10RSXM1jCQ7/RpxvDpKq6KndVFwGy74fsSYyMSAz1&#13;
+L6mk3nav6eP24GxABt4416bk9JIf7eKlgR5rXZ43TJpyp41aowsJsS5q+KTNWYSMFCMd0cc95aiq&#13;
+6yZSSjHzyrT9N/zwG6ygUAYTolCNOa7nJdgZo4OlmU+e2D7he69HdESmwRzvngpFPuW1ZQ3O3MiB&#13;
+eQ/phSmQkLCCYRhWS8QG5XpRzfZax9LEILSf1HAXN7ipKnWItOrQcYUm0+bWvt9NhNGBrp328o5Z&#13;
+yejPpWthtX9Xfqug81HBbYgz6+t707vb61Q1/w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2147,4 +2147,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_680b0482-d38f-442f-ac31-3d6574f60bea" Target="#_58efc8c3-52dd-4458-bfe9-b8f65f6d535d"><Timestamp>2022-02-20 05:09:40</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f2f07d7d-0304-45da-b0a0-f0bff69473f0" Target="#_e2b42c91-aaae-4a23-890b-885a401b9433"><Timestamp>2022-02-20 06:09:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
