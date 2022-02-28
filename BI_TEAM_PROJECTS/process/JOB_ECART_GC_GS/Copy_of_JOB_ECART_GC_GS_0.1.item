@@ -81,7 +81,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:FNWAMAUK+1M/gZulPYjMgb/cdVWj4Fn4GzWbDPqT"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:Hnqa5I28p2JF/6as/weXK/EzdmCCK2oYpC7d83Ln"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -116,7 +116,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:zIRjt9TrzV1PfrRDvula0ZmYTt/oTX0Ra01yWilA"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:UqWpIh3+WANNX5sEokWsNWvEJJ6x7d2y0cdtefLo"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -162,7 +162,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gvrC98RSCLQchpLcQi7KyfIRma1CFm+iqtcEImy/diMD9J8/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:drsjQg+iWZnM0dPwqteE/O2NizEJkOT9Xrp4MBwWysMH9aqo"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -278,7 +278,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_UMxAcGFvEeyImbQG15uLFQ-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_AwFKgJhzEeyOq_YxxDAt-w-tMap_1-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -308,12 +308,11 @@
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="INT" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GC" nullable="true" originalLength="8" pattern="" precision="4" sourceType="INT" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="GS_GC_OK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="GS_GC_KO" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="FLAG_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row5.Value_GS.compareTo(row5.Value_GC) " name="var1" type="id_Integer"/>
       </varTables>
@@ -338,7 +337,6 @@
         <mapperTableEntries expression="row5.Param " name="Param" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.Value_GS " name="Value_GS" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row5.Value_GC " name="Value_GC" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="Var.var1 == 0 ? 1 : 0 " name="GS_GC_OK" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="Var.var1 != 0 ? 1 : 0 " name="GS_GC_KO" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="Integer.valueOf(1)" name="FLAG_TOTAL" nullable="true" type="id_Integer"/>
       </outputTables>
@@ -379,7 +377,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:trZuVrAa9k915VCueLFxXNk7YKtlrDt7uaUkP3JjjAOleKAtQJD+KzE86Q=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eWzaxoVhovcKRNAUdAB4OzN2syBd282DhrffOga8OFlRnpWLI91luDZzIg=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_ECART_GS_GC&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -500,11 +498,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GS_GC_OK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="GS_GC_KO"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -550,7 +543,6 @@
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GC" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="GS_GC_OK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="GS_GC_KO" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="FLAG_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
@@ -575,7 +567,6 @@
       <column comment="" key="false" length="-1" name="Param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GS" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="Value_GC" nullable="true" originalLength="8" pattern="" precision="4" sourceType="DEC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="GS_GC_OK" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="GS_GC_KO" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="FLAG_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -598,7 +589,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2Z6SuBu3iZvtATofsQMCORHfaMcKPS2AZdVc9XJ8Vk/wtK0F"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MIP2UH6dAYakPW53pP0+EzqhpxYOWEs8D0mB0eQ7PqPh53Gg"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -700,7 +691,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:swGNffHSrxtkLTy3NTExguxniGCFoBA5ztkRTwbHLj2yJgkq"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:n3FEXvp0wTloQfZo1yIIJOVF4W55hBCcjEkF4mrO4pmn0ZH+"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -802,7 +793,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DfVJKZnBMnjFN41Vcrpw2tLs/zDEtKWzsw4U2JMyFDQsxEXA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NzdYnKL6BEkpSiZ0S5b/vquoyAHtOvG3Fnm8RQGrX/9mYGn4"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -911,7 +902,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ED00jOzyNtVc4pOIM/ogOt8acAtmpXrvUz2B8sqXoyC5XMnRWKtLYvBMjw=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:7IgTbQ5kJbzzOSqKojKpaX1OsBYaE7sPbs8ej1G5+MY31gP4ahLnFFSTaQ=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1014,7 +1005,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_UMxAcGFvEeyImbQG15uLFQ-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_AwFKgJhzEeyOq_YxxDAt-w-tMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -1117,7 +1108,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kL/o2ZvyN0+0XYQgG6ktNmKcfTOGDccc3R2CUaIqnOD6Uo30tjJb"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vv0E58dhy8dQ6Wi2XjNmEm7Fk8u7TBGndA5pP8Dn0cJs8MblyGa5"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DWH_ECART_GS_GC&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1334,7 +1325,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="Oracle"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:44ymOWsozn3uoZq+xdq7v500M4zHSUBMurEpLAWUTgmLR9v6YAD0"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GP8RbrJ4sjhRj+7xnLUD7xZfeV7wLHQVkJ5YzAnR6/HLe75MlKcK"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -1377,7 +1368,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DBhsLXEdGDyTcmW4PiUfIDQs2Z6R+ba866S3JqQGladx4Z3dI7Jk"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:e64grAzk6bJzMtlQ0WAA8IdbwT7Zg313+fzvUHxfybaYlOBWulj1"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1436,12 +1427,12 @@
       <column comment="" key="false" length="-1" name="Nb_Cas_TOTAL" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="832">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_UMxAcGFvEeyImbQG15uLFQ-tMap_3-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_AwFKgJhzEeyOq_YxxDAt-w-tMap_3-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -1491,7 +1482,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="832">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
@@ -1505,7 +1496,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pjypVs2ZJcShOlluZp2AUaZpkWYyoBdaZHr6LqVcZs3gquadHVMv"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:g8orTGPuSefwZQ4a4smMnf8RikCDoAkPO+WHzP1G6ntunSIOlAUQ"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DWH_ECART_GS_GC_AGREGAT&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1962,13 +1953,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_632352ce-5901-436c-8de1-09978de4a232"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>p6d7C4hHRmH3h9lkUekqFFhyae9eAB4VmpguN9+VFjxq47ufL6gV8Y8HB+/ECdVdlt4L5hMg+HMN&#13;
-7IiM1xyYbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7a30609e-05b4-488c-af09-9dd3cf7a4b48"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>y2OdO5wdDSoPUlrKmA1CzYxjAb32fTKXFdNCat1SGEXpO/KXfyAKoxnJGHab2ixlvKW+sNNWPG7x&#13;
-KjNJAHQJ5w==</DigestValue></Reference></SignedInfo><SignatureValue>NtM2VlLJLFgViguPU5gbvOVid012TUux104exOA/TDN3lPvw2u8yqFCn5UflzqfYOxA13P7RwTZU&#13;
-JazUQ3cZzisAnJl5ngYTgtKn2IK5z9qpMSFwP0apcNQAgoPL4/UXq+Own19DNoz5INvPT6SdweJI&#13;
-GNNWRDyM864n45RYVPELcRnYcMGCQhfDJRyJhc9dc7tYTJuUzCRAufxKU84OPqWsLjHatVCzePo7&#13;
-9HUTBSQ6wiU2/J+cEMI2o309nPsUZNUcwhTiDHY+kuJCmBzCPicpXFu6PTjuPNnM7sMbjevl7dvK&#13;
-YKOJEhRd3Kscr9DDk3yGc1Nl6qeeSlSIq0+Wbg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b7029094-8708-4ea5-b9ae-8e1542168fc0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rgvPtdzKjLkqZWcLJGZ9igUsYTiShiZh7ZxS0J6kA9EG9Ce6pWPiU1U1kwnaUxLiGGwbher5by0m&#13;
+QxeoWWKZFA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f51c9fed-93a3-4d95-90a4-9fbfa24adf69"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>n23HblIoh9D9W/6ATm6t5BxHcfgQQGZ541yyhjrNXsK4aPBB9y4klHrozkaL2PHY3av4S+e03Cny&#13;
+SD0G7JMM7Q==</DigestValue></Reference></SignedInfo><SignatureValue>OXMxQB7fVVNIZGCRtpR1AvmfcNQb35ExlxjkRWqSpoeoswp0DZH/b50qt8l7C+q7lAHt832sD025&#13;
+T9aLxwPc5HtEW+mLG5mF07dzjivG10+3XqXefxqfUG7IN4y7JRVkOFB/1XjHaypKDhfqKtAV8HXs&#13;
+s6xc1XpgY9cS6SXgvAnj2KUCzZjdWODMw1mlncisvnejVlXYdvLvFP+4XVAUtmRC83e0Dg/Nfwle&#13;
+K5k0h4/fOJKbP1uESgcy9cveoNoBJm1Tb97XJnQgGBmJbWtcnPIcaUnSUZHX5UbkEG3PU9RClKC0&#13;
+4jDn5I70E1WjPEqQG18ybQcXjUkaOFrxOO0qHQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1990,4 +1981,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7a30609e-05b4-488c-af09-9dd3cf7a4b48" Target="#_632352ce-5901-436c-8de1-09978de4a232"><Timestamp>2022-02-28 08:47:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f51c9fed-93a3-4d95-90a4-9fbfa24adf69" Target="#_b7029094-8708-4ea5-b9ae-8e1542168fc0"><Timestamp>2022-02-28 10:03:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
