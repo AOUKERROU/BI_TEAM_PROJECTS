@@ -17,6 +17,19 @@
     <contextParameter comment="" internalId="_dN0tbo52EeyHf4M4dd-r7Q" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.92"/>
     <contextParameter comment="" internalId="_dN0tb452EeyHf4M4dd-r7Q" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BI"/>
     <contextParameter comment="" internalId="_dN0tcI52EeyHf4M4dd-r7Q" name="port_ods" prompt="port_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15211"/>
+    <contextParameter comment="" internalId="_PymhsJ4JEeyD2bSruIme4w" name="user_gold" prompt="user_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="CENPRD"/>
+    <contextParameter comment="" internalId="_PymhsZ4JEeyD2bSruIme4w" name="sid_gold" prompt="sid_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="GOLDV5"/>
+    <contextParameter comment="" internalId="_Pymhsp4JEeyD2bSruIme4w" name="port_gold" prompt="port_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="1521"/>
+    <contextParameter comment="" internalId="_Pymhs54JEeyD2bSruIme4w" name="host_gold" prompt="host_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="192.168.99.98"/>
+    <contextParameter comment="" internalId="_PymhtJ4JEeyD2bSruIme4w" name="mdp_gold" prompt="mdp_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_Password" value="enc:system.encryption.key.v1:GvAvdj54Qz6PudStyydt6nDhgDoAeFTF6xvsTDJEoncAvQ=="/>
+    <contextParameter comment="" internalId="_PymhtZ4JEeyD2bSruIme4w" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="D:\TOS\TOS_DI-Win32-20200219_1130-V7.3.1\Azure Portail Fournisseur\Stock Hebdo"/>
+    <contextParameter comment="" internalId="_Pymhtp4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="sqladmin_sa_user"/>
+    <contextParameter comment="" internalId="_Pymht54JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="ssl=require"/>
+    <contextParameter comment="" internalId="_PymhuJ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PymhuZ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
+    <contextParameter comment="" internalId="_Pymhup4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="1433"/>
+    <contextParameter comment="" internalId="_Pymhu54JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:x3sI4NiN6lMuhWNdREVFvogyGaGqvZ57FqHKti/SkTCj4gLiwWY1"/>
+    <contextParameter comment="" internalId="_PymhvJ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrs_azure_db_dev"/>
   </context>
   <context confirmationNeeded="false" name="DEV">
     <contextParameter comment="" internalId="_dN0tcY52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_driverClass" prompt="Azure_Portail_Fournisseur_Pilote_connection_driverClass?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
@@ -25,17 +38,30 @@
     <contextParameter comment="" internalId="_dN0tdI52EeyHf4M4dd-r7Q" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="DEV"/>
     <contextParameter comment="" internalId="_dN0tdY52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_drivers" prompt="Azure_Portail_Fournisseur_Pilote_drivers?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="&quot;mvn:org.talend.libraries/sqljdbc42/6.0.0-SNAPSHOT/jar&quot;"/>
     <contextParameter comment="" internalId="_dN0tdo52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl" prompt="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="jdbc:sqlserver://portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
-    <contextParameter comment="" internalId="_dN0td452EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:CGYjA3y2ZuBFkNlc1udjMFm8giuxajh3bBJV04ZomGrdGGs9+tZZ"/>
+    <contextParameter comment="" internalId="_dN0td452EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:seOvvPwqoBT6RsTfnhhzfD2OO9QJTPsbP77Cuwefuf8DxOI88w0W"/>
     <contextParameter comment="" internalId="_dN0teI52EeyHf4M4dd-r7Q" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
     <contextParameter comment="" internalId="_dN0teY52EeyHf4M4dd-r7Q" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_dN0teo52EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:GNLWLTz8lz1mYYpqXpOVodaDxgDYEplbAs6EZq5koMPFkY3a"/>
+    <contextParameter comment="" internalId="_dN0teo52EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:fBpT0XJnXMc4dVLNk1CMsXiFgyzUN6aYNs2DN7iR8pu27ovK"/>
     <contextParameter comment="" internalId="_dN0te452EeyHf4M4dd-r7Q" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSDEV"/>
     <contextParameter comment="" internalId="_dN0tfI52EeyHf4M4dd-r7Q" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
-    <contextParameter comment="" internalId="_dN0tfY52EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:I5r2YN0SshYef84C/hFLQJKmi7nG/x7lC65EXTeyWJ1EotgabcA="/>
+    <contextParameter comment="" internalId="_dN0tfY52EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:lcMffe88JWwmGBJ+dvlbblQzEBV1ocGBVHiVXBm9zOdKPzvb4HM="/>
     <contextParameter comment="" internalId="_dN0tfo52EeyHf4M4dd-r7Q" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWDEV"/>
     <contextParameter comment="" internalId="_dN0tf452EeyHf4M4dd-r7Q" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_dN0tgI52EeyHf4M4dd-r7Q" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
     <contextParameter comment="" internalId="_dN0tgY52EeyHf4M4dd-r7Q" name="port_ods" prompt="port_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
+    <contextParameter comment="" internalId="_PymhvZ4JEeyD2bSruIme4w" name="user_gold" prompt="user_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="CENPRD"/>
+    <contextParameter comment="" internalId="_Pymhvp4JEeyD2bSruIme4w" name="sid_gold" prompt="sid_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="GOLDV5"/>
+    <contextParameter comment="" internalId="_Pymhv54JEeyD2bSruIme4w" name="port_gold" prompt="port_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="1521"/>
+    <contextParameter comment="" internalId="_PymhwJ4JEeyD2bSruIme4w" name="host_gold" prompt="host_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="192.168.99.98"/>
+    <contextParameter comment="" internalId="_PymhwZ4JEeyD2bSruIme4w" name="mdp_gold" prompt="mdp_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_Password" value="enc:system.encryption.key.v1:RuPunrh5lPHLZdIlolnV+8LKHAUoYIqCtkGt262evS/V+Q=="/>
+    <contextParameter comment="" internalId="_Pymhwp4JEeyD2bSruIme4w" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="D:\TOS\TOS_DI-Win32-20200219_1130-V7.3.1\Azure Portail Fournisseur\Stock Hebdo"/>
+    <contextParameter comment="" internalId="_Pymhw54JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="sqladmin_sa_user"/>
+    <contextParameter comment="" internalId="_PymhxJ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="ssl=require"/>
+    <contextParameter comment="" internalId="_PymhxZ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_Pymhxp4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
+    <contextParameter comment="" internalId="_Pymhx54JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="1433"/>
+    <contextParameter comment="" internalId="_PymhyJ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:yT55wneKdNFK+FVVrf0lmbVLluSP5lsm/zvNvFwTj4dMb8/Pp7Dr"/>
+    <contextParameter comment="" internalId="_PymhyZ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrs_azure_db_dev"/>
   </context>
   <context confirmationNeeded="false" name="KLIF">
     <contextParameter comment="" internalId="_dN0tgo52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_driverClass" prompt="Azure_Portail_Fournisseur_Pilote_connection_driverClass?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
@@ -44,17 +70,30 @@
     <contextParameter comment="" internalId="_dN0thY52EeyHf4M4dd-r7Q" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="DEV"/>
     <contextParameter comment="" internalId="_dN0tho52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_drivers" prompt="Azure_Portail_Fournisseur_Pilote_drivers?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="&quot;mvn:org.talend.libraries/sqljdbc42/6.0.0-SNAPSHOT/jar&quot;"/>
     <contextParameter comment="" internalId="_dN0th452EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl" prompt="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="jdbc:sqlserver://portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
-    <contextParameter comment="" internalId="_dN0tiI52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:0+lpdx1KC1TF3Zbi42as55AxF/lKkhw73G7TuSyg1cyAKylqPu0v"/>
+    <contextParameter comment="" internalId="_dN0tiI52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:bRE1aP0tx7Hy+eg52j0svFodkLJ4P1L75F3khJNMI0hspB8p7Pe2"/>
     <contextParameter comment="" internalId="_dN0tiY52EeyHf4M4dd-r7Q" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15216"/>
     <contextParameter comment="" internalId="_dN0tio52EeyHf4M4dd-r7Q" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_dN0ti452EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:fllxN6tJH5OQBjOo4m7gxnPAjj+ensVOt5Ga7YIfpA3yCyQS"/>
+    <contextParameter comment="" internalId="_dN0ti452EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:hyQBHvTNowTztT8zxrGwYDm4GCorPG4W9HFGYz0yO6JlS3JP"/>
     <contextParameter comment="" internalId="_dN0tjI52EeyHf4M4dd-r7Q" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSKLIF"/>
     <contextParameter comment="" internalId="_dN0tjY52EeyHf4M4dd-r7Q" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIKLIF"/>
-    <contextParameter comment="" internalId="_dN0tjo52EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:TrSyheSr9z453nmk+PkcXK2JY5Fy/U4awlSpgdHOAtiA9bWOgg=="/>
+    <contextParameter comment="" internalId="_dN0tjo52EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:7JLHuqCCTK/5B+/hvds/8Pd/S900ZUVbUcH9nQAiJVV6WTrhBQ=="/>
     <contextParameter comment="" internalId="_dN0tj452EeyHf4M4dd-r7Q" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWKLIF"/>
     <contextParameter comment="" internalId="_dN0tkI52EeyHf4M4dd-r7Q" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_dN0tkY52EeyHf4M4dd-r7Q" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIKLIF"/>
     <contextParameter comment="" internalId="_dN0tko52EeyHf4M4dd-r7Q" name="port_ods" prompt="port_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15216"/>
+    <contextParameter comment="" internalId="_Pymhyp4JEeyD2bSruIme4w" name="user_gold" prompt="user_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="CENPRD"/>
+    <contextParameter comment="" internalId="_Pymhy54JEeyD2bSruIme4w" name="sid_gold" prompt="sid_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="GOLDV5"/>
+    <contextParameter comment="" internalId="_PymhzJ4JEeyD2bSruIme4w" name="port_gold" prompt="port_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="1521"/>
+    <contextParameter comment="" internalId="_PymhzZ4JEeyD2bSruIme4w" name="host_gold" prompt="host_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="192.168.99.98"/>
+    <contextParameter comment="" internalId="_Pymhzp4JEeyD2bSruIme4w" name="mdp_gold" prompt="mdp_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_Password" value="enc:system.encryption.key.v1:PSgNDajf9u1uKxQRW9AJ2wnra1BuBNf2mycR3WPEIdyBJw=="/>
+    <contextParameter comment="" internalId="_Pymhz54JEeyD2bSruIme4w" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="D:\TOS\TOS_DI-Win32-20200219_1130-V7.3.1\Azure Portail Fournisseur\Stock Hebdo"/>
+    <contextParameter comment="" internalId="_Pymh0J4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="sqladmin_sa_user"/>
+    <contextParameter comment="" internalId="_Pymh0Z4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="ssl=require"/>
+    <contextParameter comment="" internalId="_Pymh0p4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_Pymh054JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
+    <contextParameter comment="" internalId="_Pymh1J4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="1433"/>
+    <contextParameter comment="" internalId="_Pymh1Z4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:YAZRlN8u3NbAkZsGLXy8iVrgKL217VbVaLNtC1K6dQHJRYaIAfeO"/>
+    <contextParameter comment="" internalId="_Pymh1p4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrs_azure_db_dev"/>
   </context>
   <context confirmationNeeded="false" name="DEV_AZURE">
     <contextParameter comment="" internalId="_dN0tk452EeyHf4M4dd-r7Q" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="DEV"/>
@@ -63,17 +102,30 @@
     <contextParameter comment="" internalId="_dN0tlo52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_mappingFile" prompt="Azure_Portail_Fournisseur_Pilote_mappingFile?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="mysql_id"/>
     <contextParameter comment="" internalId="_dN0tl452EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_drivers" prompt="Azure_Portail_Fournisseur_Pilote_drivers?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="&quot;mvn:org.talend.libraries/sqljdbc42/6.0.0-SNAPSHOT/jar&quot;"/>
     <contextParameter comment="" internalId="_dN0tmI52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl" prompt="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="jdbc:sqlserver://portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
-    <contextParameter comment="" internalId="_dN0tmY52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:qvjSPgJ5Fpo/mRYSeSvWtwrHoVNPJmFXaMeWQ4OwoEdz1TLFwIqu"/>
+    <contextParameter comment="" internalId="_dN0tmY52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:5GYjy3W7dPNMqECsESnYovNzvHVch8rqKqINkaGZ1t9LNQQQk6yT"/>
     <contextParameter comment="" internalId="_dN0tmo52EeyHf4M4dd-r7Q" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
     <contextParameter comment="" internalId="_dN0tm452EeyHf4M4dd-r7Q" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_dN0tnI52EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:kYUUzNAxrzMiSjqdMR2POjuXdNtevgQTRsP8xPMRKjoXfuF4"/>
+    <contextParameter comment="" internalId="_dN0tnI52EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:mfhaE7D7BpO1Gr/Hl6PRMAyl7x0P6o6B5av3srao1XEwQIUC"/>
     <contextParameter comment="" internalId="_dN0tnY52EeyHf4M4dd-r7Q" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSDEV"/>
     <contextParameter comment="" internalId="_dN0tno52EeyHf4M4dd-r7Q" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
-    <contextParameter comment="" internalId="_dN0tn452EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:g5alO06CTjSd2wrjOGrGnUU0V/i/PP0tdkI/drbtmw2JZkTcfSQ="/>
+    <contextParameter comment="" internalId="_dN0tn452EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:DUaivaMswIE7gDBuX3AY0+PPSfSggy3AYMxja+vVW+16+aUPxE0="/>
     <contextParameter comment="" internalId="_dN0toI52EeyHf4M4dd-r7Q" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWDEV"/>
     <contextParameter comment="" internalId="_dN0toY52EeyHf4M4dd-r7Q" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_dN0too52EeyHf4M4dd-r7Q" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
     <contextParameter comment="" internalId="_dN0to452EeyHf4M4dd-r7Q" name="port_ods" prompt="port_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
+    <contextParameter comment="" internalId="_PynIwJ4JEeyD2bSruIme4w" name="user_gold" prompt="user_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="CENPRD"/>
+    <contextParameter comment="" internalId="_PynIwZ4JEeyD2bSruIme4w" name="sid_gold" prompt="sid_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="GOLDV5"/>
+    <contextParameter comment="" internalId="_PynIwp4JEeyD2bSruIme4w" name="port_gold" prompt="port_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="1521"/>
+    <contextParameter comment="" internalId="_PynIw54JEeyD2bSruIme4w" name="host_gold" prompt="host_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="192.168.99.98"/>
+    <contextParameter comment="" internalId="_PynIxJ4JEeyD2bSruIme4w" name="mdp_gold" prompt="mdp_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_Password" value="enc:system.encryption.key.v1:wdR/VMUJEhF6iVIm0CCHg/E0MeqON84CeOo7ovqY9HuHfA=="/>
+    <contextParameter comment="" internalId="_PynIxZ4JEeyD2bSruIme4w" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="D:\TOS\TOS_DI-Win32-20200219_1130-V7.3.1\Azure Portail Fournisseur\Stock Hebdo"/>
+    <contextParameter comment="" internalId="_PynIxp4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="sqladmin_sa_user"/>
+    <contextParameter comment="" internalId="_PynIx54JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="ssl=require"/>
+    <contextParameter comment="" internalId="_PynIyJ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynIyZ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
+    <contextParameter comment="" internalId="_PynIyp4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="1433"/>
+    <contextParameter comment="" internalId="_PynIy54JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:O6TnDN027AlDk0vRt1F6uKNEpOT8A4OLlTGBmm0E1/v0UPOZN+t3"/>
+    <contextParameter comment="" internalId="_PynIzJ4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value="portailfrs_azure_db_dev"/>
   </context>
   <context confirmationNeeded="false" name="PROD_AZURE">
     <contextParameter comment="" internalId="_dN0tpI52EeyHf4M4dd-r7Q" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="DEV"/>
@@ -82,17 +134,30 @@
     <contextParameter comment="" internalId="_dN0tp452EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_mappingFile" prompt="Azure_Portail_Fournisseur_Pilote_mappingFile?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="mysql_id"/>
     <contextParameter comment="" internalId="_dN0tqI52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_drivers" prompt="Azure_Portail_Fournisseur_Pilote_drivers?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="&quot;mvn:org.talend.libraries/sqljdbc42/6.0.0-SNAPSHOT/jar&quot;"/>
     <contextParameter comment="" internalId="_dN0tqY52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl" prompt="Azure_Portail_Fournisseur_Pilote_connection_jdbcUrl?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_String" value="jdbc:sqlserver://portailfrsmarjane-dev-sqlsrv.database.windows.net"/>
-    <contextParameter comment="" internalId="_dN0tqo52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:dwAlGwGmoR9TE0vo4paLx4K3jVfvGcZQ1QNjZ1tUiROauP63WXA5"/>
+    <contextParameter comment="" internalId="_dN0tqo52EeyHf4M4dd-r7Q" name="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password" prompt="Azure_Portail_Fournisseur_Pilote_connection_userPassword_password?" promptNeeded="false" repositoryContextId="_GExJsFHGEeyYypHR2llg6A" type="id_Password" value="enc:system.encryption.key.v1:X0+hUDooTSO37q2xa3RSPnOqdpD/dbrTGk7IYI6OFpJDbF05JSjH"/>
     <contextParameter comment="" internalId="_dN0tq452EeyHf4M4dd-r7Q" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
     <contextParameter comment="" internalId="_dN0trI52EeyHf4M4dd-r7Q" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_dN0trY52EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:gPBQ+RWPYkK7JO+wwMU38qAn30IxjSyMegKzGWbXw3XItXWA"/>
+    <contextParameter comment="" internalId="_dN0trY52EeyHf4M4dd-r7Q" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:oW5S3dFN5xj1WWqPoy7C3LzCj46TGeB08S8vSs9hDSUsedp+"/>
     <contextParameter comment="" internalId="_dN0tro52EeyHf4M4dd-r7Q" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSDEV"/>
     <contextParameter comment="" internalId="_dN0tr452EeyHf4M4dd-r7Q" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
-    <contextParameter comment="" internalId="_dN0tsI52EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:fzdUVgwB2BaU/xwCN2fdKQ1bVkPogH3io5LROrgdXB6hD3W+hk0="/>
+    <contextParameter comment="" internalId="_dN0tsI52EeyHf4M4dd-r7Q" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:lOrosdi7uxsv8RpDYCvW/IJDCyIHpYzr/yleeGxySzmgJBmoHHo="/>
     <contextParameter comment="" internalId="_dN0tsY52EeyHf4M4dd-r7Q" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWDEV"/>
     <contextParameter comment="" internalId="_dN0tso52EeyHf4M4dd-r7Q" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_dN0ts452EeyHf4M4dd-r7Q" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
     <contextParameter comment="" internalId="_dN0ttI52EeyHf4M4dd-r7Q" name="port_ods" prompt="port_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
+    <contextParameter comment="" internalId="_PynIzZ4JEeyD2bSruIme4w" name="user_gold" prompt="user_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="CENPRD"/>
+    <contextParameter comment="" internalId="_PynIzp4JEeyD2bSruIme4w" name="sid_gold" prompt="sid_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="GOLDV5"/>
+    <contextParameter comment="" internalId="_PynIz54JEeyD2bSruIme4w" name="port_gold" prompt="port_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="1521"/>
+    <contextParameter comment="" internalId="_PynI0J4JEeyD2bSruIme4w" name="host_gold" prompt="host_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_String" value="192.168.99.98"/>
+    <contextParameter comment="" internalId="_PynI0Z4JEeyD2bSruIme4w" name="mdp_gold" prompt="mdp_gold?" promptNeeded="false" repositoryContextId="_BMS8UI52EeyHf4M4dd-r7Q" type="id_Password" value="enc:system.encryption.key.v1:0J7B8K2E3M9ABWIWZe5WwSHn5s9USuFAI2qdxcS/IZX/4w=="/>
+    <contextParameter comment="" internalId="_PynI0p4JEeyD2bSruIme4w" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynI054JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynI1J4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynI1Z4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynI1p4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynI154JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_PynI2J4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_PynI2Z4JEeyD2bSruIme4w" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="_a2dogExLEey62aWENNljjA" type="id_String" value=""/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -139,7 +204,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:wwtvJ1BeGjjTJQ2tdZ5DIFvbOO8Omr3Qi3WK/2Hq"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:WcH3aBfZk8PRBMQ+eN4T4mVABdnsOWVwrlWT2w+Z"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -174,7 +239,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:xyVWNTPWGQBFikQEHjMEWQOdrOQHq2byHFTVswcP"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:b71WszSGMBopE+ZnjeHIHXspjBjpwj18tQkM34mL"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -229,7 +294,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:ELpzz5mIsfAljJz5oHnb8z1WQPCFmdBZV48EqN3etxmU19VL"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:+/vuLTJmfWaYmoy2I/gaFzN/9QG1ffpMk4krQDh2ki7v7Tj1"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -376,7 +441,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:j67qfX01X/loemf/cKFeGsZnbChSFVq38VoWBVCLZVuJAVkPXdZWF58qFA=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:u9TsmthlteVlii9noISF11X3r58VXRw0Gph+UUgx0AODEopOG0tGXsGGOQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_STOCK_HEBDO&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -563,7 +628,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:pYvUC0vmm5sjiY8JMSucXOY6S7NCsJb7la0zX+gKnSgtsTsLZPtv0a0aKg=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:EMR0zYSzGvhtm/8aw6oRUlRclEGp4cZOo8cKMr2CJMIQzrmRjsDfQjVnyA=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -690,7 +755,7 @@
     <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;portailfrs_azure_db_dev&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;sqladmin_sa_user&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:D/SvanTDP2XG42BaLKNv+YNdo0ZHsTjgHpamfAEKYUByOYeNnO3sddc="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:UN+OKrapRoPMf4uWSj5Pt9eVh6ilQiT1ZWrHGOYAQHYYE8b02MzY3Sc="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;StockParArticleTT&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
@@ -815,7 +880,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="&quot;portailfrs_azure_db_dev&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
     <elementParameter field="TEXT" name="USER" value="&quot;sqladmin_sa_user&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HACcYOxbRzL8ZkA2nR5vyt6X2rM9W2sO7664zjTkXa+uSvep4r5Y/ak="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Hn4N3WAo9RzOiZP6sqzzlN4nUjfaJNej7xvoBP/IBB38XRgqSvWj47E="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -906,7 +971,7 @@
     <elementParameter field="TEXT" name="DB_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;portailfrs_azure_db_dev&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;sqladmin_sa_user&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:hrsR9LXO7i48pGZO2cljmt7gyMcq7PWPTqXotaUmDFXlpUYhFNboh9I="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:mJybedAmdoVdUGDAxXKgGYytQn63iFwv7Cb9CxAIZy5kjZ6HjgRynA4="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -1056,7 +1121,7 @@
       <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PROTECT_FILE" value="false"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:9813VjGSwG+9K7ToRLRWRFRHTnGwcWvp921N4Mi2"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:GUuWBBXMuZWF9em2sxgu8R5xLab5hYV9v957uJ7b"/>
     <elementParameter field="CHECK" name="CREATE" value="true"/>
     <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
     <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="100"/>
@@ -1097,13 +1162,13 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_gold"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VhDyH33vN6sLg5V5WrDb5dWFN8cSA52lQF/FhcYWnab4QBaTXTJDF9VnDh8="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:It6yzj8K7I2p2RArkIWk2InwmcGB0ROFATX+w4ifjRqx0EHREMfVhiftTHw="/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:NDDtGmh5isptJEsHe856XpfTHtK5URSKGUnR/Dmp"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:7K2RA9NHm6xdLVJX6akwGOhmWkyFdbeA+X5d5PlH"/>
     <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:ylr+uNVFp7sEFH20hTtke3y7hRkPkSRpSeKakroI"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:RiFc7/O0kKKlIuUsUH6E4HiJSReNSVWIkgUB/BXm"/>
     <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -1128,7 +1193,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.PORTAIL_FOURNISSEUR_AZURE_Database"/>
     <elementParameter field="TEXT" name="USER" value="context.PORTAIL_FOURNISSEUR_AZURE_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:obObCRONHO6/93LDSAfjl4c7/s4PmlBzC/e3YXLXIs0tROZi7CFDBVPCRP4DZ+6yzNFrbI5KEXgrCJf/37MNvraSqlOXIA=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fwx4J+Ykk88Vr1k7oGcUyDhdMdU5Bw+tmZj85Y/W1HIezVtasHt5ZzUUJDJttUa56go9ti0/FzTRzwTqmXTihlXe+RnQ1A=="/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="context.PORTAIL_FOURNISSEUR_AZURE_AdditionalParams"/>
@@ -1158,13 +1223,13 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_ods"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2vbyK6RQn0TBcqqskCTL5LCsecODIVlIf4oQgfZl9rvrCxg6BW8q63qFkg=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:o6AEKFYg85pxu8EKPJYMm67uYa1XQ/pfroZ6kzAHYBTg0gfkFKrMdc1Uiw=="/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:gjzaqxG6IeHr4VuUPF8JQ1jB1XEwabMCZtI9se+q"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:L++kwSIZsBsDHqA3wGe0M3bwJuXhhoPeZ2XT795t"/>
     <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:n3goIoEKWjaawzLeuNAoyfyp5YRudMij1T8jOtyu"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:o5OHJrQbYbE7NHdUM2kbOTgFjCekArD1eyP1Bpvu"/>
     <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -1528,13 +1593,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_51a77e05-3fea-4c7d-84e0-9ebf0c487a10"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KMEghGpJGCX+bK+Rzvp2Lf31xQyDmO4NO8jq/qUXJdo/LD3kuijRvWSGHQgIu9kOXmLb/AEHrCbS&#13;
-nP+6O7LTTQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_715f5753-c343-40ee-bba1-45915837d18a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nn+IOmQ5x4YpDH9+uK1EAnElrmbeIkqewwbdiZgZTrQllOcjJbTJCwi4/i6Q0GzyERK+IQbPcU21&#13;
-i4WKEAoedA==</DigestValue></Reference></SignedInfo><SignatureValue>Wv7tWAEH2Mb+fTxd0FSVpNczsKSukm112HW371Lin6RsuH+NuoLuo31J4w3o0UdQ7waIpwsQA780&#13;
-tMHiGf6Zkig2EK8TQM11QF9W8ZuaB3zvbWtSLWKv7kgHq42V4RUTyXiqkSOH6BxX7jzRdUTH9pov&#13;
-lo2bWfzTCOXO5aMRMTZ2R4r8OfJFR5Kth0Q0VaLOMFeH0R98sIYqp8EfGVVNsJyHxR9sPD+G/TiU&#13;
-VjuB6sQNxXAJi8ZRMaehZgk10a4lYw0O0uIRlmI9olwYsaQcmtbGpk7hiOUDeyiKZ1gB/tuR+TyY&#13;
-QY78G1t3tLP9nFBljc2lwwBKfXMC+OeYjzlU5A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7cdaaafe-4aa9-4924-a9b9-55321fa1ae3d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>n2iBMdqecZPd7viIEJ8nmMv82HrHdN8/MVRokfgmMFgixrR2jE5YHR8CxUIXg9rKv/moBkhYluSk&#13;
+Hh23+THYbg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8b4ce56e-1f26-4806-8360-dac6dbbebae0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9PCJQFa5NdoWMS3pZTVTplyiUS7FIDtwq/UtrHR3W2i+2SEiGRRklMl7VSgenHhVITFwp5MjTg2c&#13;
+rxryu9FNqA==</DigestValue></Reference></SignedInfo><SignatureValue>QJgnt9ZRvMKGiOVY9vL0l6zjja5g9r0uMAQaG8G7V6o4gbGSR9958acm9Qp/rKwF//OMNkVhzfXt&#13;
+Yx+oKRbEhFdKi9R0e6zSUkjaJN1dm3dY9HWgP1fmu5ZgjJ84g/xcMmO9vzmu4e7Ro8tMC0knvjZx&#13;
+3wOdP3qBgh2Pcyr7qopxCRVUS9uoP/SmYB+vlQFJEFRH5LsFCUzuYj7cuuQmhLRUymijN3VEdZu0&#13;
+KyvxTW6Z1QOlSzMB4neDH0alf7HL+TLhlAziQXVsEinBrYlUqXJ7KaMqR3Mbctvq8/0L9E4I/TXx&#13;
+V+DeAuqUuaGhhC0901sH/+KH/nId2wSmIrl9rg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1556,4 +1621,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_715f5753-c343-40ee-bba1-45915837d18a" Target="#_51a77e05-3fea-4c7d-84e0-9ebf0c487a10"><Timestamp>2022-03-07 11:24:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8b4ce56e-1f26-4806-8360-dac6dbbebae0" Target="#_7cdaaafe-4aa9-4924-a9b9-55321fa1ae3d"><Timestamp>2022-03-07 11:25:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
