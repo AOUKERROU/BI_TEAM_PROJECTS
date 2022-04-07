@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="PROD" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="KLIF" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" internalId="_dFCakLQiEeyoctphfB_A_Q" name="port_datamart" prompt="port_datamart?" promptNeeded="false" repositoryContextId="_SWnwELQiEeyoctphfB_A_Q" type="id_String" value=""/>
     <contextParameter comment="" internalId="_dFCakbQiEeyoctphfB_A_Q" name="sid_datamart" prompt="sid_datamart?" promptNeeded="false" repositoryContextId="_SWnwELQiEeyoctphfB_A_Q" type="id_String" value=""/>
@@ -8,10 +8,10 @@
     <contextParameter comment="" internalId="_F6Mc0LTsEeyKd7ZiS7tTeA" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
     <contextParameter comment="" internalId="_F6Mc0bTsEeyKd7ZiS7tTeA" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DEV"/>
     <contextParameter comment="" internalId="_F6Mc0rTsEeyKd7ZiS7tTeA" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_F6Mc07TsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:rz9/IYHfJeGidLTxSGtFxvsicUSxMwL54cxh5Jv92XVsP5we"/>
+    <contextParameter comment="" internalId="_F6Mc07TsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:TMiWrN3B7FggCtTTuPi604Jv5hnfU0q9ASgTnuNVJvlLPyhL"/>
     <contextParameter comment="" internalId="_F6Mc1LTsEeyKd7ZiS7tTeA" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSDEV"/>
     <contextParameter comment="" internalId="_F6Mc1bTsEeyKd7ZiS7tTeA" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
-    <contextParameter comment="" internalId="_F6Mc1rTsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:PVAz4rFe6Xqgxl3k8iWvJVGoDr3/ShaQQ8oyExLSUJU/C3Wtrw=="/>
+    <contextParameter comment="" internalId="_F6Mc1rTsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:yM3N6thHzaWVnXGfOiPGs9BT3NXUOig9JTf0aCWAvkWHD0WHJw=="/>
     <contextParameter comment="" internalId="_F6Mc17TsEeyKd7ZiS7tTeA" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWDEV"/>
     <contextParameter comment="" internalId="_F6Mc2LTsEeyKd7ZiS7tTeA" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_F6Mc2bTsEeyKd7ZiS7tTeA" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
@@ -26,10 +26,10 @@
     <contextParameter comment="" internalId="_F6Mc27TsEeyKd7ZiS7tTeA" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15211"/>
     <contextParameter comment="" internalId="_F6Mc3LTsEeyKd7ZiS7tTeA" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="PROD"/>
     <contextParameter comment="" internalId="_F6Mc3bTsEeyKd7ZiS7tTeA" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.92"/>
-    <contextParameter comment="" internalId="_F6Mc3rTsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:xdYj0+6/tlLoJFGYFjGBcyNYh3pOv1lqMNuWc2L7zcz0U+c="/>
+    <contextParameter comment="" internalId="_F6Mc3rTsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:Zudh/KO86bQwFT2DedAt/okJE/6YKbdLmJqzxm1B0+GkN28="/>
     <contextParameter comment="" internalId="_F6Mc37TsEeyKd7ZiS7tTeA" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ods"/>
     <contextParameter comment="" internalId="_F6Mc4LTsEeyKd7ZiS7tTeA" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BI"/>
-    <contextParameter comment="" internalId="_F6Mc4bTsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:7x6afYOMW15WUzeisTCWV20IqZD/2H2VokZ1fQlydeoc9+PT"/>
+    <contextParameter comment="" internalId="_F6Mc4bTsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:NIJGiLpoPqy4Z3e5hUlCU4eD5Adu6ZN9Cm2Btz2Wp/Yps27R"/>
     <contextParameter comment="" internalId="_F6Mc4rTsEeyKd7ZiS7tTeA" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DW"/>
     <contextParameter comment="" internalId="_F6Mc47TsEeyKd7ZiS7tTeA" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.92"/>
     <contextParameter comment="" internalId="_F6Mc5LTsEeyKd7ZiS7tTeA" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BI"/>
@@ -44,10 +44,10 @@
     <contextParameter comment="" internalId="_F6Mc5rTsEeyKd7ZiS7tTeA" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15217"/>
     <contextParameter comment="" internalId="_F6Mc57TsEeyKd7ZiS7tTeA" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DEV"/>
     <contextParameter comment="" internalId="_F6Mc6LTsEeyKd7ZiS7tTeA" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_F6Mc6bTsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:c/9ZsDfrrYm+UAf3yUJGNRdn830gDF6INn+WDjpZH1jp0jUr"/>
+    <contextParameter comment="" internalId="_F6Mc6bTsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:iLjB93+Ox624z6LAC9feA9gm0w0g4r90kVALK7JeWSI/fGV2"/>
     <contextParameter comment="" internalId="_F6Mc6rTsEeyKd7ZiS7tTeA" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSDEV"/>
     <contextParameter comment="" internalId="_F6Mc67TsEeyKd7ZiS7tTeA" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
-    <contextParameter comment="" internalId="_F6Mc7LTsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:GWOMM9Tj+jDGP6aHeQJUAdGNL+Pic/33m8MBTC5QqZbZAEUBdw=="/>
+    <contextParameter comment="" internalId="_F6Mc7LTsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:hIapS6qEcMAHGZMQsiV3/CzM5r9gBJkkgd0YRROtVOWDeNq7Cg=="/>
     <contextParameter comment="" internalId="_F6Mc7bTsEeyKd7ZiS7tTeA" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWDEV"/>
     <contextParameter comment="" internalId="_F6Mc7rTsEeyKd7ZiS7tTeA" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_F6Mc77TsEeyKd7ZiS7tTeA" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIDEV"/>
@@ -62,10 +62,10 @@
     <contextParameter comment="" internalId="_F6Mc8bTsEeyKd7ZiS7tTeA" name="port" prompt="port?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="15216"/>
     <contextParameter comment="" internalId="_F6Mc8rTsEeyKd7ZiS7tTeA" name="ENVIRONNEMENT" prompt="ENVIRONNEMENT?" promptNeeded="true" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="KLIF"/>
     <contextParameter comment="" internalId="_F6Mc87TsEeyKd7ZiS7tTeA" name="host" prompt="host?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
-    <contextParameter comment="" internalId="_F6Mc9LTsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:PyjKzs7pcrcvo/j6KIsuEpp++RysnRb7hyo34iHXKnpmoH8W"/>
+    <contextParameter comment="" internalId="_F6Mc9LTsEeyKd7ZiS7tTeA" name="mdp" prompt="mdp?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:QCizycfOmpNQfXwv9FmeGCdrBxL4dBTw1jtPl9GryU1hSW8h"/>
     <contextParameter comment="" internalId="_F6Mc9bTsEeyKd7ZiS7tTeA" name="user_ods" prompt="user_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="ODSKLIF"/>
     <contextParameter comment="" internalId="_F6Mc9rTsEeyKd7ZiS7tTeA" name="sid_ods" prompt="sid_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIKLIF"/>
-    <contextParameter comment="" internalId="_F6Mc97TsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:9FD+6WhXxQEswbwetq1vXdVAf8GxN12ZCd6808UATAcnYJRy1Q=="/>
+    <contextParameter comment="" internalId="_F6Mc97TsEeyKd7ZiS7tTeA" name="mdp_ods" prompt="mdp_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_Password" value="enc:system.encryption.key.v1:tCIxWVPGaldlFAiRW/rixrCJ7/PPvxGmJESFCFlADVQCnHfFyg=="/>
     <contextParameter comment="" internalId="_F6Mc-LTsEeyKd7ZiS7tTeA" name="user" prompt="user?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="DWKLIF"/>
     <contextParameter comment="" internalId="_F6Mc-bTsEeyKd7ZiS7tTeA" name="host_ods" prompt="host_ods?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="192.168.99.199"/>
     <contextParameter comment="" internalId="_F6Mc-rTsEeyKd7ZiS7tTeA" name="sid" prompt="sid?" promptNeeded="false" repositoryContextId="_U6lxYEY0Eey62aWENNljjA" type="id_String" value="BIKLIF"/>
@@ -116,7 +116,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:/opmo/181CO6x9pskfPCQZzBbhxgwUC/a0RxkLPE"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:y+ydIG/4qOZVdWsoPcwCkwbgAhqJYpwrhW0enZjf"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -151,7 +151,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:C8lZm0XBi8KpmfYSXMQ2HCwFaRJQbOK9rO8+ISN/"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:T627WtAOn9v6LQzyP7kRvW7k41pSUvcRrVPKp7g6"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -197,7 +197,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:1wJ9nrDZ20JlHkTnqtDSm+GvueX74yUNkqMXpmr5gyeP5mtT0w=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:RJNXmFkX4iQG3gvFF3/F73smQOIhrBNXo2N45GuQsieqGmiOGA=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -259,7 +259,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:ofEnDsVyFcPgkVdDDFwKVQmEDJ+hJi/EQtsvJYpiKyBmcXjWsA=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:fmLCqcXBifprv5kEZYPomq2caCTxqDnEq1mKX3kIaWnUnK6eiA=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -443,7 +443,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Y/wWIlcB+eeVm+g3hMisZPUmi2ofAgZrOY4i6NA7qzySwlbMfQ=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:9a2693HdWoM4lltrAO6RVvjxIfsjFAcTP8J+9zd9R6ClrVbERg=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -500,7 +500,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:WMxp2ypRa/MMGFfg+OUE6oRarwFpjfPC1zSv4rbv6sCYeJdYcA=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:1PtdTqF4s2TYJZxYp3ijV+hNebHbEg80/CiDpTv12FUzQ49f1A=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -678,7 +678,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:qBePcmZwBtZ1FB175gMv/o2huuLsk76BJqc4BnnmzjCfu82g4A=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:1kO7abkC3lvU9ECsvcnuna3Dgw1vpzs7cndKxMo7Ut7xdahsMw=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -732,7 +732,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:ZmNk6HHB1ZFelnZrqEEzDxCHM4r9HmcviVs3BtyjSiYvkqVVbQ=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:jGewu+FBSTFxw0AJtIsl1jPZr/G2p3BVqIBjGTPtK5nopC++ZQ=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -871,7 +871,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:JA1rA9Eu09AfinwRzhbhLIzhdr8X2t4iawiNqd3rtrmzK273oA=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Awz42skBkofjGeDrA/11uIiZGSYkpd3ydyTdzcSKYrYSXTqheQ=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1330,7 +1330,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:ZVLFFHIBMWCBP3a7YTSdVIpLk1neHhlc0HCtz1TWkr0ngAGEsA=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:69bpJ5ZBGuKAjoNlRjjt5pAQO2Np+SFaxBcjklj6qhkk/pkp6w=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1378,7 +1378,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:CEyIhmeVO13hRnJKgSk7a+/V5xF4Y+oYDP5PR88FDKVpvRWqnw=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:jjHwJaujwxU/FctSiAZxl633Qr86UiJx790eVBK4qEEVBuvSJA=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1526,7 +1526,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:/wwXT0MCqfjeYLk8HIZhsPFwx25PuhMG57iP8YZrY2V8VQti2g=="/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:PhyQMpu6/45775MAQhYAhI5W6+QmVVS7dTYVECEuUrRL8TaRTQ=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1597,13 +1597,13 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0hX8o+B6huPZjmOmWyFRyVRnYIre4uxiPjnOLctZfl0mF/r0FFdU"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:srzE29kgic/QZYJ4m+1/VxrlNgE4FmhAFTUdZjba8vZali0Mz8zJ"/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:CDa/exBMU+p7RNRR609C0L0syKsbXzNsxYiWDw82"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:eQ6I5jQ6TTpdsZ+tOAyGlRedSblBfkSZUHd1cSBO"/>
     <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:+ziL9/rQgfuSFd3moX746v5oo94LAVP5Jyrp4Gly"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:qDJx0WDcmnVa9stefaoBNvmez2LaA1+s3iU72Mt/"/>
     <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -1634,13 +1634,13 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.user_datamart"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/HCVO8K2xn6gyGhrHciw5y/XImHa1sTVqQW5lxT8bprpu99Ucm9ggD9Fwtha/g8A"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:shLs7Iav44aZUpu1OP98f7YeG/sGje3G2HGHg4l1U2LOQ1t3238DzlMppCiNW3pc"/>
     <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:8GGxTC+pzCrJLl2TddhrkWdhTtJqnUmpdcDFCawh"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:+RM+SEmwkTs/tXxZNNHgrNZs3plOniEnALHh3EjS"/>
     <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
     <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:e87I2x9farwrHMXczNIPzVmvwbQld6AYL5hGFbta"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:CWMavdHt+qEMrXRnkPvstS8qE4nAQd89ok9FGfNj"/>
     <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
@@ -1673,7 +1673,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" show="false" value="context.Schema_datamart"/>
     <elementParameter field="TEXT" name="USER" show="false" value="context.user_datamart"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:diRKa11t6u4UEvXuYmCGsYachmV1BzWgiXpgwiQlN4kPcDOi903aUl7Kkapsyo/d"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:hd/BLI8oUYkpgReH+Y4BWr5Oxssjb5uyvkUqcS7HhiJ/uC6LMudfTr4zncNB8gDQ"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DM_FACT_FID_GLOBAL_DETAIL&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1968,7 +1968,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="context.Schema_datamart"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" show="false" value="context.user_datamart"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Kfq0WCYePSE3WrduAb6VfDuVRG56sNZf4AV3LcGm8bhEOPoilZeUHUeopWcgjdve"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:VVpIZqzdxVgyGkrWvRQZCDMKyHbKy43wpviNVWIPGGeXaLWJQuDf4cJFao/qxb68"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -2359,7 +2359,7 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
@@ -2375,7 +2375,7 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
@@ -2405,13 +2405,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4c3e0282-2fbc-4445-aab0-af205f3391da"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MVlVxiLx4ZhO1zbBvGdqmPWco4uapotH1poWO+VMt4ergsZ5MosjO/zvNxS5hOBf0EWReNhG1c8P&#13;
-jPVWktRUKA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_95014cbc-dde5-4dea-a58f-d5dd38b26712"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LP7NeG80ETvr8VK64mNhOx2u0Jx26uqa9bfnXzoQ8RI6BNWg0BIlzrLZIC4fCZvNdhMoG7vAjg8+&#13;
-gEaEVs3JbA==</DigestValue></Reference></SignedInfo><SignatureValue>j6Ojk30pROcaVSDTA5gk5ho305kd4CNthdKPmYZg6C5TE5dDDeiQXi4gN3uwOyTfQaPmo7h2shxo&#13;
-W4WG+dnSKHsHMdM4X8LbCIPTjmtDAczUW05ObBgaCW493CTNA1+oI3qSHoQF0IR5ItezCvjpDdv2&#13;
-MUumdqsKUOYiSP2L5e7s3aZkGEMjOFlYsvLBwDxOsVQTCGhmAJW0DkC2IZEmwhB98p8Q/l2/iN/1&#13;
-qDpAB8At0Cb2ldYMwkHoDEPErE7EeBL50m3HSDbcnPwEq1Mic7Tk4kVO+ycns9NEILvrhCobMS2A&#13;
-6Vy5tnhpMZzSp3cvkYIBBJTOq8yaayx8xrBijQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_17cbf8b1-9d52-4b02-943c-661b3af37085"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9dgJwxWSmiinpaT+orVSfwG2BBoPlyaAzESmUuv/742PveP5z+ca7//utssH7aSxhIh322wyupQT&#13;
+NipsKoDiEw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b7a4e3a4-056f-4acf-98c0-6e0d86755d4b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Nr1TkwwriaipiGfGKProRmpeKUCNpz5f1dcuQkUqoaUk2uUFgnd0BOABubDqcLiBy+kAL7/MMBha&#13;
+ilBtO6wM7Q==</DigestValue></Reference></SignedInfo><SignatureValue>GBHfKv31zYP2SW2yteRaCCtMCyc+DrZK+6+JQLXN9aAX56whjPA6SBJUjB+dg5FuvABdmTUSEFwL&#13;
+KEH6zWHsYb5CdtyCATOI3XZVluVr52ihTCIvRxDFgkCb9RMJcJ6FBlQ7Iq6gIelz0ZEz0Th2Hymi&#13;
+KZmgKcM3bE6j+s0q9GDjy8qp4GE8edXMiL954uCGrcsQp/J0up82k0wjLMy7QIJiFFH/JNnXqssH&#13;
+zTJkp6B9JvZVH39figBkvyUjHPFo3H6awIUz764QznuMeB+jIhRbWEzoq3bUncw5NFgmGx/A+6ia&#13;
+SeuNKun0DCVC+G7jSTamoDZaVxYIUKfPffKELw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2433,4 +2433,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_95014cbc-dde5-4dea-a58f-d5dd38b26712" Target="#_4c3e0282-2fbc-4445-aab0-af205f3391da"><Timestamp>2022-04-07 18:27:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b7a4e3a4-056f-4acf-98c0-6e0d86755d4b" Target="#_17cbf8b1-9d52-4b02-943c-661b3af37085"><Timestamp>2022-04-07 18:28:24</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
