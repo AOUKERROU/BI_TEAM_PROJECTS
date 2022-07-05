@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:version="2.0">
-  <talendfile:ContextType confirmationNeeded="false" name="DEV_AZURE" xmi:id="_a2nZgExLEey62aWENNljjA">
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" type="id_String" value="1433" xmi:id="_a2nZgUxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net" xmi:id="_a2nZgkxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" type="id_String" value="portailfrs_azure_db_dev" xmi:id="_a2nZg0xLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" type="id_String" value="sqladmin_sa_user" xmi:id="_a2nZhExLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZhUxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" type="id_Password" value="enc:system.encryption.key.v1:SY8vjpHUGW7yyg7rfiZMiqaUA/db5bqzvmt8ibzYgIvICQIQM2ge" xmi:id="_a2nZhkxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" type="id_String" value="ssl=require" xmi:id="_a2nZh0xLEey62aWENNljjA"/>
-    <contextParameter comment="" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" type="id_String" value="D:\TOS\TOS_DI-Win32-20200219_1130-V7.3.1\Azure Portail Fournisseur\Stock Hebdo" xmi:id="_JEpVoFP_EeyYypHR2llg6A"/>
+  <talendfile:ContextType confirmationNeeded="false" name="DEV" xmi:id="_a2nZgExLEey62aWENNljjA">
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="1433" xmi:id="_a2nZgUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net" xmi:id="_a2nZgkxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="portailfrs_azure_db_dev" xmi:id="_a2nZg0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqladmin_sa_user" xmi:id="_a2nZhExLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_a2nZhUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:QlH8l/cror20ECqS0jUanVzLJTqwuUt8mTJKS58WaUpj2+5uta8M" xmi:id="_a2nZhkxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="ssl=require" xmi:id="_a2nZh0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="ENV" prompt="ENV?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="DEV" xmi:id="_Sej00PhiEeysM9L7kVN8qg"/>
   </talendfile:ContextType>
-  <talendfile:ContextType confirmationNeeded="false" name="PROD_AZURE" xmi:id="_a2nZiExLEey62aWENNljjA">
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZiUxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZikxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZi0xLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZjExLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZjUxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" type="id_Password" value="" xmi:id="_a2nZjkxLEey62aWENNljjA"/>
-    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" type="id_String" value="" xmi:id="_a2nZj0xLEey62aWENNljjA"/>
-    <contextParameter comment="" name="STOCK_HEBDO_PATH" prompt="STOCK_HEBDO_PATH?" promptNeeded="false" type="id_String" value="" xmi:id="_JEpVoVP_EeyYypHR2llg6A"/>
+  <talendfile:ContextType confirmationNeeded="false" name="KLIF" xmi:id="_a2nZiExLEey62aWENNljjA">
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="1433" xmi:id="_a2nZiUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="portailfrsmarjane-dev-sqlsrv.database.windows.net" xmi:id="_a2nZikxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="portailfrs_azure_db_dev" xmi:id="_a2nZi0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqladmin_sa_user" xmi:id="_a2nZjExLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_a2nZjUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:G+Yqaw2ezTtsF8k+gsLt1/4N+pfQ0v9yYlhAk2z8KeYhnzPN2g8i" xmi:id="_a2nZjkxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="ssl=require" xmi:id="_a2nZj0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="ENV" prompt="ENV?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="KLIF" xmi:id="_Sej00fhiEeysM9L7kVN8qg"/>
   </talendfile:ContextType>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e50e660e-bd7a-4d88-a505-01a72242e531"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OCyYPgmsqEnIYwwt4zs8HvcT0A8F/ZJHsWOgbrTkiclskw762RcQ8Bj5ipunwXvYovuknaxCmj6f&#13;
-os6UJZQGTQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a36d6431-2ec1-4ab5-94de-074caa47311d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+X9fUqD9GL2cwcDkWoGjq8xh4/B8eaaJf4/5LIy3j2eSKC9xH9H+QENDCh/8/Q28iV79euy9EkYM&#13;
-sF2lMExHEg==</DigestValue></Reference></SignedInfo><SignatureValue>nwTpFE4fkLkM0FlvAaB4hGbYc6moWlOCOpHpyLJJ0ViZ+b2Gdj9UA+65789dgRJAbyHDZ9VfcUX+&#13;
-gBmxCjioXVUNK/2G8tOHtMoLWoIICe9meuA4QWZt0S/LWJ8t4R+Kk8wwdg5y20kZZ6nSlW3+3/Xd&#13;
-EgGrjZUa6NVmrloWC19KZpofjBVyYuioTFOJlRn9Y1Q8v6Pxi+rgwAyNI4cWpU0XAGcLLozoeYoT&#13;
-ZtpocIYKeRdWBI4gNDltkKspYe38yh5HtlwIlMvTzjnMS9YQkKIieZsJRWLIZowmWg7fYAdtrgzG&#13;
-Gh2SZYHuxlmTMaD9Vh7kyTxQNsRlOcJaM527uw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <talendfile:ContextType confirmationNeeded="false" name="PROD" xmi:id="_UfubUPhiEeysM9L7kVN8qg">
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubUfhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubUvhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubU_hiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubVPhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubVfhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="" xmi:id="_UfubVvhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubV_hiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="ENV" prompt="PROD" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubWPhiEeysM9L7kVN8qg"/>
+  </talendfile:ContextType>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f1069cde-49c6-46c4-9121-361f757eaa2f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>aN69N0F1xnm62WHxvbJMGsgOsxL8NMDhhZ8wk4iXrqNCHynTi4ppKQnAG3aJO8BNK+St+zzVVKPp&#13;
+GWoOxTUdkA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_447ddf17-ce8c-4358-8af9-4d01346aab55"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AN6lH8Hddyr6rDB9bBk14eiWvdX5ohHNhQRw6Io41iDvpOqDPksGQz7NOZeAPF4q27MbiRLqAh+J&#13;
+hdDWwHbVjw==</DigestValue></Reference></SignedInfo><SignatureValue>TMOTAftn4iaBYWcuyktKA33X0UtK1U0b1Jl21YyVtPy/g0RvTQLFS+ra24x7vBuhKDMHky5mU4Pb&#13;
+KpKpT3aXJzfE3vTCi8zoAPzW6MKV/+QPbjAK2Qn4uvNo/8Ho0xLpEvVNu98H6QCi2PHqqW2qsosG&#13;
+f+TMePiqTzsbJDszDARi5Zbah7/9xzbUOgtyjYBP8ATBuLpDX2UkevrwV1zerzQpUf/ye7DVuHQB&#13;
+6UPjwOgQJl3acRbI0MZnSy4fSb8QJfxoampCz5Eym6b8x3Yv9DNbxc7KJW1mBcPmAetSyaMNmAUc&#13;
+dccpwxLRpIfHG4e5F9s8c51+mqvHEw0xXw9vUQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -47,4 +57,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a36d6431-2ec1-4ab5-94de-074caa47311d" Target="#_e50e660e-bd7a-4d88-a505-01a72242e531"><Timestamp>2022-02-15 14:57:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_447ddf17-ce8c-4358-8af9-4d01346aab55" Target="#_f1069cde-49c6-46c4-9121-361f757eaa2f"><Timestamp>2022-07-01 11:07:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
