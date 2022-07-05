@@ -39,27 +39,49 @@
     } ]
   }, {
     "contextName" : "PROD",
+    "repoId" : "_BMS8UI52EeyHf4M4dd-r7Q",
+    "parameterList" : [ {
+      "id" : "_BMxddI52EeyHf4M4dd-r7Q",
+      "name" : "user_gold"
+    }, {
+      "id" : "_BMxdc452EeyHf4M4dd-r7Q",
+      "name" : "sid_gold"
+    }, {
+      "id" : "_BMxdco52EeyHf4M4dd-r7Q",
+      "name" : "port_gold"
+    }, {
+      "id" : "_BMxdcY52EeyHf4M4dd-r7Q",
+      "name" : "host_gold"
+    }, {
+      "id" : "_BMxddY52EeyHf4M4dd-r7Q",
+      "name" : "mdp_gold"
+    } ]
+  }, {
+    "contextName" : "PROD",
     "repoId" : "_a2dogExLEey62aWENNljjA",
     "parameterList" : [ {
-      "id" : "_a2nZhExLEey62aWENNljjA",
+      "id" : "_UfubVPhiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Login"
     }, {
-      "id" : "_a2nZh0xLEey62aWENNljjA",
+      "id" : "_UfubV_hiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_AdditionalParams"
     }, {
-      "id" : "_a2nZhUxLEey62aWENNljjA",
+      "id" : "_UfubVfhiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Schema"
     }, {
-      "id" : "_a2nZgkxLEey62aWENNljjA",
+      "id" : "_UfubUvhiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Server"
     }, {
-      "id" : "_a2nZgUxLEey62aWENNljjA",
+      "id" : "_UfubUfhiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Port"
     }, {
-      "id" : "_a2nZhkxLEey62aWENNljjA",
+      "id" : "_UfubVvhiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Password"
     }, {
-      "id" : "_a2nZg0xLEey62aWENNljjA",
+      "id" : "_UfubWPhiEeysM9L7kVN8qg",
+      "name" : "ENV"
+    }, {
+      "id" : "_UfubU_hiEeysM9L7kVN8qg",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Database"
     } ]
   }, {
@@ -101,6 +123,25 @@
     } ]
   }, {
     "contextName" : "DEV",
+    "repoId" : "_BMS8UI52EeyHf4M4dd-r7Q",
+    "parameterList" : [ {
+      "id" : "_BMxddI52EeyHf4M4dd-r7Q",
+      "name" : "user_gold"
+    }, {
+      "id" : "_BMxdc452EeyHf4M4dd-r7Q",
+      "name" : "sid_gold"
+    }, {
+      "id" : "_BMxdco52EeyHf4M4dd-r7Q",
+      "name" : "port_gold"
+    }, {
+      "id" : "_BMxdcY52EeyHf4M4dd-r7Q",
+      "name" : "host_gold"
+    }, {
+      "id" : "_BMxddY52EeyHf4M4dd-r7Q",
+      "name" : "mdp_gold"
+    } ]
+  }, {
+    "contextName" : "DEV",
     "repoId" : "_a2dogExLEey62aWENNljjA",
     "parameterList" : [ {
       "id" : "_a2nZhExLEey62aWENNljjA",
@@ -120,6 +161,9 @@
     }, {
       "id" : "_a2nZhkxLEey62aWENNljjA",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Password"
+    }, {
+      "id" : "_Sej00PhiEeysM9L7kVN8qg",
+      "name" : "ENV"
     }, {
       "id" : "_a2nZg0xLEey62aWENNljjA",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Database"
@@ -163,78 +207,50 @@
     } ]
   }, {
     "contextName" : "KLIF",
-    "repoId" : "_a2dogExLEey62aWENNljjA",
+    "repoId" : "_BMS8UI52EeyHf4M4dd-r7Q",
     "parameterList" : [ {
-      "id" : "_a2nZhExLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Login"
+      "id" : "_BMxddI52EeyHf4M4dd-r7Q",
+      "name" : "user_gold"
     }, {
-      "id" : "_a2nZh0xLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_AdditionalParams"
+      "id" : "_BMxdc452EeyHf4M4dd-r7Q",
+      "name" : "sid_gold"
     }, {
-      "id" : "_a2nZhUxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Schema"
+      "id" : "_BMxdco52EeyHf4M4dd-r7Q",
+      "name" : "port_gold"
     }, {
-      "id" : "_a2nZgkxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Server"
+      "id" : "_BMxdcY52EeyHf4M4dd-r7Q",
+      "name" : "host_gold"
     }, {
-      "id" : "_a2nZgUxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Port"
-    }, {
-      "id" : "_a2nZhkxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Password"
-    }, {
-      "id" : "_a2nZg0xLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Database"
+      "id" : "_BMxddY52EeyHf4M4dd-r7Q",
+      "name" : "mdp_gold"
     } ]
   }, {
-    "contextName" : "DEV_AZURE",
+    "contextName" : "KLIF",
     "repoId" : "_a2dogExLEey62aWENNljjA",
     "parameterList" : [ {
-      "id" : "_a2nZgUxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Port"
-    }, {
-      "id" : "_a2nZgkxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Server"
-    }, {
-      "id" : "_a2nZg0xLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Database"
-    }, {
-      "id" : "_a2nZhExLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Login"
-    }, {
-      "id" : "_a2nZhUxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Schema"
-    }, {
-      "id" : "_a2nZhkxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Password"
-    }, {
-      "id" : "_a2nZh0xLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_AdditionalParams"
-    } ]
-  }, {
-    "contextName" : "PROD_AZURE",
-    "repoId" : "_a2dogExLEey62aWENNljjA",
-    "parameterList" : [ {
-      "id" : "_a2nZiUxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Port"
-    }, {
-      "id" : "_a2nZikxLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Server"
-    }, {
-      "id" : "_a2nZi0xLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_Database"
-    }, {
       "id" : "_a2nZjExLEey62aWENNljjA",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Login"
+    }, {
+      "id" : "_a2nZj0xLEey62aWENNljjA",
+      "name" : "PORTAIL_FOURNISSEUR_AZURE_AdditionalParams"
     }, {
       "id" : "_a2nZjUxLEey62aWENNljjA",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Schema"
     }, {
+      "id" : "_a2nZikxLEey62aWENNljjA",
+      "name" : "PORTAIL_FOURNISSEUR_AZURE_Server"
+    }, {
+      "id" : "_a2nZiUxLEey62aWENNljjA",
+      "name" : "PORTAIL_FOURNISSEUR_AZURE_Port"
+    }, {
       "id" : "_a2nZjkxLEey62aWENNljjA",
       "name" : "PORTAIL_FOURNISSEUR_AZURE_Password"
     }, {
-      "id" : "_a2nZj0xLEey62aWENNljjA",
-      "name" : "PORTAIL_FOURNISSEUR_AZURE_AdditionalParams"
+      "id" : "_Sej00fhiEeysM9L7kVN8qg",
+      "name" : "ENV"
+    }, {
+      "id" : "_a2nZi0xLEey62aWENNljjA",
+      "name" : "PORTAIL_FOURNISSEUR_AZURE_Database"
     } ]
   } ]
 }
