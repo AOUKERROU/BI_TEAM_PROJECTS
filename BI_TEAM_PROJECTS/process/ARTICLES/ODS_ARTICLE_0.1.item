@@ -43,7 +43,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:9Pvq05t3rqEsv5QPz1hMiI6B+DJRX1ZHePyYbIzC"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:iNM59CVp9EYHs2Swv7suT0pfGS3KoSLzACc/dBLk"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -78,7 +78,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:06rJOJ0aK5XSR3RsPp4EV7mfLYiqtgRwFMZB1XGn"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:qn38dbFwKRMknE4uDP9p30FgKPW+0z+JyxCFES7S"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -124,7 +124,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:RGA1RpOo7KgkUkvPJeV+KSg1nOKlpp8l/RpbwTNIOF8qx5DM"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BrxXtZpjcxRQAdxD8uDserhWAT4jTtOFkDgca35P5DKWiSk5"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -386,7 +386,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ObwtR0CLgupTom7haA0WQUZCXai/pYD6OlHYivft9tClesbW8Kg="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:U6hHl+TKPz51Wr52NzzaZXyOShGXoMVBfoDJ5nE9iPKIgcS5yxU="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_STRUCTURE_MARCHANDISE_TMP&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -652,7 +652,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="-32">
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Probleme de connexion GOLD&quot;"/>
@@ -688,7 +688,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wgLnreSXxJ+k8K+/2/BRCHUMEmJSmnAMpiek50rCx4PWcQI9myE="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lK7CRJ1g+yyQKh7ELQpV3e0Ye/lF3zPB1u5Hi7qBqCFlN8bp/sk="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -733,7 +733,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:7no9s1cuEcbSNDgNnRlw871ag6xJM8PQo/TBB8E8A+6/liPO0zM="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:j3cCf7D4DUNm2UwP+eDDHwfWy0EP4Oo3epjkH3jgR44YTPhL4hE="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -778,7 +778,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:peTXRvwlAqL//nLk2szHXdOtTTAnFhwpIknI4VT49CFRK3l8gCU="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tqluTqfuPSlhnsvZw+RkoBr7OO2jbzUSyNiqnQgOIkPCaY+rllo="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -823,7 +823,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:7/VshFKru46POMsxf0mXVZoQkWTM8ngZJZrKA7W0VDqtkh6PV3Q="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kSIYwMZeVMNItQ1XpMgcwAIsaVjb64Ev7O6VEbFDhMDx+uKRmvQ="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -868,7 +868,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6QNXSSGjujXTicdSdM4gCoK/afGzKNPuOnFChGWsMLK4kKLarao="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xfpw9fcCS2O/dt1GNAWvyCZN74TQKEiJvOdmNiWyIUqcerqOzss="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -913,7 +913,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0cO2gaTy3MpBBXoDwvkDXqiNG6G9PyGNNSt0KRYrEzLKFeEKRDs="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:EVziADmh6QDrM+Vq93BvB7ek9wa8sIAzAdTJN87Lj9s5n0rXbe0="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -958,7 +958,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:qUilw5ZGssPIXuIruwC/wSos/rJWTYOwfhyW8DDvUMQ43N4w"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jgQRsbNYyY+MIiQ7VPmnmQydxP0kLrH8T7S/RiQJxT46thfA"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1052,7 +1052,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:SabYeDWPjUpq1ZI97qa+dcDam9Bx+iXfjfdB14CptY2Mv7jxKgY="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lzvZEoRqWo0eDjWicRetnDVgC+ca8oe3oDcSi57eInmM0bUTTdA="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_UNITE_BESOIN&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1138,7 +1138,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Sm4N7q4/8pmro6ef0pjyv5vMdlligtA7Ds6KXcrh0YZRWO9a"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HRXZjKp6Kj2P8zONVGTcymbxawp+osmhUNSwRor3vyBmUUgF"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1232,7 +1232,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dMS9CsvcB8xzHHHjIuERRz4g73qGS4lyG1EfmicQUs4ygOb78/A="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:SiqWD7o+QsIANNEKYQi99v6hjaW3H13N1gYtUWCA4l8ovNYwgcI="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_SS_FAMILLE&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1318,7 +1318,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lcgtWTRduGkeYgMYIqASdRIbjLCsT+iSfopHmkb8htOckP2J"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LllqpbmLjJHKYgNUajNHonLvoem2zxAAKiZlNGjc9WuDTGAR"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1412,7 +1412,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HH1so+tKpx2i6Dh2Dv7Xo57y1WzNoTjrnuWsJYkUf5jR9+iQ3MY="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6jA0cZDhs89M/sluOlmPmSqUbdR7MDZp77mDkWsWq+hhaDcyT0o="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_S_FAMILLE&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1498,7 +1498,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:O86EgA+R8bmUyASUEYxnQRuKrHZWp7oRJCd95PcuiVppohV4"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0TlATPCvI5yjshVOFS5WojSltTThP3SyECAtPZRvyW1BOSYQ"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1592,7 +1592,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:73Ndi8qN3S/Voio4jmqxWxiWHDGsu2BC/aD2gxFchcbe8utCR5M="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4DFf3rwDo2UejhMOSOXr9BQsjBLxNMbr7hH3qmgmqSOd7wLn0X4="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_FAMILLE&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1678,7 +1678,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0IsabeDywNZzLC1O7/iOmIlCjtbR5lkGm9qixMGx52eTT7AT"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aEgLsLEZtUORgYrsMdMpVAy4JWiosJKQOWTxwUVQNb3pQouF"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1772,7 +1772,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5BdIW4jIdaoODOhtJ1Zdjlt6HKAcYioHdaXQA28b9RybjYJZs/0="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AG9TdTA15zmElCM+DSqKch0VEpv0WWJYBSfIHGlJ8gmhNobf5WQ="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_RAYON&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1858,7 +1858,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kqz3cR5n8m7PFRhoss+sEayUxP+guBTvb9D2tuW4gc3krPV/"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nPNMunQIT5AENyH4Fpk+WzzQIwaanOpBuA+QEJjQnNAlyvB3"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1946,7 +1946,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:I5YtCcQaq/LDOxSUjA8zxBGa7KUo8PloP5+D5DTWNyjD4HCxG8w="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bvoW5iaDrWWE1phVhdHPCaNObc2UgEfHp527OazQP99ZkrC3dcg="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_DEPARTEMENT&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -2025,7 +2025,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9DDgF8eoEMU45/eSCMgO3QTFEannA50B5GsifMGhXcB+pWVMq3M="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AAYCB91+Y1FpzOIMCT4bvXeNVq3Mrtrb7k+wt1FxZ37bOxTDyOs="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2307,7 +2307,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0/aJ0FHpcPOcjGsAsXY6VGTo9NWudtwfgQREBHgOX6rlmD+Nh3U="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eGbhKjWpcJ0TT7S4sLSID7uZByl9MIhOtcixYCd8YRhpOIuTdps="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2364,7 +2364,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:H11CnO0qSYwGeHTvT6pIpPZgdplEagZwbtpGamVIbE7Zr+foAZ4="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:qSkFDYIFumh8+4PC2+suzv5IAS4zPQJguwzBorMrl677rhbGwBI="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2600,7 +2600,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hLmTZ4rc8/Hoee+Nq3GX+9M83fUz9BOUoPEZMsaySonMi+0gJ8I="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2nLd/Iph9ieRalKOwbVK3/tUuJC6bSFeLHfN+AF3w2svSfV3yJI="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2654,7 +2654,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BifAyZ12APv9bGyZFYf0a2D5LdnztHdvclaoTHRVzQy+o5VhvC8="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ugRemkra3dNhdSqyogGOJIkoBJpQ4a3tdq0LtVbdjpwZPSTnRMo="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2708,7 +2708,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:8fiqVNpu3zwpvFQnwET1LkGT7V0c6tJU657WHzrxq8qwCH3s94o="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+HxYmFbj6/3cf5RPKoew0I6dBZ+Qzln7YqlFo1qnj/uIcUhXDj0="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2765,7 +2765,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:uvCq0SZBXu8lQXivuaOxVHhHGDV1taMOcSgGz7fWulE3ykR+i8Q="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PXO8alOKB7htR+wHkqpUlqg/qeys1dXTkcrvHHvvAZ4nHYmcXww="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2822,7 +2822,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IrbcvU+LTw6tXd7HxCSdGVYyg5uhBWdme1bZJ0LP8xNCfrAFSLQ="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OgEXT7Z4Qw6chgGsB414/3MrsZq+6prN+NYH+RIh9uGoZg6NYNc="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_STRUCTURE_MARCHANDISE&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -3404,13 +3404,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b978fbe1-49ee-4187-be14-6edc0ad0ff47"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WKezlg9vbA+lL7870LdfFVn8Kv7tdzJlchbXj14H6AGUegn5D6E0v5TsoPP1apv2dE9T46h2s+X7&#13;
-WibHVKd2ig==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4a69298f-0cd5-461a-9981-65b7261842dd"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BKjiAMD+jfyY/tWnsbQANycQBf9v0v2TuGLxb235F/jaou5pzv9XbpEOLSPy5nuxCC1gH4B2TkQ5&#13;
-eqvjhvscDw==</DigestValue></Reference></SignedInfo><SignatureValue>NXn1irQYs3INc9K/5E47Ady3MdzN9oMCJeTkvejprKHViL77nhtYI930DzgivXi8pBzKpGF3jFui&#13;
-s4NutH4AM4aKn89dfBJ+Q5H+6/B6cYrBzPtYv08lE8NkbT2qMG+IuO68cIPVX9xT63U8WMhe78ni&#13;
-L0y41rCQ62X9RXDyTnDBpUgvXDLPIpqjzQp0nXQhUdUBm9aWc1ZAIc+LxgsS0RFW+jyErABRVWLH&#13;
-mhPoFv5EUHG0gP6ChXR95q2+hKrtOTGIiiKOW4uIDvijn8B3kOsIyQAr9Dzk4kq2uozfvGCmwkjN&#13;
-PUFEw9yR5P3V3RyOcPlsUE05acjnYcU1LEZAfQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_295120a7-6634-4078-b8bd-9e37204d0d43"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>W9K3dRvSVExl35vIXOhH5AX/sTMm6eAgm9KTE/LEgO36BZHnSe4XY9q6JZcZVK9AIdwcMJTEDfKC&#13;
+m3j/MYNO/g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bd49fb28-24d5-48f0-b395-a8ce1d1360af"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mmFB3odoPKZ1tr56RAWXMtnqdLwasjveWr+3SXnKPn77i4QDnsq5vqCECY8FY44pdpnVAUaWxN40&#13;
+JKDAsSuWaQ==</DigestValue></Reference></SignedInfo><SignatureValue>Fefpl1f17qQXvS+4H3KjC4uY/edFsPX7KF+GTFvJ23Z4Xo3Dk/y/0sY7BTkMzio5fUVETjp44WBV&#13;
+Z3WrtJgCijQqmOmO9S9zHmhAsmcUxQ9BeiTAzz9nAhSKxqzDLJtS6wAnNjiH/cYWan5NheFM+vnp&#13;
+RYrV68l0YDaq8mi2epIlFxnJXrM9XDAktc0Fn20rJR0MfBW7qbhofiQKSU+INy1rdt/6KaNXzn4y&#13;
+BhphbKroWMddWwsiNjxLAY3+QYeBXPHYQte+tVwcDuulvDGL1l+8CfpWuFPinuKKiE5wXLzdlGRb&#13;
+pCH6ZusdAVpi1oGhnWqs4sDHkYL4Ek18v70T8A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3432,4 +3432,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4a69298f-0cd5-461a-9981-65b7261842dd" Target="#_b978fbe1-49ee-4187-be14-6edc0ad0ff47"><Timestamp>2022-07-21 11:07:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bd49fb28-24d5-48f0-b395-a8ce1d1360af" Target="#_295120a7-6634-4078-b8bd-9e37204d0d43"><Timestamp>2022-07-21 11:08:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
