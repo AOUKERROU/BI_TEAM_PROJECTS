@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms2560M&quot;,&quot;-Xmx10240M&quot;]}"/>
     <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="192"/>
@@ -23,6 +24,7 @@
     <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
     <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
     <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
@@ -43,7 +45,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:CHuNe97x9CE4lxUSbUZjAuqyyn68GJlk4E93lpWX"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:QSHxhjovEn8qTopWjJLzzW0bM6nxX6nQ+kZKTCBM"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -53,42 +55,40 @@
     <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
     <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false"/>
-    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/TOS/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/.metadata&quot;"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/TALEND/STUDIO/WORKSPACES/REMOTE_WORKSPACE/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="true"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tOracleOutput_sid"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11"/>
-    <elementParameter field="TEXT" name="URL" show="false" value=""/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tJDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
-    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value=""/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.99.92&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;15211&quot;"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yqaTsNdAUO7ChfGdzaGGEkf5ff/Ad5a0u0RmH14IpC5VxfiWdA=="/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:z73PUIwJBfy512+GfJdGvL6aKWSm0alIZS4gCGqj"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;stats&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;logs&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;FLOWMETER&quot;"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
@@ -108,6 +108,7 @@
     <routinesParameter id="_U7CaUOunEeqosvUtFHkmiw" name="TalendDate"/>
     <routinesParameter id="_U7P1sOunEeqosvUtFHkmiw" name="TalendStringUtil"/>
     <routinesParameter id="_U7LkQOunEeqosvUtFHkmiw" name="TalendString"/>
+    <routinesParameter id="_hshZMI5pEey7guvAqpMizQ" name="SQLike"/>
   </parameters>
   <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-128" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
@@ -125,7 +126,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/LqJSyMojhYQ6Z71RoWkPt6zSEQfVBx2kiyMs6I7+EiELhm1W3Y="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5yEj7LO3Qk79jXOAqCXt0mA2rap8cFm/k5V1iXpPHY9ROxRzd+g="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -682,7 +683,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:IN7HlbzcWv401HQnkgALZoH3mXv54c6JFvJs5QWEt0GdOUYU1Yg="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ABgAvoF+yvmSzpQ468vLJQT882wdzaZY8c8FfYT33ovDpN4dPhQ="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -992,7 +993,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LXoV9zio5evKX7I8fKRcHwgfYs0t17nTAohtSTiU0HSzZ6JZ+dg="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hHiVC7tVNc+jeTKvvFpBYfC3I17clUGYbpW+WXW6MaVGF3yhdfQ="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1305,7 +1306,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oiOTecp3YxxJxJ9YXP9u6rM1PQCk+oOu/5kxs90qr/rshZ1Zris="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pjmp9D7gCMU0vJ/retaRSwuQb1EJk8h9Icj/KzcNOEP6GVpTiuA="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1621,7 +1622,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0LG9XsT9afXoM20AHoYoxR1M6xY3fUKz5Uh0Ea8WaMzzfPL8Z1U="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AEZS3Baf6hOkmK9qJB0sDEMUwcJZlsFs330ItvMMj+FMNBC+jfQ="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1940,7 +1941,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:V/xw1u//nkH9S3pF8wOActmMda8gx0+9yvpPoEcDdxfZBr2M304="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:doAtchRnaRKUiNJ5PfBdvng7LzpAEpzukRpYXiiQuxyRfY2fJtI="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2262,7 +2263,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bLD3b5oaoOaj9ObHeskFVvU3G4eR0GOzLH5HRy1+rQXtJditnDw="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oeip4XxNYY4oOeA6bl4wePHb3VpXnJgUgt78nQ06BjgRUUXnIa4="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2587,7 +2588,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6fzxuyLe+m2sf4whEZXxXqQ9YHhNaqdo8QlvINGBkShbxGontVc="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:3QVMOLaNiFTf+HZry/fHPUuwX3HXRRPrlQYg20Tma6D9CHmF68g="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -2915,7 +2916,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XHTMg3i5Fb5Fy08OEjPS/jWbztdeLVWXubPF31FweT8EHYBeI8A="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fq0mij1Ay+eVXSr2DwYNZ9LizOS3wChXrI/qqB8h+/Ghu5po4o8="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -3246,7 +3247,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ivUIFuC1LlqEhMDbea47ybkoVfOoFSCwuMOrtiWbLF1+sCRFadk="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6xOEPmfMNeSw+gNbNpUIbbV8vkxO+7HX28cjkWt+E633OoArhhc="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -3580,7 +3581,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LTppbXb0T4JCdAzAoxjH79vrnADHTp0p6cv4eMRjdzxcxjJLXGU="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:zQnTiOuQV7MutNnqFpss+EniDyEAXkb6NN9655vYNhPJniL6I7I="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -3917,7 +3918,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:1ddbXCM12OiUnVPDC5SJHL9qhCLor7//SvqXF6xd29sYHD9NqHk="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ylghk/upOM7VZApCFfMKhMuIfuzbYZFPp+yd3mnzAWtTG2b5e5E="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -3968,7 +3969,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:AdfT2C8t/CLnb1kVR+XwpcpIqrt/1A8BjOhudQEMCkpdZlkjahI="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:28v29Va06AyVoxDQMNPT3XmlkwoBOmyYKh1yrfsZMwI7lQJpHdg="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_CLIENT&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -4423,6 +4424,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -4521,127 +4523,6 @@
       <column comment="" key="false" length="18" name="CARD_KEY" nullable="true" originalLength="18" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="255" name="VILLE_ACTUELLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="OPTION_SMS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="QUARTIER_ACTUEL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="ATTACH_STORE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="OPTION_EMAIL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="MATRICULE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="OPTION_PUSH" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="LANGUE_PREFEREE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="SOCIETE_ACTUELLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="EMAIL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="38" name="LINE_TYPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="ACTION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CUSTOMER_KEY" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="ACCOUNT_KEY" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="SITUATION_FAMILLIALE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="SEXE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="JOB" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN1_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN1_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1" name="CHILDREN1_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN1_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN2_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN2_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN2_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN2_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN3_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN3_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN3_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN3_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN4_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN4_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN4_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN4_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN5_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN5_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN5_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN5_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN6_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN6_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN6_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN6_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN7_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN7_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN7_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN7_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN8_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN8_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN8_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN8_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN9_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN9_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN9_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN9_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN10_FIRST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN10_LAST_NAME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CHILDREN10_GENDER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CHILDREN10_BIRTHDAY" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="9" name="TYPE_CLIENT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="7" name="STATUS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="TITLE_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="FIRST_NAME_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="LAST_NAME_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="BIRTHDAY_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="GENDER_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="JOB_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="NATIONALITY_COHABITEE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="INCOME" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="STORE_CHAIN" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="LOGIN" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="PASSWD" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="SECRETQUESTION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1000" name="SECRETANSWER" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="NATIONALITY" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="HOME_TYPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="SEC" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="FAMILY_SITUATION" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="STOP_PUB" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="SPONSOR_KEY" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="SPONSOR_STORE_CHAIN" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="SPONSOR_UPDATE_DATE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="CREATION_DATE" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="UPDATE_DATE" nullable="true" originalLength="-1" pattern="&quot;dd/MM/yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="CARD_KEY" nullable="true" originalLength="18" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1888" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/ODS_CLIENT.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="true"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
-    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_1">
       <column comment="" key="false" length="255" name="VILLE_ACTUELLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="OPTION_SMS" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="QUARTIER_ACTUEL" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -4841,10 +4722,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row13"/>
   </connection>
-  <connection connectorName="REJECT" label="row3" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tFileOutputDelimited_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
-  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
@@ -4855,13 +4732,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_23594698-7899-4e40-ab53-3884315956b3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6Kfugzif6i67+QRx2eXGFaNhgzUAIl44TSPatCtPf3r2dHIGkQkkBrPrOWlQ0I7dZaj+ECzzb9DW&#13;
-49eNambBlQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b464d005-1e5b-422c-bc39-eb46fe762ea8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>317CfGMkWOKytwgocVGeano4NtVu31+RTIjcDbSd7FWfwqqdcjWSbw7M1WDTaJRLuAZFHHXegTe/&#13;
-YvN748bRyA==</DigestValue></Reference></SignedInfo><SignatureValue>MiY/Trm2fs61MHakxt0RflIs35YLp59aEA3Nhlz3+14SOJISS0JFYd5grGPcYs3ACFjx+2VzImXx&#13;
-rZ+4qC0NRuI/SVvpObWZVjZg2CfqiCPEEKsyGDJsLPHOECkQbhB4QxbFxZ4bHkOUazC+e/+VUmfq&#13;
-KN2369XD6dcwhxoSuTO2gM8yqVEeJRt391OkhP+HWZEl39HLHsnxXJZ5jdkSl3GfmWhVaP70wNQG&#13;
-Xazop1WOgDjisbVhetqEsgPdwGzTDHWy2wWvJdEkaymuYnLPrRrXCSmFq71sQTbiE51v190BAAMo&#13;
-awmhbiLBHNIA4sUBqGQTZbvYLyytsFzbXv0OHg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_59f1b170-075b-4e83-bbd3-1e8fcb3921cf"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qQ8eS3vCnclQQP0SendSqvnMoD3FmUy9QkLxO7cvKXcqBNEpsYxSKCN41gH27GpMVhUsz7sDdPlS&#13;
+lsG397MTXQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6d67aebb-8e91-48a0-a3e5-da5579fffa63"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/jlYJv8Ta5ZReUiWTnukP/dyOqsWn3p41c3qVFfrnjqPd4xh/CZJR8bbUvT+SoYfKo9SzwmX6Si1&#13;
+ElGFvq59cg==</DigestValue></Reference></SignedInfo><SignatureValue>hL5/ViBMhCy34j57mJ5mv63fNheghq7Y/vLdi0rSCZW4Nc6Pc0cMUqi/XmWlW96fd8e/91EQBPuW&#13;
++JMCcwqUJSI7IGD2+rVP+jdoLU4YSEO2RGiTSczMjY2kQv3Xr1RPfgINCzlYQZ47u6EYSDJKsMcM&#13;
+RNW2bBnVDnyA6iyebCYlp/GGbZlypa+nN/+kgyglpBlBVGTf6e7UZXt+YVmYSOsyTSkhHRSuXoo0&#13;
+bFZGG4B7+Et2zOrJh5gX91S7HEg0u+mTV9glnf2VCM3ReQFIyfBLpXy3PikjCdvkOyfLhcRTb1cu&#13;
+iaacjbP+gnR447IfdZIrpWtpgFvG37HmSxDMiw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4883,4 +4760,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b464d005-1e5b-422c-bc39-eb46fe762ea8" Target="#_23594698-7899-4e40-ab53-3884315956b3"><Timestamp>2022-07-21 10:14:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6d67aebb-8e91-48a0-a3e5-da5579fffa63" Target="#_59f1b170-075b-4e83-bbd3-1e8fcb3921cf"><Timestamp>2022-07-21 10:52:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
