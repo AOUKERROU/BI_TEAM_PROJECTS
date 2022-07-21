@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms2560M&quot;,&quot;-Xmx10240M&quot;]}"/>
     <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="128"/>
@@ -23,6 +24,7 @@
     <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
     <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
     <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
@@ -43,7 +45,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:qvEbRrpYRTOXPeiiiRwGNagBS4WH6hBy/Auq+wIe"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:66cyBKrbFPuEvJxrF6qnR8LwwDPpXx96lwy7g3+/"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -53,42 +55,40 @@
     <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
     <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false"/>
-    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/TOS/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/.metadata&quot;"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/TALEND/STUDIO/WORKSPACES/REMOTE_WORKSPACE/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="true"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tOracleOutput_sid"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11"/>
-    <elementParameter field="TEXT" name="URL" show="false" value=""/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tJDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
-    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value=""/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.99.92&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;15211&quot;"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bs1RxWo6MMtoqS0oXsjdqhLvm0TvM2jQIjsXjrEyH+UdYKnXtQ=="/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:5k2UMiKv+MM2ymFJVi3fBMvCzdsLUenw2tO/H9Ht"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;stats&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;logs&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;FLOWMETER&quot;"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
@@ -108,6 +108,7 @@
     <routinesParameter id="_U7CaUOunEeqosvUtFHkmiw" name="TalendDate"/>
     <routinesParameter id="_U7P1sOunEeqosvUtFHkmiw" name="TalendStringUtil"/>
     <routinesParameter id="_U7LkQOunEeqosvUtFHkmiw" name="TalendString"/>
+    <routinesParameter id="_hshZMI5pEey7guvAqpMizQ" name="SQLike"/>
   </parameters>
   <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="-192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
@@ -1300,7 +1301,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5ufWR3h9xXhvdP9vLWoPZipt9Pled3uPJsZUm07JlV/TMbgmrVk="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Edg5NzX1Tbnl0ZV+j6xzxzAqshuA7k4KHD+BGh4dOrq6fZsBIxA="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_TEMP_CLIENT_200&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1700,6 +1701,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -1787,258 +1789,6 @@
       <column comment="" defaultValue="&quot;&quot;" key="false" length="19" name="UPDATE_DATE" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="5" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="ACCOUNT_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="5" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="TITLE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STATUS" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="JOB" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN1_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN1_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="1" name="CHILDREN1_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="3" name="CHILDREN1_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN2_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN2_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN2_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="19" name="CHILDREN2_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN3_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN3_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN3_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN3_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN4_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN4_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN4_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN4_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN5_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN5_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN5_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN5_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN6_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN6_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN6_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN6_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN7_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN7_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN7_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN7_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN8_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN8_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN8_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN8_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN9_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN9_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN9_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN9_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN10_FIRST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN10_LAST_NAME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CHILDREN10_GENDER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="0" name="CHILDREN10_BIRTHDAY" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="TITLE_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="FIRST_NAME_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="LAST_NAME_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="BIRTHDAY_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="GENDER_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="JOB_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="NATIONALITY_COHABITEE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="INCOME" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="LOGIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="1000" name="PASSWD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="SECRETQUESTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="1000" name="SECRETANSWER" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="NATIONALITY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="HOME_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="SEC" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="FAMILY_SITUATION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STOP_PUB" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="SPONSOR_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="SPONSOR_STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="SPONSOR_UPDATE_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="19" name="CREATION_DATE" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="19" name="UPDATE_DATE" nullable="true" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1248" posY="-160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="LINE_TYPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTION"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CUSTOMER_KEY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACCOUNT_KEY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TITLE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STATUS"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="JOB"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN1_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN1_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN1_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN1_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN2_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN2_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN2_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN2_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN3_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN3_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN3_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN3_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN4_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN4_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN4_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN4_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN5_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN5_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN5_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN5_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN6_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN6_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN6_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN6_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN7_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN7_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN7_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN7_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN8_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN8_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN8_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN8_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN9_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN9_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN9_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN9_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN10_FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN10_LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN10_GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CHILDREN10_BIRTHDAY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TYPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TITLE_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FIRST_NAME_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_NAME_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BIRTHDAY_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GENDER_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="JOB_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NATIONALITY_COHABITEE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="INCOME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STORE_CHAIN"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOGIN"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PASSWD"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SECRETQUESTION"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SECRETANSWER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NATIONALITY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="HOME_TYPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SEC"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FAMILY_SITUATION"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STOP_PUB"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SPONSOR_KEY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SPONSOR_STORE_CHAIN"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SPONSOR_UPDATE_DATE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CREATION_DATE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UPDATE_DATE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="errorCode"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="errorMessage"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
       <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="5" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -2529,7 +2279,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gTYiGVKFc1Hxo/jcHquGruYh8BfhnybsuKgu0rwbrOTKBoqkR84="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:3O1t1KV9TKYK11mDEuKxwQa1nIlyCkSkx8Hy5gBnXu5Fs/Zl21w="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_TEMP_CLIENT_300&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -2649,6 +2399,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -2680,60 +2431,6 @@
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="UPDATE_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CARD_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="5" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="5" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STATUS" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="250" name="INACTIVE_CAUSE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="2500" name="INACTIVE_CAUSE_TEXT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="DATE_INACTIVE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="NAME_ON_CARD" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="EXPIRED_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ATTACH_STORE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="FIRST_USE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="LAST_USE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="REGISTRATION_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="MAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CREATION_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="UPDATE_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="0">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/client300.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="true"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
-    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_1">
       <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="CARD_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="5" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -3157,7 +2854,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oL9iq5+YoBpE4OcJShfTmuuLPYjDpnI1STZFeR9Gt+f/x+4Wc7Y="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:1WZek/68XMxkQGkriOmDFSIg4w0Z9BQ6vPxb2gpRloK+ZqcpZik="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_TEMP_CLIENT_100&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -3272,6 +2969,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -3302,59 +3000,6 @@
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="UPDATE_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACCOUNT_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STATUS" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="INACTIVE_CAUSE_TEXT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="INACTIVE_CAUSE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="DATE_INACTIVE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ATTACH_STORE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACCOUNT_KEY_PARENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="MEMBERSHIP_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="LANGUAGE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN_PARENT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="COMMENTS" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="GROUP_TEST" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CREATION_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="UPDATE_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="192">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_3"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/client100.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="true"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
-    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_3">
       <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACCOUNT_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -3667,7 +3312,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:U0SOBjBQLBPyvWIidX6TUibTY2GlykYkgF5UpNxcFBIrPgWvdN8="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aIJDm/WDYJHW5/v7UIzCkVqkJF4kM0I4xyGFOSij3+Y9T1r8TKs="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_TEMP_CLIENT_203&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -3732,6 +3377,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -3752,49 +3398,6 @@
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="QUALITY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="EMAIL" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STATUS" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="MAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="QUALITY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_2"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/client203.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="true"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
-    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_2">
       <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -4097,7 +3700,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:1kuKiU8AYrcvP5U+0ouob01quHeal71ApvXPsrYr0mgQfCbgJq0="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CyODODrEGEF+FCLjZUbAGgwR3E4GMWMsb9py3LYTwvzsTVXggJk="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_TEMP_CLIENT_202&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -4162,6 +3765,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -4182,49 +3786,6 @@
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="255" name="TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="255" name="VALUE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="1000" name="VALUE_BIS" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="19" name="DELETE_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="STORE_CHAIN" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_4"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/client202.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="true"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
-    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_4">
       <column comment="" defaultValue="" key="false" length="3" name="LINE_TYPE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="ACTION" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="&quot;&quot;" key="false" length="50" name="CUSTOMER_KEY" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -4260,10 +3821,6 @@
   <connection connectorName="FLOW" label="row13" lineStyle="0" metaname="tConvertType_1" offsetLabelX="0" offsetLabelY="0" source="tConvertType_1" target="tDBOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row13"/>
-  </connection>
-  <connection connectorName="REJECT" label="row4" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_2" target="tLogRow_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_2" offsetLabelX="0" offsetLabelY="0" source="tFileList_2" target="tFileInputDelimited_3">
     <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
@@ -4320,10 +3877,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="LINE_300"/>
   </connection>
-  <connection connectorName="REJECT" label="row3" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_3" target="tFileOutputDelimited_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
-  </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileList_3" offsetLabelX="0" offsetLabelY="0" source="tFileList_3" target="tFileList_4">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
@@ -4376,10 +3929,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="LINE_100"/>
   </connection>
-  <connection connectorName="REJECT" label="row16" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_4" target="tFileOutputDelimited_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row16"/>
-  </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileList_4" offsetLabelX="0" offsetLabelY="0" source="tFileList_4" target="tFileList_5">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
   </connection>
@@ -4404,10 +3953,6 @@
   <connection connectorName="FLOW" label="LINE_203" lineStyle="0" metaname="LINE_203" offsetLabelX="0" offsetLabelY="0" source="tMap_5" target="tDBOutput_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="LINE_203"/>
-  </connection>
-  <connection connectorName="REJECT" label="row15" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_5" target="tFileOutputDelimited_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row15"/>
   </connection>
   <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_5" offsetLabelX="0" offsetLabelY="0" source="tFileList_5" target="tFileInputDelimited_6">
     <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
@@ -4442,10 +3987,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
-  <connection connectorName="REJECT" label="row14" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_6" target="tFileOutputDelimited_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row14"/>
-  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
@@ -4471,13 +4012,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9c52aca9-a4c5-4362-aa24-e48837ff46e2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>g10q9YgH8susjOeWETV14ekjltPY5uRq+Xhd8+O1sRh+vQDV8OSDOO5pOB2141DQD5PklrgLhFeZ&#13;
-b3v206YBhQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_063c6be8-fc89-419d-9866-8be1bbb5798c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>inJU26tCcEH7WRUVaZEzAXbevbJWyoUIJG+y2+8DpgwwQrkGYAkYCJboHooJlPuY0tJeyBBE1iEj&#13;
-Rm1G7LDQHA==</DigestValue></Reference></SignedInfo><SignatureValue>mN/yma2XM4K9bfGzbnGFe6CdnmGIQAqtNgPcYfdFQEuacndInN/jd+dKdk07FQsKKWozLljUGlXZ&#13;
-MHT7PMNZf2jasfViVHGpomxeLQGCixV0lw0owqc1gmGkUx6dtNpM+VUogUptVZiuWgrGYKy8cfzp&#13;
-rttVuKNOEKOApG+XWakCf56raSzzJT3mqjEZCn9ZdiAwuc5dwJ37TQoaiNey+OZs5H9uRssnVIBs&#13;
-PLiO9A45z8jbBKrIl5h7TLYzg8ZzPhztYBzunga5lXuqCSnxoadcbEBPW/N7zrjy2FoP4JQQcQku&#13;
-yrZylaPY95HdKLHM2VVy9Wdn6/Jo0RHr0Fd6fw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_12e9470e-4ea5-4078-9a12-d64af36d3f8d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gACljRx7w8tvwZBjmge9DpiltodMX+dRRkrdgVSKV3f61YEZ2hQtQxUmWBsl9h3Df28A6bjkfiJz&#13;
+QPvdbXHrJQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f5ad86a3-f94b-4fb5-a5f6-0260caa61d62"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XLUJaVxa/nUa+tdFFBv8P8BDJyKiSfQ4AQU2PFEHbblI3DFewtuvxlTvgt6HHVlnkslYxZngdDuf&#13;
+h8faG2fi+w==</DigestValue></Reference></SignedInfo><SignatureValue>O6O4QdwtB4lN2hMNe8ufMpe3BIuF4XjQeXgYNaYpTn/bUrJlRkLRZIBe1M7NqMDgzmZJ2g656cJS&#13;
+0kowFg0Jo8oJFya4dG7Py9XDtkdVrRm8iJmrRouS5IgtCDwqA9IMOvdp+gVv9MXaW9Te0+xgOa80&#13;
+NnPDFQEQF1n12mM9h3HHVoAF/dsZKr1HbTNJ8eUxdBN4g3CIqTwERtaJm+TiKwwUoOc/2ekuxvFx&#13;
+ZoBYWzWtUPImjMWMITMpaNlbJwL5QGEhpTASX2bQiq2rWBwgDp9UoJhdQ0sXHz5oi0d2oTmWPaP2&#13;
+lm4l8maGXfPu42kieFcCQXAq8whGZ/9QdM5jCg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4499,4 +4040,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_063c6be8-fc89-419d-9866-8be1bbb5798c" Target="#_9c52aca9-a4c5-4362-aa24-e48837ff46e2"><Timestamp>2022-07-21 10:14:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f5ad86a3-f94b-4fb5-a5f6-0260caa61d62" Target="#_12e9470e-4ea5-4078-9a12-d64af36d3f8d"><Timestamp>2022-07-21 10:52:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
