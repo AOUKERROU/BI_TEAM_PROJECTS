@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:version="2.0">
+  <talendfile:ContextType confirmationNeeded="false" name="DEV" xmi:id="_a2nZgExLEey62aWENNljjA">
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="1433" xmi:id="_a2nZgUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqlsrv-portailfrs-fra-dev.database.windows.net" xmi:id="_a2nZgkxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqldb-portailfrs-dev" xmi:id="_a2nZg0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqladmin_sa_user" xmi:id="_a2nZhExLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_a2nZhUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:a+oGI6UDMW4GkEs0ZW2YwMewLepzsNgxRzG8yW3Nh/4l8gioVRrW" xmi:id="_a2nZhkxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="ssl=require" xmi:id="_a2nZh0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="ENV" prompt="ENV?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="DEV" xmi:id="_Sej00PhiEeysM9L7kVN8qg"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="KLIF" xmi:id="_a2nZiExLEey62aWENNljjA">
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="1433" xmi:id="_a2nZiUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqlsrv-portailfrs-fra-dev.database.windows.net" xmi:id="_a2nZikxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqldb-portailfrs-dev" xmi:id="_a2nZi0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="sqladmin_sa_user" xmi:id="_a2nZjExLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_a2nZjUxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:reB5t2iEVUHhmYtjluNAGz+B/zHRyyfgjVmhD3FhtX7b25nFXnS9" xmi:id="_a2nZjkxLEey62aWENNljjA"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="ssl=require" xmi:id="_a2nZj0xLEey62aWENNljjA"/>
+    <contextParameter comment="" name="ENV" prompt="ENV?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="KLIF" xmi:id="_Sej00fhiEeysM9L7kVN8qg"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType confirmationNeeded="false" name="PROD" xmi:id="_UfubUPhiEeysM9L7kVN8qg">
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Port" prompt="PORTAIL_FOURNISSEUR_AZURE_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubUfhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Server" prompt="PORTAIL_FOURNISSEUR_AZURE_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubUvhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Database" prompt="PORTAIL_FOURNISSEUR_AZURE_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubU_hiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Login" prompt="PORTAIL_FOURNISSEUR_AZURE_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubVPhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Schema" prompt="PORTAIL_FOURNISSEUR_AZURE_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubVfhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_Password" prompt="PORTAIL_FOURNISSEUR_AZURE_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="" xmi:id="_UfubVvhiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams" prompt="PORTAIL_FOURNISSEUR_AZURE_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubV_hiEeysM9L7kVN8qg"/>
+    <contextParameter comment="" name="ENV" prompt="PROD" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" xmi:id="_UfubWPhiEeysM9L7kVN8qg"/>
+  </talendfile:ContextType>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_61f29bce-0d46-4d28-bf52-9cba64bb23f0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>kDWHV94XV0V6UhChdhBVzIkpbzCPgdqBFBhKzbYT5izmlokoEfU5QAmmtpsOD3cBVIhokaIsGIz4&#13;
+wuk7YDy9qw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5193b844-220d-43c9-a985-1cdd30ee9584"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SJkrCtCgFXFfk0E2hbtDQQFlrdUxmR1NKLWXrCuipLwBXvGCzfx56q/F9TUgF1mx0DtPkWdbTD8T&#13;
+QgNCeNxj2w==</DigestValue></Reference></SignedInfo><SignatureValue>RqeiNn36VrJIbwPhxDnXk+qz5FYva5eLLU5AQYGyOvYwFk0jA247C+K6nnIyFzSblt/0BV7THc4p&#13;
+2qF4uYoN0WDTU2s58XfOoS22HtCLeI1Ebrp9ktzOA/5Qd428SBXNt8C1Mm0Mcd3tMIQKAO9T7n8a&#13;
+e7OK0cBOMh23SRf6JyKtFC/jA04YKuRJYBz377WSPIs2nEHiwMX4foP3UTxN+ErCZ4bV1DPhgNTw&#13;
+VbH5kx1BmYD6TJk6oak6YD4g8ZFo9/jxpPSjnno4p0l6KKbwLvgt/VWuOGotlGHS8ZFCm1N//hSy&#13;
+l+NbyCRgznC5CJ11av7Sgm4tX+c3ilf/qM/O0w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5193b844-220d-43c9-a985-1cdd30ee9584" Target="#_61f29bce-0d46-4d28-bf52-9cba64bb23f0"><Timestamp>2022-07-21 11:55:43</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
