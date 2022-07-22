@@ -661,7 +661,7 @@ public class TEST implements TalendJob {
 
 		status = "failure";
 
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tAdvancedHash_row5_error(Exception exception, String errorComponent,
@@ -671,7 +671,7 @@ public class TEST implements TalendJob {
 
 		status = "failure";
 
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tAggregateRow_1_AGGOUT_error(Exception exception, String errorComponent,
@@ -734,6 +734,14 @@ public class TEST implements TalendJob {
 	}
 
 	public void tDBInput_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tHashInput_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -3936,685 +3944,6 @@ public class TEST implements TalendJob {
 
 	}
 
-	public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
-		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
-		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
-
-		public Long EAN;
-
-		public Long getEAN() {
-			return this.EAN;
-		}
-
-		public Long CODE_INTERNE_ARTICLE;
-
-		public Long getCODE_INTERNE_ARTICLE() {
-			return this.CODE_INTERNE_ARTICLE;
-		}
-
-		public Long CODESITE;
-
-		public Long getCODESITE() {
-			return this.CODESITE;
-		}
-
-		public String DATE_DEBUT;
-
-		public String getDATE_DEBUT() {
-			return this.DATE_DEBUT;
-		}
-
-		public String DATE_FIN;
-
-		public String getDATE_FIN() {
-			return this.DATE_FIN;
-		}
-
-		public Long CODEENSEIGNE;
-
-		public Long getCODEENSEIGNE() {
-			return this.CODEENSEIGNE;
-		}
-
-		public Long CODE_ARTICLE;
-
-		public Long getCODE_ARTICLE() {
-			return this.CODE_ARTICLE;
-		}
-
-		public BigDecimal QTE;
-
-		public BigDecimal getQTE() {
-			return this.QTE;
-		}
-
-		public BigDecimal CA_TTC;
-
-		public BigDecimal getCA_TTC() {
-			return this.CA_TTC;
-		}
-
-		public BigDecimal CA_HT;
-
-		public BigDecimal getCA_HT() {
-			return this.CA_HT;
-		}
-
-		public java.util.Date DateLastUpdateWebJob;
-
-		public java.util.Date getDateLastUpdateWebJob() {
-			return this.DateLastUpdateWebJob;
-		}
-
-		public Integer FOUCIN;
-
-		public Integer getFOUCIN() {
-			return this.FOUCIN;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI_TEAM_PROJECTS_TEST.length) {
-					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEST.length == 0) {
-						commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[1024];
-					} else {
-						commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEST, 0, length);
-				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEST, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI_TEAM_PROJECTS_TEST.length) {
-					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEST.length == 0) {
-						commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[1024];
-					} else {
-						commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEST, 0, length);
-				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEST, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = unmarshaller.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(unmarshaller.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (date1 == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeLong(date1.getTime());
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
-
-				try {
-
-					int length = 0;
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.EAN = null;
-					} else {
-						this.EAN = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODE_INTERNE_ARTICLE = null;
-					} else {
-						this.CODE_INTERNE_ARTICLE = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODESITE = null;
-					} else {
-						this.CODESITE = dis.readLong();
-					}
-
-					this.DATE_DEBUT = readString(dis);
-
-					this.DATE_FIN = readString(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODEENSEIGNE = null;
-					} else {
-						this.CODEENSEIGNE = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODE_ARTICLE = null;
-					} else {
-						this.CODE_ARTICLE = dis.readLong();
-					}
-
-					this.QTE = (BigDecimal) dis.readObject();
-
-					this.CA_TTC = (BigDecimal) dis.readObject();
-
-					this.CA_HT = (BigDecimal) dis.readObject();
-
-					this.DateLastUpdateWebJob = readDate(dis);
-
-					this.FOUCIN = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				} catch (ClassNotFoundException eCNFE) {
-					throw new RuntimeException(eCNFE);
-
-				}
-
-			}
-
-		}
-
-		public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
-
-				try {
-
-					int length = 0;
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.EAN = null;
-					} else {
-						this.EAN = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODE_INTERNE_ARTICLE = null;
-					} else {
-						this.CODE_INTERNE_ARTICLE = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODESITE = null;
-					} else {
-						this.CODESITE = dis.readLong();
-					}
-
-					this.DATE_DEBUT = readString(dis);
-
-					this.DATE_FIN = readString(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODEENSEIGNE = null;
-					} else {
-						this.CODEENSEIGNE = dis.readLong();
-					}
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.CODE_ARTICLE = null;
-					} else {
-						this.CODE_ARTICLE = dis.readLong();
-					}
-
-					this.QTE = (BigDecimal) dis.readObject();
-
-					this.CA_TTC = (BigDecimal) dis.readObject();
-
-					this.CA_HT = (BigDecimal) dis.readObject();
-
-					this.DateLastUpdateWebJob = readDate(dis);
-
-					this.FOUCIN = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				} catch (ClassNotFoundException eCNFE) {
-					throw new RuntimeException(eCNFE);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// Long
-
-				if (this.EAN == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.EAN);
-				}
-
-				// Long
-
-				if (this.CODE_INTERNE_ARTICLE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODE_INTERNE_ARTICLE);
-				}
-
-				// Long
-
-				if (this.CODESITE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODESITE);
-				}
-
-				// String
-
-				writeString(this.DATE_DEBUT, dos);
-
-				// String
-
-				writeString(this.DATE_FIN, dos);
-
-				// Long
-
-				if (this.CODEENSEIGNE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODEENSEIGNE);
-				}
-
-				// Long
-
-				if (this.CODE_ARTICLE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODE_ARTICLE);
-				}
-
-				// BigDecimal
-
-				dos.writeObject(this.QTE);
-
-				// BigDecimal
-
-				dos.writeObject(this.CA_TTC);
-
-				// BigDecimal
-
-				dos.writeObject(this.CA_HT);
-
-				// java.util.Date
-
-				writeDate(this.DateLastUpdateWebJob, dos);
-
-				// Integer
-
-				writeInteger(this.FOUCIN, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// Long
-
-				if (this.EAN == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.EAN);
-				}
-
-				// Long
-
-				if (this.CODE_INTERNE_ARTICLE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODE_INTERNE_ARTICLE);
-				}
-
-				// Long
-
-				if (this.CODESITE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODESITE);
-				}
-
-				// String
-
-				writeString(this.DATE_DEBUT, dos);
-
-				// String
-
-				writeString(this.DATE_FIN, dos);
-
-				// Long
-
-				if (this.CODEENSEIGNE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODEENSEIGNE);
-				}
-
-				// Long
-
-				if (this.CODE_ARTICLE == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.CODE_ARTICLE);
-				}
-
-				// BigDecimal
-
-				dos.writeObject(this.QTE);
-
-				// BigDecimal
-
-				dos.writeObject(this.CA_TTC);
-
-				// BigDecimal
-
-				dos.writeObject(this.CA_HT);
-
-				// java.util.Date
-
-				writeDate(this.DateLastUpdateWebJob, dos);
-
-				// Integer
-
-				writeInteger(this.FOUCIN, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("EAN=" + String.valueOf(EAN));
-			sb.append(",CODE_INTERNE_ARTICLE=" + String.valueOf(CODE_INTERNE_ARTICLE));
-			sb.append(",CODESITE=" + String.valueOf(CODESITE));
-			sb.append(",DATE_DEBUT=" + DATE_DEBUT);
-			sb.append(",DATE_FIN=" + DATE_FIN);
-			sb.append(",CODEENSEIGNE=" + String.valueOf(CODEENSEIGNE));
-			sb.append(",CODE_ARTICLE=" + String.valueOf(CODE_ARTICLE));
-			sb.append(",QTE=" + String.valueOf(QTE));
-			sb.append(",CA_TTC=" + String.valueOf(CA_TTC));
-			sb.append(",CA_HT=" + String.valueOf(CA_HT));
-			sb.append(",DateLastUpdateWebJob=" + String.valueOf(DateLastUpdateWebJob));
-			sb.append(",FOUCIN=" + String.valueOf(FOUCIN));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (EAN == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(EAN);
-			}
-
-			sb.append("|");
-
-			if (CODE_INTERNE_ARTICLE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(CODE_INTERNE_ARTICLE);
-			}
-
-			sb.append("|");
-
-			if (CODESITE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(CODESITE);
-			}
-
-			sb.append("|");
-
-			if (DATE_DEBUT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(DATE_DEBUT);
-			}
-
-			sb.append("|");
-
-			if (DATE_FIN == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(DATE_FIN);
-			}
-
-			sb.append("|");
-
-			if (CODEENSEIGNE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(CODEENSEIGNE);
-			}
-
-			sb.append("|");
-
-			if (CODE_ARTICLE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(CODE_ARTICLE);
-			}
-
-			sb.append("|");
-
-			if (QTE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(QTE);
-			}
-
-			sb.append("|");
-
-			if (CA_TTC == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(CA_TTC);
-			}
-
-			sb.append("|");
-
-			if (CA_HT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(CA_HT);
-			}
-
-			sb.append("|");
-
-			if (DateLastUpdateWebJob == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(DateLastUpdateWebJob);
-			}
-
-			sb.append("|");
-
-			if (FOUCIN == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FOUCIN);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(after_tDBInput_1Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
 	public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
 
@@ -4635,8 +3964,6 @@ public class TEST implements TalendJob {
 			}
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
-
-				tHashInput_1Process(globalMap);
 
 				row1Struct row1 = new row1Struct();
 				fouciStruct fouci = new fouciStruct();
@@ -4957,8 +4284,7 @@ public class TEST implements TalendJob {
 
 				int count_row5_tMap_1 = 0;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) globalMap
-						.get("tHash_Lookup_row5"));
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = null;
 
 				row5Struct row5HashKey = new row5Struct();
 				row5Struct row5Default = new row5Struct();
@@ -5310,7 +4636,20 @@ public class TEST implements TalendJob {
 
 							row5HashKey.hashCodeDirty = true;
 
+							tHashInput_1Process(globalMap);
+
+							tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) globalMap
+									.get("tHash_Lookup_row5"));
+
+							tHash_Lookup_row5.initGet();
+
 							tHash_Lookup_row5.lookup(row5HashKey);
+
+							if (!tHash_Lookup_row5.hasNext()) { // G_TM_M_090
+
+								rejectedInnerJoin_tMap_1 = true;
+
+							} // G_TM_M_090
 
 						} // G_TM_M_020
 
@@ -5348,16 +4687,19 @@ public class TEST implements TalendJob {
 
 							fouci = null;
 
+							if (!rejectedInnerJoin_tMap_1) {
+
 // # Output table : 'fouci'
-							count_fouci_tMap_1++;
+								count_fouci_tMap_1++;
 
-							fouci_tmp.FOUCFIN = row5.FOUCFIN;
-							fouci_tmp.FOULIB = row5.LIBFRS;
-							fouci_tmp.FOUCNUF = row5.FOUCNUF;
-							fouci = fouci_tmp;
-							log.debug("tMap_1 - Outputting the record " + count_fouci_tMap_1
-									+ " of the output table 'fouci'.");
+								fouci_tmp.FOUCFIN = row5.FOUCFIN;
+								fouci_tmp.FOULIB = row5.LIBFRS;
+								fouci_tmp.FOUCNUF = row5.FOUCNUF;
+								fouci = fouci_tmp;
+								log.debug("tMap_1 - Outputting the record " + count_fouci_tMap_1
+										+ " of the output table 'fouci'.");
 
+							} // closing inner join bracket (2)
 // ###############################
 
 						} // end of Var scope
@@ -6631,8 +5973,8 @@ public class TEST implements TalendJob {
 				}
 
 				// connection name:row5
-				// source node:tHashInput_1 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
-				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
+				// source node:tHashInput_1 - inputs:() outputs:(row5,row5) | target
+				// node:tAdvancedHash_row5 - inputs:(row5) outputs:()
 				// linked node: tMap_1 - inputs:(row1,row5) outputs:(fouci)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -7801,6 +7143,6 @@ public class TEST implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 245693 characters generated by Talend Cloud Data Management Platform on the
- * 22 juillet 2022 à 11:39:01 WEST
+ * 228604 characters generated by Talend Cloud Data Management Platform on the
+ * 22 juillet 2022 à 11:49:12 WEST
  ************************************************************************************************/
