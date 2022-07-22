@@ -695,16 +695,6 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
 	public void tDBOutput_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -916,7 +906,7 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 		status = "failure";
 
-		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tHashInput_3_error(Exception exception, String errorComponent,
@@ -936,7 +926,7 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 		status = "failure";
 
-		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tAdvancedHash_row7_error(Exception exception, String errorComponent,
@@ -947,6 +937,23 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 		status = "failure";
 
 		tHashInput_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMap_1_TMAP_OUT_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		tMap_1_TMAP_IN_error(exception, errorComponent, globalMap);
+
+	}
+
+	public void tMap_1_TMAP_IN_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tAggregateRow_1_AGGOUT_error(Exception exception, String errorComponent,
@@ -1153,14 +1160,6 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 	}
 
 	public void tSendMail_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tHashInput_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -6035,6 +6034,685 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 	}
 
+	public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[0];
+
+		public Long CODE_INTERNE_ARTICLE;
+
+		public Long getCODE_INTERNE_ARTICLE() {
+			return this.CODE_INTERNE_ARTICLE;
+		}
+
+		public Long CODESITE;
+
+		public Long getCODESITE() {
+			return this.CODESITE;
+		}
+
+		public Long EAN;
+
+		public Long getEAN() {
+			return this.EAN;
+		}
+
+		public String DATE_DEBUT;
+
+		public String getDATE_DEBUT() {
+			return this.DATE_DEBUT;
+		}
+
+		public String DATE_FIN;
+
+		public String getDATE_FIN() {
+			return this.DATE_FIN;
+		}
+
+		public Long CODEENSEIGNE;
+
+		public Long getCODEENSEIGNE() {
+			return this.CODEENSEIGNE;
+		}
+
+		public Long CODE_ARTICLE;
+
+		public Long getCODE_ARTICLE() {
+			return this.CODE_ARTICLE;
+		}
+
+		public BigDecimal QTE;
+
+		public BigDecimal getQTE() {
+			return this.QTE;
+		}
+
+		public BigDecimal CA_TTC;
+
+		public BigDecimal getCA_TTC() {
+			return this.CA_TTC;
+		}
+
+		public BigDecimal CA_HT;
+
+		public BigDecimal getCA_HT() {
+			return this.CA_HT;
+		}
+
+		public java.util.Date DateLastUpdateWebJob;
+
+		public java.util.Date getDateLastUpdateWebJob() {
+			return this.DateLastUpdateWebJob;
+		}
+
+		public Integer FOUCIN;
+
+		public Integer getFOUCIN() {
+			return this.FOUCIN;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO) {
+
+				try {
+
+					int length = 0;
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODE_INTERNE_ARTICLE = null;
+					} else {
+						this.CODE_INTERNE_ARTICLE = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODESITE = null;
+					} else {
+						this.CODESITE = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.EAN = null;
+					} else {
+						this.EAN = dis.readLong();
+					}
+
+					this.DATE_DEBUT = readString(dis);
+
+					this.DATE_FIN = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODEENSEIGNE = null;
+					} else {
+						this.CODEENSEIGNE = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODE_ARTICLE = null;
+					} else {
+						this.CODE_ARTICLE = dis.readLong();
+					}
+
+					this.QTE = (BigDecimal) dis.readObject();
+
+					this.CA_TTC = (BigDecimal) dis.readObject();
+
+					this.CA_HT = (BigDecimal) dis.readObject();
+
+					this.DateLastUpdateWebJob = readDate(dis);
+
+					this.FOUCIN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO) {
+
+				try {
+
+					int length = 0;
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODE_INTERNE_ARTICLE = null;
+					} else {
+						this.CODE_INTERNE_ARTICLE = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODESITE = null;
+					} else {
+						this.CODESITE = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.EAN = null;
+					} else {
+						this.EAN = dis.readLong();
+					}
+
+					this.DATE_DEBUT = readString(dis);
+
+					this.DATE_FIN = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODEENSEIGNE = null;
+					} else {
+						this.CODEENSEIGNE = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.CODE_ARTICLE = null;
+					} else {
+						this.CODE_ARTICLE = dis.readLong();
+					}
+
+					this.QTE = (BigDecimal) dis.readObject();
+
+					this.CA_TTC = (BigDecimal) dis.readObject();
+
+					this.CA_HT = (BigDecimal) dis.readObject();
+
+					this.DateLastUpdateWebJob = readDate(dis);
+
+					this.FOUCIN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Long
+
+				if (this.CODE_INTERNE_ARTICLE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODE_INTERNE_ARTICLE);
+				}
+
+				// Long
+
+				if (this.CODESITE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODESITE);
+				}
+
+				// Long
+
+				if (this.EAN == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.EAN);
+				}
+
+				// String
+
+				writeString(this.DATE_DEBUT, dos);
+
+				// String
+
+				writeString(this.DATE_FIN, dos);
+
+				// Long
+
+				if (this.CODEENSEIGNE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODEENSEIGNE);
+				}
+
+				// Long
+
+				if (this.CODE_ARTICLE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODE_ARTICLE);
+				}
+
+				// BigDecimal
+
+				dos.writeObject(this.QTE);
+
+				// BigDecimal
+
+				dos.writeObject(this.CA_TTC);
+
+				// BigDecimal
+
+				dos.writeObject(this.CA_HT);
+
+				// java.util.Date
+
+				writeDate(this.DateLastUpdateWebJob, dos);
+
+				// Integer
+
+				writeInteger(this.FOUCIN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// Long
+
+				if (this.CODE_INTERNE_ARTICLE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODE_INTERNE_ARTICLE);
+				}
+
+				// Long
+
+				if (this.CODESITE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODESITE);
+				}
+
+				// Long
+
+				if (this.EAN == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.EAN);
+				}
+
+				// String
+
+				writeString(this.DATE_DEBUT, dos);
+
+				// String
+
+				writeString(this.DATE_FIN, dos);
+
+				// Long
+
+				if (this.CODEENSEIGNE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODEENSEIGNE);
+				}
+
+				// Long
+
+				if (this.CODE_ARTICLE == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.CODE_ARTICLE);
+				}
+
+				// BigDecimal
+
+				dos.writeObject(this.QTE);
+
+				// BigDecimal
+
+				dos.writeObject(this.CA_TTC);
+
+				// BigDecimal
+
+				dos.writeObject(this.CA_HT);
+
+				// java.util.Date
+
+				writeDate(this.DateLastUpdateWebJob, dos);
+
+				// Integer
+
+				writeInteger(this.FOUCIN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("CODE_INTERNE_ARTICLE=" + String.valueOf(CODE_INTERNE_ARTICLE));
+			sb.append(",CODESITE=" + String.valueOf(CODESITE));
+			sb.append(",EAN=" + String.valueOf(EAN));
+			sb.append(",DATE_DEBUT=" + DATE_DEBUT);
+			sb.append(",DATE_FIN=" + DATE_FIN);
+			sb.append(",CODEENSEIGNE=" + String.valueOf(CODEENSEIGNE));
+			sb.append(",CODE_ARTICLE=" + String.valueOf(CODE_ARTICLE));
+			sb.append(",QTE=" + String.valueOf(QTE));
+			sb.append(",CA_TTC=" + String.valueOf(CA_TTC));
+			sb.append(",CA_HT=" + String.valueOf(CA_HT));
+			sb.append(",DateLastUpdateWebJob=" + String.valueOf(DateLastUpdateWebJob));
+			sb.append(",FOUCIN=" + String.valueOf(FOUCIN));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (CODE_INTERNE_ARTICLE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(CODE_INTERNE_ARTICLE);
+			}
+
+			sb.append("|");
+
+			if (CODESITE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(CODESITE);
+			}
+
+			sb.append("|");
+
+			if (EAN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(EAN);
+			}
+
+			sb.append("|");
+
+			if (DATE_DEBUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(DATE_DEBUT);
+			}
+
+			sb.append("|");
+
+			if (DATE_FIN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(DATE_FIN);
+			}
+
+			sb.append("|");
+
+			if (CODEENSEIGNE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(CODEENSEIGNE);
+			}
+
+			sb.append("|");
+
+			if (CODE_ARTICLE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(CODE_ARTICLE);
+			}
+
+			sb.append("|");
+
+			if (QTE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(QTE);
+			}
+
+			sb.append("|");
+
+			if (CA_TTC == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(CA_TTC);
+			}
+
+			sb.append("|");
+
+			if (CA_HT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(CA_HT);
+			}
+
+			sb.append("|");
+
+			if (DateLastUpdateWebJob == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(DateLastUpdateWebJob);
+			}
+
+			sb.append("|");
+
+			if (FOUCIN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCIN);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(after_tDBInput_1Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
 	public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
 
@@ -6056,11 +6734,1181 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				tHashInput_1Process(globalMap);
+
 				row1Struct row1 = new row1Struct();
 				out1Struct out1 = new out1Struct();
 				fouciStruct fouci = new fouciStruct();
 				row4Struct row4 = new row4Struct();
 				row4Struct row9 = row4;
+
+				/**
+				 * [tMap_1_TMAP_OUT begin ] start
+				 */
+
+				ok_Hash.put("tMap_1_TMAP_OUT", false);
+				start_Hash.put("tMap_1_TMAP_OUT", System.currentTimeMillis());
+
+				currentVirtualComponent = "tMap_1";
+
+				currentComponent = "tMap_1_TMAP_OUT";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row1");
+
+				int tos_count_tMap_1_TMAP_OUT = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tMap_1_TMAP_OUT - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tMap_1_TMAP_OUT {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tMap_1_TMAP_OUT = new StringBuilder();
+							log4jParamters_tMap_1_TMAP_OUT.append("Parameters:");
+							log4jParamters_tMap_1_TMAP_OUT.append("LINK_STYLE" + " = " + "AUTO");
+							log4jParamters_tMap_1_TMAP_OUT.append(" | ");
+							log4jParamters_tMap_1_TMAP_OUT.append("TEMPORARY_DATA_DIRECTORY" + " = " + "");
+							log4jParamters_tMap_1_TMAP_OUT.append(" | ");
+							log4jParamters_tMap_1_TMAP_OUT.append("ROWS_BUFFER_SIZE" + " = " + "2000000");
+							log4jParamters_tMap_1_TMAP_OUT.append(" | ");
+							log4jParamters_tMap_1_TMAP_OUT
+									.append("CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" + " = " + "true");
+							log4jParamters_tMap_1_TMAP_OUT.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tMap_1_TMAP_OUT - " + (log4jParamters_tMap_1_TMAP_OUT));
+						}
+					}
+					new BytesLimit65535_tMap_1_TMAP_OUT().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tMap_1_TMAP_OUT", "tMap_1_TMAP_OUT", "tMapOut");
+					talendJobLogProcess(globalMap);
+				}
+
+// ###############################
+// # Lookup's keys initialization
+
+				org.talend.designer.components.lookup.persistent.PersistentSortedLookupManager<row5Struct> tHash_Lookup_row5 = (org.talend.designer.components.lookup.persistent.PersistentSortedLookupManager<row5Struct>) ((org.talend.designer.components.lookup.persistent.PersistentSortedLookupManager<row5Struct>) globalMap
+						.get("tHash_Lookup_row5"));
+
+				row5Struct row5HashKey = new row5Struct();
+				row5Struct row5Default = new row5Struct();
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_1_TMAP_OUT__Struct {
+				}
+				Var__tMap_1_TMAP_OUT__Struct Var__tMap_1_TMAP_OUT = new Var__tMap_1_TMAP_OUT__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+// ###############################
+
+				class SortableRow_tMap_1_1 implements Comparable<SortableRow_tMap_1_1>,
+						routines.system.IPersistableRow<SortableRow_tMap_1_1> { // G_TM_B_001
+
+					boolean is__rejectedInnerJoin;
+
+					Integer exprKey_row5__FOUCFIN;
+
+					// row1
+					Long row1__CODE_INTERNE_ARTICLE;
+					Long row1__CODESITE;
+					Long row1__EAN;
+					String row1__DATE_DEBUT;
+					String row1__DATE_FIN;
+					Long row1__CODEENSEIGNE;
+					Long row1__CODE_ARTICLE;
+					BigDecimal row1__QTE;
+					BigDecimal row1__CA_TTC;
+					BigDecimal row1__CA_HT;
+					java.util.Date row1__DateLastUpdateWebJob;
+					Integer row1__FOUCIN;
+
+					public void fillFrom(row1Struct row1, Integer exprKey_row5__FOUCFIN) {
+
+						this.row1__CODE_INTERNE_ARTICLE = row1.CODE_INTERNE_ARTICLE;
+
+						this.row1__CODESITE = row1.CODESITE;
+
+						this.row1__EAN = row1.EAN;
+
+						this.row1__DATE_DEBUT = row1.DATE_DEBUT;
+
+						this.row1__DATE_FIN = row1.DATE_FIN;
+
+						this.row1__CODEENSEIGNE = row1.CODEENSEIGNE;
+
+						this.row1__CODE_ARTICLE = row1.CODE_ARTICLE;
+
+						this.row1__QTE = row1.QTE;
+
+						this.row1__CA_TTC = row1.CA_TTC;
+
+						this.row1__CA_HT = row1.CA_HT;
+
+						this.row1__DateLastUpdateWebJob = row1.DateLastUpdateWebJob;
+
+						this.row1__FOUCIN = row1.FOUCIN;
+
+						this.exprKey_row5__FOUCFIN = exprKey_row5__FOUCFIN;
+
+					}
+
+					public void copyDataTo(row1Struct row1) {
+
+						row1.CODE_INTERNE_ARTICLE = this.row1__CODE_INTERNE_ARTICLE;
+						row1.CODESITE = this.row1__CODESITE;
+						row1.EAN = this.row1__EAN;
+						row1.DATE_DEBUT = this.row1__DATE_DEBUT;
+						row1.DATE_FIN = this.row1__DATE_FIN;
+						row1.CODEENSEIGNE = this.row1__CODEENSEIGNE;
+						row1.CODE_ARTICLE = this.row1__CODE_ARTICLE;
+						row1.QTE = this.row1__QTE;
+						row1.CA_TTC = this.row1__CA_TTC;
+						row1.CA_HT = this.row1__CA_HT;
+						row1.DateLastUpdateWebJob = this.row1__DateLastUpdateWebJob;
+						row1.FOUCIN = this.row1__FOUCIN;
+
+					}
+
+					public String toString() {
+
+						StringBuilder sb = new StringBuilder();
+						sb.append(super.toString());
+						sb.append("[");
+
+						sb.append("row1__CODE_INTERNE_ARTICLE");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__CODE_INTERNE_ARTICLE));
+
+						sb.append(", ");
+
+						sb.append("row1__CODESITE");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__CODESITE));
+
+						sb.append(", ");
+
+						sb.append("row1__EAN");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__EAN));
+
+						sb.append(", ");
+
+						sb.append("row1__DATE_DEBUT");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__DATE_DEBUT));
+
+						sb.append(", ");
+
+						sb.append("row1__DATE_FIN");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__DATE_FIN));
+
+						sb.append(", ");
+
+						sb.append("row1__CODEENSEIGNE");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__CODEENSEIGNE));
+
+						sb.append(", ");
+
+						sb.append("row1__CODE_ARTICLE");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__CODE_ARTICLE));
+
+						sb.append(", ");
+
+						sb.append("row1__QTE");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__QTE));
+
+						sb.append(", ");
+
+						sb.append("row1__CA_TTC");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__CA_TTC));
+
+						sb.append(", ");
+
+						sb.append("row1__CA_HT");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__CA_HT));
+
+						sb.append(", ");
+
+						sb.append("row1__DateLastUpdateWebJob");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__DateLastUpdateWebJob));
+
+						sb.append(", ");
+
+						sb.append("row1__FOUCIN");
+						sb.append("=");
+						sb.append(String.valueOf(this.row1__FOUCIN));
+
+						sb.append("]");
+
+						return sb.toString();
+					}
+
+					public int compareTo(SortableRow_tMap_1_1 other) {
+
+						int returnValue = 0;
+
+						returnValue = checkNullsAndCompare(this.exprKey_row5__FOUCFIN, other.exprKey_row5__FOUCFIN);
+						if (returnValue != 0) {
+							return returnValue;
+						}
+
+						return returnValue;
+					}
+
+					private int checkNullsAndCompare(Object object1, Object object2) {
+						int returnValue = 0;
+						if (object1 instanceof Comparable && object2 instanceof Comparable) {
+							returnValue = ((Comparable) object1).compareTo(object2);
+						} else if (object1 != null && object2 != null) {
+							returnValue = compareStrings(object1.toString(), object2.toString());
+						} else if (object1 == null && object2 != null) {
+							returnValue = 1;
+						} else if (object1 != null && object2 == null) {
+							returnValue = -1;
+						} else {
+							returnValue = 0;
+						}
+
+						return returnValue;
+					}
+
+					private int compareStrings(String string1, String string2) {
+						return string1.compareTo(string2);
+					}
+
+					public void readData(ObjectInputStream dis) {
+
+						synchronized (row1Struct.commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO) {
+
+							try {
+
+								int length = 0;
+
+								this.is__rejectedInnerJoin = dis.readBoolean();
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__CODE_INTERNE_ARTICLE = null;
+								} else {
+
+									this.row1__CODE_INTERNE_ARTICLE = dis.readLong();
+
+								}
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__CODESITE = null;
+								} else {
+
+									this.row1__CODESITE = dis.readLong();
+
+								}
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__EAN = null;
+								} else {
+
+									this.row1__EAN = dis.readLong();
+
+								}
+
+								length = dis.readInt();
+								if (length == -1) {
+									this.row1__DATE_DEBUT = null;
+								} else {
+									if (length > row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+										if (length < 1024
+												&& row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+										} else {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2
+													* length];
+										}
+									}
+									dis.readFully(row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0,
+											length);
+									this.row1__DATE_DEBUT = new String(
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length,
+											utf8Charset);
+								}
+
+								length = dis.readInt();
+								if (length == -1) {
+									this.row1__DATE_FIN = null;
+								} else {
+									if (length > row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+										if (length < 1024
+												&& row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+										} else {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2
+													* length];
+										}
+									}
+									dis.readFully(row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0,
+											length);
+									this.row1__DATE_FIN = new String(
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length,
+											utf8Charset);
+								}
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__CODEENSEIGNE = null;
+								} else {
+
+									this.row1__CODEENSEIGNE = dis.readLong();
+
+								}
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__CODE_ARTICLE = null;
+								} else {
+
+									this.row1__CODE_ARTICLE = dis.readLong();
+
+								}
+
+								this.row1__QTE = (BigDecimal) dis.readObject();
+
+								this.row1__CA_TTC = (BigDecimal) dis.readObject();
+
+								this.row1__CA_HT = (BigDecimal) dis.readObject();
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__DateLastUpdateWebJob = null;
+								} else {
+									this.row1__DateLastUpdateWebJob = new Date(dis.readLong());
+								}
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.row1__FOUCIN = null;
+								} else {
+
+									this.row1__FOUCIN = dis.readInt();
+
+								}
+
+								length = dis.readByte();
+								if (length == -1) {
+									this.exprKey_row5__FOUCFIN = null;
+								} else {
+
+									this.exprKey_row5__FOUCFIN = dis.readInt();
+
+								}
+
+							} catch (IOException e) {
+								throw new RuntimeException(e);
+
+							} catch (ClassNotFoundException eCNFE) {
+								throw new RuntimeException(eCNFE);
+
+							}
+
+						}
+					}
+
+					public void readData(org.jboss.marshalling.Unmarshaller objectIn) {
+
+						synchronized (row1Struct.commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO) {
+
+							try {
+
+								int length = 0;
+
+								this.is__rejectedInnerJoin = objectIn.readBoolean();
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__CODE_INTERNE_ARTICLE = null;
+								} else {
+
+									this.row1__CODE_INTERNE_ARTICLE = objectIn.readLong();
+
+								}
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__CODESITE = null;
+								} else {
+
+									this.row1__CODESITE = objectIn.readLong();
+
+								}
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__EAN = null;
+								} else {
+
+									this.row1__EAN = objectIn.readLong();
+
+								}
+
+								length = objectIn.readInt();
+								if (length == -1) {
+									this.row1__DATE_DEBUT = null;
+								} else {
+									if (length > row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+										if (length < 1024
+												&& row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+										} else {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2
+													* length];
+										}
+									}
+									objectIn.readFully(row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0,
+											length);
+									this.row1__DATE_DEBUT = new String(
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length,
+											utf8Charset);
+								}
+
+								length = objectIn.readInt();
+								if (length == -1) {
+									this.row1__DATE_FIN = null;
+								} else {
+									if (length > row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+										if (length < 1024
+												&& row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+										} else {
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2
+													* length];
+										}
+									}
+									objectIn.readFully(row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0,
+											length);
+									this.row1__DATE_FIN = new String(
+											row1Struct.commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length,
+											utf8Charset);
+								}
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__CODEENSEIGNE = null;
+								} else {
+
+									this.row1__CODEENSEIGNE = objectIn.readLong();
+
+								}
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__CODE_ARTICLE = null;
+								} else {
+
+									this.row1__CODE_ARTICLE = objectIn.readLong();
+
+								}
+
+								this.row1__QTE = (BigDecimal) objectIn.readObject();
+
+								this.row1__CA_TTC = (BigDecimal) objectIn.readObject();
+
+								this.row1__CA_HT = (BigDecimal) objectIn.readObject();
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__DateLastUpdateWebJob = null;
+								} else {
+									this.row1__DateLastUpdateWebJob = new Date(objectIn.readLong());
+								}
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.row1__FOUCIN = null;
+								} else {
+
+									this.row1__FOUCIN = objectIn.readInt();
+
+								}
+
+								length = objectIn.readByte();
+								if (length == -1) {
+									this.exprKey_row5__FOUCFIN = null;
+								} else {
+
+									this.exprKey_row5__FOUCFIN = objectIn.readInt();
+
+								}
+
+							} catch (IOException e) {
+								throw new RuntimeException(e);
+
+							} catch (ClassNotFoundException eCNFE) {
+								throw new RuntimeException(eCNFE);
+
+							}
+
+						}
+					}
+
+					public void writeData(ObjectOutputStream dos) {
+						try {
+
+							dos.writeBoolean(this.is__rejectedInnerJoin);
+
+							if (this.row1__CODE_INTERNE_ARTICLE == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeLong(this.row1__CODE_INTERNE_ARTICLE);
+
+							}
+
+							if (this.row1__CODESITE == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeLong(this.row1__CODESITE);
+
+							}
+
+							if (this.row1__EAN == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeLong(this.row1__EAN);
+
+							}
+
+							if (this.row1__DATE_DEBUT == null) {
+								dos.writeInt(-1);
+							} else {
+								byte[] byteArray = this.row1__DATE_DEBUT.getBytes(utf8Charset);
+								dos.writeInt(byteArray.length);
+								dos.write(byteArray);
+							}
+
+							if (this.row1__DATE_FIN == null) {
+								dos.writeInt(-1);
+							} else {
+								byte[] byteArray = this.row1__DATE_FIN.getBytes(utf8Charset);
+								dos.writeInt(byteArray.length);
+								dos.write(byteArray);
+							}
+
+							if (this.row1__CODEENSEIGNE == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeLong(this.row1__CODEENSEIGNE);
+
+							}
+
+							if (this.row1__CODE_ARTICLE == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeLong(this.row1__CODE_ARTICLE);
+
+							}
+
+							dos.writeObject(this.row1__QTE);
+
+							dos.writeObject(this.row1__CA_TTC);
+
+							dos.writeObject(this.row1__CA_HT);
+
+							if (this.row1__DateLastUpdateWebJob == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+								dos.writeLong(this.row1__DateLastUpdateWebJob.getTime());
+							}
+
+							if (this.row1__FOUCIN == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeInt(this.row1__FOUCIN);
+
+							}
+
+							if (this.exprKey_row5__FOUCFIN == null) {
+								dos.writeByte(-1);
+							} else {
+								dos.writeByte(0);
+
+								dos.writeInt(this.exprKey_row5__FOUCFIN);
+
+							}
+
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+					}
+
+					public void writeData(org.jboss.marshalling.Marshaller objectOut) {
+						try {
+
+							objectOut.writeBoolean(this.is__rejectedInnerJoin);
+
+							if (this.row1__CODE_INTERNE_ARTICLE == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeLong(this.row1__CODE_INTERNE_ARTICLE);
+
+							}
+
+							if (this.row1__CODESITE == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeLong(this.row1__CODESITE);
+
+							}
+
+							if (this.row1__EAN == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeLong(this.row1__EAN);
+
+							}
+
+							if (this.row1__DATE_DEBUT == null) {
+								objectOut.writeInt(-1);
+							} else {
+								byte[] byteArray = this.row1__DATE_DEBUT.getBytes(utf8Charset);
+								objectOut.writeInt(byteArray.length);
+								objectOut.write(byteArray);
+							}
+
+							if (this.row1__DATE_FIN == null) {
+								objectOut.writeInt(-1);
+							} else {
+								byte[] byteArray = this.row1__DATE_FIN.getBytes(utf8Charset);
+								objectOut.writeInt(byteArray.length);
+								objectOut.write(byteArray);
+							}
+
+							if (this.row1__CODEENSEIGNE == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeLong(this.row1__CODEENSEIGNE);
+
+							}
+
+							if (this.row1__CODE_ARTICLE == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeLong(this.row1__CODE_ARTICLE);
+
+							}
+
+							objectOut.writeObject(this.row1__QTE);
+
+							objectOut.writeObject(this.row1__CA_TTC);
+
+							objectOut.writeObject(this.row1__CA_HT);
+
+							if (this.row1__DateLastUpdateWebJob == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+								objectOut.writeLong(this.row1__DateLastUpdateWebJob.getTime());
+							}
+
+							if (this.row1__FOUCIN == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeInt(this.row1__FOUCIN);
+
+							}
+
+							if (this.exprKey_row5__FOUCFIN == null) {
+								objectOut.writeByte(-1);
+							} else {
+								objectOut.writeByte(0);
+
+								objectOut.writeInt(this.exprKey_row5__FOUCFIN);
+
+							}
+
+						} catch (IOException e) {
+							throw new RuntimeException(e);
+						}
+					}
+
+					public boolean supportJboss() {
+						return true;
+					}
+
+				} // G_TM_B_001
+
+				org.talend.designer.components.lookup.persistent.PersistentRowSorterIterator<SortableRow_tMap_1_1> fsi_tMap_1_1 = new org.talend.designer.components.lookup.persistent.PersistentRowSorterIterator<SortableRow_tMap_1_1>(
+						"C:/TALEND/STUDIO/WORKSPACES/REMOTE_WORKSPACE/temp" + "/" + jobName + "_tMapData_"
+								+ Thread.currentThread().getId() + "_" + pid + "_tMap_1_1",
+						2000000) {
+					public SortableRow_tMap_1_1 createRowInstance() {
+						return new SortableRow_tMap_1_1();
+					}
+				};
+
+				fsi_tMap_1_1.initPut();
+
+				/**
+				 * [tMap_1_TMAP_OUT begin ] stop
+				 */
+
+				/**
+				 * [tDBInput_1 begin ] start
+				 */
+
+				ok_Hash.put("tDBInput_1", false);
+				start_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+				currentComponent = "tDBInput_1";
+
+				int tos_count_tDBInput_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tDBInput_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tDBInput_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tDBInput_1 = new StringBuilder();
+							log4jParamters_tDBInput_1.append("Parameters:");
+							log4jParamters_tDBInput_1.append("USE_EXISTING_CONNECTION" + " = " + "true");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("CONNECTION" + " = " + "tDBConnection_1");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("TABLE" + " = " + "\"\"");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("QUERYSTORE" + " = " + "\"\"");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("QUERY" + " = "
+									+ "\"With VTEVMVT AS  (SELECT T.STMCINL,               T.STMSITE SOCSITE,               S.SOCCHAIN,               -NVL(SUM(STMVAL), 0) QTE,               -NVL(SUM(STMVPV), 0) CA_TTC,               -NVL(SUM(STMVPV - STMTVA), 0) CA_HT          FROM SITDGENE S, STOMVT T         WHERE S.SOCCMAG = 10           AND T.STMSITE = S.SOCSITE           AND STMTMVT BETWEEN 150 AND 174           AND TRUNC(T.STMDMVT) BETWEEN               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'dd/MM/yyyy')) AND               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'dd/MM/yyyy')) + 0.99999         GROUP BY T.STMSITE, T.STMCINL, S.SOCCHAIN        HAVING - NVL(SUM(STMVAL), 0) <> 0)    SELECT U.ARVCINR CODE_INTERNE_ARTICLE,         VV.SOCSITE CODESITE,         PKARTCOCA.GET_CLOSESTEAN(U.ARVCINV) EAN,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'yyyy-MM-dd') DATE_DEBUT,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,         VV.SOCCHAIN CODEENSEIGNE,         U.ARVCEXR CODE_ARTICLE,         QTE,         CA_TTC,         CA_HT,         TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELASTUPDATEWEBJOB,         F.FCLCFIN FOUCIN    FROM ARTUV U, FOUCATALOG F, VTEVMVT VV   WHERE F.FCLCINV = U.ARVCINV     AND TRUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN     AND VV.STMCINL = U.ARVCINV\"");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("IS_CONVERT_XMLTYPE" + " = " + "false");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("USE_CURSOR" + " = " + "true");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("CURSOR_SIZE" + " = " + "1000");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("TRIM_ALL_COLUMN" + " = " + "false");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("TRIM_COLUMN" + " = " + "[{TRIM=" + ("false")
+									+ ", SCHEMA_COLUMN=" + ("CODE_INTERNE_ARTICLE") + "}, {TRIM=" + ("false")
+									+ ", SCHEMA_COLUMN=" + ("CODESITE") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN="
+									+ ("EAN") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("DATE_DEBUT")
+									+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("DATE_FIN") + "}, {TRIM="
+									+ ("false") + ", SCHEMA_COLUMN=" + ("CODEENSEIGNE") + "}, {TRIM=" + ("false")
+									+ ", SCHEMA_COLUMN=" + ("CODE_ARTICLE") + "}, {TRIM=" + ("false")
+									+ ", SCHEMA_COLUMN=" + ("QTE") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN="
+									+ ("CA_TTC") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("CA_HT")
+									+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("DateLastUpdateWebJob")
+									+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("FOUCIN") + "}]");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("NO_NULL_VALUES" + " = " + "false");
+							log4jParamters_tDBInput_1.append(" | ");
+							log4jParamters_tDBInput_1.append("UNIFIED_COMPONENTS" + " = " + "tOracleInput");
+							log4jParamters_tDBInput_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tDBInput_1 - " + (log4jParamters_tDBInput_1));
+						}
+					}
+					new BytesLimit65535_tDBInput_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tDBInput_1", "ORACLE_GOLD", "tOracleInput");
+					talendJobLogProcess(globalMap);
+				}
+
+				int nb_line_tDBInput_1 = 0;
+				java.sql.Connection conn_tDBInput_1 = null;
+				conn_tDBInput_1 = (java.sql.Connection) globalMap.get("conn_tDBConnection_1");
+
+				if (conn_tDBInput_1 != null) {
+					if (conn_tDBInput_1.getMetaData() != null) {
+
+						log.debug("tDBInput_1 - Uses an existing connection with username '"
+								+ conn_tDBInput_1.getMetaData().getUserName() + "'. Connection URL: "
+								+ conn_tDBInput_1.getMetaData().getURL() + ".");
+
+					}
+				}
+
+				boolean isTimeZoneNull_tDBInput_1 = false;
+				boolean isConnectionWrapped_tDBInput_1 = !(conn_tDBInput_1 instanceof oracle.jdbc.OracleConnection)
+						&& conn_tDBInput_1.isWrapperFor(oracle.jdbc.OracleConnection.class);
+				oracle.jdbc.OracleConnection unwrappedOraConn_tDBInput_1 = null;
+				if (isConnectionWrapped_tDBInput_1) {
+					unwrappedOraConn_tDBInput_1 = conn_tDBInput_1.unwrap(oracle.jdbc.OracleConnection.class);
+					if (unwrappedOraConn_tDBInput_1 != null) {
+						isTimeZoneNull_tDBInput_1 = (unwrappedOraConn_tDBInput_1.getSessionTimeZone() == null);
+					}
+				} else {
+					isTimeZoneNull_tDBInput_1 = (((oracle.jdbc.OracleConnection) conn_tDBInput_1)
+							.getSessionTimeZone() == null);
+				}
+
+				if (isTimeZoneNull_tDBInput_1) {
+					java.sql.Statement stmtGetTZ_tDBInput_1 = conn_tDBInput_1.createStatement();
+					java.sql.ResultSet rsGetTZ_tDBInput_1 = stmtGetTZ_tDBInput_1
+							.executeQuery("select sessiontimezone from dual");
+					String sessionTimezone_tDBInput_1 = java.util.TimeZone.getDefault().getID();
+					while (rsGetTZ_tDBInput_1.next()) {
+						sessionTimezone_tDBInput_1 = rsGetTZ_tDBInput_1.getString(1);
+					}
+					if (isConnectionWrapped_tDBInput_1 && unwrappedOraConn_tDBInput_1 != null) {
+						unwrappedOraConn_tDBInput_1.setSessionTimeZone(sessionTimezone_tDBInput_1);
+					} else {
+						((oracle.jdbc.OracleConnection) conn_tDBInput_1).setSessionTimeZone(sessionTimezone_tDBInput_1);
+					}
+				}
+
+				java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1
+						.createStatement(java.sql.ResultSet.TYPE_FORWARD_ONLY, java.sql.ResultSet.CONCUR_READ_ONLY);
+
+				stmt_tDBInput_1.setFetchSize(1000);
+
+				String dbquery_tDBInput_1 = "With VTEVMVT AS\n(SELECT T.STMCINL,\n             T.STMSITE SOCSITE,\n             S.SOCCHAIN,\n             -NVL(SUM(S"
+						+ "TMVAL), 0) QTE,\n             -NVL(SUM(STMVPV), 0) CA_TTC,\n             -NVL(SUM(STMVPV - STMTVA), 0) CA_HT\n        FR"
+						+ "OM SITDGENE S, STOMVT T\n       WHERE S.SOCCMAG = 10\n         AND T.STMSITE = S.SOCSITE\n         AND STMTMVT BETWEEN 1"
+						+ "50 AND 174\n         AND TRUNC(T.STMDMVT) BETWEEN\n             TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'dd/MM/yyyy'))"
+						+ " AND\n             TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'dd/MM/yyyy')) + 0.99999\n       GROUP BY T.STMSITE, T.STMC"
+						+ "INL, S.SOCCHAIN\n      HAVING - NVL(SUM(STMVAL), 0) <> 0)\n\nSELECT U.ARVCINR CODE_INTERNE_ARTICLE,\n       VV.SOCSITE C"
+						+ "ODESITE,\n       PKARTCOCA.GET_CLOSESTEAN(U.ARVCINV) EAN,\n       TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'yyyy-MM-dd') DATE_D"
+						+ "EBUT,\n       TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,\n       VV.SOCCHAIN CODEENSEIGNE,\n       U.ARVC"
+						+ "EXR CODE_ARTICLE,\n       QTE,\n       CA_TTC,\n       CA_HT,\n       TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELAST"
+						+ "UPDATEWEBJOB,\n       F.FCLCFIN FOUCIN\n  FROM ARTUV U, FOUCATALOG F, VTEVMVT VV\n WHERE F.FCLCINV = U.ARVCINV\n   AND T"
+						+ "RUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN\n   AND VV.STMCINL = U.ARVCINV";
+
+				log.debug("tDBInput_1 - Executing the query: '" + dbquery_tDBInput_1 + "'.");
+
+				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
+				java.sql.ResultSet rs_tDBInput_1 = null;
+
+				try {
+					rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
+					java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
+					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
+
+					String tmpContent_tDBInput_1 = null;
+
+					log.debug("tDBInput_1 - Retrieving records from the database.");
+
+					while (rs_tDBInput_1.next()) {
+						nb_line_tDBInput_1++;
+
+						if (colQtyInRs_tDBInput_1 < 1) {
+							row1.CODE_INTERNE_ARTICLE = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(1) != null) {
+								row1.CODE_INTERNE_ARTICLE = rs_tDBInput_1.getLong(1);
+							} else {
+
+								row1.CODE_INTERNE_ARTICLE = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 2) {
+							row1.CODESITE = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(2) != null) {
+								row1.CODESITE = rs_tDBInput_1.getLong(2);
+							} else {
+
+								row1.CODESITE = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 3) {
+							row1.EAN = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(3) != null) {
+								row1.EAN = rs_tDBInput_1.getLong(3);
+							} else {
+
+								row1.EAN = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 4) {
+							row1.DATE_DEBUT = null;
+						} else {
+
+							row1.DATE_DEBUT = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
+						}
+						if (colQtyInRs_tDBInput_1 < 5) {
+							row1.DATE_FIN = null;
+						} else {
+
+							row1.DATE_FIN = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
+						}
+						if (colQtyInRs_tDBInput_1 < 6) {
+							row1.CODEENSEIGNE = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(6) != null) {
+								row1.CODEENSEIGNE = rs_tDBInput_1.getLong(6);
+							} else {
+
+								row1.CODEENSEIGNE = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 7) {
+							row1.CODE_ARTICLE = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(7) != null) {
+								row1.CODE_ARTICLE = rs_tDBInput_1.getLong(7);
+							} else {
+
+								row1.CODE_ARTICLE = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 8) {
+							row1.QTE = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(8) != null) {
+								row1.QTE = rs_tDBInput_1.getBigDecimal(8);
+							} else {
+
+								row1.QTE = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 9) {
+							row1.CA_TTC = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(9) != null) {
+								row1.CA_TTC = rs_tDBInput_1.getBigDecimal(9);
+							} else {
+
+								row1.CA_TTC = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 10) {
+							row1.CA_HT = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(10) != null) {
+								row1.CA_HT = rs_tDBInput_1.getBigDecimal(10);
+							} else {
+
+								row1.CA_HT = null;
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 11) {
+							row1.DateLastUpdateWebJob = null;
+						} else {
+
+							row1.DateLastUpdateWebJob = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 11);
+						}
+						if (colQtyInRs_tDBInput_1 < 12) {
+							row1.FOUCIN = null;
+						} else {
+
+							if (rs_tDBInput_1.getObject(12) != null) {
+								row1.FOUCIN = rs_tDBInput_1.getInt(12);
+							} else {
+
+								row1.FOUCIN = null;
+							}
+						}
+
+						log.debug("tDBInput_1 - Retrieving the record " + nb_line_tDBInput_1 + ".");
+
+						/**
+						 * [tDBInput_1 begin ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 main ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+						tos_count_tDBInput_1++;
+
+						/**
+						 * [tDBInput_1 main ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+						/**
+						 * [tDBInput_1 process_data_begin ] stop
+						 */
+
+						/**
+						 * [tMap_1_TMAP_OUT main ] start
+						 */
+
+						currentVirtualComponent = "tMap_1";
+
+						currentComponent = "tMap_1_TMAP_OUT";
+
+						if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+								, "row1", "tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1_TMAP_OUT",
+								"tMap_1_TMAP_OUT", "tMapOut"
+
+						)) {
+							talendJobLogProcess(globalMap);
+						}
+
+						if (log.isTraceEnabled()) {
+							log.trace("row1 - " + (row1 == null ? "" : row1.toLogString()));
+						}
+
+						boolean hasCasePrimitiveKeyWithNull_tMap_1_TMAP_OUT = false;
+
+						hasCasePrimitiveKeyWithNull_tMap_1_TMAP_OUT = false;
+
+						Integer exprKey_row5__FOUCFIN = row1.FOUCIN;
+
+						SortableRow_tMap_1_1 sortableRow_tMap_1_1 = fsi_tMap_1_1.getNextFreeRow();
+
+						sortableRow_tMap_1_1.fillFrom(row1, exprKey_row5__FOUCFIN);
+
+						fsi_tMap_1_1.put(sortableRow_tMap_1_1);
+
+						// ###############################
+						// # Input tables (lookups)
+						boolean rejectedInnerJoin_tMap_1_TMAP_OUT = false;
+						boolean mainRowRejected_tMap_1_TMAP_OUT = false;
+
+						// ###############################
+
+						tos_count_tMap_1_TMAP_OUT++;
+
+						/**
+						 * [tMap_1_TMAP_OUT main ] stop
+						 */
+
+						/**
+						 * [tMap_1_TMAP_OUT process_data_begin ] start
+						 */
+
+						currentVirtualComponent = "tMap_1";
+
+						currentComponent = "tMap_1_TMAP_OUT";
+
+						/**
+						 * [tMap_1_TMAP_OUT process_data_begin ] stop
+						 */
+
+						/**
+						 * [tMap_1_TMAP_OUT process_data_end ] start
+						 */
+
+						currentVirtualComponent = "tMap_1";
+
+						currentComponent = "tMap_1_TMAP_OUT";
+
+						/**
+						 * [tMap_1_TMAP_OUT process_data_end ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 process_data_end ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+						/**
+						 * [tDBInput_1 process_data_end ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 end ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+					}
+				} finally {
+					if (rs_tDBInput_1 != null) {
+						rs_tDBInput_1.close();
+					}
+					if (stmt_tDBInput_1 != null) {
+						stmt_tDBInput_1.close();
+					}
+				}
+
+				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
+				log.debug("tDBInput_1 - Retrieved records count: " + nb_line_tDBInput_1 + " .");
+
+				if (log.isDebugEnabled())
+					log.debug("tDBInput_1 - " + ("Done."));
+
+				ok_Hash.put("tDBInput_1", true);
+				end_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+				/**
+				 * [tDBInput_1 end ] stop
+				 */
+
+				/**
+				 * [tMap_1_TMAP_OUT end ] start
+				 */
+
+				currentVirtualComponent = "tMap_1";
+
+				currentComponent = "tMap_1_TMAP_OUT";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row1", 2, 0,
+						"tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1_TMAP_OUT", "tMap_1_TMAP_OUT", "tMapOut",
+						"output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				if (log.isDebugEnabled())
+					log.debug("tMap_1_TMAP_OUT - " + ("Done."));
+
+				ok_Hash.put("tMap_1_TMAP_OUT", true);
+				end_Hash.put("tMap_1_TMAP_OUT", System.currentTimeMillis());
+
+				/**
+				 * [tMap_1_TMAP_OUT end ] stop
+				 */
 
 				/**
 				 * [tDBOutput_1 begin ] start
@@ -6469,41 +8317,42 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				 */
 
 				/**
-				 * [tMap_1 begin ] start
+				 * [tMap_1_TMAP_IN begin ] start
 				 */
 
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
+				ok_Hash.put("tMap_1_TMAP_IN", false);
+				start_Hash.put("tMap_1_TMAP_IN", System.currentTimeMillis());
 
-				currentComponent = "tMap_1";
+				currentVirtualComponent = "tMap_1";
 
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row1");
+				currentComponent = "tMap_1_TMAP_IN";
 
-				int tos_count_tMap_1 = 0;
+				int tos_count_tMap_1_TMAP_IN = 0;
 
 				if (log.isDebugEnabled())
-					log.debug("tMap_1 - " + ("Start to work."));
+					log.debug("tMap_1_TMAP_IN - " + ("Start to work."));
 				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tMap_1 {
+					class BytesLimit65535_tMap_1_TMAP_IN {
 						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tMap_1 = new StringBuilder();
-							log4jParamters_tMap_1.append("Parameters:");
-							log4jParamters_tMap_1.append("LINK_STYLE" + " = " + "AUTO");
-							log4jParamters_tMap_1.append(" | ");
-							log4jParamters_tMap_1.append("TEMPORARY_DATA_DIRECTORY" + " = " + "");
-							log4jParamters_tMap_1.append(" | ");
-							log4jParamters_tMap_1.append("ROWS_BUFFER_SIZE" + " = " + "2000000");
-							log4jParamters_tMap_1.append(" | ");
-							log4jParamters_tMap_1.append("CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" + " = " + "true");
-							log4jParamters_tMap_1.append(" | ");
+							StringBuilder log4jParamters_tMap_1_TMAP_IN = new StringBuilder();
+							log4jParamters_tMap_1_TMAP_IN.append("Parameters:");
+							log4jParamters_tMap_1_TMAP_IN.append("LINK_STYLE" + " = " + "AUTO");
+							log4jParamters_tMap_1_TMAP_IN.append(" | ");
+							log4jParamters_tMap_1_TMAP_IN.append("TEMPORARY_DATA_DIRECTORY" + " = " + "");
+							log4jParamters_tMap_1_TMAP_IN.append(" | ");
+							log4jParamters_tMap_1_TMAP_IN.append("ROWS_BUFFER_SIZE" + " = " + "2000000");
+							log4jParamters_tMap_1_TMAP_IN.append(" | ");
+							log4jParamters_tMap_1_TMAP_IN
+									.append("CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" + " = " + "true");
+							log4jParamters_tMap_1_TMAP_IN.append(" | ");
 							if (log.isDebugEnabled())
-								log.debug("tMap_1 - " + (log4jParamters_tMap_1));
+								log.debug("tMap_1_TMAP_IN - " + (log4jParamters_tMap_1_TMAP_IN));
 						}
 					}
-					new BytesLimit65535_tMap_1().limitLog4jByte();
+					new BytesLimit65535_tMap_1_TMAP_IN().limitLog4jByte();
 				}
 				if (enableLogStash) {
-					talendJobLog.addCM("tMap_1", "tMap_1", "tMap");
+					talendJobLog.addCM("tMap_1_TMAP_IN", "tMap_1_TMAP_IN", "tMapIn");
 					talendJobLogProcess(globalMap);
 				}
 
@@ -6513,17 +8362,13 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 				int count_row5_tMap_1 = 0;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = null;
-
-				row5Struct row5HashKey = new row5Struct();
-				row5Struct row5Default = new row5Struct();
 // ###############################        
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_1__Struct {
+				class Var__tMap_1_TMAP_IN__Struct {
 				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+				Var__tMap_1_TMAP_IN__Struct Var__tMap_1_TMAP_IN = new Var__tMap_1_TMAP_IN__Struct();
 // ###############################
 
 // ###############################
@@ -6537,741 +8382,430 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 // ###############################
 
 				/**
-				 * [tMap_1 begin ] stop
+				 * [tMap_1_TMAP_IN begin ] stop
 				 */
 
 				/**
-				 * [tDBInput_1 begin ] start
+				 * [tMap_1_TMAP_IN main ] start
 				 */
 
-				ok_Hash.put("tDBInput_1", false);
-				start_Hash.put("tDBInput_1", System.currentTimeMillis());
+				currentVirtualComponent = "tMap_1";
 
-				currentComponent = "tDBInput_1";
+				currentComponent = "tMap_1_TMAP_IN";
 
-				int tos_count_tDBInput_1 = 0;
+				boolean hasCasePrimitiveKeyWithNull_tMap_1_TMAP_IN = false;
 
-				if (log.isDebugEnabled())
-					log.debug("tDBInput_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tDBInput_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tDBInput_1 = new StringBuilder();
-							log4jParamters_tDBInput_1.append("Parameters:");
-							log4jParamters_tDBInput_1.append("USE_EXISTING_CONNECTION" + " = " + "true");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("CONNECTION" + " = " + "tDBConnection_1");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("TABLE" + " = " + "\"\"");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("QUERYSTORE" + " = " + "\"\"");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("QUERY" + " = "
-									+ "\"With VTEVMVT AS  (SELECT T.STMCINL,               T.STMSITE SOCSITE,               S.SOCCHAIN,               -NVL(SUM(STMVAL), 0) QTE,               -NVL(SUM(STMVPV), 0) CA_TTC,               -NVL(SUM(STMVPV - STMTVA), 0) CA_HT          FROM SITDGENE S, STOMVT T         WHERE S.SOCCMAG = 10           AND T.STMSITE = S.SOCSITE           AND STMTMVT BETWEEN 150 AND 174           AND TRUNC(T.STMDMVT) BETWEEN               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'dd/MM/yyyy')) AND               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'dd/MM/yyyy')) + 0.99999         GROUP BY T.STMSITE, T.STMCINL, S.SOCCHAIN        HAVING - NVL(SUM(STMVAL), 0) <> 0)    SELECT U.ARVCINR CODE_INTERNE_ARTICLE,         VV.SOCSITE CODESITE,         PKARTCOCA.GET_CLOSESTEAN(U.ARVCINV) EAN,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'yyyy-MM-dd') DATE_DEBUT,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,         VV.SOCCHAIN CODEENSEIGNE,         U.ARVCEXR CODE_ARTICLE,         QTE,         CA_TTC,         CA_HT,         TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELASTUPDATEWEBJOB,         F.FCLCFIN FOUCIN    FROM ARTUV U, FOUCATALOG F, VTEVMVT VV   WHERE F.FCLCINV = U.ARVCINV     AND TRUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN     AND VV.STMCINL = U.ARVCINV\"");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("IS_CONVERT_XMLTYPE" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("USE_CURSOR" + " = " + "true");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("CURSOR_SIZE" + " = " + "1000");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("TRIM_ALL_COLUMN" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("TRIM_COLUMN" + " = " + "[{TRIM=" + ("false")
-									+ ", SCHEMA_COLUMN=" + ("CODE_INTERNE_ARTICLE") + "}, {TRIM=" + ("false")
-									+ ", SCHEMA_COLUMN=" + ("CODESITE") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN="
-									+ ("EAN") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("DATE_DEBUT")
-									+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("DATE_FIN") + "}, {TRIM="
-									+ ("false") + ", SCHEMA_COLUMN=" + ("CODEENSEIGNE") + "}, {TRIM=" + ("false")
-									+ ", SCHEMA_COLUMN=" + ("CODE_ARTICLE") + "}, {TRIM=" + ("false")
-									+ ", SCHEMA_COLUMN=" + ("QTE") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN="
-									+ ("CA_TTC") + "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("CA_HT")
-									+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("DateLastUpdateWebJob")
-									+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("FOUCIN") + "}]");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("NO_NULL_VALUES" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("UNIFIED_COMPONENTS" + " = " + "tOracleInput");
-							log4jParamters_tDBInput_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tDBInput_1 - " + (log4jParamters_tDBInput_1));
-						}
-					}
-					new BytesLimit65535_tDBInput_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tDBInput_1", "ORACLE_GOLD", "tOracleInput");
-					talendJobLogProcess(globalMap);
+				fsi_tMap_1_1.endPut();
+
+				if (row1 == null) {
+					row1 = new row1Struct();
 				}
 
-				int nb_line_tDBInput_1 = 0;
-				java.sql.Connection conn_tDBInput_1 = null;
-				conn_tDBInput_1 = (java.sql.Connection) globalMap.get("conn_tDBConnection_1");
+				// ###############################
+				// # Input tables (lookups)
+				boolean rejectedInnerJoin_tMap_1_TMAP_IN = false;
+				boolean mainRowRejected_tMap_1_TMAP_IN = false;
 
-				if (conn_tDBInput_1 != null) {
-					if (conn_tDBInput_1.getMetaData() != null) {
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row5"
+				///////////////////////////////////////////////
 
-						log.debug("tDBInput_1 - Uses an existing connection with username '"
-								+ conn_tDBInput_1.getMetaData().getUserName() + "'. Connection URL: "
-								+ conn_tDBInput_1.getMetaData().getURL() + ".");
+				SortableRow_tMap_1_1 rsc_tMap_1_1;
 
-					}
-				}
+				tHash_Lookup_row5.initGet();
 
-				boolean isTimeZoneNull_tDBInput_1 = false;
-				boolean isConnectionWrapped_tDBInput_1 = !(conn_tDBInput_1 instanceof oracle.jdbc.OracleConnection)
-						&& conn_tDBInput_1.isWrapperFor(oracle.jdbc.OracleConnection.class);
-				oracle.jdbc.OracleConnection unwrappedOraConn_tDBInput_1 = null;
-				if (isConnectionWrapped_tDBInput_1) {
-					unwrappedOraConn_tDBInput_1 = conn_tDBInput_1.unwrap(oracle.jdbc.OracleConnection.class);
-					if (unwrappedOraConn_tDBInput_1 != null) {
-						isTimeZoneNull_tDBInput_1 = (unwrappedOraConn_tDBInput_1.getSessionTimeZone() == null);
-					}
-				} else {
-					isTimeZoneNull_tDBInput_1 = (((oracle.jdbc.OracleConnection) conn_tDBInput_1)
-							.getSessionTimeZone() == null);
-				}
+				fsi_tMap_1_1.initGet();
 
-				if (isTimeZoneNull_tDBInput_1) {
-					java.sql.Statement stmtGetTZ_tDBInput_1 = conn_tDBInput_1.createStatement();
-					java.sql.ResultSet rsGetTZ_tDBInput_1 = stmtGetTZ_tDBInput_1
-							.executeQuery("select sessiontimezone from dual");
-					String sessionTimezone_tDBInput_1 = java.util.TimeZone.getDefault().getID();
-					while (rsGetTZ_tDBInput_1.next()) {
-						sessionTimezone_tDBInput_1 = rsGetTZ_tDBInput_1.getString(1);
-					}
-					if (isConnectionWrapped_tDBInput_1 && unwrappedOraConn_tDBInput_1 != null) {
-						unwrappedOraConn_tDBInput_1.setSessionTimeZone(sessionTimezone_tDBInput_1);
-					} else {
-						((oracle.jdbc.OracleConnection) conn_tDBInput_1).setSessionTimeZone(sessionTimezone_tDBInput_1);
-					}
-				}
+				// TEST firstLookupIsPersistentSorted=true isFirstPersistentSortedTable=true
 
-				java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1
-						.createStatement(java.sql.ResultSet.TYPE_FORWARD_ONLY, java.sql.ResultSet.CONCUR_READ_ONLY);
+				rejectedInnerJoin_tMap_1_TMAP_IN = false;
 
-				stmt_tDBInput_1.setFetchSize(1000);
+				while (fsi_tMap_1_1.hasNext()) { // G_TM_M_250 loop "1"
 
-				String dbquery_tDBInput_1 = "With VTEVMVT AS\n(SELECT T.STMCINL,\n             T.STMSITE SOCSITE,\n             S.SOCCHAIN,\n             -NVL(SUM(S"
-						+ "TMVAL), 0) QTE,\n             -NVL(SUM(STMVPV), 0) CA_TTC,\n             -NVL(SUM(STMVPV - STMTVA), 0) CA_HT\n        FR"
-						+ "OM SITDGENE S, STOMVT T\n       WHERE S.SOCCMAG = 10\n         AND T.STMSITE = S.SOCSITE\n         AND STMTMVT BETWEEN 1"
-						+ "50 AND 174\n         AND TRUNC(T.STMDMVT) BETWEEN\n             TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'dd/MM/yyyy'))"
-						+ " AND\n             TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'dd/MM/yyyy')) + 0.99999\n       GROUP BY T.STMSITE, T.STMC"
-						+ "INL, S.SOCCHAIN\n      HAVING - NVL(SUM(STMVAL), 0) <> 0)\n\nSELECT U.ARVCINR CODE_INTERNE_ARTICLE,\n       VV.SOCSITE C"
-						+ "ODESITE,\n       PKARTCOCA.GET_CLOSESTEAN(U.ARVCINV) EAN,\n       TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'yyyy-MM-dd') DATE_D"
-						+ "EBUT,\n       TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,\n       VV.SOCCHAIN CODEENSEIGNE,\n       U.ARVC"
-						+ "EXR CODE_ARTICLE,\n       QTE,\n       CA_TTC,\n       CA_HT,\n       TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELAST"
-						+ "UPDATEWEBJOB,\n       F.FCLCFIN FOUCIN\n  FROM ARTUV U, FOUCATALOG F, VTEVMVT VV\n WHERE F.FCLCINV = U.ARVCINV\n   AND T"
-						+ "RUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN\n   AND VV.STMCINL = U.ARVCINV";
+					// CALL close loop of lookup '1'
 
-				log.debug("tDBInput_1 - Executing the query: '" + dbquery_tDBInput_1 + "'.");
+					rsc_tMap_1_1 = (SortableRow_tMap_1_1) fsi_tMap_1_1.next();
+					rsc_tMap_1_1.copyDataTo(row1);
 
-				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
-				java.sql.ResultSet rs_tDBInput_1 = null;
+					rejectedInnerJoin_tMap_1_TMAP_IN = rsc_tMap_1_1.is__rejectedInnerJoin;
 
-				try {
-					rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
-					java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
-					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
+					boolean forceLooprow5 = false;
 
-					String tmpContent_tDBInput_1 = null;
+					row5Struct row5ObjectFromLookup = null;
 
-					log.debug("tDBInput_1 - Retrieving records from the database.");
+					if (!rejectedInnerJoin_tMap_1_TMAP_IN) { // G_TM_M_020
 
-					while (rs_tDBInput_1.next()) {
-						nb_line_tDBInput_1++;
+						hasCasePrimitiveKeyWithNull_tMap_1_TMAP_IN = false;
 
-						if (colQtyInRs_tDBInput_1 < 1) {
-							row1.CODE_INTERNE_ARTICLE = null;
-						} else {
+						row5HashKey.FOUCFIN = rsc_tMap_1_1.exprKey_row5__FOUCFIN;
 
-							if (rs_tDBInput_1.getObject(1) != null) {
-								row1.CODE_INTERNE_ARTICLE = rs_tDBInput_1.getLong(1);
-							} else {
+						tHash_Lookup_row5.lookup(row5HashKey);
 
-								row1.CODE_INTERNE_ARTICLE = null;
+						if (!tHash_Lookup_row5.hasNext()) { // G_TM_M_090
+
+							rejectedInnerJoin_tMap_1_TMAP_IN = true;
+
+							forceLooprow5 = true;
+
+						} // G_TM_M_090
+
+					} // G_TM_M_020
+
+					else { // G 20 - G 21
+						forceLooprow5 = true;
+					} // G 21
+
+					row5Struct row5 = null;
+
+					while ((tHash_Lookup_row5 != null && tHash_Lookup_row5.hasNext()) || forceLooprow5) { // G_TM_M_043
+
+						// CALL close loop of lookup 'row5'
+
+						row5Struct fromLookup_row5 = null;
+						row5 = row5Default;
+
+						if (!forceLooprow5) { // G 46
+
+							fromLookup_row5 = tHash_Lookup_row5.next();
+
+							if (fromLookup_row5 != null) {
+								row5 = fromLookup_row5;
 							}
-						}
-						if (colQtyInRs_tDBInput_1 < 2) {
-							row1.CODESITE = null;
-						} else {
 
-							if (rs_tDBInput_1.getObject(2) != null) {
-								row1.CODESITE = rs_tDBInput_1.getLong(2);
-							} else {
+						} // G 46
 
-								row1.CODESITE = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 3) {
-							row1.EAN = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(3) != null) {
-								row1.EAN = rs_tDBInput_1.getLong(3);
-							} else {
-
-								row1.EAN = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 4) {
-							row1.DATE_DEBUT = null;
-						} else {
-
-							row1.DATE_DEBUT = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 5) {
-							row1.DATE_FIN = null;
-						} else {
-
-							row1.DATE_FIN = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 6) {
-							row1.CODEENSEIGNE = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(6) != null) {
-								row1.CODEENSEIGNE = rs_tDBInput_1.getLong(6);
-							} else {
-
-								row1.CODEENSEIGNE = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 7) {
-							row1.CODE_ARTICLE = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(7) != null) {
-								row1.CODE_ARTICLE = rs_tDBInput_1.getLong(7);
-							} else {
-
-								row1.CODE_ARTICLE = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 8) {
-							row1.QTE = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(8) != null) {
-								row1.QTE = rs_tDBInput_1.getBigDecimal(8);
-							} else {
-
-								row1.QTE = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 9) {
-							row1.CA_TTC = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(9) != null) {
-								row1.CA_TTC = rs_tDBInput_1.getBigDecimal(9);
-							} else {
-
-								row1.CA_TTC = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 10) {
-							row1.CA_HT = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(10) != null) {
-								row1.CA_HT = rs_tDBInput_1.getBigDecimal(10);
-							} else {
-
-								row1.CA_HT = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 11) {
-							row1.DateLastUpdateWebJob = null;
-						} else {
-
-							row1.DateLastUpdateWebJob = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 11);
-						}
-						if (colQtyInRs_tDBInput_1 < 12) {
-							row1.FOUCIN = null;
-						} else {
-
-							if (rs_tDBInput_1.getObject(12) != null) {
-								row1.FOUCIN = rs_tDBInput_1.getInt(12);
-							} else {
-
-								row1.FOUCIN = null;
-							}
-						}
-
-						log.debug("tDBInput_1 - Retrieving the record " + nb_line_tDBInput_1 + ".");
-
-						/**
-						 * [tDBInput_1 begin ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 main ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						tos_count_tDBInput_1++;
-
-						/**
-						 * [tDBInput_1 main ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						/**
-						 * [tDBInput_1 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tMap_1 main ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
-
-								, "row1", "tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1", "tMap_1", "tMap"
-
-						)) {
-							talendJobLogProcess(globalMap);
-						}
-
-						if (log.isTraceEnabled()) {
-							log.trace("row1 - " + (row1 == null ? "" : row1.toLogString()));
-						}
-
-						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+						forceLooprow5 = false;
 
 						// ###############################
-						// # Input tables (lookups)
-						boolean rejectedInnerJoin_tMap_1 = false;
-						boolean mainRowRejected_tMap_1 = false;
-
-						///////////////////////////////////////////////
-						// Starting Lookup Table "row5"
-						///////////////////////////////////////////////
-
-						boolean forceLooprow5 = false;
-
-						row5Struct row5ObjectFromLookup = null;
-
-						if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
-
-							hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-							row5HashKey.FOUCFIN = row1.FOUCIN;
-
-							row5HashKey.hashCodeDirty = true;
-
-							tHashInput_1Process(globalMap);
-
-							tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) globalMap
-									.get("tHash_Lookup_row5"));
-
-							tHash_Lookup_row5.initGet();
-
-							tHash_Lookup_row5.lookup(row5HashKey);
-
-							if (!tHash_Lookup_row5.hasNext()) { // G_TM_M_090
-
-								rejectedInnerJoin_tMap_1 = true;
-
-								forceLooprow5 = true;
-
-							} // G_TM_M_090
-
-						} // G_TM_M_020
-
-						else { // G 20 - G 21
-							forceLooprow5 = true;
-						} // G 21
-
-						row5Struct row5 = null;
-
-						while ((tHash_Lookup_row5 != null && tHash_Lookup_row5.hasNext()) || forceLooprow5) { // G_TM_M_043
-
-							// CALL close loop of lookup 'row5'
-
-							row5Struct fromLookup_row5 = null;
-							row5 = row5Default;
-
-							if (!forceLooprow5) { // G 46
-
-								fromLookup_row5 = tHash_Lookup_row5.next();
-
-								if (fromLookup_row5 != null) {
-									row5 = fromLookup_row5;
-								}
-
-							} // G 46
-
-							forceLooprow5 = false;
+						{ // start of Var scope
 
 							// ###############################
-							{ // start of Var scope
+							// # Vars tables
 
-								// ###############################
-								// # Vars tables
+							Var__tMap_1_TMAP_IN__Struct Var = Var__tMap_1_TMAP_IN;// ###############################
+							// ###############################
+							// # Output tables
 
-								Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
-								// ###############################
-								// # Output tables
+							out1 = null;
+							fouci = null;
 
-								out1 = null;
-								fouci = null;
-
-								if (!rejectedInnerJoin_tMap_1) {
+							if (!rejectedInnerJoin_tMap_1_TMAP_IN) {
 
 // # Output table : 'out1'
-									count_out1_tMap_1++;
+								count_out1_tMap_1++;
 
-									out1_tmp.CODE_INTERNE_ARTICLE = row1.CODE_INTERNE_ARTICLE;
-									out1_tmp.CODESITE = row1.CODESITE;
-									out1_tmp.EAN = row1.EAN;
-									out1_tmp.DATE_DEBUT = TalendDate.parseDate("yyyy-MM-dd", row1.DATE_DEBUT);
-									out1_tmp.DATE_FIN = TalendDate.parseDate("yyyy-MM-dd", row1.DATE_FIN);
-									out1_tmp.CODEENSEIGNE = row1.CODEENSEIGNE;
-									out1_tmp.CODE_ARTICLE = row1.CODE_ARTICLE;
-									out1_tmp.QTE = row1.QTE;
-									out1_tmp.CA_TTC = row1.CA_TTC;
-									out1_tmp.CA_HT = row1.CA_HT;
-									out1_tmp.DateLastUpdateWebJob = row1.DateLastUpdateWebJob;
-									out1 = out1_tmp;
-									log.debug("tMap_1 - Outputting the record " + count_out1_tMap_1
-											+ " of the output table 'out1'.");
+								out1_tmp.CODE_INTERNE_ARTICLE = row1.CODE_INTERNE_ARTICLE;
+								out1_tmp.CODESITE = row1.CODESITE;
+								out1_tmp.EAN = row1.EAN;
+								out1_tmp.DATE_DEBUT = TalendDate.parseDate("yyyy-MM-dd", row1.DATE_DEBUT);
+								out1_tmp.DATE_FIN = TalendDate.parseDate("yyyy-MM-dd", row1.DATE_FIN);
+								out1_tmp.CODEENSEIGNE = row1.CODEENSEIGNE;
+								out1_tmp.CODE_ARTICLE = row1.CODE_ARTICLE;
+								out1_tmp.QTE = row1.QTE;
+								out1_tmp.CA_TTC = row1.CA_TTC;
+								out1_tmp.CA_HT = row1.CA_HT;
+								out1_tmp.DateLastUpdateWebJob = row1.DateLastUpdateWebJob;
+								out1 = out1_tmp;
+								log.debug("tMap_1 - Outputting the record " + count_out1_tMap_1
+										+ " of the output table 'out1'.");
 
 // # Output table : 'fouci'
-									count_fouci_tMap_1++;
+								count_fouci_tMap_1++;
 
-									fouci_tmp.FOUCFIN = row5.FOUCFIN;
-									fouci_tmp.FOULIB = row5.LIBFRS;
-									fouci_tmp.FOUCNUF = row5.FOUCNUF;
-									fouci = fouci_tmp;
-									log.debug("tMap_1 - Outputting the record " + count_fouci_tMap_1
-											+ " of the output table 'fouci'.");
+								fouci_tmp.FOUCFIN = row5.FOUCFIN;
+								fouci_tmp.FOULIB = row5.LIBFRS;
+								fouci_tmp.FOUCNUF = row5.FOUCNUF;
+								fouci = fouci_tmp;
+								log.debug("tMap_1 - Outputting the record " + count_fouci_tMap_1
+										+ " of the output table 'fouci'.");
 
-								} // closing inner join bracket (2)
+							} // closing inner join bracket (2)
 // ###############################
 
-							} // end of Var scope
+						} // end of Var scope
 
-							rejectedInnerJoin_tMap_1 = false;
+						rejectedInnerJoin_tMap_1_TMAP_IN = false;
 
-							tos_count_tMap_1++;
+						tos_count_tMap_1_TMAP_IN++;
 
-							/**
-							 * [tMap_1 main ] stop
-							 */
+						/**
+						 * [tMap_1_TMAP_IN main ] stop
+						 */
 
-							/**
-							 * [tMap_1 process_data_begin ] start
-							 */
+						/**
+						 * [tMap_1_TMAP_IN process_data_begin ] start
+						 */
 
-							currentComponent = "tMap_1";
+						currentVirtualComponent = "tMap_1";
 
-							/**
-							 * [tMap_1 process_data_begin ] stop
-							 */
+						currentComponent = "tMap_1_TMAP_IN";
+
+						/**
+						 * [tMap_1_TMAP_IN process_data_begin ] stop
+						 */
 // Start of branch "out1"
-							if (out1 != null) {
+						if (out1 != null) {
 
-								/**
-								 * [tDBOutput_1 main ] start
-								 */
+							/**
+							 * [tDBOutput_1 main ] start
+							 */
 
-								currentComponent = "tDBOutput_1";
+							currentComponent = "tDBOutput_1";
 
-								if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+							if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
 
-										, "out1", "tMap_1", "tMap_1", "tMap", "tDBOutput_1", "Oracle_ODS",
-										"tOracleOutput"
+									, "out1", "tMap_1_TMAP_IN", "tMap_1_TMAP_IN", "tMapIn", "tDBOutput_1", "Oracle_ODS",
+									"tOracleOutput"
 
-								)) {
-									talendJobLogProcess(globalMap);
-								}
+							)) {
+								talendJobLogProcess(globalMap);
+							}
 
-								if (log.isTraceEnabled()) {
-									log.trace("out1 - " + (out1 == null ? "" : out1.toLogString()));
-								}
+							if (log.isTraceEnabled()) {
+								log.trace("out1 - " + (out1 == null ? "" : out1.toLogString()));
+							}
 
-								whetherReject_tDBOutput_1 = false;
-								if (out1.CODE_INTERNE_ARTICLE == null) {
-									pstmt_tDBOutput_1.setNull(1, java.sql.Types.INTEGER);
-								} else {
-									pstmt_tDBOutput_1.setLong(1, out1.CODE_INTERNE_ARTICLE);
-								}
+							whetherReject_tDBOutput_1 = false;
+							if (out1.CODE_INTERNE_ARTICLE == null) {
+								pstmt_tDBOutput_1.setNull(1, java.sql.Types.INTEGER);
+							} else {
+								pstmt_tDBOutput_1.setLong(1, out1.CODE_INTERNE_ARTICLE);
+							}
 
-								if (out1.CODESITE == null) {
-									pstmt_tDBOutput_1.setNull(2, java.sql.Types.INTEGER);
-								} else {
-									pstmt_tDBOutput_1.setLong(2, out1.CODESITE);
-								}
+							if (out1.CODESITE == null) {
+								pstmt_tDBOutput_1.setNull(2, java.sql.Types.INTEGER);
+							} else {
+								pstmt_tDBOutput_1.setLong(2, out1.CODESITE);
+							}
 
-								if (out1.EAN == null) {
-									pstmt_tDBOutput_1.setNull(3, java.sql.Types.INTEGER);
-								} else {
-									pstmt_tDBOutput_1.setLong(3, out1.EAN);
-								}
+							if (out1.EAN == null) {
+								pstmt_tDBOutput_1.setNull(3, java.sql.Types.INTEGER);
+							} else {
+								pstmt_tDBOutput_1.setLong(3, out1.EAN);
+							}
 
-								if (out1.DATE_DEBUT != null) {
-									pstmt_tDBOutput_1.setObject(4, new java.sql.Timestamp(out1.DATE_DEBUT.getTime()),
-											java.sql.Types.DATE);
-								} else {
-									pstmt_tDBOutput_1.setNull(4, java.sql.Types.DATE);
-								}
+							if (out1.DATE_DEBUT != null) {
+								pstmt_tDBOutput_1.setObject(4, new java.sql.Timestamp(out1.DATE_DEBUT.getTime()),
+										java.sql.Types.DATE);
+							} else {
+								pstmt_tDBOutput_1.setNull(4, java.sql.Types.DATE);
+							}
 
-								if (out1.DATE_FIN != null) {
-									pstmt_tDBOutput_1.setObject(5, new java.sql.Timestamp(out1.DATE_FIN.getTime()),
-											java.sql.Types.DATE);
-								} else {
-									pstmt_tDBOutput_1.setNull(5, java.sql.Types.DATE);
-								}
+							if (out1.DATE_FIN != null) {
+								pstmt_tDBOutput_1.setObject(5, new java.sql.Timestamp(out1.DATE_FIN.getTime()),
+										java.sql.Types.DATE);
+							} else {
+								pstmt_tDBOutput_1.setNull(5, java.sql.Types.DATE);
+							}
 
-								if (out1.CODEENSEIGNE == null) {
-									pstmt_tDBOutput_1.setNull(6, java.sql.Types.INTEGER);
-								} else {
-									pstmt_tDBOutput_1.setLong(6, out1.CODEENSEIGNE);
-								}
+							if (out1.CODEENSEIGNE == null) {
+								pstmt_tDBOutput_1.setNull(6, java.sql.Types.INTEGER);
+							} else {
+								pstmt_tDBOutput_1.setLong(6, out1.CODEENSEIGNE);
+							}
 
-								if (out1.CODE_ARTICLE == null) {
-									pstmt_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
-								} else {
-									pstmt_tDBOutput_1.setLong(7, out1.CODE_ARTICLE);
-								}
+							if (out1.CODE_ARTICLE == null) {
+								pstmt_tDBOutput_1.setNull(7, java.sql.Types.INTEGER);
+							} else {
+								pstmt_tDBOutput_1.setLong(7, out1.CODE_ARTICLE);
+							}
 
-								pstmt_tDBOutput_1.setBigDecimal(8, out1.QTE);
+							pstmt_tDBOutput_1.setBigDecimal(8, out1.QTE);
 
-								pstmt_tDBOutput_1.setBigDecimal(9, out1.CA_TTC);
+							pstmt_tDBOutput_1.setBigDecimal(9, out1.CA_TTC);
 
-								pstmt_tDBOutput_1.setBigDecimal(10, out1.CA_HT);
+							pstmt_tDBOutput_1.setBigDecimal(10, out1.CA_HT);
 
-								if (out1.DateLastUpdateWebJob != null) {
-									pstmt_tDBOutput_1.setObject(11,
-											new java.sql.Timestamp(out1.DateLastUpdateWebJob.getTime()),
-											java.sql.Types.DATE);
-								} else {
-									pstmt_tDBOutput_1.setNull(11, java.sql.Types.DATE);
-								}
+							if (out1.DateLastUpdateWebJob != null) {
+								pstmt_tDBOutput_1.setObject(11,
+										new java.sql.Timestamp(out1.DateLastUpdateWebJob.getTime()),
+										java.sql.Types.DATE);
+							} else {
+								pstmt_tDBOutput_1.setNull(11, java.sql.Types.DATE);
+							}
 
-								pstmt_tDBOutput_1.addBatch();
-								nb_line_tDBOutput_1++;
-								if (log.isDebugEnabled())
-									log.debug("tDBOutput_1 - " + ("Adding the record ") + (nb_line_tDBOutput_1)
-											+ (" to the ") + ("INSERT") + (" batch."));
-								batchSizeCounter_tDBOutput_1++;
-								if (batchSize_tDBOutput_1 > 0
-										&& batchSize_tDBOutput_1 <= batchSizeCounter_tDBOutput_1) {
-									try {
-										if (log.isDebugEnabled())
-											log.debug("tDBOutput_1 - " + ("Executing the ") + ("INSERT") + (" batch."));
-										pstmt_tDBOutput_1.executeBatch();
-										if (log.isDebugEnabled())
-											log.debug("tDBOutput_1 - " + ("The ") + ("INSERT")
-													+ (" batch execution has succeeded."));
-									} catch (java.sql.BatchUpdateException e_tDBOutput_1) {
-										globalMap.put("tDBOutput_1_ERROR_MESSAGE", e_tDBOutput_1.getMessage());
-										java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),
-												sqle_tDBOutput_1 = null;
-										String errormessage_tDBOutput_1;
-										if (ne_tDBOutput_1 != null) {
-											// build new exception to provide the original cause
-											sqle_tDBOutput_1 = new java.sql.SQLException(
-													e_tDBOutput_1.getMessage() + "\ncaused by: "
-															+ ne_tDBOutput_1.getMessage(),
-													ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(),
-													ne_tDBOutput_1);
-											errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
-										} else {
-											errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
-										}
-
-										log.error("tDBOutput_1 - " + (errormessage_tDBOutput_1));
-										System.err.println(errormessage_tDBOutput_1);
-
+							pstmt_tDBOutput_1.addBatch();
+							nb_line_tDBOutput_1++;
+							if (log.isDebugEnabled())
+								log.debug("tDBOutput_1 - " + ("Adding the record ") + (nb_line_tDBOutput_1)
+										+ (" to the ") + ("INSERT") + (" batch."));
+							batchSizeCounter_tDBOutput_1++;
+							if (batchSize_tDBOutput_1 > 0 && batchSize_tDBOutput_1 <= batchSizeCounter_tDBOutput_1) {
+								try {
+									if (log.isDebugEnabled())
+										log.debug("tDBOutput_1 - " + ("Executing the ") + ("INSERT") + (" batch."));
+									pstmt_tDBOutput_1.executeBatch();
+									if (log.isDebugEnabled())
+										log.debug("tDBOutput_1 - " + ("The ") + ("INSERT")
+												+ (" batch execution has succeeded."));
+								} catch (java.sql.BatchUpdateException e_tDBOutput_1) {
+									globalMap.put("tDBOutput_1_ERROR_MESSAGE", e_tDBOutput_1.getMessage());
+									java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),
+											sqle_tDBOutput_1 = null;
+									String errormessage_tDBOutput_1;
+									if (ne_tDBOutput_1 != null) {
+										// build new exception to provide the original cause
+										sqle_tDBOutput_1 = new java.sql.SQLException(
+												e_tDBOutput_1.getMessage() + "\ncaused by: "
+														+ ne_tDBOutput_1.getMessage(),
+												ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(),
+												ne_tDBOutput_1);
+										errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
+									} else {
+										errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
 									}
-									tmp_batchUpdateCount_tDBOutput_1 = pstmt_tDBOutput_1.getUpdateCount();
-									insertedCount_tDBOutput_1 += (tmp_batchUpdateCount_tDBOutput_1 != -1
-											? tmp_batchUpdateCount_tDBOutput_1
-											: 0);
-									rowsToCommitCount_tDBOutput_1 += (tmp_batchUpdateCount_tDBOutput_1 != -1
-											? tmp_batchUpdateCount_tDBOutput_1
-											: 0);
-									batchSizeCounter_tDBOutput_1 = 0;
+
+									log.error("tDBOutput_1 - " + (errormessage_tDBOutput_1));
+									System.err.println(errormessage_tDBOutput_1);
+
 								}
+								tmp_batchUpdateCount_tDBOutput_1 = pstmt_tDBOutput_1.getUpdateCount();
+								insertedCount_tDBOutput_1 += (tmp_batchUpdateCount_tDBOutput_1 != -1
+										? tmp_batchUpdateCount_tDBOutput_1
+										: 0);
+								rowsToCommitCount_tDBOutput_1 += (tmp_batchUpdateCount_tDBOutput_1 != -1
+										? tmp_batchUpdateCount_tDBOutput_1
+										: 0);
+								batchSizeCounter_tDBOutput_1 = 0;
+							}
 
-								tos_count_tDBOutput_1++;
+							tos_count_tDBOutput_1++;
 
-								/**
-								 * [tDBOutput_1 main ] stop
-								 */
+							/**
+							 * [tDBOutput_1 main ] stop
+							 */
 
-								/**
-								 * [tDBOutput_1 process_data_begin ] start
-								 */
+							/**
+							 * [tDBOutput_1 process_data_begin ] start
+							 */
 
-								currentComponent = "tDBOutput_1";
+							currentComponent = "tDBOutput_1";
 
-								/**
-								 * [tDBOutput_1 process_data_begin ] stop
-								 */
+							/**
+							 * [tDBOutput_1 process_data_begin ] stop
+							 */
 
-								/**
-								 * [tDBOutput_1 process_data_end ] start
-								 */
+							/**
+							 * [tDBOutput_1 process_data_end ] start
+							 */
 
-								currentComponent = "tDBOutput_1";
+							currentComponent = "tDBOutput_1";
 
-								/**
-								 * [tDBOutput_1 process_data_end ] stop
-								 */
+							/**
+							 * [tDBOutput_1 process_data_end ] stop
+							 */
 
-							} // End of branch "out1"
+						} // End of branch "out1"
 
 // Start of branch "fouci"
-							if (fouci != null) {
+						if (fouci != null) {
 
-								/**
-								 * [tAggregateRow_1_AGGOUT main ] start
-								 */
+							/**
+							 * [tAggregateRow_1_AGGOUT main ] start
+							 */
 
-								currentVirtualComponent = "tAggregateRow_1";
+							currentVirtualComponent = "tAggregateRow_1";
 
-								currentComponent = "tAggregateRow_1_AGGOUT";
+							currentComponent = "tAggregateRow_1_AGGOUT";
 
-								if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+							if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
 
-										, "fouci", "tMap_1", "tMap_1", "tMap", "tAggregateRow_1_AGGOUT",
-										"tAggregateRow_1_AGGOUT", "tAggregateOut"
+									, "fouci", "tMap_1_TMAP_IN", "tMap_1_TMAP_IN", "tMapIn", "tAggregateRow_1_AGGOUT",
+									"tAggregateRow_1_AGGOUT", "tAggregateOut"
 
-								)) {
-									talendJobLogProcess(globalMap);
-								}
+							)) {
+								talendJobLogProcess(globalMap);
+							}
 
-								if (log.isTraceEnabled()) {
-									log.trace("fouci - " + (fouci == null ? "" : fouci.toLogString()));
-								}
+							if (log.isTraceEnabled()) {
+								log.trace("fouci - " + (fouci == null ? "" : fouci.toLogString()));
+							}
 
-								operation_finder_tAggregateRow_1.FOUCFIN = fouci.FOUCFIN;
-								operation_finder_tAggregateRow_1.FOULIB = fouci.FOULIB;
-								operation_finder_tAggregateRow_1.FOUCNUF = fouci.FOUCNUF;
+							operation_finder_tAggregateRow_1.FOUCFIN = fouci.FOUCFIN;
+							operation_finder_tAggregateRow_1.FOULIB = fouci.FOULIB;
+							operation_finder_tAggregateRow_1.FOUCNUF = fouci.FOUCNUF;
 
-								operation_finder_tAggregateRow_1.hashCodeDirty = true;
+							operation_finder_tAggregateRow_1.hashCodeDirty = true;
 
-								operation_result_tAggregateRow_1 = hash_tAggregateRow_1
-										.get(operation_finder_tAggregateRow_1);
+							operation_result_tAggregateRow_1 = hash_tAggregateRow_1
+									.get(operation_finder_tAggregateRow_1);
 
-								if (operation_result_tAggregateRow_1 == null) { // G_OutMain_AggR_001
+							if (operation_result_tAggregateRow_1 == null) { // G_OutMain_AggR_001
 
-									operation_result_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
+								operation_result_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
 
-									operation_result_tAggregateRow_1.FOUCFIN = operation_finder_tAggregateRow_1.FOUCFIN;
-									operation_result_tAggregateRow_1.FOULIB = operation_finder_tAggregateRow_1.FOULIB;
-									operation_result_tAggregateRow_1.FOUCNUF = operation_finder_tAggregateRow_1.FOUCNUF;
+								operation_result_tAggregateRow_1.FOUCFIN = operation_finder_tAggregateRow_1.FOUCFIN;
+								operation_result_tAggregateRow_1.FOULIB = operation_finder_tAggregateRow_1.FOULIB;
+								operation_result_tAggregateRow_1.FOUCNUF = operation_finder_tAggregateRow_1.FOUCNUF;
 
-									hash_tAggregateRow_1.put(operation_result_tAggregateRow_1,
-											operation_result_tAggregateRow_1);
+								hash_tAggregateRow_1.put(operation_result_tAggregateRow_1,
+										operation_result_tAggregateRow_1);
 
-								} // G_OutMain_AggR_001
+							} // G_OutMain_AggR_001
 
-								operation_result_tAggregateRow_1.COUNTFRN_clmCount++;
-								operation_result_tAggregateRow_1.count++;
+							operation_result_tAggregateRow_1.COUNTFRN_clmCount++;
+							operation_result_tAggregateRow_1.count++;
 
-								tos_count_tAggregateRow_1_AGGOUT++;
+							tos_count_tAggregateRow_1_AGGOUT++;
 
-								/**
-								 * [tAggregateRow_1_AGGOUT main ] stop
-								 */
+							/**
+							 * [tAggregateRow_1_AGGOUT main ] stop
+							 */
 
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_begin ] start
-								 */
+							/**
+							 * [tAggregateRow_1_AGGOUT process_data_begin ] start
+							 */
 
-								currentVirtualComponent = "tAggregateRow_1";
+							currentVirtualComponent = "tAggregateRow_1";
 
-								currentComponent = "tAggregateRow_1_AGGOUT";
+							currentComponent = "tAggregateRow_1_AGGOUT";
 
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_begin ] stop
-								 */
+							/**
+							 * [tAggregateRow_1_AGGOUT process_data_begin ] stop
+							 */
 
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_end ] start
-								 */
+							/**
+							 * [tAggregateRow_1_AGGOUT process_data_end ] start
+							 */
 
-								currentVirtualComponent = "tAggregateRow_1";
+							currentVirtualComponent = "tAggregateRow_1";
 
-								currentComponent = "tAggregateRow_1_AGGOUT";
+							currentComponent = "tAggregateRow_1_AGGOUT";
 
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_end ] stop
-								 */
+							/**
+							 * [tAggregateRow_1_AGGOUT process_data_end ] stop
+							 */
 
-							} // End of branch "fouci"
+						} // End of branch "fouci"
 
-						} // close loop of lookup 'row5' // G_TM_M_043
+					} // close loop of lookup 'row5' // G_TM_M_043
 
-						/**
-						 * [tMap_1 process_data_end ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						/**
-						 * [tMap_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						/**
-						 * [tDBInput_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-					}
-				} finally {
-					if (rs_tDBInput_1 != null) {
-						rs_tDBInput_1.close();
-					}
-					if (stmt_tDBInput_1 != null) {
-						stmt_tDBInput_1.close();
-					}
-				}
-
-				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
-				log.debug("tDBInput_1 - Retrieved records count: " + nb_line_tDBInput_1 + " .");
-
-				if (log.isDebugEnabled())
-					log.debug("tDBInput_1 - " + ("Done."));
-
-				ok_Hash.put("tDBInput_1", true);
-				end_Hash.put("tDBInput_1", System.currentTimeMillis());
+				} // G_TM_M_250 close loop read file data '1'
 
 				/**
-				 * [tDBInput_1 end ] stop
+				 * [tMap_1_TMAP_IN process_data_end ] start
+				 */
+
+				currentVirtualComponent = "tMap_1";
+
+				currentComponent = "tMap_1_TMAP_IN";
+
+				/**
+				 * [tMap_1_TMAP_IN process_data_end ] stop
 				 */
 
 				/**
-				 * [tMap_1 end ] start
+				 * [tMap_1_TMAP_IN end ] start
 				 */
 
-				currentComponent = "tMap_1";
+				currentVirtualComponent = "tMap_1";
+
+				currentComponent = "tMap_1_TMAP_IN";
 
 // ###############################
 // # Lookup hashes releasing
+				fsi_tMap_1_1.endGet();
+
 				if (tHash_Lookup_row5 != null) {
 					tHash_Lookup_row5.endGet();
 				}
@@ -7281,19 +8815,14 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				log.debug("tMap_1 - Written records count in the table 'out1': " + count_out1_tMap_1 + ".");
 				log.debug("tMap_1 - Written records count in the table 'fouci': " + count_fouci_tMap_1 + ".");
 
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row1", 2, 0,
-						"tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1", "tMap_1", "tMap", "output")) {
-					talendJobLogProcess(globalMap);
-				}
-
 				if (log.isDebugEnabled())
-					log.debug("tMap_1 - " + ("Done."));
+					log.debug("tMap_1_TMAP_IN - " + ("Done."));
 
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
+				ok_Hash.put("tMap_1_TMAP_IN", true);
+				end_Hash.put("tMap_1_TMAP_IN", System.currentTimeMillis());
 
 				/**
-				 * [tMap_1 end ] stop
+				 * [tMap_1_TMAP_IN end ] stop
 				 */
 
 				/**
@@ -7363,8 +8892,9 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				globalMap.put("tDBOutput_1_NB_LINE_DELETED", nb_line_deleted_tDBOutput_1);
 				globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
 
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "out1", 2, 0, "tMap_1",
-						"tMap_1", "tMap", "tDBOutput_1", "Oracle_ODS", "tOracleOutput", "output")) {
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "out1", 2, 0,
+						"tMap_1_TMAP_IN", "tMap_1_TMAP_IN", "tMapIn", "tDBOutput_1", "Oracle_ODS", "tOracleOutput",
+						"output")) {
 					talendJobLogProcess(globalMap);
 				}
 
@@ -7386,9 +8916,9 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 				currentComponent = "tAggregateRow_1_AGGOUT";
 
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "fouci", 2, 0, "tMap_1",
-						"tMap_1", "tMap", "tAggregateRow_1_AGGOUT", "tAggregateRow_1_AGGOUT", "tAggregateOut",
-						"output")) {
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "fouci", 2, 0,
+						"tMap_1_TMAP_IN", "tMap_1_TMAP_IN", "tMapIn", "tAggregateRow_1_AGGOUT",
+						"tAggregateRow_1_AGGOUT", "tAggregateOut", "output")) {
 					talendJobLogProcess(globalMap);
 				}
 
@@ -7979,9 +9509,6 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 			// free memory for "tAggregateRow_1_AGGIN"
 			globalMap.remove("tAggregateRow_1");
 
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row5");
-
 			try {
 
 				/**
@@ -7995,13 +9522,27 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				 */
 
 				/**
-				 * [tMap_1 finally ] start
+				 * [tMap_1_TMAP_OUT finally ] start
 				 */
 
-				currentComponent = "tMap_1";
+				currentVirtualComponent = "tMap_1";
+
+				currentComponent = "tMap_1_TMAP_OUT";
 
 				/**
-				 * [tMap_1 finally ] stop
+				 * [tMap_1_TMAP_OUT finally ] stop
+				 */
+
+				/**
+				 * [tMap_1_TMAP_IN finally ] start
+				 */
+
+				currentVirtualComponent = "tMap_1";
+
+				currentComponent = "tMap_1_TMAP_IN";
+
+				/**
+				 * [tMap_1_TMAP_IN finally ] stop
 				 */
 
 				/**
@@ -15026,14 +16567,26 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				}
 
 				// connection name:row5
-				// source node:tHashInput_1 - inputs:() outputs:(row5,row5) | target
-				// node:tAdvancedHash_row5 - inputs:(row5) outputs:()
+				// source node:tHashInput_1 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
+				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
 				// linked node: tMap_1 - inputs:(row1,row5) outputs:(out1,fouci)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row5Struct>getLookup(matchingModeEnum_row5);
+				org.talend.designer.components.lookup.persistent.PersistentSortedLookupManager<row5Struct> tHash_Lookup_row5 = new org.talend.designer.components.lookup.persistent.PersistentSortedLookupManager<row5Struct>(
+						matchingModeEnum_row5, "C:/TALEND/STUDIO/WORKSPACES/REMOTE_WORKSPACE/temp" + "/" + jobName
+								+ "_tMapData_" + pid + "_Lookup_row5_",
+						new org.talend.designer.components.persistent.IRowCreator() {
+							public row5Struct createRowInstance() {
+								return new row5Struct();
+							}
+						}
+
+						, 2000000
+
+				);
+
+				tHash_Lookup_row5.initPut();
 
 				globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
 
@@ -15120,7 +16673,7 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 						log.trace("row5 - " + (row5 == null ? "" : row5.toLogString()));
 					}
 
-					row5Struct row5_HashRow = new row5Struct();
+					row5Struct row5_HashRow = tHash_Lookup_row5.getNextFreeRow();
 
 					row5_HashRow.FOUCFIN = row5.FOUCFIN;
 
@@ -16963,6 +18516,6 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 538595 characters generated by Talend Cloud Data Management Platform on the
- * 22 juillet 2022 à 11:58:31 WEST
+ * 585581 characters generated by Talend Cloud Data Management Platform on the
+ * 22 juillet 2022 à 12:30:47 WEST
  ************************************************************************************************/
