@@ -106,6 +106,151 @@ public class TEST implements TalendJob {
 
 		public void synchronizeContext() {
 
+			if (host != null) {
+
+				this.setProperty("host", host.toString());
+
+			}
+
+			if (sid != null) {
+
+				this.setProperty("sid", sid.toString());
+
+			}
+
+			if (port != null) {
+
+				this.setProperty("port", port.toString());
+
+			}
+
+			if (user != null) {
+
+				this.setProperty("user", user.toString());
+
+			}
+
+			if (mdp != null) {
+
+				this.setProperty("mdp", mdp.toString());
+
+			}
+
+			if (ENVIRONNEMENT != null) {
+
+				this.setProperty("ENVIRONNEMENT", ENVIRONNEMENT.toString());
+
+			}
+
+			if (host_ods != null) {
+
+				this.setProperty("host_ods", host_ods.toString());
+
+			}
+
+			if (sid_ods != null) {
+
+				this.setProperty("sid_ods", sid_ods.toString());
+
+			}
+
+			if (port_ods != null) {
+
+				this.setProperty("port_ods", port_ods.toString());
+
+			}
+
+			if (user_ods != null) {
+
+				this.setProperty("user_ods", user_ods.toString());
+
+			}
+
+			if (mdp_ods != null) {
+
+				this.setProperty("mdp_ods", mdp_ods.toString());
+
+			}
+
+			if (user_gold != null) {
+
+				this.setProperty("user_gold", user_gold.toString());
+
+			}
+
+			if (sid_gold != null) {
+
+				this.setProperty("sid_gold", sid_gold.toString());
+
+			}
+
+			if (port_gold != null) {
+
+				this.setProperty("port_gold", port_gold.toString());
+
+			}
+
+			if (host_gold != null) {
+
+				this.setProperty("host_gold", host_gold.toString());
+
+			}
+
+			if (mdp_gold != null) {
+
+				this.setProperty("mdp_gold", mdp_gold.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_Login != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_Login", PORTAIL_FOURNISSEUR_AZURE_Login.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_AdditionalParams != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_AdditionalParams",
+						PORTAIL_FOURNISSEUR_AZURE_AdditionalParams.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_Schema != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_Schema", PORTAIL_FOURNISSEUR_AZURE_Schema.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_Server != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_Server", PORTAIL_FOURNISSEUR_AZURE_Server.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_Port != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_Port", PORTAIL_FOURNISSEUR_AZURE_Port.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_Password != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_Password", PORTAIL_FOURNISSEUR_AZURE_Password.toString());
+
+			}
+
+			if (ENV != null) {
+
+				this.setProperty("ENV", ENV.toString());
+
+			}
+
+			if (PORTAIL_FOURNISSEUR_AZURE_Database != null) {
+
+				this.setProperty("PORTAIL_FOURNISSEUR_AZURE_Database", PORTAIL_FOURNISSEUR_AZURE_Database.toString());
+
+			}
+
 		}
 
 		// if the stored or passed value is "<TALEND_NULL>" string, it mean null
@@ -117,6 +262,149 @@ public class TEST implements TalendJob {
 			return origin_value;
 		}
 
+		public String host;
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public String sid;
+
+		public String getSid() {
+			return this.sid;
+		}
+
+		public String port;
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public String user;
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public java.lang.String mdp;
+
+		public java.lang.String getMdp() {
+			return this.mdp;
+		}
+
+		public String ENVIRONNEMENT;
+
+		public String getENVIRONNEMENT() {
+			return this.ENVIRONNEMENT;
+		}
+
+		public String host_ods;
+
+		public String getHost_ods() {
+			return this.host_ods;
+		}
+
+		public String sid_ods;
+
+		public String getSid_ods() {
+			return this.sid_ods;
+		}
+
+		public String port_ods;
+
+		public String getPort_ods() {
+			return this.port_ods;
+		}
+
+		public String user_ods;
+
+		public String getUser_ods() {
+			return this.user_ods;
+		}
+
+		public java.lang.String mdp_ods;
+
+		public java.lang.String getMdp_ods() {
+			return this.mdp_ods;
+		}
+
+		public String user_gold;
+
+		public String getUser_gold() {
+			return this.user_gold;
+		}
+
+		public String sid_gold;
+
+		public String getSid_gold() {
+			return this.sid_gold;
+		}
+
+		public String port_gold;
+
+		public String getPort_gold() {
+			return this.port_gold;
+		}
+
+		public String host_gold;
+
+		public String getHost_gold() {
+			return this.host_gold;
+		}
+
+		public java.lang.String mdp_gold;
+
+		public java.lang.String getMdp_gold() {
+			return this.mdp_gold;
+		}
+
+		public String PORTAIL_FOURNISSEUR_AZURE_Login;
+
+		public String getPORTAIL_FOURNISSEUR_AZURE_Login() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_Login;
+		}
+
+		public String PORTAIL_FOURNISSEUR_AZURE_AdditionalParams;
+
+		public String getPORTAIL_FOURNISSEUR_AZURE_AdditionalParams() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_AdditionalParams;
+		}
+
+		public String PORTAIL_FOURNISSEUR_AZURE_Schema;
+
+		public String getPORTAIL_FOURNISSEUR_AZURE_Schema() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_Schema;
+		}
+
+		public String PORTAIL_FOURNISSEUR_AZURE_Server;
+
+		public String getPORTAIL_FOURNISSEUR_AZURE_Server() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_Server;
+		}
+
+		public String PORTAIL_FOURNISSEUR_AZURE_Port;
+
+		public String getPORTAIL_FOURNISSEUR_AZURE_Port() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_Port;
+		}
+
+		public java.lang.String PORTAIL_FOURNISSEUR_AZURE_Password;
+
+		public java.lang.String getPORTAIL_FOURNISSEUR_AZURE_Password() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_Password;
+		}
+
+		public String ENV;
+
+		public String getENV() {
+			return this.ENV;
+		}
+
+		public String PORTAIL_FOURNISSEUR_AZURE_Database;
+
+		public String getPORTAIL_FOURNISSEUR_AZURE_Database() {
+			return this.PORTAIL_FOURNISSEUR_AZURE_Database;
+		}
 	}
 
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
@@ -6763,7 +7051,7 @@ public class TEST implements TalendJob {
 	public int portTraces = 4334;
 	public String clientHost;
 	public String defaultClientHost = "localhost";
-	public String contextStr = "Default";
+	public String contextStr = "KLIF";
 	public boolean isDefaultContext = true;
 	public String pid = "0";
 	public String rootPid = null;
@@ -6961,6 +7249,220 @@ public class TEST implements TalendJob {
 			}
 			class ContextProcessing {
 				private void processContext_0() {
+					context.setContextType("host", "id_String");
+					if (context.getStringValue("host") == null) {
+						context.host = null;
+					} else {
+						context.host = (String) context.getProperty("host");
+					}
+					context.setContextType("sid", "id_String");
+					if (context.getStringValue("sid") == null) {
+						context.sid = null;
+					} else {
+						context.sid = (String) context.getProperty("sid");
+					}
+					context.setContextType("port", "id_String");
+					if (context.getStringValue("port") == null) {
+						context.port = null;
+					} else {
+						context.port = (String) context.getProperty("port");
+					}
+					context.setContextType("user", "id_String");
+					if (context.getStringValue("user") == null) {
+						context.user = null;
+					} else {
+						context.user = (String) context.getProperty("user");
+					}
+					context.setContextType("mdp", "id_Password");
+					if (context.getStringValue("mdp") == null) {
+						context.mdp = null;
+					} else {
+						String pwd_mdp_value = context.getProperty("mdp");
+						context.mdp = null;
+						if (pwd_mdp_value != null) {
+							if (context_param.containsKey("mdp")) {// no need to decrypt if it come from program
+																	// argument or parent job runtime
+								context.mdp = pwd_mdp_value;
+							} else if (!pwd_mdp_value.isEmpty()) {
+								try {
+									context.mdp = routines.system.PasswordEncryptUtil.decryptPassword(pwd_mdp_value);
+									context.put("mdp", context.mdp);
+								} catch (java.lang.RuntimeException e) {
+									// do nothing
+								}
+							}
+						}
+					}
+					context.setContextType("ENVIRONNEMENT", "id_String");
+					if (context.getStringValue("ENVIRONNEMENT") == null) {
+						context.ENVIRONNEMENT = null;
+					} else {
+						context.ENVIRONNEMENT = (String) context.getProperty("ENVIRONNEMENT");
+					}
+					context.setContextType("host_ods", "id_String");
+					if (context.getStringValue("host_ods") == null) {
+						context.host_ods = null;
+					} else {
+						context.host_ods = (String) context.getProperty("host_ods");
+					}
+					context.setContextType("sid_ods", "id_String");
+					if (context.getStringValue("sid_ods") == null) {
+						context.sid_ods = null;
+					} else {
+						context.sid_ods = (String) context.getProperty("sid_ods");
+					}
+					context.setContextType("port_ods", "id_String");
+					if (context.getStringValue("port_ods") == null) {
+						context.port_ods = null;
+					} else {
+						context.port_ods = (String) context.getProperty("port_ods");
+					}
+					context.setContextType("user_ods", "id_String");
+					if (context.getStringValue("user_ods") == null) {
+						context.user_ods = null;
+					} else {
+						context.user_ods = (String) context.getProperty("user_ods");
+					}
+					context.setContextType("mdp_ods", "id_Password");
+					if (context.getStringValue("mdp_ods") == null) {
+						context.mdp_ods = null;
+					} else {
+						String pwd_mdp_ods_value = context.getProperty("mdp_ods");
+						context.mdp_ods = null;
+						if (pwd_mdp_ods_value != null) {
+							if (context_param.containsKey("mdp_ods")) {// no need to decrypt if it come from program
+																		// argument or parent job runtime
+								context.mdp_ods = pwd_mdp_ods_value;
+							} else if (!pwd_mdp_ods_value.isEmpty()) {
+								try {
+									context.mdp_ods = routines.system.PasswordEncryptUtil
+											.decryptPassword(pwd_mdp_ods_value);
+									context.put("mdp_ods", context.mdp_ods);
+								} catch (java.lang.RuntimeException e) {
+									// do nothing
+								}
+							}
+						}
+					}
+					context.setContextType("user_gold", "id_String");
+					if (context.getStringValue("user_gold") == null) {
+						context.user_gold = null;
+					} else {
+						context.user_gold = (String) context.getProperty("user_gold");
+					}
+					context.setContextType("sid_gold", "id_String");
+					if (context.getStringValue("sid_gold") == null) {
+						context.sid_gold = null;
+					} else {
+						context.sid_gold = (String) context.getProperty("sid_gold");
+					}
+					context.setContextType("port_gold", "id_String");
+					if (context.getStringValue("port_gold") == null) {
+						context.port_gold = null;
+					} else {
+						context.port_gold = (String) context.getProperty("port_gold");
+					}
+					context.setContextType("host_gold", "id_String");
+					if (context.getStringValue("host_gold") == null) {
+						context.host_gold = null;
+					} else {
+						context.host_gold = (String) context.getProperty("host_gold");
+					}
+					context.setContextType("mdp_gold", "id_Password");
+					if (context.getStringValue("mdp_gold") == null) {
+						context.mdp_gold = null;
+					} else {
+						String pwd_mdp_gold_value = context.getProperty("mdp_gold");
+						context.mdp_gold = null;
+						if (pwd_mdp_gold_value != null) {
+							if (context_param.containsKey("mdp_gold")) {// no need to decrypt if it come from program
+																		// argument or parent job runtime
+								context.mdp_gold = pwd_mdp_gold_value;
+							} else if (!pwd_mdp_gold_value.isEmpty()) {
+								try {
+									context.mdp_gold = routines.system.PasswordEncryptUtil
+											.decryptPassword(pwd_mdp_gold_value);
+									context.put("mdp_gold", context.mdp_gold);
+								} catch (java.lang.RuntimeException e) {
+									// do nothing
+								}
+							}
+						}
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_Login", "id_String");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_Login") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_Login = null;
+					} else {
+						context.PORTAIL_FOURNISSEUR_AZURE_Login = (String) context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Login");
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_AdditionalParams", "id_String");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_AdditionalParams") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_AdditionalParams = null;
+					} else {
+						context.PORTAIL_FOURNISSEUR_AZURE_AdditionalParams = (String) context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_AdditionalParams");
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_Schema", "id_String");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_Schema") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_Schema = null;
+					} else {
+						context.PORTAIL_FOURNISSEUR_AZURE_Schema = (String) context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Schema");
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_Server", "id_String");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_Server") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_Server = null;
+					} else {
+						context.PORTAIL_FOURNISSEUR_AZURE_Server = (String) context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Server");
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_Port", "id_String");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_Port") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_Port = null;
+					} else {
+						context.PORTAIL_FOURNISSEUR_AZURE_Port = (String) context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Port");
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_Password", "id_Password");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_Password") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_Password = null;
+					} else {
+						String pwd_PORTAIL_FOURNISSEUR_AZURE_Password_value = context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Password");
+						context.PORTAIL_FOURNISSEUR_AZURE_Password = null;
+						if (pwd_PORTAIL_FOURNISSEUR_AZURE_Password_value != null) {
+							if (context_param.containsKey("PORTAIL_FOURNISSEUR_AZURE_Password")) {// no need to decrypt
+																									// if it come from
+																									// program argument
+																									// or parent job
+																									// runtime
+								context.PORTAIL_FOURNISSEUR_AZURE_Password = pwd_PORTAIL_FOURNISSEUR_AZURE_Password_value;
+							} else if (!pwd_PORTAIL_FOURNISSEUR_AZURE_Password_value.isEmpty()) {
+								try {
+									context.PORTAIL_FOURNISSEUR_AZURE_Password = routines.system.PasswordEncryptUtil
+											.decryptPassword(pwd_PORTAIL_FOURNISSEUR_AZURE_Password_value);
+									context.put("PORTAIL_FOURNISSEUR_AZURE_Password",
+											context.PORTAIL_FOURNISSEUR_AZURE_Password);
+								} catch (java.lang.RuntimeException e) {
+									// do nothing
+								}
+							}
+						}
+					}
+					context.setContextType("ENV", "id_String");
+					if (context.getStringValue("ENV") == null) {
+						context.ENV = null;
+					} else {
+						context.ENV = (String) context.getProperty("ENV");
+					}
+					context.setContextType("PORTAIL_FOURNISSEUR_AZURE_Database", "id_String");
+					if (context.getStringValue("PORTAIL_FOURNISSEUR_AZURE_Database") == null) {
+						context.PORTAIL_FOURNISSEUR_AZURE_Database = null;
+					} else {
+						context.PORTAIL_FOURNISSEUR_AZURE_Database = (String) context
+								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Database");
+					}
 				}
 
 				public void processAllContext() {
@@ -6976,6 +7478,85 @@ public class TEST implements TalendJob {
 
 		// get context value from parent directly
 		if (parentContextMap != null && !parentContextMap.isEmpty()) {
+			if (parentContextMap.containsKey("host")) {
+				context.host = (String) parentContextMap.get("host");
+			}
+			if (parentContextMap.containsKey("sid")) {
+				context.sid = (String) parentContextMap.get("sid");
+			}
+			if (parentContextMap.containsKey("port")) {
+				context.port = (String) parentContextMap.get("port");
+			}
+			if (parentContextMap.containsKey("user")) {
+				context.user = (String) parentContextMap.get("user");
+			}
+			if (parentContextMap.containsKey("mdp")) {
+				context.mdp = (java.lang.String) parentContextMap.get("mdp");
+			}
+			if (parentContextMap.containsKey("ENVIRONNEMENT")) {
+				context.ENVIRONNEMENT = (String) parentContextMap.get("ENVIRONNEMENT");
+			}
+			if (parentContextMap.containsKey("host_ods")) {
+				context.host_ods = (String) parentContextMap.get("host_ods");
+			}
+			if (parentContextMap.containsKey("sid_ods")) {
+				context.sid_ods = (String) parentContextMap.get("sid_ods");
+			}
+			if (parentContextMap.containsKey("port_ods")) {
+				context.port_ods = (String) parentContextMap.get("port_ods");
+			}
+			if (parentContextMap.containsKey("user_ods")) {
+				context.user_ods = (String) parentContextMap.get("user_ods");
+			}
+			if (parentContextMap.containsKey("mdp_ods")) {
+				context.mdp_ods = (java.lang.String) parentContextMap.get("mdp_ods");
+			}
+			if (parentContextMap.containsKey("user_gold")) {
+				context.user_gold = (String) parentContextMap.get("user_gold");
+			}
+			if (parentContextMap.containsKey("sid_gold")) {
+				context.sid_gold = (String) parentContextMap.get("sid_gold");
+			}
+			if (parentContextMap.containsKey("port_gold")) {
+				context.port_gold = (String) parentContextMap.get("port_gold");
+			}
+			if (parentContextMap.containsKey("host_gold")) {
+				context.host_gold = (String) parentContextMap.get("host_gold");
+			}
+			if (parentContextMap.containsKey("mdp_gold")) {
+				context.mdp_gold = (java.lang.String) parentContextMap.get("mdp_gold");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Login")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_Login = (String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_Login");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_AdditionalParams")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_AdditionalParams = (String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_AdditionalParams");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Schema")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_Schema = (String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_Schema");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Server")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_Server = (String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_Server");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Port")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_Port = (String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_Port");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Password")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_Password = (java.lang.String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_Password");
+			}
+			if (parentContextMap.containsKey("ENV")) {
+				context.ENV = (String) parentContextMap.get("ENV");
+			}
+			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Database")) {
+				context.PORTAIL_FOURNISSEUR_AZURE_Database = (String) parentContextMap
+						.get("PORTAIL_FOURNISSEUR_AZURE_Database");
+			}
 		}
 
 		// Resume: init the resumeUtil
@@ -6984,6 +7565,10 @@ public class TEST implements TalendJob {
 		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
+		parametersToEncrypt.add("mdp");
+		parametersToEncrypt.add("mdp_ods");
+		parametersToEncrypt.add("mdp_gold");
+		parametersToEncrypt.add("PORTAIL_FOURNISSEUR_AZURE_Password");
 		// Resume: jobStart
 		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
 				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
@@ -7216,6 +7801,6 @@ public class TEST implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 222984 characters generated by Talend Cloud Data Management Platform on the
- * 22 juillet 2022 à 11:37:14 WEST
+ * 245693 characters generated by Talend Cloud Data Management Platform on the
+ * 22 juillet 2022 à 11:37:41 WEST
  ************************************************************************************************/
