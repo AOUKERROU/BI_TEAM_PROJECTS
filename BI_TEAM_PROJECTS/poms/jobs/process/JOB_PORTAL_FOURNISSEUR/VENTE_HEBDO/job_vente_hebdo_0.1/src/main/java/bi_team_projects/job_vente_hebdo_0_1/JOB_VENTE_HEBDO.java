@@ -725,6 +725,16 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tLogRow_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tDBConnection_5_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -3552,6 +3562,321 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 		}
 
 		globalMap.put("tDBClose_4_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row9Struct implements routines.system.IPersistableRow<row9Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[0];
+
+		public Integer FOUCFIN;
+
+		public Integer getFOUCFIN() {
+			return this.FOUCFIN;
+		}
+
+		public String FOULIB;
+
+		public String getFOULIB() {
+			return this.FOULIB;
+		}
+
+		public String FOUCNUF;
+
+		public String getFOUCNUF() {
+			return this.FOUCNUF;
+		}
+
+		public Integer COUNTFRN;
+
+		public Integer getCOUNTFRN() {
+			return this.COUNTFRN;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO) {
+
+				try {
+
+					int length = 0;
+
+					this.FOUCFIN = readInteger(dis);
+
+					this.FOULIB = readString(dis);
+
+					this.FOUCNUF = readString(dis);
+
+					this.COUNTFRN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_JOB_VENTE_HEBDO) {
+
+				try {
+
+					int length = 0;
+
+					this.FOUCFIN = readInteger(dis);
+
+					this.FOULIB = readString(dis);
+
+					this.FOUCNUF = readString(dis);
+
+					this.COUNTFRN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.FOUCFIN, dos);
+
+				// String
+
+				writeString(this.FOULIB, dos);
+
+				// String
+
+				writeString(this.FOUCNUF, dos);
+
+				// Integer
+
+				writeInteger(this.COUNTFRN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.FOUCFIN, dos);
+
+				// String
+
+				writeString(this.FOULIB, dos);
+
+				// String
+
+				writeString(this.FOUCNUF, dos);
+
+				// Integer
+
+				writeInteger(this.COUNTFRN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("FOUCFIN=" + String.valueOf(FOUCFIN));
+			sb.append(",FOULIB=" + FOULIB);
+			sb.append(",FOUCNUF=" + FOUCNUF);
+			sb.append(",COUNTFRN=" + String.valueOf(COUNTFRN));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (FOUCFIN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCFIN);
+			}
+
+			sb.append("|");
+
+			if (FOULIB == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOULIB);
+			}
+
+			sb.append("|");
+
+			if (FOUCNUF == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCNUF);
+			}
+
+			sb.append("|");
+
+			if (COUNTFRN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(COUNTFRN);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row9Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
 	}
 
 	public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
@@ -6408,6 +6733,7 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				out1Struct out1 = new out1Struct();
 				fouciStruct fouci = new fouciStruct();
 				row4Struct row4 = new row4Struct();
+				row4Struct row9 = row4;
 
 				/**
 				 * [tDBOutput_1 begin ] start
@@ -7726,6 +8052,182 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 				 */
 
 				/**
+				 * [tLogRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_1", false);
+				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_1";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row9");
+
+				int tos_count_tLogRow_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tLogRow_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tLogRow_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tLogRow_1 = new StringBuilder();
+							log4jParamters_tLogRow_1.append("Parameters:");
+							log4jParamters_tLogRow_1.append("BASIC_MODE" + " = " + "false");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("TABLE_PRINT" + " = " + "true");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("VERTICAL" + " = " + "false");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("PRINT_CONTENT_WITH_LOG4J" + " = " + "true");
+							log4jParamters_tLogRow_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tLogRow_1 - " + (log4jParamters_tLogRow_1));
+						}
+					}
+					new BytesLimit65535_tLogRow_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tLogRow_1", "tLogRow_1", "tLogRow");
+					talendJobLogProcess(globalMap);
+				}
+
+				///////////////////////
+
+				class Util_tLogRow_1 {
+
+					String[] des_top = { ".", ".", "-", "+" };
+
+					String[] des_head = { "|=", "=|", "-", "+" };
+
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[4];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 4; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
+					}
+
+					public void setTableName(String name) {
+
+						this.name = name;
+					}
+
+					public StringBuilder format() {
+
+						StringBuilder sb = new StringBuilder();
+
+						sb.append(print(des_top));
+
+						int totals = 0;
+						for (int i = 0; i < colLengths.length; i++) {
+							totals = totals + colLengths[i];
+						}
+
+						// name
+						sb.append("|");
+						int k = 0;
+						for (k = 0; k < (totals + 3 - name.length()) / 2; k++) {
+							sb.append(' ');
+						}
+						sb.append(name);
+						for (int i = 0; i < totals + 3 - name.length() - k; i++) {
+							sb.append(' ');
+						}
+						sb.append("|\n");
+
+						// head and rows
+						sb.append(print(des_head));
+						for (int i = 0; i < list.size(); i++) {
+
+							String[] row = list.get(i);
+
+							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+
+							StringBuilder sbformat = new StringBuilder();
+							sbformat.append("|%1$-");
+							sbformat.append(colLengths[0]);
+							sbformat.append("s");
+
+							sbformat.append("|%2$-");
+							sbformat.append(colLengths[1]);
+							sbformat.append("s");
+
+							sbformat.append("|%3$-");
+							sbformat.append(colLengths[2]);
+							sbformat.append("s");
+
+							sbformat.append("|%4$-");
+							sbformat.append(colLengths[3]);
+							sbformat.append("s");
+
+							sbformat.append("|\n");
+
+							formatter.format(sbformat.toString(), (Object[]) row);
+
+							sb.append(formatter.toString());
+							if (i == 0)
+								sb.append(print(des_head)); // print the head
+						}
+
+						// end
+						sb.append(print(des_bottom));
+						return sb;
+					}
+
+					private StringBuilder print(String[] fillChars) {
+						StringBuilder sb = new StringBuilder();
+						// first column
+						sb.append(fillChars[0]);
+						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						// last column
+						for (int i = 0; i < colLengths[3] - fillChars[1].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[1]);
+						sb.append("\n");
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
+				util_tLogRow_1.setTableName("tLogRow_1");
+				util_tLogRow_1.addRow(new String[] { "FOUCFIN", "FOULIB", "FOUCNUF", "COUNTFRN", });
+				StringBuilder strBuffer_tLogRow_1 = null;
+				int nb_line_tLogRow_1 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_1 begin ] stop
+				 */
+
+				/**
 				 * [tHashOutput_2 begin ] start
 				 */
 
@@ -7894,6 +8396,8 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 					tHashFile_tHashOutput_2.put(oneRow_tHashOutput_2);
 					nb_line_tHashOutput_2++;
 
+					row9 = row4;
+
 					tos_count_tHashOutput_2++;
 
 					/**
@@ -7908,6 +8412,84 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 					/**
 					 * [tHashOutput_2 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_1 main ] start
+					 */
+
+					currentComponent = "tLogRow_1";
+
+					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+							, "row9", "tHashOutput_2", "COUNTFRN", "tHashOutput", "tLogRow_1", "tLogRow_1", "tLogRow"
+
+					)) {
+						talendJobLogProcess(globalMap);
+					}
+
+					if (log.isTraceEnabled()) {
+						log.trace("row9 - " + (row9 == null ? "" : row9.toLogString()));
+					}
+
+///////////////////////		
+
+					String[] row_tLogRow_1 = new String[4];
+
+					if (row9.FOUCFIN != null) { //
+						row_tLogRow_1[0] = String.valueOf(row9.FOUCFIN);
+
+					} //
+
+					if (row9.FOULIB != null) { //
+						row_tLogRow_1[1] = String.valueOf(row9.FOULIB);
+
+					} //
+
+					if (row9.FOUCNUF != null) { //
+						row_tLogRow_1[2] = String.valueOf(row9.FOUCNUF);
+
+					} //
+
+					if (row9.COUNTFRN != null) { //
+						row_tLogRow_1[3] = String.valueOf(row9.COUNTFRN);
+
+					} //
+
+					util_tLogRow_1.addRow(row_tLogRow_1);
+					nb_line_tLogRow_1++;
+					log.info("tLogRow_1 - Content of row " + nb_line_tLogRow_1 + ": "
+							+ TalendString.unionString("|", row_tLogRow_1));
+//////
+
+//////                    
+
+///////////////////////    			
+
+					tos_count_tLogRow_1++;
+
+					/**
+					 * [tLogRow_1 main ] stop
+					 */
+
+					/**
+					 * [tLogRow_1 process_data_begin ] start
+					 */
+
+					currentComponent = "tLogRow_1";
+
+					/**
+					 * [tLogRow_1 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_1 process_data_end ] start
+					 */
+
+					currentComponent = "tLogRow_1";
+
+					/**
+					 * [tLogRow_1 process_data_end ] stop
 					 */
 
 					/**
@@ -7970,6 +8552,46 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 				/**
 				 * [tHashOutput_2 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 end ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_1 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
+				}
+
+				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
+				consoleOut_tLogRow_1.flush();
+//////
+				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+				if (log.isInfoEnabled())
+					log.info("tLogRow_1 - " + ("Printed row count: ") + (nb_line_tLogRow_1) + ("."));
+
+///////////////////////    			
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row9", 2, 0,
+						"tHashOutput_2", "COUNTFRN", "tHashOutput", "tLogRow_1", "tLogRow_1", "tLogRow", "output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				if (log.isDebugEnabled())
+					log.debug("tLogRow_1 - " + ("Done."));
+
+				ok_Hash.put("tLogRow_1", true);
+				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_1 end ] stop
 				 */
 
 			} // end the resume
@@ -8081,6 +8703,16 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 
 				/**
 				 * [tHashOutput_2 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 finally ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+				/**
+				 * [tLogRow_1 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -16980,6 +17612,6 @@ public class JOB_VENTE_HEBDO implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 536541 characters generated by Talend Cloud Data Management Platform on the
- * 21 juillet 2022 à 16:22:11 WEST
+ * 555679 characters generated by Talend Cloud Data Management Platform on the
+ * 22 juillet 2022 à 11:03:22 WEST
  ************************************************************************************************/
