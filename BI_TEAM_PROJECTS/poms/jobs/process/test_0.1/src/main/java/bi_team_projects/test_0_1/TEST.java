@@ -251,6 +251,12 @@ public class TEST implements TalendJob {
 
 			}
 
+			if (PATH_VENTE_HEBDO != null) {
+
+				this.setProperty("PATH_VENTE_HEBDO", PATH_VENTE_HEBDO.toString());
+
+			}
+
 		}
 
 		// if the stored or passed value is "<TALEND_NULL>" string, it mean null
@@ -404,6 +410,12 @@ public class TEST implements TalendJob {
 
 		public String getPORTAIL_FOURNISSEUR_AZURE_Database() {
 			return this.PORTAIL_FOURNISSEUR_AZURE_Database;
+		}
+
+		public String PATH_VENTE_HEBDO;
+
+		public String getPATH_VENTE_HEBDO() {
+			return this.PATH_VENTE_HEBDO;
 		}
 	}
 
@@ -13684,9 +13696,9 @@ public class TEST implements TalendJob {
 			return this.StartDate;
 		}
 
-		public String Duration;
+		public Long Duration;
 
-		public String getDuration() {
+		public Long getDuration() {
 			return this.Duration;
 		}
 
@@ -13714,15 +13726,15 @@ public class TEST implements TalendJob {
 			return this.TaskType;
 		}
 
-		public String NbFournisseur;
+		public Integer NbFournisseur;
 
-		public String getNbFournisseur() {
+		public Integer getNbFournisseur() {
 			return this.NbFournisseur;
 		}
 
-		public String ERROR_STATUT;
+		public Integer ERROR_STATUT;
 
-		public String getERROR_STATUT() {
+		public Integer getERROR_STATUT() {
 			return this.ERROR_STATUT;
 		}
 
@@ -13792,6 +13804,48 @@ public class TEST implements TalendJob {
 			}
 		}
 
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
 		public void readData(ObjectInputStream dis) {
 
 			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
@@ -13802,7 +13856,12 @@ public class TEST implements TalendJob {
 
 					this.StartDate = readString(dis);
 
-					this.Duration = readString(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
 
 					this.EndDate = readString(dis);
 
@@ -13812,9 +13871,9 @@ public class TEST implements TalendJob {
 
 					this.TaskType = readString(dis);
 
-					this.NbFournisseur = readString(dis);
+					this.NbFournisseur = readInteger(dis);
 
-					this.ERROR_STATUT = readString(dis);
+					this.ERROR_STATUT = readInteger(dis);
 
 					this.ERROR_MESSAGE = readString(dis);
 
@@ -13837,7 +13896,12 @@ public class TEST implements TalendJob {
 
 					this.StartDate = readString(dis);
 
-					this.Duration = readString(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
 
 					this.EndDate = readString(dis);
 
@@ -13847,9 +13911,9 @@ public class TEST implements TalendJob {
 
 					this.TaskType = readString(dis);
 
-					this.NbFournisseur = readString(dis);
+					this.NbFournisseur = readInteger(dis);
 
-					this.ERROR_STATUT = readString(dis);
+					this.ERROR_STATUT = readInteger(dis);
 
 					this.ERROR_MESSAGE = readString(dis);
 
@@ -13869,9 +13933,14 @@ public class TEST implements TalendJob {
 
 				writeString(this.StartDate, dos);
 
-				// String
+				// Long
 
-				writeString(this.Duration, dos);
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
 
 				// String
 
@@ -13889,13 +13958,13 @@ public class TEST implements TalendJob {
 
 				writeString(this.TaskType, dos);
 
-				// String
+				// Integer
 
-				writeString(this.NbFournisseur, dos);
+				writeInteger(this.NbFournisseur, dos);
 
-				// String
+				// Integer
 
-				writeString(this.ERROR_STATUT, dos);
+				writeInteger(this.ERROR_STATUT, dos);
 
 				// String
 
@@ -13914,9 +13983,14 @@ public class TEST implements TalendJob {
 
 				writeString(this.StartDate, dos);
 
-				// String
+				// Long
 
-				writeString(this.Duration, dos);
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
 
 				// String
 
@@ -13934,13 +14008,13 @@ public class TEST implements TalendJob {
 
 				writeString(this.TaskType, dos);
 
-				// String
+				// Integer
 
-				writeString(this.NbFournisseur, dos);
+				writeInteger(this.NbFournisseur, dos);
 
-				// String
+				// Integer
 
-				writeString(this.ERROR_STATUT, dos);
+				writeInteger(this.ERROR_STATUT, dos);
 
 				// String
 
@@ -13958,13 +14032,13 @@ public class TEST implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("StartDate=" + StartDate);
-			sb.append(",Duration=" + Duration);
+			sb.append(",Duration=" + String.valueOf(Duration));
 			sb.append(",EndDate=" + EndDate);
 			sb.append(",TaskName=" + TaskName);
 			sb.append(",TaskDetail=" + TaskDetail);
 			sb.append(",TaskType=" + TaskType);
-			sb.append(",NbFournisseur=" + NbFournisseur);
-			sb.append(",ERROR_STATUT=" + ERROR_STATUT);
+			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
+			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
 			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
 			sb.append("]");
 
@@ -14086,9 +14160,9 @@ public class TEST implements TalendJob {
 		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
 		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
 
-		public java.util.Date StartDate;
+		public String StartDate;
 
-		public java.util.Date getStartDate() {
+		public String getStartDate() {
 			return this.StartDate;
 		}
 
@@ -14098,9 +14172,9 @@ public class TEST implements TalendJob {
 			return this.Duration;
 		}
 
-		public java.util.Date EndDate;
+		public String EndDate;
 
-		public java.util.Date getEndDate() {
+		public String getEndDate() {
 			return this.EndDate;
 		}
 
@@ -14138,48 +14212,6 @@ public class TEST implements TalendJob {
 
 		public String getERROR_MESSAGE() {
 			return this.ERROR_MESSAGE;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = unmarshaller.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(unmarshaller.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (date1 == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeLong(date1.getTime());
-			}
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -14292,7 +14324,7 @@ public class TEST implements TalendJob {
 
 					int length = 0;
 
-					this.StartDate = readDate(dis);
+					this.StartDate = readString(dis);
 
 					length = dis.readByte();
 					if (length == -1) {
@@ -14301,7 +14333,7 @@ public class TEST implements TalendJob {
 						this.Duration = dis.readLong();
 					}
 
-					this.EndDate = readDate(dis);
+					this.EndDate = readString(dis);
 
 					this.TaskName = readString(dis);
 
@@ -14332,7 +14364,7 @@ public class TEST implements TalendJob {
 
 					int length = 0;
 
-					this.StartDate = readDate(dis);
+					this.StartDate = readString(dis);
 
 					length = dis.readByte();
 					if (length == -1) {
@@ -14341,7 +14373,7 @@ public class TEST implements TalendJob {
 						this.Duration = dis.readLong();
 					}
 
-					this.EndDate = readDate(dis);
+					this.EndDate = readString(dis);
 
 					this.TaskName = readString(dis);
 
@@ -14367,9 +14399,9 @@ public class TEST implements TalendJob {
 		public void writeData(ObjectOutputStream dos) {
 			try {
 
-				// java.util.Date
+				// String
 
-				writeDate(this.StartDate, dos);
+				writeString(this.StartDate, dos);
 
 				// Long
 
@@ -14380,9 +14412,9 @@ public class TEST implements TalendJob {
 					dos.writeLong(this.Duration);
 				}
 
-				// java.util.Date
+				// String
 
-				writeDate(this.EndDate, dos);
+				writeString(this.EndDate, dos);
 
 				// String
 
@@ -14417,9 +14449,9 @@ public class TEST implements TalendJob {
 		public void writeData(org.jboss.marshalling.Marshaller dos) {
 			try {
 
-				// java.util.Date
+				// String
 
-				writeDate(this.StartDate, dos);
+				writeString(this.StartDate, dos);
 
 				// Long
 
@@ -14430,9 +14462,9 @@ public class TEST implements TalendJob {
 					dos.writeLong(this.Duration);
 				}
 
-				// java.util.Date
+				// String
 
-				writeDate(this.EndDate, dos);
+				writeString(this.EndDate, dos);
 
 				// String
 
@@ -14469,9 +14501,9 @@ public class TEST implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("StartDate=" + String.valueOf(StartDate));
+			sb.append("StartDate=" + StartDate);
 			sb.append(",Duration=" + String.valueOf(Duration));
-			sb.append(",EndDate=" + String.valueOf(EndDate));
+			sb.append(",EndDate=" + EndDate);
 			sb.append(",TaskName=" + TaskName);
 			sb.append(",TaskDetail=" + TaskDetail);
 			sb.append(",TaskType=" + TaskType);
@@ -18773,6 +18805,12 @@ public class TEST implements TalendJob {
 						context.PORTAIL_FOURNISSEUR_AZURE_Database = (String) context
 								.getProperty("PORTAIL_FOURNISSEUR_AZURE_Database");
 					}
+					context.setContextType("PATH_VENTE_HEBDO", "id_String");
+					if (context.getStringValue("PATH_VENTE_HEBDO") == null) {
+						context.PATH_VENTE_HEBDO = null;
+					} else {
+						context.PATH_VENTE_HEBDO = (String) context.getProperty("PATH_VENTE_HEBDO");
+					}
 				}
 
 				public void processAllContext() {
@@ -18866,6 +18904,9 @@ public class TEST implements TalendJob {
 			if (parentContextMap.containsKey("PORTAIL_FOURNISSEUR_AZURE_Database")) {
 				context.PORTAIL_FOURNISSEUR_AZURE_Database = (String) parentContextMap
 						.get("PORTAIL_FOURNISSEUR_AZURE_Database");
+			}
+			if (parentContextMap.containsKey("PATH_VENTE_HEBDO")) {
+				context.PATH_VENTE_HEBDO = (String) parentContextMap.get("PATH_VENTE_HEBDO");
 			}
 		}
 
@@ -19152,6 +19193,6 @@ public class TEST implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 596815 characters generated by Talend Cloud Data Management Platform on the
- * 26 juillet 2022 à 12:57:36 WEST
+ * 598117 characters generated by Talend Cloud Data Management Platform on the
+ * 26 juillet 2022 à 13:01:19 WEST
  ************************************************************************************************/
