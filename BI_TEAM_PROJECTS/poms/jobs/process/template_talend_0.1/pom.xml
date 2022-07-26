@@ -9,20 +9,20 @@
     <relativePath>../../../</relativePath>
   </parent>
   <groupId>org.example.bi_team_projects.job</groupId>
-  <artifactId>TEST</artifactId>
+  <artifactId>TEMPLATE_TALEND</artifactId>
   <version>0.1.0</version>
-  <name>BI_TEAM_PROJECTS TEST-0.1.0 (0.1,Jobs)</name>
+  <name>BI_TEAM_PROJECTS TEMPLATE_TALEND-0.1.0 (0.1,Jobs)</name>
   <properties>
     <talend.job.type>Standard</talend.job.type>
     <talend.job.date>${maven.build.timestamp}</talend.job.date>
     <talend.pigudf.groupid>org.example.bi_team_projects.pigudf</talend.pigudf.groupid>
     <talend.job.folder></talend.job.folder>
-    <talend.job.context>KLIF</talend.job.context>
+    <talend.job.context>DEV</talend.job.context>
     <talend.job.path>bi_team_projects</talend.job.path>
-    <talend.job.git.commit.id>ebe7f6d11b2c613dffdc1a06c90158eb1beac0ba</talend.job.git.commit.id>
+    <talend.job.git.commit.id></talend.job.git.commit.id>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
-    <talend.job.git.author>ayoub@marjane.co.ma</talend.job.git.author>
+    <talend.job.git.author></talend.job.git.author>
     <talend.job.jvmargs>-Xms256M -Xmx1024M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
     <talend.job.id>_0-AqwAmpEe2IX-E-61NGPg</talend.job.id>
     <talend.job.version>0.1</talend.job.version>
@@ -39,11 +39,11 @@
     <talend.product.version>8.0.1.20220317_0634-patch</talend.product.version>
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
-    <talend.job.git.commit.date>1658851293000</talend.job.git.commit.date>
+    <talend.job.git.commit.date></talend.job.git.commit.date>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
-    <talend.job.name>TEST</talend.job.name>
-    <talend.job.finalName>test_0_1</talend.job.finalName>
+    <talend.job.name>TEMPLATE_TALEND</talend.job.name>
+    <talend.job.finalName>template_talend_0_1</talend.job.finalName>
   </properties>
   <dependencies>
     <dependency>
