@@ -1,5 +1,5 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_4=>" expression="row9.STATUT != Integer.parseInt(&quot;1&quot;)  ? String.valueOf(&quot;KO&quot;) : String.valueOf(&quot;OK&quot;)">
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_4=>" expression="row9.STATUT != Integer.parseInt(&quot;1&quot;) || row9.STATUT == null  ? String.valueOf(&quot;KO&quot;) : String.valueOf(&quot;OK&quot;)">
   <variables name="row9.StartDate" value="null" talendType="id_String" nullable="true"/>
   <variables name="row9.Duration" value="null" talendType="id_String" nullable="true"/>
   <variables name="row9.EndDate" value="null" talendType="id_String" nullable="true"/>
