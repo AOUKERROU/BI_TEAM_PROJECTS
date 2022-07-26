@@ -14086,21 +14086,21 @@ public class TEST implements TalendJob {
 		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
 		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
 
-		public String StartDate;
+		public java.util.Date StartDate;
 
-		public String getStartDate() {
+		public java.util.Date getStartDate() {
 			return this.StartDate;
 		}
 
-		public String Duration;
+		public Long Duration;
 
-		public String getDuration() {
+		public Long getDuration() {
 			return this.Duration;
 		}
 
-		public String EndDate;
+		public java.util.Date EndDate;
 
-		public String getEndDate() {
+		public java.util.Date getEndDate() {
 			return this.EndDate;
 		}
 
@@ -14138,6 +14138,48 @@ public class TEST implements TalendJob {
 
 		public String getERROR_MESSAGE() {
 			return this.ERROR_MESSAGE;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -14250,11 +14292,16 @@ public class TEST implements TalendJob {
 
 					int length = 0;
 
-					this.StartDate = readString(dis);
+					this.StartDate = readDate(dis);
 
-					this.Duration = readString(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
 
-					this.EndDate = readString(dis);
+					this.EndDate = readDate(dis);
 
 					this.TaskName = readString(dis);
 
@@ -14285,11 +14332,16 @@ public class TEST implements TalendJob {
 
 					int length = 0;
 
-					this.StartDate = readString(dis);
+					this.StartDate = readDate(dis);
 
-					this.Duration = readString(dis);
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
 
-					this.EndDate = readString(dis);
+					this.EndDate = readDate(dis);
 
 					this.TaskName = readString(dis);
 
@@ -14315,17 +14367,22 @@ public class TEST implements TalendJob {
 		public void writeData(ObjectOutputStream dos) {
 			try {
 
-				// String
+				// java.util.Date
 
-				writeString(this.StartDate, dos);
+				writeDate(this.StartDate, dos);
 
-				// String
+				// Long
 
-				writeString(this.Duration, dos);
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
 
-				// String
+				// java.util.Date
 
-				writeString(this.EndDate, dos);
+				writeDate(this.EndDate, dos);
 
 				// String
 
@@ -14360,17 +14417,22 @@ public class TEST implements TalendJob {
 		public void writeData(org.jboss.marshalling.Marshaller dos) {
 			try {
 
-				// String
+				// java.util.Date
 
-				writeString(this.StartDate, dos);
+				writeDate(this.StartDate, dos);
 
-				// String
+				// Long
 
-				writeString(this.Duration, dos);
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
 
-				// String
+				// java.util.Date
 
-				writeString(this.EndDate, dos);
+				writeDate(this.EndDate, dos);
 
 				// String
 
@@ -14407,9 +14469,9 @@ public class TEST implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("StartDate=" + StartDate);
-			sb.append(",Duration=" + Duration);
-			sb.append(",EndDate=" + EndDate);
+			sb.append("StartDate=" + String.valueOf(StartDate));
+			sb.append(",Duration=" + String.valueOf(Duration));
+			sb.append(",EndDate=" + String.valueOf(EndDate));
 			sb.append(",TaskName=" + TaskName);
 			sb.append(",TaskDetail=" + TaskDetail);
 			sb.append(",TaskType=" + TaskType);
@@ -14884,9 +14946,9 @@ public class TEST implements TalendJob {
 
 				for (int i_tFixedFlowInput_1 = 0; i_tFixedFlowInput_1 < 1; i_tFixedFlowInput_1++) {
 
-					row9.StartDate = ((Long) globalMap.get("tChronometerStart_1_STARTTIME"));
+					row9.StartDate = ((String) globalMap.get("CurrentDate"));
 
-					row9.Duration = ((Long) globalMap.get("tChronometerStop_1_DURATION"));
+					row9.Duration = ((String) globalMap.get("CurrentDate2"));
 
 					row9.EndDate = ((Long) globalMap.get("tChronometerStop_1_STOPTIME"));
 
@@ -19090,6 +19152,6 @@ public class TEST implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 594915 characters generated by Talend Cloud Data Management Platform on the
- * 26 juillet 2022 à 12:54:42 WEST
+ * 596815 characters generated by Talend Cloud Data Management Platform on the
+ * 26 juillet 2022 à 12:57:36 WEST
  ************************************************************************************************/
