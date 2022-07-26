@@ -15103,6 +15103,12 @@ public class TEST implements TalendJob {
 			return this.STATUT;
 		}
 
+		public Integer SUCCESS_STATUT;
+
+		public Integer getSUCCESS_STATUT() {
+			return this.SUCCESS_STATUT;
+		}
+
 		public String ERROR_MESSAGE;
 
 		public String getERROR_MESSAGE() {
@@ -15246,6 +15252,8 @@ public class TEST implements TalendJob {
 
 					this.STATUT = readString(dis);
 
+					this.SUCCESS_STATUT = readInteger(dis);
+
 					this.ERROR_MESSAGE = readString(dis);
 
 					this.FileNamePOutPut = readString(dis);
@@ -15287,6 +15295,8 @@ public class TEST implements TalendJob {
 					this.NbFournisseur = readInteger(dis);
 
 					this.STATUT = readString(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
 
 					this.ERROR_MESSAGE = readString(dis);
 
@@ -15340,6 +15350,10 @@ public class TEST implements TalendJob {
 				// String
 
 				writeString(this.STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
 
 				// String
 
@@ -15395,6 +15409,10 @@ public class TEST implements TalendJob {
 
 				writeString(this.STATUT, dos);
 
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
 				// String
 
 				writeString(this.ERROR_MESSAGE, dos);
@@ -15422,6 +15440,7 @@ public class TEST implements TalendJob {
 			sb.append(",TaskType=" + TaskType);
 			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
 			sb.append(",STATUT=" + STATUT);
+			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
 			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
 			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
 			sb.append("]");
@@ -15492,6 +15511,14 @@ public class TEST implements TalendJob {
 				sb.append("<null>");
 			} else {
 				sb.append(STATUT);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_STATUT);
 			}
 
 			sb.append("|");
@@ -15594,10 +15621,16 @@ public class TEST implements TalendJob {
 			return this.NbFournisseur;
 		}
 
-		public Integer STATUT;
+		public Integer ERROR_STATUT;
 
-		public Integer getSTATUT() {
-			return this.STATUT;
+		public Integer getERROR_STATUT() {
+			return this.ERROR_STATUT;
+		}
+
+		public Integer SUCCESS_STATUT;
+
+		public Integer getSUCCESS_STATUT() {
+			return this.SUCCESS_STATUT;
 		}
 
 		public String ERROR_MESSAGE;
@@ -15741,7 +15774,9 @@ public class TEST implements TalendJob {
 
 					this.NbFournisseur = readInteger(dis);
 
-					this.STATUT = readInteger(dis);
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
 
 					this.ERROR_MESSAGE = readString(dis);
 
@@ -15783,7 +15818,9 @@ public class TEST implements TalendJob {
 
 					this.NbFournisseur = readInteger(dis);
 
-					this.STATUT = readInteger(dis);
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
 
 					this.ERROR_MESSAGE = readString(dis);
 
@@ -15836,7 +15873,11 @@ public class TEST implements TalendJob {
 
 				// Integer
 
-				writeInteger(this.STATUT, dos);
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
 
 				// String
 
@@ -15890,7 +15931,11 @@ public class TEST implements TalendJob {
 
 				// Integer
 
-				writeInteger(this.STATUT, dos);
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
 
 				// String
 
@@ -15918,7 +15963,8 @@ public class TEST implements TalendJob {
 			sb.append(",TaskDetail=" + TaskDetail);
 			sb.append(",TaskType=" + TaskType);
 			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
-			sb.append(",STATUT=" + String.valueOf(STATUT));
+			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
+			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
 			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
 			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
 			sb.append("]");
@@ -15985,10 +16031,18 @@ public class TEST implements TalendJob {
 
 			sb.append("|");
 
-			if (STATUT == null) {
+			if (ERROR_STATUT == null) {
 				sb.append("<null>");
 			} else {
-				sb.append(STATUT);
+				sb.append(ERROR_STATUT);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_STATUT);
 			}
 
 			sb.append("|");
@@ -16183,8 +16237,8 @@ public class TEST implements TalendJob {
 						// step 4: print dataset
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskName");
-						for (int i = 0; i < titleWidth - "TaskName".length() + 1; i++)
+						sb.append("| " + "StartDate");
+						for (int i = 0; i < titleWidth - "StartDate".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[0]);
 						for (int i = 0; row[0] == null && i < dataWidth - 3
@@ -16195,8 +16249,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskDetail");
-						for (int i = 0; i < titleWidth - "TaskDetail".length() + 1; i++)
+						sb.append("| " + "Duration");
+						for (int i = 0; i < titleWidth - "Duration".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[1]);
 						for (int i = 0; row[1] == null && i < dataWidth - 3
@@ -16207,8 +16261,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskType");
-						for (int i = 0; i < titleWidth - "TaskType".length() + 1; i++)
+						sb.append("| " + "EndDate");
+						for (int i = 0; i < titleWidth - "EndDate".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[2]);
 						for (int i = 0; row[2] == null && i < dataWidth - 3
@@ -16219,8 +16273,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "StartDate");
-						for (int i = 0; i < titleWidth - "StartDate".length() + 1; i++)
+						sb.append("| " + "TaskName");
+						for (int i = 0; i < titleWidth - "TaskName".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[3]);
 						for (int i = 0; row[3] == null && i < dataWidth - 3
@@ -16231,8 +16285,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "Duration");
-						for (int i = 0; i < titleWidth - "Duration".length() + 1; i++)
+						sb.append("| " + "TaskDetail");
+						for (int i = 0; i < titleWidth - "TaskDetail".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[4]);
 						for (int i = 0; row[4] == null && i < dataWidth - 3
@@ -16243,8 +16297,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "EndDate");
-						for (int i = 0; i < titleWidth - "EndDate".length() + 1; i++)
+						sb.append("| " + "TaskType");
+						for (int i = 0; i < titleWidth - "TaskType".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[5]);
 						for (int i = 0; row[5] == null && i < dataWidth - 3
@@ -16267,8 +16321,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "FileNamePOutPut");
-						for (int i = 0; i < titleWidth - "FileNamePOutPut".length() + 1; i++)
+						sb.append("| " + "STATUT");
+						for (int i = 0; i < titleWidth - "STATUT".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[7]);
 						for (int i = 0; row[7] == null && i < dataWidth - 3
@@ -16279,8 +16333,8 @@ public class TEST implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "STATUT");
-						for (int i = 0; i < titleWidth - "STATUT".length() + 1; i++)
+						sb.append("| " + "SUCCESS_STATUT");
+						for (int i = 0; i < titleWidth - "SUCCESS_STATUT".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[8]);
 						for (int i = 0; row[8] == null && i < dataWidth - 3
@@ -16297,6 +16351,18 @@ public class TEST implements TalendJob {
 						sb.append("| " + row[9]);
 						for (int i = 0; row[9] == null && i < dataWidth - 3
 								|| row[9] != null && i < dataWidth - row[9].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "FileNamePOutPut");
+						for (int i = 0; i < titleWidth - "FileNamePOutPut".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[10]);
+						for (int i = 0; row[10] == null && i < dataWidth - 3
+								|| row[10] != null && i < dataWidth - row[10].length() + 1; i++)
 							sb.append(" ");
 						sb.append("|" + "\n");
 
@@ -16423,7 +16489,9 @@ public class TEST implements TalendJob {
 
 					row9.NbFournisseur = ((Integer) globalMap.get("tDBInput_3_NB_LINE"));
 
-					row9.STATUT = ((Integer) globalMap.get("tDie_1_DIE_CODE"));
+					row9.ERROR_STATUT = ((Integer) globalMap.get("tDie_1_DIE_CODE"));
+
+					row9.SUCCESS_STATUT = ((Integer) globalMap.get("tWarn_1_WARN_CODE"));
 
 					row9.ERROR_MESSAGE = ((String) globalMap.get("tDie_1_ERROR_MESSAGE"));
 
@@ -16502,7 +16570,11 @@ public class TEST implements TalendJob {
 						Log_Out_tmp.TaskDetail = row9.TaskDetail;
 						Log_Out_tmp.TaskType = row9.TaskType;
 						Log_Out_tmp.NbFournisseur = row9.NbFournisseur;
-						Log_Out_tmp.STATUT = "ok";
+						Log_Out_tmp.STATUT = row9.ERROR_STATUT != Integer.parseInt("1") || row9.ERROR_STATUT == null
+								? String.valueOf("KO")
+								: String.valueOf("OK");
+						Log_Out_tmp.SUCCESS_STATUT = row9.SUCCESS_STATUT != Integer.parseInt("1")
+								|| row9.SUCCESS_STATUT == null ? String.valueOf("KO") : String.valueOf("OK");
 						Log_Out_tmp.ERROR_MESSAGE = row9.ERROR_MESSAGE;
 						Log_Out_tmp.FileNamePOutPut = row9.FileNamePOutPut;
 						Log_Out = Log_Out_tmp;
@@ -16555,30 +16627,6 @@ public class TEST implements TalendJob {
 
 						strBuffer_tLogRow_1 = new StringBuilder();
 
-						if (Log_Out.TaskName != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskName));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.TaskDetail != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskDetail));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.TaskType != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskType));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
 						if (Log_Out.StartDate != null) { //
 
 							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.StartDate));
@@ -16603,17 +16651,33 @@ public class TEST implements TalendJob {
 
 						strBuffer_tLogRow_1.append("|");
 
-						if (Log_Out.NbFournisseur != null) { //
+						if (Log_Out.TaskName != null) { //
 
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.NbFournisseur));
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskName));
 
 						} //
 
 						strBuffer_tLogRow_1.append("|");
 
-						if (Log_Out.FileNamePOutPut != null) { //
+						if (Log_Out.TaskDetail != null) { //
 
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.FileNamePOutPut));
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskDetail));
+
+						} //
+
+						strBuffer_tLogRow_1.append("|");
+
+						if (Log_Out.TaskType != null) { //
+
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskType));
+
+						} //
+
+						strBuffer_tLogRow_1.append("|");
+
+						if (Log_Out.NbFournisseur != null) { //
+
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.NbFournisseur));
 
 						} //
 
@@ -16627,41 +16691,57 @@ public class TEST implements TalendJob {
 
 						strBuffer_tLogRow_1.append("|");
 
+						if (Log_Out.SUCCESS_STATUT != null) { //
+
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.SUCCESS_STATUT));
+
+						} //
+
+						strBuffer_tLogRow_1.append("|");
+
 						if (Log_Out.ERROR_MESSAGE != null) { //
 
 							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.ERROR_MESSAGE));
 
 						} //
 
-						String[] row_tLogRow_1 = new String[10];
+						strBuffer_tLogRow_1.append("|");
 
-						if (Log_Out.TaskName != null) { //
-							row_tLogRow_1[0] = String.valueOf(Log_Out.TaskName);
+						if (Log_Out.FileNamePOutPut != null) { //
 
-						} //
-
-						if (Log_Out.TaskDetail != null) { //
-							row_tLogRow_1[1] = String.valueOf(Log_Out.TaskDetail);
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.FileNamePOutPut));
 
 						} //
 
-						if (Log_Out.TaskType != null) { //
-							row_tLogRow_1[2] = String.valueOf(Log_Out.TaskType);
-
-						} //
+						String[] row_tLogRow_1 = new String[11];
 
 						if (Log_Out.StartDate != null) { //
-							row_tLogRow_1[3] = String.valueOf(Log_Out.StartDate);
+							row_tLogRow_1[0] = String.valueOf(Log_Out.StartDate);
 
 						} //
 
 						if (Log_Out.Duration != null) { //
-							row_tLogRow_1[4] = String.valueOf(Log_Out.Duration);
+							row_tLogRow_1[1] = String.valueOf(Log_Out.Duration);
 
 						} //
 
 						if (Log_Out.EndDate != null) { //
-							row_tLogRow_1[5] = String.valueOf(Log_Out.EndDate);
+							row_tLogRow_1[2] = String.valueOf(Log_Out.EndDate);
+
+						} //
+
+						if (Log_Out.TaskName != null) { //
+							row_tLogRow_1[3] = String.valueOf(Log_Out.TaskName);
+
+						} //
+
+						if (Log_Out.TaskDetail != null) { //
+							row_tLogRow_1[4] = String.valueOf(Log_Out.TaskDetail);
+
+						} //
+
+						if (Log_Out.TaskType != null) { //
+							row_tLogRow_1[5] = String.valueOf(Log_Out.TaskType);
 
 						} //
 
@@ -16670,18 +16750,23 @@ public class TEST implements TalendJob {
 
 						} //
 
-						if (Log_Out.FileNamePOutPut != null) { //
-							row_tLogRow_1[7] = String.valueOf(Log_Out.FileNamePOutPut);
+						if (Log_Out.STATUT != null) { //
+							row_tLogRow_1[7] = String.valueOf(Log_Out.STATUT);
 
 						} //
 
-						if (Log_Out.STATUT != null) { //
-							row_tLogRow_1[8] = String.valueOf(Log_Out.STATUT);
+						if (Log_Out.SUCCESS_STATUT != null) { //
+							row_tLogRow_1[8] = String.valueOf(Log_Out.SUCCESS_STATUT);
 
 						} //
 
 						if (Log_Out.ERROR_MESSAGE != null) { //
 							row_tLogRow_1[9] = String.valueOf(Log_Out.ERROR_MESSAGE);
+
+						} //
+
+						if (Log_Out.FileNamePOutPut != null) { //
+							row_tLogRow_1[10] = String.valueOf(Log_Out.FileNamePOutPut);
 
 						} //
 
@@ -19278,6 +19363,6 @@ public class TEST implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 600255 characters generated by Talend Cloud Data Management Platform on the
- * 26 juillet 2022 à 16:51:37 WEST
+ * 602992 characters generated by Talend Cloud Data Management Platform on the
+ * 26 juillet 2022 à 16:58:15 WEST
  ************************************************************************************************/
