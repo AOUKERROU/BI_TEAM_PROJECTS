@@ -81,7 +81,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:RPhgNgXn0lZF95UR4A3lmUE6wexfBmPNtmJZIA7y"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:Om/j78y66zdHjj5AyhMTC2rSqjTpficfO3JqGJ8y"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -116,7 +116,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:sNNJzaDBUTsg+DhaexKjZ1IOxa7IM3O5NiMksah/"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:PflXynEf4cJdc5Ki85ftVNrU8vuhD7ABl2ybFaAt"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -160,7 +160,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ATvDn8Z1S4j9F7EBCFPf9BwjOvTgp5oHe5ZG1lTeetutYsU1"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pqZJtqaSPd43IOP2nTrd3JvsJ3VmjwXCt4rtYUpyTeq0dwx7"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -362,7 +362,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/aoukerrou/Desktop/sql/portail frn/OUTPUT/MCSEDI_C780_MARJANE_SO_SKU_&quot;+((String)globalMap.get(&quot;CurentDate&quot;))+&quot;.txt&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/OUTPUT FILES/SUMSUNG PRT FRNS/MCSEDI_C780_MARJANE_SO_SKU_&quot;+((String)globalMap.get(&quot;CurentDate&quot;))+&quot;.txt&quot;"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -418,7 +418,7 @@
   </node>
   <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
-    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;C:/Users/aoukerrou/Desktop/sql/portail frn/OUTPUT&quot;"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;E:/Talend/OUTPUT FILES/SUMSUNG PRT FRNS&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
     <elementParameter field="CHECK" name="INCLUDSUBDIR" value="false"/>
     <elementParameter field="CLOSED_LIST" name="CASE_SENSITIVE" value="YES"/>
@@ -471,7 +471,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;GOLDV5&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;CENPRD&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:iead+xqcqEvXUtWe2a7fkB2Ep3Zx5SWLWssStsaUIYdxaocs"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oqMGxmH1GfFkEaoezU4H2xWM2awP/HGJuGDZtS/u6qBz5kRA"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -673,7 +673,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_2"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/aoukerrou/Desktop/sql/portail frn/OUTPUT/OUTPUT/MCSEDI_C780_ELECTROPLANET_SO_SKU_&quot;+((String)globalMap.get(&quot;CurentDate&quot;))+&quot;.txt&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/OUTPUT FILES/SUMSUNG PRT FRNS/MCSEDI_C780_ELECTROPLANET_SO_SKU_&quot;+((String)globalMap.get(&quot;CurentDate&quot;))+&quot;.txt&quot;"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -733,14 +733,14 @@
     <elementParameter field="TEXT" name="PORT" value="22"/>
     <elementParameter field="TEXT" name="FTPS_PORT" show="false" value="990"/>
     <elementParameter field="TEXT" name="USER" value="&quot;edi&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2z2HnzVR1j0bAyEoss0tXNMHlVWpi08E0jIist3MTQYmOYYIN9JdQKtB"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:H1a6Brk/yUbq0poTP6+x7EMmVxXN+HYFecXtXjQ5bBMJCV1jho/FknfI"/>
     <elementParameter field="CHECK" name="SFTP" value="true"/>
     <elementParameter field="CHECK" name="FTPS" show="false" value="false"/>
     <elementParameter field="FILE" name="KEYSTORE_FILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:9+8B5UTIbUhRxIlEvjf+HLsiFxncrWOevklHq6VnxWvdad26"/>
+    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:YaH7UIX5T2PlZeqgV2JL6vVDRCTAZ66wjRNlsF4jeUAj4NfG"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_METHOD" value="PASSWORD"/>
     <elementParameter field="FILE" name="PRIVATEKEY" show="false" value="&quot;/.ssh/id_dsa&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:aZcEZ7ZTLhgZL7TOQ1eOwofNAHU6SlBTSaGQRVNVSyCzgwWU"/>
+    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:tMVoh4pEivPbMU3fKMGzi6Z3K37xHea7Et8LwPZpLmBk8axP"/>
     <elementParameter field="CLOSED_LIST" name="CONNECT_MODE" show="false" value="PASSIVE"/>
     <elementParameter field="CLOSED_LIST" name="SECURITY_MODE" show="false" value="IMPLICIT"/>
     <elementParameter field="CHECK" name="USE_ENCODING" value="false"/>
@@ -750,7 +750,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
     <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;1080&quot;"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:kIx9XLzFO15b0vSRAiCZnB318AvE92xGfQTYtDVV"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:MzxN/hcjnPdq0E7/u1TnYKVqgA2MH3E1H1Fuwm/z"/>
     <elementParameter field="OPENED_LIST" name="FTPS_PROT" show="false" value="&quot;P&quot;"/>
     <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" show="false" value="0"/>
     <elementParameter field="CHECK" name="REMOTE_VERIFICATION" show="false" value="true"/>
@@ -766,18 +766,18 @@
     <elementParameter field="TEXT" name="PORT" show="false" value="21"/>
     <elementParameter field="TEXT" name="FTPS_PORT" show="false" value="990"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:kDP+PDu568BWreYsq0xLW4I0Oj2tkXeHEbekQNKRboGc02CGEZDO"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:IdGrNsc41LyN6IEFePxTZgJvFpJ438ctfDSz4oz37by67FyjV43F"/>
     <elementParameter field="CHECK" name="SFTP" show="false" value="false"/>
     <elementParameter field="CHECK" name="FTPS" show="false" value="false"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_METHOD" show="false" value="PASSWORD"/>
     <elementParameter field="FILE" name="PRIVATEKEY" show="false" value="&quot;/.ssh/id_dsa&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:5UV+pPVDA4csw5EXq9nZ4PmZRhy+RrpGyLIucZeCbHaQnoEL"/>
-    <elementParameter field="DIRECTORY" name="LOCALDIR" value="&quot;C:/Users/aoukerrou/Desktop/sql/portail frn/OUTPUT&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:TdKTktG5JqcFB63Pc2456fkCbgVDaLjV7UFs3Ya4Z9zpQ6i1"/>
+    <elementParameter field="DIRECTORY" name="LOCALDIR" value="&quot;E:/Talend/OUTPUT FILES/SUMSUNG PRT FRNS&quot;"/>
     <elementParameter field="TEXT" name="REMOTEDIR" value="&quot;/uploads_edi/Marjane/OUT&quot;"/>
     <elementParameter field="CHECK" name="CREATE_DIR_IF_NOT_EXIST" value="false"/>
     <elementParameter field="CHECK" name="MOVE_TO_THE_CURRENT_DIRECTORY" show="false" value="true"/>
     <elementParameter field="FILE" name="KEYSTORE_FILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:JJUbZWtukN+r3aYK/Sn/dO9xuaTQuB4VXGfVQjwkDAWNfNe9"/>
+    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:yAoHBjqoXGc0BrpH6/enq5CpvRZkfhE6tbgnlAyoct/c0t8v"/>
     <elementParameter field="CLOSED_LIST" name="MODE" show="false" value="ascii"/>
     <elementParameter field="CLOSED_LIST" name="OVERWRITE" show="false" value="never"/>
     <elementParameter field="CHECK" name="APPEND" show="false" value="false"/>
@@ -798,7 +798,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
     <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;1080&quot;"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:VNvyIwVf033eHTVkaRf3V5JJ6E/4MVCmSCme6Nsi"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:HEjtdAAFnpB9yHhea2UGVSBj7f5fskIwHCnv1c2T"/>
     <elementParameter field="CHECK" name="IGNORE_FAILURE_AT_QUIT" show="false" value="false"/>
     <elementParameter field="OPENED_LIST" name="FTPS_PROT" show="false" value="&quot;P&quot;"/>
     <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" show="false" value="0"/>
@@ -816,18 +816,18 @@
     <elementParameter field="TEXT" name="PORT" show="false" value="21"/>
     <elementParameter field="TEXT" name="FTPS_PORT" show="false" value="990"/>
     <elementParameter field="TEXT" name="USERNAME" show="false" value="&quot;anonymous&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:vIS8arCYhI1kZAlhXXWxY5d7IWPQfCljA99sANj500ede+XxSRv1"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" show="false" value="enc:system.encryption.key.v1:1Pdy+sUhLiRmjUvb4duWzvy6xAbNGgwNY05ksfAxHSNMu6wdAy1a"/>
     <elementParameter field="CHECK" name="SFTP" show="false" value="false"/>
     <elementParameter field="CHECK" name="FTPS" show="false" value="false"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_METHOD" show="false" value="PASSWORD"/>
     <elementParameter field="FILE" name="PRIVATEKEY" show="false" value="&quot;/.ssh/id_dsa&quot;"/>
-    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:iXGLWj5V2zoGvJk9U7oGEuH4MTfVoS/iX9pg7fFGxFNeBB4G"/>
-    <elementParameter field="DIRECTORY" name="LOCALDIR" value="&quot;C:/Users/aoukerrou/Desktop/sql/portail frn/OUTPUT&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSPHRASE" show="false" value="enc:system.encryption.key.v1:6gzojp3F5XJr3Uw+YpQYa1lqznUFvABFsjQWM8MUNRKgoyfB"/>
+    <elementParameter field="DIRECTORY" name="LOCALDIR" value="&quot;E:/Talend/OUTPUT FILES/SUMSUNG PRT FRNS&quot;"/>
     <elementParameter field="TEXT" name="REMOTEDIR" value="&quot;/uploads_edi/EP/OUT&quot;"/>
     <elementParameter field="CHECK" name="CREATE_DIR_IF_NOT_EXIST" value="false"/>
     <elementParameter field="CHECK" name="MOVE_TO_THE_CURRENT_DIRECTORY" show="false" value="true"/>
     <elementParameter field="FILE" name="KEYSTORE_FILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:6NqB22kOls3JEseHTy6Blt+kKaE7Kl6/Fez+4jcSNODGVGbz"/>
+    <elementParameter field="PASSWORD" name="KEYSTORE_PASS" show="false" value="enc:system.encryption.key.v1:6jYLnLwtaUfMo1G8Xm1YgwiZFQfCJWIueG6y1MQk7KdjANWr"/>
     <elementParameter field="CLOSED_LIST" name="MODE" show="false" value="ascii"/>
     <elementParameter field="CLOSED_LIST" name="OVERWRITE" show="false" value="never"/>
     <elementParameter field="CHECK" name="APPEND" show="false" value="false"/>
@@ -848,7 +848,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
     <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;1080&quot;"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:EFU84RSY/uIZN7mCcuoP3ymOyHIEDwLSOr9FWFnG"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="enc:system.encryption.key.v1:WErT1vc+Rl9Gs40UXrvfZViiVS4xTg4SqVo+TNrs"/>
     <elementParameter field="CHECK" name="IGNORE_FAILURE_AT_QUIT" show="false" value="false"/>
     <elementParameter field="OPENED_LIST" name="FTPS_PROT" show="false" value="&quot;P&quot;"/>
     <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" show="false" value="0"/>
@@ -1126,13 +1126,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_aae440d1-a0ac-4986-8be0-834a4f295936"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+ilhkG1HJgbLKCv/ZKnYVH9328jQNO0TGbsgFppbsxcIZQ3A7RuOGkym7t7ERgKoTznZlhmop+cg&#13;
-ALOP+V2TrQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6b579c18-882e-44c9-818f-72c773f27073"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gTG6WulHnZ5gzUH2GcImioFX0YFUv9qqmwlatWTjdCqGupy+BTyeQNx1GU6NEZkwKiNNjAojBA8p&#13;
-Ssw7jvX6nw==</DigestValue></Reference></SignedInfo><SignatureValue>bkpEWCbct0SS6fNAw3n5e3iNF6rRYb/ycllCYC2q29gHnAjI1yCliVtzms7gmbmHmP9WHz0Lz1N1&#13;
-nccXNtwVnOMBcpPdyJmQHbPANxByCztnlkgUslNBDryh0p8hfG/00GHE2zKJuDsq5s5rcxX5qRQK&#13;
-jEfqy8SHVTDECBzJeqTTF6zwr8o2zjeYDGclsgX3pe190gaEi0ONICGaJpnJJFnh2IOEpPeLPQwy&#13;
-w0PoKZsWAcGXu9IpU9Aoy3tzdHt4T6zhAghfZ2N0PP6uiriEoWMxv5MN8u5UTd7YwBiml2vmT3m6&#13;
-Ly8Ock6Bm+IzJ48foNZah3InJQR2ebPct00dUw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c5ae3c7f-dd5c-441c-b294-5aff8d38df51"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ClbUdxNW+YBfuQa5kNNBTkbQ65HZFC9xT7A76pB4gRgcoG1T6NoDtnxmZH4Wl3npTc1adkLVhFCY&#13;
+ktxXhDdwPA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f1af3f28-72bb-49ee-85bf-316040fbce5d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ujl24AqN5HKAL5q5XIFkYrSDuXGOaxwVsebU2KDEk8WLHVOIT1CRso5UYkPezS8GjMOxVFXCyC6O&#13;
+N8xj34pWcw==</DigestValue></Reference></SignedInfo><SignatureValue>Oenz+FJYpasgcEio6Ud6LfYzze2aiX4a4IAS8z+PH28+a84733bOw54XhXWcMyVtVPGGf2uYC0e5&#13;
+PKEgZJcPvaRGSHszoMYQ3LoO+56+3d0q4G3czjAMliMLXPQO4aftNG2ITz09pBS+7IXgHIT0i1Jn&#13;
+Ua1MGzN5W3J500xPmtne8npClRsRtSM+AUzSvetU510I6R9f4X4700PUIqyP8B4U99M1tlobVMax&#13;
+bKD+lw1ErnKiOOSByOpZ13+R3x9LYyC4FEk3MrJEh2EHKTii8Q0nllMlwq40NcKOcIysnTj0rRrJ&#13;
+e6qMLwmhd+grdS+mkldxU5jn4mmeLem5WCM5RA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1154,4 +1154,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6b579c18-882e-44c9-818f-72c773f27073" Target="#_aae440d1-a0ac-4986-8be0-834a4f295936"><Timestamp>2022-07-25 15:29:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f1af3f28-72bb-49ee-85bf-316040fbce5d" Target="#_c5ae3c7f-dd5c-441c-b294-5aff8d38df51"><Timestamp>2022-07-26 09:31:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
