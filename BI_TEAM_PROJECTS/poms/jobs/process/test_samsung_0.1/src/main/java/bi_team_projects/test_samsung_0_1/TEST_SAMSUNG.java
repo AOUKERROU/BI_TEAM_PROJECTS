@@ -27,6 +27,9 @@ import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
 
+//the import part of tJava_1
+//import java.util.List;
+
 @SuppressWarnings("unused")
 
 /**
@@ -282,7 +285,21 @@ public class TEST_SAMSUNG implements TalendJob {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
-		status = "failure";
+		try {
+
+			if (this.execStat) {
+				runStat.updateStatOnConnection("OnComponentError1", 0, "error");
+			}
+
+			errorCode = null;
+			tJava_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		tFTPConnection_1_onSubJobError(exception, errorComponent, globalMap);
 	}
@@ -305,6 +322,16 @@ public class TEST_SAMSUNG implements TalendJob {
 		status = "failure";
 
 		tFTPPut_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tJava_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void talendJobLog_error(Exception exception, String errorComponent,
@@ -334,6 +361,14 @@ public class TEST_SAMSUNG implements TalendJob {
 	}
 
 	public void tFTPPut_2_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tJava_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -394,7 +429,7 @@ public class TEST_SAMSUNG implements TalendJob {
 							log4jParamters_tFTPConnection_1.append("USER" + " = " + "\"edi\"");
 							log4jParamters_tFTPConnection_1.append(" | ");
 							log4jParamters_tFTPConnection_1.append("PASS" + " = " + String.valueOf(
-									"enc:routine.encryption.key.v1:WJaUBMHJ5mMru5vqglLH89OzfNHmU+JWQ5u3BJF0dYi2dWIFr0JjzA==")
+									"enc:routine.encryption.key.v1:ZNBVpN2AKkVYGkwoIolRkvbbSX4P+zduljoLGiZBB3Mdam5lVbygZw==")
 									.substring(0, 4) + "...");
 							log4jParamters_tFTPConnection_1.append(" | ");
 							log4jParamters_tFTPConnection_1.append("SFTP" + " = " + "true");
@@ -424,7 +459,7 @@ public class TEST_SAMSUNG implements TalendJob {
 				class MyUserInfo implements com.jcraft.jsch.UserInfo, com.jcraft.jsch.UIKeyboardInteractive {
 
 					String decryptedPassphrase_tFTPConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword(
-							"enc:routine.encryption.key.v1:o8h5nNiw59LY3ve9FA/nJFXTe21CUnqLRys3lfvCg7dOcA==");
+							"enc:routine.encryption.key.v1:BbXNH1pgxxGg4l7J+IPLHaraMCwPVThNuZbXp2O7GiDnvw==");
 
 					String passphrase_tFTPConnection_1 = decryptedPassphrase_tFTPConnection_1;
 
@@ -456,7 +491,7 @@ public class TEST_SAMSUNG implements TalendJob {
 
 						final String decryptedPassword_tFTPConnection_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:W08wMAF/URM8X2rLcZoc8iDbp3RqTgdbYjfM69NzbLYZF4Xv9ghkcA==");
+										"enc:routine.encryption.key.v1:TIaYD2lLm411YAQ3qp3Wc4bpNRKjN+Uyp3VEVBH6erpsNHoPw389ng==");
 
 						return decryptedPassword_tFTPConnection_1;
 
@@ -484,7 +519,7 @@ public class TEST_SAMSUNG implements TalendJob {
 
 					final String decryptedPassword_tFTPConnection_1 = routines.system.PasswordEncryptUtil
 							.decryptPassword(
-									"enc:routine.encryption.key.v1:17Ord/H1QUlzpzzaAhtOVleIAAsThejvv4FBujR+CnCJ6bCIHKZp7A==");
+									"enc:routine.encryption.key.v1:7X+mzOcAfTuahFPkqMpbiS76xvH1QXRU9jWzQjA9NP1VFPGdLsyyOA==");
 
 					session_tFTPConnection_1.setPassword(decryptedPassword_tFTPConnection_1);
 
@@ -1408,6 +1443,134 @@ public class TEST_SAMSUNG implements TalendJob {
 		globalMap.put("tFTPPut_2_SUBPROCESS_STATE", 1);
 	}
 
+	public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tJava_1 begin ] start
+				 */
+
+				ok_Hash.put("tJava_1", false);
+				start_Hash.put("tJava_1", System.currentTimeMillis());
+
+				currentComponent = "tJava_1";
+
+				int tos_count_tJava_1 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tJava_1", "tJava_1", "tJava");
+					talendJobLogProcess(globalMap);
+				}
+
+				String var = "Erreur: ";
+				var = var + ((String) globalMap.get("tFTPConnection_1_ERROR_MESSAGE"));
+				System.out.println(var);
+
+				/**
+				 * [tJava_1 begin ] stop
+				 */
+
+				/**
+				 * [tJava_1 main ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				tos_count_tJava_1++;
+
+				/**
+				 * [tJava_1 main ] stop
+				 */
+
+				/**
+				 * [tJava_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tJava_1 process_data_end ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tJava_1 end ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				ok_Hash.put("tJava_1", true);
+				end_Hash.put("tJava_1", System.currentTimeMillis());
+
+				/**
+				 * [tJava_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tJava_1 finally ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
+	}
+
 	public void talendJobLogProcess(final java.util.Map<String, Object> globalMap) throws TalendException {
 		globalMap.put("talendJobLog_SUBPROCESS_STATE", 0);
 
@@ -2040,6 +2203,6 @@ public class TEST_SAMSUNG implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 77451 characters generated by Talend Cloud Data Management Platform on the 26
- * juillet 2022 à 15:51:16 WEST
+ * 81340 characters generated by Talend Cloud Data Management Platform on the 26
+ * juillet 2022 à 16:03:46 WEST
  ************************************************************************************************/
