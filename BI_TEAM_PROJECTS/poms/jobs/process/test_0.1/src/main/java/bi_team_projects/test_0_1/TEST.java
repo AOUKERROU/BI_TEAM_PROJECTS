@@ -731,9 +731,27 @@ public class TEST implements TalendJob {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
+		tDBRow_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDie_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
 		status = "failure";
 
-		tDBRow_1_onSubJobError(exception, errorComponent, globalMap);
+		tDie_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tWarn_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tWarn_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tDBCommit_1_error(Exception exception, String errorComponent,
@@ -801,27 +819,9 @@ public class TEST implements TalendJob {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
+		status = "failure";
+
 		tSendMail_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tWarn_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tWarn_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDie_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDie_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tChronometerStop_1_error(Exception exception, String errorComponent,
@@ -832,6 +832,26 @@ public class TEST implements TalendJob {
 		status = "failure";
 
 		tChronometerStop_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tHashInput_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tHashInput_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tFixedFlowInput_1_error(Exception exception, String errorComponent,
@@ -862,26 +882,6 @@ public class TEST implements TalendJob {
 		status = "failure";
 
 		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHashInput_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHashInput_3_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tPostjob_1_error(Exception exception, String errorComponent,
@@ -1078,6 +1078,36 @@ public class TEST implements TalendJob {
 	public void tDBRow_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "ERROR", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+		try {
+
+			if (this.execStat) {
+				runStat.updateStatOnConnection("OnSubjobError1", 0, "error");
+			}
+
+			errorCode = null;
+			tDie_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void tDie_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tWarn_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
 				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
 
@@ -1116,36 +1146,6 @@ public class TEST implements TalendJob {
 	}
 
 	public void tSendMail_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "ERROR", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-		try {
-
-			if (this.execStat) {
-				runStat.updateStatOnConnection("OnSubjobError1", 0, "error");
-			}
-
-			errorCode = null;
-			tDie_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void tWarn_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tDie_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -9062,7 +9062,7 @@ public class TEST implements TalendJob {
 							log4jParamters_tDBOutput_2.append(" | ");
 							log4jParamters_tDBOutput_2.append("CONNECTION" + " = " + "tDBConnection_1");
 							log4jParamters_tDBOutput_2.append(" | ");
-							log4jParamters_tDBOutput_2.append("TABLE" + " = " + "\"VenteHebdoTT\"");
+							log4jParamters_tDBOutput_2.append("TABLE" + " = " + "\"VenteHebdoTTest\"");
 							log4jParamters_tDBOutput_2.append(" | ");
 							log4jParamters_tDBOutput_2.append("TABLE_ACTION" + " = " + "TRUNCATE");
 							log4jParamters_tDBOutput_2.append(" | ");
@@ -9170,9 +9170,9 @@ public class TEST implements TalendJob {
 				int batchSizeCounter_tDBOutput_2 = 0;
 
 				if (dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
-					tableName_tDBOutput_2 = "VenteHebdoTT";
+					tableName_tDBOutput_2 = "VenteHebdoTTest";
 				} else {
-					tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "].[" + "VenteHebdoTT";
+					tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "].[" + "VenteHebdoTTest";
 				}
 				int count_tDBOutput_2 = 0;
 
@@ -10540,7 +10540,7 @@ public class TEST implements TalendJob {
 							log4jParamters_tDBRow_1.append("QUERYSTORE" + " = " + "\"\"");
 							log4jParamters_tDBRow_1.append(" | ");
 							log4jParamters_tDBRow_1.append("QUERY" + " = "
-									+ "\"MERGE VenteHebdo AS T  USING VenteHebdoTT As S  ON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_INTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN  WHEN NOT MATCHED THEN      INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdateWebJob)       VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S.QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())  WHEN MATCHED THEN UPDATE SET      T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T.CA_TTC= S.CA_TTC,      T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE,   	DateLastUpdateWebJob= SYSDATETIME();\"");
+									+ "\"MERGE VenteHebdoTest AS T  USING VenteHebdoTTest As S  ON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_INTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN  WHEN NOT MATCHED THEN      INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdateWebJob)       VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S.QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())  WHEN MATCHED THEN UPDATE SET      T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T.CA_TTC= S.CA_TTC,      T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE,   	DateLastUpdateWebJob= SYSDATETIME();\"");
 							log4jParamters_tDBRow_1.append(" | ");
 							log4jParamters_tDBRow_1.append("DIE_ON_ERROR" + " = " + "false");
 							log4jParamters_tDBRow_1.append(" | ");
@@ -10592,12 +10592,12 @@ public class TEST implements TalendJob {
 
 				currentComponent = "tDBRow_1";
 
-				query_tDBRow_1 = "MERGE VenteHebdo AS T\nUSING VenteHebdoTT As S\nON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_INTERNE_"
-						+ "ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN\nWHEN NOT MATCHED THEN\n    INSERT"
-						+ " (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdateWebJob"
-						+ ") \n    VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S.QTE,S.C"
-						+ "A_TTC,S.CA_HT,SYSDATETIME())\nWHEN MATCHED THEN UPDATE SET\n    T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T.CA_TTC"
-						+ "= S.CA_TTC,\n    T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE, \n	DateLastUpdateWebJob= SYSDATETIME();";
+				query_tDBRow_1 = "MERGE VenteHebdoTest AS T\nUSING VenteHebdoTTest As S\nON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_I"
+						+ "NTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN\nWHEN NOT MATCHED THEN\n   "
+						+ " INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdat"
+						+ "eWebJob) \n    VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S."
+						+ "QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())\nWHEN MATCHED THEN UPDATE SET\n    T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T"
+						+ ".CA_TTC= S.CA_TTC,\n    T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE, \n	DateLastUpdateWebJob= SYSDATETIME();";
 				whetherReject_tDBRow_1 = false;
 				log.debug("tDBRow_1 - Executing the query: '" + query_tDBRow_1 + "'.");
 
@@ -10674,6 +10674,17 @@ public class TEST implements TalendJob {
 				 */
 			} // end the resume
 
+			if (resumeEntryMethodName == null || globalResumeTicket) {
+				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBRow_1:OnSubjobOk", "",
+						Thread.currentThread().getId() + "", "", "", "", "", "");
+			}
+
+			if (execStat) {
+				runStat.updateStatOnConnection("OnSubjobOk4", 0, "ok");
+			}
+
+			tWarn_1Process(globalMap);
+
 		} catch (java.lang.Exception e) {
 
 			if (!(e instanceof TalendException)) {
@@ -10717,6 +10728,342 @@ public class TEST implements TalendJob {
 		}
 
 		globalMap.put("tDBRow_1_SUBPROCESS_STATE", 1);
+	}
+
+	public void tDie_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tDie_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tDie_1 begin ] start
+				 */
+
+				ok_Hash.put("tDie_1", false);
+				start_Hash.put("tDie_1", System.currentTimeMillis());
+
+				currentComponent = "tDie_1";
+
+				int tos_count_tDie_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tDie_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tDie_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tDie_1 = new StringBuilder();
+							log4jParamters_tDie_1.append("Parameters:");
+							log4jParamters_tDie_1.append("MESSAGE" + " = " + "\"Job ERROR\"");
+							log4jParamters_tDie_1.append(" | ");
+							log4jParamters_tDie_1.append("CODE" + " = " + "1");
+							log4jParamters_tDie_1.append(" | ");
+							log4jParamters_tDie_1.append("PRIORITY" + " = " + "5");
+							log4jParamters_tDie_1.append(" | ");
+							log4jParamters_tDie_1.append("EXIT_JVM" + " = " + "false");
+							log4jParamters_tDie_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tDie_1 - " + (log4jParamters_tDie_1));
+						}
+					}
+					new BytesLimit65535_tDie_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tDie_1", "KO", "tDie");
+					talendJobLogProcess(globalMap);
+				}
+
+				/**
+				 * [tDie_1 begin ] stop
+				 */
+
+				/**
+				 * [tDie_1 main ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				try {
+					globalMap.put("tDie_1_DIE_PRIORITY", 5);
+					System.err.println("Job ERROR");
+
+					log.error("tDie_1 - The die message: " + "Job ERROR");
+
+					globalMap.put("tDie_1_DIE_MESSAGE", "Job ERROR");
+					globalMap.put("tDie_1_DIE_MESSAGES", "Job ERROR");
+
+				} catch (Exception | Error e_tDie_1) {
+					globalMap.put("tDie_1_ERROR_MESSAGE", e_tDie_1.getMessage());
+					logIgnoredError(
+							String.format("tDie_1 - tDie failed to log message due to internal error: %s", e_tDie_1),
+							e_tDie_1);
+				}
+
+				currentComponent = "tDie_1";
+				status = "failure";
+				errorCode = new Integer(1);
+				globalMap.put("tDie_1_DIE_CODE", errorCode);
+
+				if (true) {
+					throw new TDieException();
+				}
+
+				tos_count_tDie_1++;
+
+				/**
+				 * [tDie_1 main ] stop
+				 */
+
+				/**
+				 * [tDie_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				/**
+				 * [tDie_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tDie_1 process_data_end ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				/**
+				 * [tDie_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tDie_1 end ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				if (log.isDebugEnabled())
+					log.debug("tDie_1 - " + ("Done."));
+
+				ok_Hash.put("tDie_1", true);
+				end_Hash.put("tDie_1", System.currentTimeMillis());
+
+				/**
+				 * [tDie_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tDie_1 finally ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				/**
+				 * [tDie_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tDie_1_SUBPROCESS_STATE", 1);
+	}
+
+	public void tWarn_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tWarn_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tWarn_1 begin ] start
+				 */
+
+				ok_Hash.put("tWarn_1", false);
+				start_Hash.put("tWarn_1", System.currentTimeMillis());
+
+				currentComponent = "tWarn_1";
+
+				int tos_count_tWarn_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tWarn_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tWarn_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tWarn_1 = new StringBuilder();
+							log4jParamters_tWarn_1.append("Parameters:");
+							log4jParamters_tWarn_1.append("MESSAGE" + " = " + "\"Job OK\"");
+							log4jParamters_tWarn_1.append(" | ");
+							log4jParamters_tWarn_1.append("CODE" + " = " + "0");
+							log4jParamters_tWarn_1.append(" | ");
+							log4jParamters_tWarn_1.append("PRIORITY" + " = " + "3");
+							log4jParamters_tWarn_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tWarn_1 - " + (log4jParamters_tWarn_1));
+						}
+					}
+					new BytesLimit65535_tWarn_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tWarn_1", "OK", "tWarn");
+					talendJobLogProcess(globalMap);
+				}
+
+				/**
+				 * [tWarn_1 begin ] stop
+				 */
+
+				/**
+				 * [tWarn_1 main ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				try {
+
+					resumeUtil.addLog("USER_DEF_LOG", "NODE:tWarn_1", "", Thread.currentThread().getId() + "", "INFO",
+							"", "Job OK", "", "");
+					if (log.isInfoEnabled())
+						log.info("tWarn_1 - " + ("Message: ") + ("Job OK") + (". Code: ") + (0));
+					globalMap.put("tWarn_1_WARN_MESSAGES", "Job OK");
+					globalMap.put("tWarn_1_WARN_PRIORITY", 3);
+					globalMap.put("tWarn_1_WARN_CODE", 0);
+
+				} catch (Exception e_tWarn_1) {
+					globalMap.put("tWarn_1_ERROR_MESSAGE", e_tWarn_1.getMessage());
+					logIgnoredError(
+							String.format("tWarn_1 - tWarn failed to log message due to internal error: %s", e_tWarn_1),
+							e_tWarn_1);
+				}
+
+				tos_count_tWarn_1++;
+
+				/**
+				 * [tWarn_1 main ] stop
+				 */
+
+				/**
+				 * [tWarn_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				/**
+				 * [tWarn_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tWarn_1 process_data_end ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				/**
+				 * [tWarn_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tWarn_1 end ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				if (log.isDebugEnabled())
+					log.debug("tWarn_1 - " + ("Done."));
+
+				ok_Hash.put("tWarn_1", true);
+				end_Hash.put("tWarn_1", System.currentTimeMillis());
+
+				/**
+				 * [tWarn_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tWarn_1 finally ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				/**
+				 * [tWarn_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tWarn_1_SUBPROCESS_STATE", 1);
 	}
 
 	public void tDBCommit_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -13102,32 +13449,15 @@ public class TEST implements TalendJob {
 				ok_Hash.put("tSendMail_1", true);
 				end_Hash.put("tSendMail_1", System.currentTimeMillis());
 
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk10", 0, "ok");
+				}
+				tChronometerStop_1Process(globalMap);
+
 				/**
 				 * [tSendMail_1 end ] stop
 				 */
 			} // end the resume
-
-			if (resumeEntryMethodName == null || globalResumeTicket) {
-				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tSendMail_1:OnSubjobOk1", "",
-						Thread.currentThread().getId() + "", "", "", "", "", "");
-			}
-
-			if (execStat) {
-				runStat.updateStatOnConnection("OnSubjobOk4", 0, "ok");
-			}
-
-			tWarn_1Process(globalMap);
-
-			if (resumeEntryMethodName == null || globalResumeTicket) {
-				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tSendMail_1:OnSubjobOk2", "",
-						Thread.currentThread().getId() + "", "", "", "", "", "");
-			}
-
-			if (execStat) {
-				runStat.updateStatOnConnection("OnSubjobOk5", 0, "ok");
-			}
-
-			tChronometerStop_1Process(globalMap);
 
 		} catch (java.lang.Exception e) {
 
@@ -13165,342 +13495,6 @@ public class TEST implements TalendJob {
 		}
 
 		globalMap.put("tSendMail_1_SUBPROCESS_STATE", 1);
-	}
-
-	public void tWarn_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tWarn_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tWarn_1 begin ] start
-				 */
-
-				ok_Hash.put("tWarn_1", false);
-				start_Hash.put("tWarn_1", System.currentTimeMillis());
-
-				currentComponent = "tWarn_1";
-
-				int tos_count_tWarn_1 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tWarn_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tWarn_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tWarn_1 = new StringBuilder();
-							log4jParamters_tWarn_1.append("Parameters:");
-							log4jParamters_tWarn_1.append("MESSAGE" + " = " + "\"Job OK\"");
-							log4jParamters_tWarn_1.append(" | ");
-							log4jParamters_tWarn_1.append("CODE" + " = " + "0");
-							log4jParamters_tWarn_1.append(" | ");
-							log4jParamters_tWarn_1.append("PRIORITY" + " = " + "3");
-							log4jParamters_tWarn_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tWarn_1 - " + (log4jParamters_tWarn_1));
-						}
-					}
-					new BytesLimit65535_tWarn_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tWarn_1", "OK", "tWarn");
-					talendJobLogProcess(globalMap);
-				}
-
-				/**
-				 * [tWarn_1 begin ] stop
-				 */
-
-				/**
-				 * [tWarn_1 main ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				try {
-
-					resumeUtil.addLog("USER_DEF_LOG", "NODE:tWarn_1", "", Thread.currentThread().getId() + "", "INFO",
-							"", "Job OK", "", "");
-					if (log.isInfoEnabled())
-						log.info("tWarn_1 - " + ("Message: ") + ("Job OK") + (". Code: ") + (0));
-					globalMap.put("tWarn_1_WARN_MESSAGES", "Job OK");
-					globalMap.put("tWarn_1_WARN_PRIORITY", 3);
-					globalMap.put("tWarn_1_WARN_CODE", 0);
-
-				} catch (Exception e_tWarn_1) {
-					globalMap.put("tWarn_1_ERROR_MESSAGE", e_tWarn_1.getMessage());
-					logIgnoredError(
-							String.format("tWarn_1 - tWarn failed to log message due to internal error: %s", e_tWarn_1),
-							e_tWarn_1);
-				}
-
-				tos_count_tWarn_1++;
-
-				/**
-				 * [tWarn_1 main ] stop
-				 */
-
-				/**
-				 * [tWarn_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				/**
-				 * [tWarn_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tWarn_1 process_data_end ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				/**
-				 * [tWarn_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tWarn_1 end ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				if (log.isDebugEnabled())
-					log.debug("tWarn_1 - " + ("Done."));
-
-				ok_Hash.put("tWarn_1", true);
-				end_Hash.put("tWarn_1", System.currentTimeMillis());
-
-				/**
-				 * [tWarn_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tWarn_1 finally ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				/**
-				 * [tWarn_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tWarn_1_SUBPROCESS_STATE", 1);
-	}
-
-	public void tDie_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDie_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tDie_1 begin ] start
-				 */
-
-				ok_Hash.put("tDie_1", false);
-				start_Hash.put("tDie_1", System.currentTimeMillis());
-
-				currentComponent = "tDie_1";
-
-				int tos_count_tDie_1 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tDie_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tDie_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tDie_1 = new StringBuilder();
-							log4jParamters_tDie_1.append("Parameters:");
-							log4jParamters_tDie_1.append("MESSAGE" + " = " + "\"Job ERROR\"");
-							log4jParamters_tDie_1.append(" | ");
-							log4jParamters_tDie_1.append("CODE" + " = " + "1");
-							log4jParamters_tDie_1.append(" | ");
-							log4jParamters_tDie_1.append("PRIORITY" + " = " + "5");
-							log4jParamters_tDie_1.append(" | ");
-							log4jParamters_tDie_1.append("EXIT_JVM" + " = " + "false");
-							log4jParamters_tDie_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tDie_1 - " + (log4jParamters_tDie_1));
-						}
-					}
-					new BytesLimit65535_tDie_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tDie_1", "KO", "tDie");
-					talendJobLogProcess(globalMap);
-				}
-
-				/**
-				 * [tDie_1 begin ] stop
-				 */
-
-				/**
-				 * [tDie_1 main ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				try {
-					globalMap.put("tDie_1_DIE_PRIORITY", 5);
-					System.err.println("Job ERROR");
-
-					log.error("tDie_1 - The die message: " + "Job ERROR");
-
-					globalMap.put("tDie_1_DIE_MESSAGE", "Job ERROR");
-					globalMap.put("tDie_1_DIE_MESSAGES", "Job ERROR");
-
-				} catch (Exception | Error e_tDie_1) {
-					globalMap.put("tDie_1_ERROR_MESSAGE", e_tDie_1.getMessage());
-					logIgnoredError(
-							String.format("tDie_1 - tDie failed to log message due to internal error: %s", e_tDie_1),
-							e_tDie_1);
-				}
-
-				currentComponent = "tDie_1";
-				status = "failure";
-				errorCode = new Integer(1);
-				globalMap.put("tDie_1_DIE_CODE", errorCode);
-
-				if (true) {
-					throw new TDieException();
-				}
-
-				tos_count_tDie_1++;
-
-				/**
-				 * [tDie_1 main ] stop
-				 */
-
-				/**
-				 * [tDie_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				/**
-				 * [tDie_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tDie_1 process_data_end ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				/**
-				 * [tDie_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tDie_1 end ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				if (log.isDebugEnabled())
-					log.debug("tDie_1 - " + ("Done."));
-
-				ok_Hash.put("tDie_1", true);
-				end_Hash.put("tDie_1", System.currentTimeMillis());
-
-				/**
-				 * [tDie_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tDie_1 finally ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				/**
-				 * [tDie_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tDie_1_SUBPROCESS_STATE", 1);
 	}
 
 	public void tChronometerStop_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -13638,11 +13632,6 @@ public class TEST implements TalendJob {
 				ok_Hash.put("tChronometerStop_1", true);
 				end_Hash.put("tChronometerStop_1", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk10", 0, "ok");
-				}
-				tFixedFlowInput_1Process(globalMap);
-
 				/**
 				 * [tChronometerStop_1 end ] stop
 				 */
@@ -13684,6 +13673,1385 @@ public class TEST implements TalendJob {
 		}
 
 		globalMap.put("tChronometerStop_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public Integer FOUCFIN;
+
+		public Integer getFOUCFIN() {
+			return this.FOUCFIN;
+		}
+
+		public String LIBFRS;
+
+		public String getLIBFRS() {
+			return this.LIBFRS;
+		}
+
+		public String FOUCNUF;
+
+		public String getFOUCNUF() {
+			return this.FOUCNUF;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.FOUCFIN == null) ? 0 : this.FOUCFIN.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row5Struct other = (row5Struct) obj;
+
+			if (this.FOUCFIN == null) {
+				if (other.FOUCFIN != null)
+					return false;
+
+			} else if (!this.FOUCFIN.equals(other.FOUCFIN))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row5Struct other) {
+
+			other.FOUCFIN = this.FOUCFIN;
+			other.LIBFRS = this.LIBFRS;
+			other.FOUCNUF = this.FOUCNUF;
+
+		}
+
+		public void copyKeysDataTo(row5Struct other) {
+
+			other.FOUCFIN = this.FOUCFIN;
+
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
+				throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				unmarshaller.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
+				throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
+
+				try {
+
+					int length = 0;
+
+					this.FOUCFIN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
+
+				try {
+
+					int length = 0;
+
+					this.FOUCFIN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.FOUCFIN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.FOUCFIN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.LIBFRS = readString(dis, ois);
+
+				this.FOUCNUF = readString(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
+			try {
+				int length = 0;
+
+				this.LIBFRS = readString(dis, objectIn);
+
+				this.FOUCNUF = readString(dis, objectIn);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				writeString(this.LIBFRS, dos, oos);
+
+				writeString(this.FOUCNUF, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
+			try {
+
+				writeString(this.LIBFRS, dos, objectOut);
+
+				writeString(this.FOUCNUF, dos, objectOut);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+
+		public boolean supportMarshaller() {
+			return true;
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("FOUCFIN=" + String.valueOf(FOUCFIN));
+			sb.append(",LIBFRS=" + LIBFRS);
+			sb.append(",FOUCNUF=" + FOUCNUF);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (FOUCFIN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCFIN);
+			}
+
+			sb.append("|");
+
+			if (LIBFRS == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(LIBFRS);
+			}
+
+			sb.append("|");
+
+			if (FOUCNUF == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCNUF);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row5Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.FOUCFIN, other.FOUCFIN);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tHashInput_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tHashInput_2_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row5Struct row5 = new row5Struct();
+
+				/**
+				 * [tAdvancedHash_row5 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row5", false);
+				start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row5";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row5");
+
+				int tos_count_tAdvancedHash_row5 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tAdvancedHash_row5", "tAdvancedHash_row5", "tAdvancedHash");
+					talendJobLogProcess(globalMap);
+				}
+
+				// connection name:row5
+				// source node:tHashInput_2 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
+				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
+				// linked node: tMap_1 - inputs:(row1,row5) outputs:(out1,fouci)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row5Struct>getLookup(matchingModeEnum_row5);
+
+				globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+
+				/**
+				 * [tAdvancedHash_row5 begin ] stop
+				 */
+
+				/**
+				 * [tHashInput_2 begin ] start
+				 */
+
+				ok_Hash.put("tHashInput_2", false);
+				start_Hash.put("tHashInput_2", System.currentTimeMillis());
+
+				currentComponent = "tHashInput_2";
+
+				int tos_count_tHashInput_2 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tHashInput_2", "FOURNISSEUR", "tHashInput");
+					talendJobLogProcess(globalMap);
+				}
+
+				int nb_line_tHashInput_2 = 0;
+
+				org.talend.designer.components.hashfile.common.MapHashFile mf_tHashInput_2 = org.talend.designer.components.hashfile.common.MapHashFile
+						.getMapHashFile();
+				org.talend.designer.components.hashfile.memory.AdvancedMemoryHashFile<row3Struct> tHashFile_tHashInput_2 = mf_tHashInput_2
+						.getAdvancedMemoryHashFile("tHashFile_TEST_" + pid + "_tHashOutput_1");
+				if (tHashFile_tHashInput_2 == null) {
+					throw new RuntimeException(
+							"The hash is not initialized : The hash must exist before you read from it");
+				}
+				java.util.Iterator<row3Struct> iterator_tHashInput_2 = tHashFile_tHashInput_2.iterator();
+				while (iterator_tHashInput_2.hasNext()) {
+					row3Struct next_tHashInput_2 = iterator_tHashInput_2.next();
+
+					row5.FOUCFIN = next_tHashInput_2.FOUCFIN;
+					row5.LIBFRS = next_tHashInput_2.LIBFRS;
+					row5.FOUCNUF = next_tHashInput_2.FOUCNUF;
+
+					/**
+					 * [tHashInput_2 begin ] stop
+					 */
+
+					/**
+					 * [tHashInput_2 main ] start
+					 */
+
+					currentComponent = "tHashInput_2";
+
+					tos_count_tHashInput_2++;
+
+					/**
+					 * [tHashInput_2 main ] stop
+					 */
+
+					/**
+					 * [tHashInput_2 process_data_begin ] start
+					 */
+
+					currentComponent = "tHashInput_2";
+
+					/**
+					 * [tHashInput_2 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row5 main ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row5";
+
+					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+							, "row5", "tHashInput_2", "FOURNISSEUR", "tHashInput", "tAdvancedHash_row5",
+							"tAdvancedHash_row5", "tAdvancedHash"
+
+					)) {
+						talendJobLogProcess(globalMap);
+					}
+
+					if (log.isTraceEnabled()) {
+						log.trace("row5 - " + (row5 == null ? "" : row5.toLogString()));
+					}
+
+					row5Struct row5_HashRow = new row5Struct();
+
+					row5_HashRow.FOUCFIN = row5.FOUCFIN;
+
+					row5_HashRow.LIBFRS = row5.LIBFRS;
+
+					row5_HashRow.FOUCNUF = row5.FOUCNUF;
+
+					tHash_Lookup_row5.put(row5_HashRow);
+
+					tos_count_tAdvancedHash_row5++;
+
+					/**
+					 * [tAdvancedHash_row5 main ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row5 process_data_begin ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row5";
+
+					/**
+					 * [tAdvancedHash_row5 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row5 process_data_end ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row5";
+
+					/**
+					 * [tAdvancedHash_row5 process_data_end ] stop
+					 */
+
+					/**
+					 * [tHashInput_2 process_data_end ] start
+					 */
+
+					currentComponent = "tHashInput_2";
+
+					/**
+					 * [tHashInput_2 process_data_end ] stop
+					 */
+
+					/**
+					 * [tHashInput_2 end ] start
+					 */
+
+					currentComponent = "tHashInput_2";
+
+					nb_line_tHashInput_2++;
+				}
+
+				org.talend.designer.components.hashfile.common.MapHashFile.resourceLockMap
+						.remove("tHashFile_TEST_" + pid + "_tHashOutput_1");
+
+				globalMap.put("tHashInput_2_NB_LINE", nb_line_tHashInput_2);
+
+				ok_Hash.put("tHashInput_2", true);
+				end_Hash.put("tHashInput_2", System.currentTimeMillis());
+
+				/**
+				 * [tHashInput_2 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row5 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row5";
+
+				tHash_Lookup_row5.endPut();
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row5", 2, 0,
+						"tHashInput_2", "FOURNISSEUR", "tHashInput", "tAdvancedHash_row5", "tAdvancedHash_row5",
+						"tAdvancedHash", "output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				ok_Hash.put("tAdvancedHash_row5", true);
+				end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row5 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tHashInput_2 finally ] start
+				 */
+
+				currentComponent = "tHashInput_2";
+
+				/**
+				 * [tHashInput_2 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row5 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row5";
+
+				/**
+				 * [tAdvancedHash_row5 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tHashInput_2_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row7Struct implements routines.system.IPersistableComparableLookupRow<row7Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public Integer FOUCFIN;
+
+		public Integer getFOUCFIN() {
+			return this.FOUCFIN;
+		}
+
+		public String LIBFRS;
+
+		public String getLIBFRS() {
+			return this.LIBFRS;
+		}
+
+		public String FOUCNUF;
+
+		public String getFOUCNUF() {
+			return this.FOUCNUF;
+		}
+
+		public Integer COUNTFRN;
+
+		public Integer getCOUNTFRN() {
+			return this.COUNTFRN;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.FOUCFIN == null) ? 0 : this.FOUCFIN.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row7Struct other = (row7Struct) obj;
+
+			if (this.FOUCFIN == null) {
+				if (other.FOUCFIN != null)
+					return false;
+
+			} else if (!this.FOUCFIN.equals(other.FOUCFIN))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row7Struct other) {
+
+			other.FOUCFIN = this.FOUCFIN;
+			other.LIBFRS = this.LIBFRS;
+			other.FOUCNUF = this.FOUCNUF;
+			other.COUNTFRN = this.COUNTFRN;
+
+		}
+
+		public void copyKeysDataTo(row7Struct other) {
+
+			other.FOUCFIN = this.FOUCFIN;
+
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
+				throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				unmarshaller.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
+				throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
+				throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = unmarshaller.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
+				throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
+
+				try {
+
+					int length = 0;
+
+					this.FOUCFIN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
+
+				try {
+
+					int length = 0;
+
+					this.FOUCFIN = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.FOUCFIN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// Integer
+
+				writeInteger(this.FOUCFIN, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.LIBFRS = readString(dis, ois);
+
+				this.FOUCNUF = readString(dis, ois);
+
+				this.COUNTFRN = readInteger(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
+			try {
+				int length = 0;
+
+				this.LIBFRS = readString(dis, objectIn);
+
+				this.FOUCNUF = readString(dis, objectIn);
+
+				this.COUNTFRN = readInteger(dis, objectIn);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				writeString(this.LIBFRS, dos, oos);
+
+				writeString(this.FOUCNUF, dos, oos);
+
+				writeInteger(this.COUNTFRN, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
+			try {
+
+				writeString(this.LIBFRS, dos, objectOut);
+
+				writeString(this.FOUCNUF, dos, objectOut);
+
+				writeInteger(this.COUNTFRN, dos, objectOut);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+
+		public boolean supportMarshaller() {
+			return true;
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("FOUCFIN=" + String.valueOf(FOUCFIN));
+			sb.append(",LIBFRS=" + LIBFRS);
+			sb.append(",FOUCNUF=" + FOUCNUF);
+			sb.append(",COUNTFRN=" + String.valueOf(COUNTFRN));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (FOUCFIN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCFIN);
+			}
+
+			sb.append("|");
+
+			if (LIBFRS == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(LIBFRS);
+			}
+
+			sb.append("|");
+
+			if (FOUCNUF == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FOUCNUF);
+			}
+
+			sb.append("|");
+
+			if (COUNTFRN == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(COUNTFRN);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row7Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.FOUCFIN, other.FOUCFIN);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tHashInput_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tHashInput_3_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row7Struct row7 = new row7Struct();
+
+				/**
+				 * [tAdvancedHash_row7 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row7", false);
+				start_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row7";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row7");
+
+				int tos_count_tAdvancedHash_row7 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tAdvancedHash_row7", "tAdvancedHash_row7", "tAdvancedHash");
+					talendJobLogProcess(globalMap);
+				}
+
+				// connection name:row7
+				// source node:tHashInput_3 - inputs:(after_tHashInput_1) outputs:(row7,row7) |
+				// target node:tAdvancedHash_row7 - inputs:(row7) outputs:()
+				// linked node: tMap_3 - inputs:(row6,row7) outputs:(OUTFRN)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row7 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row7Struct> tHash_Lookup_row7 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row7Struct>getLookup(matchingModeEnum_row7);
+
+				globalMap.put("tHash_Lookup_row7", tHash_Lookup_row7);
+
+				/**
+				 * [tAdvancedHash_row7 begin ] stop
+				 */
+
+				/**
+				 * [tHashInput_3 begin ] start
+				 */
+
+				ok_Hash.put("tHashInput_3", false);
+				start_Hash.put("tHashInput_3", System.currentTimeMillis());
+
+				currentComponent = "tHashInput_3";
+
+				int tos_count_tHashInput_3 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tHashInput_3", "COUNTFRN", "tHashInput");
+					talendJobLogProcess(globalMap);
+				}
+
+				int nb_line_tHashInput_3 = 0;
+
+				org.talend.designer.components.hashfile.common.MapHashFile mf_tHashInput_3 = org.talend.designer.components.hashfile.common.MapHashFile
+						.getMapHashFile();
+				org.talend.designer.components.hashfile.memory.AdvancedMemoryHashFile<row4Struct> tHashFile_tHashInput_3 = mf_tHashInput_3
+						.getAdvancedMemoryHashFile("tHashFile_TEST_" + pid + "_tHashOutput_2");
+				if (tHashFile_tHashInput_3 == null) {
+					throw new RuntimeException(
+							"The hash is not initialized : The hash must exist before you read from it");
+				}
+				java.util.Iterator<row4Struct> iterator_tHashInput_3 = tHashFile_tHashInput_3.iterator();
+				while (iterator_tHashInput_3.hasNext()) {
+					row4Struct next_tHashInput_3 = iterator_tHashInput_3.next();
+
+					row7.FOUCFIN = next_tHashInput_3.FOUCFIN;
+					row7.LIBFRS = next_tHashInput_3.FOULIB;
+					row7.FOUCNUF = next_tHashInput_3.FOUCNUF;
+					row7.COUNTFRN = next_tHashInput_3.COUNTFRN;
+
+					/**
+					 * [tHashInput_3 begin ] stop
+					 */
+
+					/**
+					 * [tHashInput_3 main ] start
+					 */
+
+					currentComponent = "tHashInput_3";
+
+					tos_count_tHashInput_3++;
+
+					/**
+					 * [tHashInput_3 main ] stop
+					 */
+
+					/**
+					 * [tHashInput_3 process_data_begin ] start
+					 */
+
+					currentComponent = "tHashInput_3";
+
+					/**
+					 * [tHashInput_3 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row7 main ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row7";
+
+					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+							, "row7", "tHashInput_3", "COUNTFRN", "tHashInput", "tAdvancedHash_row7",
+							"tAdvancedHash_row7", "tAdvancedHash"
+
+					)) {
+						talendJobLogProcess(globalMap);
+					}
+
+					if (log.isTraceEnabled()) {
+						log.trace("row7 - " + (row7 == null ? "" : row7.toLogString()));
+					}
+
+					row7Struct row7_HashRow = new row7Struct();
+
+					row7_HashRow.FOUCFIN = row7.FOUCFIN;
+
+					row7_HashRow.LIBFRS = row7.LIBFRS;
+
+					row7_HashRow.FOUCNUF = row7.FOUCNUF;
+
+					row7_HashRow.COUNTFRN = row7.COUNTFRN;
+
+					tHash_Lookup_row7.put(row7_HashRow);
+
+					tos_count_tAdvancedHash_row7++;
+
+					/**
+					 * [tAdvancedHash_row7 main ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row7 process_data_begin ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row7";
+
+					/**
+					 * [tAdvancedHash_row7 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row7 process_data_end ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row7";
+
+					/**
+					 * [tAdvancedHash_row7 process_data_end ] stop
+					 */
+
+					/**
+					 * [tHashInput_3 process_data_end ] start
+					 */
+
+					currentComponent = "tHashInput_3";
+
+					/**
+					 * [tHashInput_3 process_data_end ] stop
+					 */
+
+					/**
+					 * [tHashInput_3 end ] start
+					 */
+
+					currentComponent = "tHashInput_3";
+
+					nb_line_tHashInput_3++;
+				}
+
+				org.talend.designer.components.hashfile.common.MapHashFile.resourceLockMap
+						.remove("tHashFile_TEST_" + pid + "_tHashOutput_2");
+
+				globalMap.put("tHashInput_3_NB_LINE", nb_line_tHashInput_3);
+
+				ok_Hash.put("tHashInput_3", true);
+				end_Hash.put("tHashInput_3", System.currentTimeMillis());
+
+				/**
+				 * [tHashInput_3 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row7 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row7";
+
+				tHash_Lookup_row7.endPut();
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row7", 2, 0,
+						"tHashInput_3", "COUNTFRN", "tHashInput", "tAdvancedHash_row7", "tAdvancedHash_row7",
+						"tAdvancedHash", "output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				ok_Hash.put("tAdvancedHash_row7", true);
+				end_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row7 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tHashInput_3 finally ] start
+				 */
+
+				currentComponent = "tHashInput_3";
+
+				/**
+				 * [tHashInput_3 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row7 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row7";
+
+				/**
+				 * [tAdvancedHash_row7 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tHashInput_3_SUBPROCESS_STATE", 1);
 	}
 
 	public static class Log_OutStruct implements routines.system.IPersistableRow<Log_OutStruct> {
@@ -15310,6 +16678,11 @@ public class TEST implements TalendJob {
 				ok_Hash.put("tFixedFlowInput_1", true);
 				end_Hash.put("tFixedFlowInput_1", System.currentTimeMillis());
 
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk24", 0, "ok");
+				}
+				tChronometerStop_1Process(globalMap);
+
 				/**
 				 * [tFixedFlowInput_1 end ] stop
 				 */
@@ -15428,1385 +16801,6 @@ public class TEST implements TalendJob {
 		}
 
 		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
-		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
-		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public Integer FOUCFIN;
-
-		public Integer getFOUCFIN() {
-			return this.FOUCFIN;
-		}
-
-		public String LIBFRS;
-
-		public String getLIBFRS() {
-			return this.LIBFRS;
-		}
-
-		public String FOUCNUF;
-
-		public String getFOUCNUF() {
-			return this.FOUCNUF;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.FOUCFIN == null) ? 0 : this.FOUCFIN.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row5Struct other = (row5Struct) obj;
-
-			if (this.FOUCFIN == null) {
-				if (other.FOUCFIN != null)
-					return false;
-
-			} else if (!this.FOUCFIN.equals(other.FOUCFIN))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row5Struct other) {
-
-			other.FOUCFIN = this.FOUCFIN;
-			other.LIBFRS = this.LIBFRS;
-			other.FOUCNUF = this.FOUCNUF;
-
-		}
-
-		public void copyKeysDataTo(row5Struct other) {
-
-			other.FOUCFIN = this.FOUCFIN;
-
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				unmarshaller.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
-
-				try {
-
-					int length = 0;
-
-					this.FOUCFIN = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
-
-				try {
-
-					int length = 0;
-
-					this.FOUCFIN = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// Integer
-
-				writeInteger(this.FOUCFIN, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// Integer
-
-				writeInteger(this.FOUCFIN, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.LIBFRS = readString(dis, ois);
-
-				this.FOUCNUF = readString(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-			try {
-				int length = 0;
-
-				this.LIBFRS = readString(dis, objectIn);
-
-				this.FOUCNUF = readString(dis, objectIn);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeString(this.LIBFRS, dos, oos);
-
-				writeString(this.FOUCNUF, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
-			try {
-
-				writeString(this.LIBFRS, dos, objectOut);
-
-				writeString(this.FOUCNUF, dos, objectOut);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		}
-
-		public boolean supportMarshaller() {
-			return true;
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("FOUCFIN=" + String.valueOf(FOUCFIN));
-			sb.append(",LIBFRS=" + LIBFRS);
-			sb.append(",FOUCNUF=" + FOUCNUF);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (FOUCFIN == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FOUCFIN);
-			}
-
-			sb.append("|");
-
-			if (LIBFRS == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(LIBFRS);
-			}
-
-			sb.append("|");
-
-			if (FOUCNUF == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FOUCNUF);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row5Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.FOUCFIN, other.FOUCFIN);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tHashInput_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tHashInput_2_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				row5Struct row5 = new row5Struct();
-
-				/**
-				 * [tAdvancedHash_row5 begin ] start
-				 */
-
-				ok_Hash.put("tAdvancedHash_row5", false);
-				start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
-
-				currentComponent = "tAdvancedHash_row5";
-
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row5");
-
-				int tos_count_tAdvancedHash_row5 = 0;
-
-				if (enableLogStash) {
-					talendJobLog.addCM("tAdvancedHash_row5", "tAdvancedHash_row5", "tAdvancedHash");
-					talendJobLogProcess(globalMap);
-				}
-
-				// connection name:row5
-				// source node:tHashInput_2 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
-				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row5) outputs:(out1,fouci)
-
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row5Struct>getLookup(matchingModeEnum_row5);
-
-				globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
-
-				/**
-				 * [tAdvancedHash_row5 begin ] stop
-				 */
-
-				/**
-				 * [tHashInput_2 begin ] start
-				 */
-
-				ok_Hash.put("tHashInput_2", false);
-				start_Hash.put("tHashInput_2", System.currentTimeMillis());
-
-				currentComponent = "tHashInput_2";
-
-				int tos_count_tHashInput_2 = 0;
-
-				if (enableLogStash) {
-					talendJobLog.addCM("tHashInput_2", "FOURNISSEUR", "tHashInput");
-					talendJobLogProcess(globalMap);
-				}
-
-				int nb_line_tHashInput_2 = 0;
-
-				org.talend.designer.components.hashfile.common.MapHashFile mf_tHashInput_2 = org.talend.designer.components.hashfile.common.MapHashFile
-						.getMapHashFile();
-				org.talend.designer.components.hashfile.memory.AdvancedMemoryHashFile<row3Struct> tHashFile_tHashInput_2 = mf_tHashInput_2
-						.getAdvancedMemoryHashFile("tHashFile_TEST_" + pid + "_tHashOutput_1");
-				if (tHashFile_tHashInput_2 == null) {
-					throw new RuntimeException(
-							"The hash is not initialized : The hash must exist before you read from it");
-				}
-				java.util.Iterator<row3Struct> iterator_tHashInput_2 = tHashFile_tHashInput_2.iterator();
-				while (iterator_tHashInput_2.hasNext()) {
-					row3Struct next_tHashInput_2 = iterator_tHashInput_2.next();
-
-					row5.FOUCFIN = next_tHashInput_2.FOUCFIN;
-					row5.LIBFRS = next_tHashInput_2.LIBFRS;
-					row5.FOUCNUF = next_tHashInput_2.FOUCNUF;
-
-					/**
-					 * [tHashInput_2 begin ] stop
-					 */
-
-					/**
-					 * [tHashInput_2 main ] start
-					 */
-
-					currentComponent = "tHashInput_2";
-
-					tos_count_tHashInput_2++;
-
-					/**
-					 * [tHashInput_2 main ] stop
-					 */
-
-					/**
-					 * [tHashInput_2 process_data_begin ] start
-					 */
-
-					currentComponent = "tHashInput_2";
-
-					/**
-					 * [tHashInput_2 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tAdvancedHash_row5 main ] start
-					 */
-
-					currentComponent = "tAdvancedHash_row5";
-
-					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
-
-							, "row5", "tHashInput_2", "FOURNISSEUR", "tHashInput", "tAdvancedHash_row5",
-							"tAdvancedHash_row5", "tAdvancedHash"
-
-					)) {
-						talendJobLogProcess(globalMap);
-					}
-
-					if (log.isTraceEnabled()) {
-						log.trace("row5 - " + (row5 == null ? "" : row5.toLogString()));
-					}
-
-					row5Struct row5_HashRow = new row5Struct();
-
-					row5_HashRow.FOUCFIN = row5.FOUCFIN;
-
-					row5_HashRow.LIBFRS = row5.LIBFRS;
-
-					row5_HashRow.FOUCNUF = row5.FOUCNUF;
-
-					tHash_Lookup_row5.put(row5_HashRow);
-
-					tos_count_tAdvancedHash_row5++;
-
-					/**
-					 * [tAdvancedHash_row5 main ] stop
-					 */
-
-					/**
-					 * [tAdvancedHash_row5 process_data_begin ] start
-					 */
-
-					currentComponent = "tAdvancedHash_row5";
-
-					/**
-					 * [tAdvancedHash_row5 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tAdvancedHash_row5 process_data_end ] start
-					 */
-
-					currentComponent = "tAdvancedHash_row5";
-
-					/**
-					 * [tAdvancedHash_row5 process_data_end ] stop
-					 */
-
-					/**
-					 * [tHashInput_2 process_data_end ] start
-					 */
-
-					currentComponent = "tHashInput_2";
-
-					/**
-					 * [tHashInput_2 process_data_end ] stop
-					 */
-
-					/**
-					 * [tHashInput_2 end ] start
-					 */
-
-					currentComponent = "tHashInput_2";
-
-					nb_line_tHashInput_2++;
-				}
-
-				org.talend.designer.components.hashfile.common.MapHashFile.resourceLockMap
-						.remove("tHashFile_TEST_" + pid + "_tHashOutput_1");
-
-				globalMap.put("tHashInput_2_NB_LINE", nb_line_tHashInput_2);
-
-				ok_Hash.put("tHashInput_2", true);
-				end_Hash.put("tHashInput_2", System.currentTimeMillis());
-
-				/**
-				 * [tHashInput_2 end ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row5 end ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row5";
-
-				tHash_Lookup_row5.endPut();
-
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row5", 2, 0,
-						"tHashInput_2", "FOURNISSEUR", "tHashInput", "tAdvancedHash_row5", "tAdvancedHash_row5",
-						"tAdvancedHash", "output")) {
-					talendJobLogProcess(globalMap);
-				}
-
-				ok_Hash.put("tAdvancedHash_row5", true);
-				end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
-
-				/**
-				 * [tAdvancedHash_row5 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tHashInput_2 finally ] start
-				 */
-
-				currentComponent = "tHashInput_2";
-
-				/**
-				 * [tHashInput_2 finally ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row5 finally ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row5";
-
-				/**
-				 * [tAdvancedHash_row5 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tHashInput_2_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row7Struct implements routines.system.IPersistableComparableLookupRow<row7Struct> {
-		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEST = new byte[0];
-		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEST = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public Integer FOUCFIN;
-
-		public Integer getFOUCFIN() {
-			return this.FOUCFIN;
-		}
-
-		public String LIBFRS;
-
-		public String getLIBFRS() {
-			return this.LIBFRS;
-		}
-
-		public String FOUCNUF;
-
-		public String getFOUCNUF() {
-			return this.FOUCNUF;
-		}
-
-		public Integer COUNTFRN;
-
-		public Integer getCOUNTFRN() {
-			return this.COUNTFRN;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.FOUCFIN == null) ? 0 : this.FOUCFIN.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row7Struct other = (row7Struct) obj;
-
-			if (this.FOUCFIN == null) {
-				if (other.FOUCFIN != null)
-					return false;
-
-			} else if (!this.FOUCFIN.equals(other.FOUCFIN))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row7Struct other) {
-
-			other.FOUCFIN = this.FOUCFIN;
-			other.LIBFRS = this.LIBFRS;
-			other.FOUCNUF = this.FOUCNUF;
-			other.COUNTFRN = this.COUNTFRN;
-
-		}
-
-		public void copyKeysDataTo(row7Struct other) {
-
-			other.FOUCFIN = this.FOUCFIN;
-
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				unmarshaller.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller)
-				throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = unmarshaller.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = unmarshaller.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller)
-				throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
-
-				try {
-
-					int length = 0;
-
-					this.FOUCFIN = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEST) {
-
-				try {
-
-					int length = 0;
-
-					this.FOUCFIN = readInteger(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// Integer
-
-				writeInteger(this.FOUCFIN, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// Integer
-
-				writeInteger(this.FOUCFIN, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.LIBFRS = readString(dis, ois);
-
-				this.FOUCNUF = readString(dis, ois);
-
-				this.COUNTFRN = readInteger(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-			try {
-				int length = 0;
-
-				this.LIBFRS = readString(dis, objectIn);
-
-				this.FOUCNUF = readString(dis, objectIn);
-
-				this.COUNTFRN = readInteger(dis, objectIn);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeString(this.LIBFRS, dos, oos);
-
-				writeString(this.FOUCNUF, dos, oos);
-
-				writeInteger(this.COUNTFRN, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut) {
-			try {
-
-				writeString(this.LIBFRS, dos, objectOut);
-
-				writeString(this.FOUCNUF, dos, objectOut);
-
-				writeInteger(this.COUNTFRN, dos, objectOut);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		}
-
-		public boolean supportMarshaller() {
-			return true;
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("FOUCFIN=" + String.valueOf(FOUCFIN));
-			sb.append(",LIBFRS=" + LIBFRS);
-			sb.append(",FOUCNUF=" + FOUCNUF);
-			sb.append(",COUNTFRN=" + String.valueOf(COUNTFRN));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (FOUCFIN == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FOUCFIN);
-			}
-
-			sb.append("|");
-
-			if (LIBFRS == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(LIBFRS);
-			}
-
-			sb.append("|");
-
-			if (FOUCNUF == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FOUCNUF);
-			}
-
-			sb.append("|");
-
-			if (COUNTFRN == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(COUNTFRN);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row7Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.FOUCFIN, other.FOUCFIN);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tHashInput_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tHashInput_3_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				row7Struct row7 = new row7Struct();
-
-				/**
-				 * [tAdvancedHash_row7 begin ] start
-				 */
-
-				ok_Hash.put("tAdvancedHash_row7", false);
-				start_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
-
-				currentComponent = "tAdvancedHash_row7";
-
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row7");
-
-				int tos_count_tAdvancedHash_row7 = 0;
-
-				if (enableLogStash) {
-					talendJobLog.addCM("tAdvancedHash_row7", "tAdvancedHash_row7", "tAdvancedHash");
-					talendJobLogProcess(globalMap);
-				}
-
-				// connection name:row7
-				// source node:tHashInput_3 - inputs:(after_tHashInput_1) outputs:(row7,row7) |
-				// target node:tAdvancedHash_row7 - inputs:(row7) outputs:()
-				// linked node: tMap_3 - inputs:(row6,row7) outputs:(OUTFRN)
-
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row7 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row7Struct> tHash_Lookup_row7 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row7Struct>getLookup(matchingModeEnum_row7);
-
-				globalMap.put("tHash_Lookup_row7", tHash_Lookup_row7);
-
-				/**
-				 * [tAdvancedHash_row7 begin ] stop
-				 */
-
-				/**
-				 * [tHashInput_3 begin ] start
-				 */
-
-				ok_Hash.put("tHashInput_3", false);
-				start_Hash.put("tHashInput_3", System.currentTimeMillis());
-
-				currentComponent = "tHashInput_3";
-
-				int tos_count_tHashInput_3 = 0;
-
-				if (enableLogStash) {
-					talendJobLog.addCM("tHashInput_3", "COUNTFRN", "tHashInput");
-					talendJobLogProcess(globalMap);
-				}
-
-				int nb_line_tHashInput_3 = 0;
-
-				org.talend.designer.components.hashfile.common.MapHashFile mf_tHashInput_3 = org.talend.designer.components.hashfile.common.MapHashFile
-						.getMapHashFile();
-				org.talend.designer.components.hashfile.memory.AdvancedMemoryHashFile<row4Struct> tHashFile_tHashInput_3 = mf_tHashInput_3
-						.getAdvancedMemoryHashFile("tHashFile_TEST_" + pid + "_tHashOutput_2");
-				if (tHashFile_tHashInput_3 == null) {
-					throw new RuntimeException(
-							"The hash is not initialized : The hash must exist before you read from it");
-				}
-				java.util.Iterator<row4Struct> iterator_tHashInput_3 = tHashFile_tHashInput_3.iterator();
-				while (iterator_tHashInput_3.hasNext()) {
-					row4Struct next_tHashInput_3 = iterator_tHashInput_3.next();
-
-					row7.FOUCFIN = next_tHashInput_3.FOUCFIN;
-					row7.LIBFRS = next_tHashInput_3.FOULIB;
-					row7.FOUCNUF = next_tHashInput_3.FOUCNUF;
-					row7.COUNTFRN = next_tHashInput_3.COUNTFRN;
-
-					/**
-					 * [tHashInput_3 begin ] stop
-					 */
-
-					/**
-					 * [tHashInput_3 main ] start
-					 */
-
-					currentComponent = "tHashInput_3";
-
-					tos_count_tHashInput_3++;
-
-					/**
-					 * [tHashInput_3 main ] stop
-					 */
-
-					/**
-					 * [tHashInput_3 process_data_begin ] start
-					 */
-
-					currentComponent = "tHashInput_3";
-
-					/**
-					 * [tHashInput_3 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tAdvancedHash_row7 main ] start
-					 */
-
-					currentComponent = "tAdvancedHash_row7";
-
-					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
-
-							, "row7", "tHashInput_3", "COUNTFRN", "tHashInput", "tAdvancedHash_row7",
-							"tAdvancedHash_row7", "tAdvancedHash"
-
-					)) {
-						talendJobLogProcess(globalMap);
-					}
-
-					if (log.isTraceEnabled()) {
-						log.trace("row7 - " + (row7 == null ? "" : row7.toLogString()));
-					}
-
-					row7Struct row7_HashRow = new row7Struct();
-
-					row7_HashRow.FOUCFIN = row7.FOUCFIN;
-
-					row7_HashRow.LIBFRS = row7.LIBFRS;
-
-					row7_HashRow.FOUCNUF = row7.FOUCNUF;
-
-					row7_HashRow.COUNTFRN = row7.COUNTFRN;
-
-					tHash_Lookup_row7.put(row7_HashRow);
-
-					tos_count_tAdvancedHash_row7++;
-
-					/**
-					 * [tAdvancedHash_row7 main ] stop
-					 */
-
-					/**
-					 * [tAdvancedHash_row7 process_data_begin ] start
-					 */
-
-					currentComponent = "tAdvancedHash_row7";
-
-					/**
-					 * [tAdvancedHash_row7 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tAdvancedHash_row7 process_data_end ] start
-					 */
-
-					currentComponent = "tAdvancedHash_row7";
-
-					/**
-					 * [tAdvancedHash_row7 process_data_end ] stop
-					 */
-
-					/**
-					 * [tHashInput_3 process_data_end ] start
-					 */
-
-					currentComponent = "tHashInput_3";
-
-					/**
-					 * [tHashInput_3 process_data_end ] stop
-					 */
-
-					/**
-					 * [tHashInput_3 end ] start
-					 */
-
-					currentComponent = "tHashInput_3";
-
-					nb_line_tHashInput_3++;
-				}
-
-				org.talend.designer.components.hashfile.common.MapHashFile.resourceLockMap
-						.remove("tHashFile_TEST_" + pid + "_tHashOutput_2");
-
-				globalMap.put("tHashInput_3_NB_LINE", nb_line_tHashInput_3);
-
-				ok_Hash.put("tHashInput_3", true);
-				end_Hash.put("tHashInput_3", System.currentTimeMillis());
-
-				/**
-				 * [tHashInput_3 end ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row7 end ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row7";
-
-				tHash_Lookup_row7.endPut();
-
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row7", 2, 0,
-						"tHashInput_3", "COUNTFRN", "tHashInput", "tAdvancedHash_row7", "tAdvancedHash_row7",
-						"tAdvancedHash", "output")) {
-					talendJobLogProcess(globalMap);
-				}
-
-				ok_Hash.put("tAdvancedHash_row7", true);
-				end_Hash.put("tAdvancedHash_row7", System.currentTimeMillis());
-
-				/**
-				 * [tAdvancedHash_row7 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tHashInput_3 finally ] start
-				 */
-
-				currentComponent = "tHashInput_3";
-
-				/**
-				 * [tHashInput_3 finally ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row7 finally ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row7";
-
-				/**
-				 * [tAdvancedHash_row7 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tHashInput_3_SUBPROCESS_STATE", 1);
 	}
 
 	public void tPostjob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -18983,6 +18977,18 @@ public class TEST implements TalendJob {
 			e_tChronometerStart_1.printStackTrace();
 
 		}
+		try {
+			errorCode = null;
+			tFixedFlowInput_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_tFixedFlowInput_1) {
+			globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", -1);
+
+			e_tFixedFlowInput_1.printStackTrace();
+
+		}
 
 		this.globalResumeTicket = true;// to run tPostJob
 
@@ -19194,6 +19200,6 @@ public class TEST implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 598221 characters generated by Talend Cloud Data Management Platform on the
- * 26 juillet 2022 à 13:57:21 WEST
+ * 598204 characters generated by Talend Cloud Data Management Platform on the
+ * 26 juillet 2022 à 14:08:49 WEST
  ************************************************************************************************/
