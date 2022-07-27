@@ -476,6 +476,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
 
+	MetterCatcherUtils tFlowMeterCatcher_1 = new MetterCatcherUtils("_0-AqwAmpEe2IX-E-61NGPg", "0.1");
+
 	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
 	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
@@ -845,26 +847,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 		tChronometerStop_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tHashInput_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tHashInput_3_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
 	public void tFixedFlowInput_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -893,6 +875,36 @@ public class TEMPLATE_TALEND implements TalendJob {
 		status = "failure";
 
 		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFlowMeterCatcher_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tHashInput_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tHashInput_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tHashInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tPostjob_1_error(Exception exception, String errorComponent,
@@ -973,6 +985,16 @@ public class TEMPLATE_TALEND implements TalendJob {
 		status = "failure";
 
 		tDBConnection_4_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tAdvancedHash_row11_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tAdvancedHash_row5_error(Exception exception, String errorComponent,
@@ -6034,6 +6056,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						 * [tMap_1 main ] start
 						 */
 
+						tFlowMeterCatcher_1.addLineToRow("row1_count");
+
 						currentComponent = "tMap_1";
 
 						if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
@@ -10887,6 +10911,10 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				currentComponent = "tFlowMeter_15";
 
+				if (log.isDebugEnabled())
+					log.debug("tFlowMeter_15 - " + ("Sending message to tFlowMeterCatcher_1."));
+				tFlowMeterCatcher_1.addMessage("row8", new Integer(count_tFlowMeter_15), "row1", "", "tFlowMeter_15");
+
 				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row8", 2, 0,
 						"tUniqRow_1", "tUniqRow_1", "tUniqRow", "tFlowMeter_15", "tFlowMeter_15", "tFlowMeter",
 						"output")) {
@@ -10985,6 +11013,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 				 */
 
 			} // end the resume
+
+			tFixedFlowInput_1Process(globalMap);
 
 			if (resumeEntryMethodName == null || globalResumeTicket) {
 				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tDBInput_2:OnSubjobOk", "",
@@ -14373,6 +14403,11 @@ public class TEMPLATE_TALEND implements TalendJob {
 				ok_Hash.put("tChronometerStop_1", true);
 				end_Hash.put("tChronometerStop_1", System.currentTimeMillis());
 
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk24", 0, "ok");
+				}
+				tFixedFlowInput_1Process(globalMap);
+
 				/**
 				 * [tChronometerStop_1 end ] stop
 				 */
@@ -14414,6 +14449,3628 @@ public class TEMPLATE_TALEND implements TalendJob {
 		}
 
 		globalMap.put("tChronometerStop_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class Log_OutStruct implements routines.system.IPersistableRow<Log_OutStruct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+
+		public String TaskName;
+
+		public String getTaskName() {
+			return this.TaskName;
+		}
+
+		public String TaskDetail;
+
+		public String getTaskDetail() {
+			return this.TaskDetail;
+		}
+
+		public String TaskType;
+
+		public String getTaskType() {
+			return this.TaskType;
+		}
+
+		public String StartDate;
+
+		public String getStartDate() {
+			return this.StartDate;
+		}
+
+		public String Duration;
+
+		public String getDuration() {
+			return this.Duration;
+		}
+
+		public String EndDate;
+
+		public String getEndDate() {
+			return this.EndDate;
+		}
+
+		public Integer NbFournisseur;
+
+		public Integer getNbFournisseur() {
+			return this.NbFournisseur;
+		}
+
+		public Integer ERROR_STATUT;
+
+		public Integer getERROR_STATUT() {
+			return this.ERROR_STATUT;
+		}
+
+		public Integer SUCCESS_STATUT;
+
+		public Integer getSUCCESS_STATUT() {
+			return this.SUCCESS_STATUT;
+		}
+
+		public String ERROR_MESSAGE;
+
+		public String getERROR_MESSAGE() {
+			return this.ERROR_MESSAGE;
+		}
+
+		public String FileNamePOutPut;
+
+		public String getFileNamePOutPut() {
+			return this.FileNamePOutPut;
+		}
+
+		public String SUCCESS_MESSAGE;
+
+		public String getSUCCESS_MESSAGE() {
+			return this.SUCCESS_MESSAGE;
+		}
+
+		public Integer count;
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.TaskName = readString(dis);
+
+					this.TaskDetail = readString(dis);
+
+					this.TaskType = readString(dis);
+
+					this.StartDate = readString(dis);
+
+					this.Duration = readString(dis);
+
+					this.EndDate = readString(dis);
+
+					this.NbFournisseur = readInteger(dis);
+
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
+
+					this.ERROR_MESSAGE = readString(dis);
+
+					this.FileNamePOutPut = readString(dis);
+
+					this.SUCCESS_MESSAGE = readString(dis);
+
+					this.count = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.TaskName = readString(dis);
+
+					this.TaskDetail = readString(dis);
+
+					this.TaskType = readString(dis);
+
+					this.StartDate = readString(dis);
+
+					this.Duration = readString(dis);
+
+					this.EndDate = readString(dis);
+
+					this.NbFournisseur = readInteger(dis);
+
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
+
+					this.ERROR_MESSAGE = readString(dis);
+
+					this.FileNamePOutPut = readString(dis);
+
+					this.SUCCESS_MESSAGE = readString(dis);
+
+					this.count = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.TaskName, dos);
+
+				// String
+
+				writeString(this.TaskDetail, dos);
+
+				// String
+
+				writeString(this.TaskType, dos);
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// String
+
+				writeString(this.Duration, dos);
+
+				// String
+
+				writeString(this.EndDate, dos);
+
+				// Integer
+
+				writeInteger(this.NbFournisseur, dos);
+
+				// Integer
+
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
+				// String
+
+				writeString(this.ERROR_MESSAGE, dos);
+
+				// String
+
+				writeString(this.FileNamePOutPut, dos);
+
+				// String
+
+				writeString(this.SUCCESS_MESSAGE, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.TaskName, dos);
+
+				// String
+
+				writeString(this.TaskDetail, dos);
+
+				// String
+
+				writeString(this.TaskType, dos);
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// String
+
+				writeString(this.Duration, dos);
+
+				// String
+
+				writeString(this.EndDate, dos);
+
+				// Integer
+
+				writeInteger(this.NbFournisseur, dos);
+
+				// Integer
+
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
+				// String
+
+				writeString(this.ERROR_MESSAGE, dos);
+
+				// String
+
+				writeString(this.FileNamePOutPut, dos);
+
+				// String
+
+				writeString(this.SUCCESS_MESSAGE, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("TaskName=" + TaskName);
+			sb.append(",TaskDetail=" + TaskDetail);
+			sb.append(",TaskType=" + TaskType);
+			sb.append(",StartDate=" + StartDate);
+			sb.append(",Duration=" + Duration);
+			sb.append(",EndDate=" + EndDate);
+			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
+			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
+			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
+			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
+			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
+			sb.append(",SUCCESS_MESSAGE=" + SUCCESS_MESSAGE);
+			sb.append(",count=" + String.valueOf(count));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (TaskName == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskName);
+			}
+
+			sb.append("|");
+
+			if (TaskDetail == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskDetail);
+			}
+
+			sb.append("|");
+
+			if (TaskType == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskType);
+			}
+
+			sb.append("|");
+
+			if (StartDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(StartDate);
+			}
+
+			sb.append("|");
+
+			if (Duration == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(Duration);
+			}
+
+			sb.append("|");
+
+			if (EndDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(EndDate);
+			}
+
+			sb.append("|");
+
+			if (NbFournisseur == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(NbFournisseur);
+			}
+
+			sb.append("|");
+
+			if (ERROR_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(ERROR_STATUT);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_STATUT);
+			}
+
+			sb.append("|");
+
+			if (ERROR_MESSAGE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(ERROR_MESSAGE);
+			}
+
+			sb.append("|");
+
+			if (FileNamePOutPut == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FileNamePOutPut);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_MESSAGE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_MESSAGE);
+			}
+
+			sb.append("|");
+
+			if (count == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(count);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(Log_OutStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row9Struct implements routines.system.IPersistableRow<row9Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+
+		public String StartDate;
+
+		public String getStartDate() {
+			return this.StartDate;
+		}
+
+		public Long Duration;
+
+		public Long getDuration() {
+			return this.Duration;
+		}
+
+		public String EndDate;
+
+		public String getEndDate() {
+			return this.EndDate;
+		}
+
+		public String TaskName;
+
+		public String getTaskName() {
+			return this.TaskName;
+		}
+
+		public String TaskDetail;
+
+		public String getTaskDetail() {
+			return this.TaskDetail;
+		}
+
+		public String TaskType;
+
+		public String getTaskType() {
+			return this.TaskType;
+		}
+
+		public Integer NbFournisseur;
+
+		public Integer getNbFournisseur() {
+			return this.NbFournisseur;
+		}
+
+		public Integer ERROR_STATUT;
+
+		public Integer getERROR_STATUT() {
+			return this.ERROR_STATUT;
+		}
+
+		public Integer SUCCESS_STATUT;
+
+		public Integer getSUCCESS_STATUT() {
+			return this.SUCCESS_STATUT;
+		}
+
+		public String ERROR_MESSAGE;
+
+		public String getERROR_MESSAGE() {
+			return this.ERROR_MESSAGE;
+		}
+
+		public String FileNamePOutPut;
+
+		public String getFileNamePOutPut() {
+			return this.FileNamePOutPut;
+		}
+
+		public String SUCCESS_MESSAGE;
+
+		public String getSUCCESS_MESSAGE() {
+			return this.SUCCESS_MESSAGE;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.StartDate = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
+
+					this.EndDate = readString(dis);
+
+					this.TaskName = readString(dis);
+
+					this.TaskDetail = readString(dis);
+
+					this.TaskType = readString(dis);
+
+					this.NbFournisseur = readInteger(dis);
+
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
+
+					this.ERROR_MESSAGE = readString(dis);
+
+					this.FileNamePOutPut = readString(dis);
+
+					this.SUCCESS_MESSAGE = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.StartDate = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
+
+					this.EndDate = readString(dis);
+
+					this.TaskName = readString(dis);
+
+					this.TaskDetail = readString(dis);
+
+					this.TaskType = readString(dis);
+
+					this.NbFournisseur = readInteger(dis);
+
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
+
+					this.ERROR_MESSAGE = readString(dis);
+
+					this.FileNamePOutPut = readString(dis);
+
+					this.SUCCESS_MESSAGE = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// Long
+
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
+
+				// String
+
+				writeString(this.EndDate, dos);
+
+				// String
+
+				writeString(this.TaskName, dos);
+
+				// String
+
+				writeString(this.TaskDetail, dos);
+
+				// String
+
+				writeString(this.TaskType, dos);
+
+				// Integer
+
+				writeInteger(this.NbFournisseur, dos);
+
+				// Integer
+
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
+				// String
+
+				writeString(this.ERROR_MESSAGE, dos);
+
+				// String
+
+				writeString(this.FileNamePOutPut, dos);
+
+				// String
+
+				writeString(this.SUCCESS_MESSAGE, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// Long
+
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
+
+				// String
+
+				writeString(this.EndDate, dos);
+
+				// String
+
+				writeString(this.TaskName, dos);
+
+				// String
+
+				writeString(this.TaskDetail, dos);
+
+				// String
+
+				writeString(this.TaskType, dos);
+
+				// Integer
+
+				writeInteger(this.NbFournisseur, dos);
+
+				// Integer
+
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
+				// String
+
+				writeString(this.ERROR_MESSAGE, dos);
+
+				// String
+
+				writeString(this.FileNamePOutPut, dos);
+
+				// String
+
+				writeString(this.SUCCESS_MESSAGE, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("StartDate=" + StartDate);
+			sb.append(",Duration=" + String.valueOf(Duration));
+			sb.append(",EndDate=" + EndDate);
+			sb.append(",TaskName=" + TaskName);
+			sb.append(",TaskDetail=" + TaskDetail);
+			sb.append(",TaskType=" + TaskType);
+			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
+			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
+			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
+			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
+			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
+			sb.append(",SUCCESS_MESSAGE=" + SUCCESS_MESSAGE);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (StartDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(StartDate);
+			}
+
+			sb.append("|");
+
+			if (Duration == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(Duration);
+			}
+
+			sb.append("|");
+
+			if (EndDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(EndDate);
+			}
+
+			sb.append("|");
+
+			if (TaskName == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskName);
+			}
+
+			sb.append("|");
+
+			if (TaskDetail == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskDetail);
+			}
+
+			sb.append("|");
+
+			if (TaskType == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskType);
+			}
+
+			sb.append("|");
+
+			if (NbFournisseur == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(NbFournisseur);
+			}
+
+			sb.append("|");
+
+			if (ERROR_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(ERROR_STATUT);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_STATUT);
+			}
+
+			sb.append("|");
+
+			if (ERROR_MESSAGE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(ERROR_MESSAGE);
+			}
+
+			sb.append("|");
+
+			if (FileNamePOutPut == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FileNamePOutPut);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_MESSAGE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_MESSAGE);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row9Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class after_tFixedFlowInput_1Struct
+			implements routines.system.IPersistableRow<after_tFixedFlowInput_1Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+
+		public String StartDate;
+
+		public String getStartDate() {
+			return this.StartDate;
+		}
+
+		public Long Duration;
+
+		public Long getDuration() {
+			return this.Duration;
+		}
+
+		public String EndDate;
+
+		public String getEndDate() {
+			return this.EndDate;
+		}
+
+		public String TaskName;
+
+		public String getTaskName() {
+			return this.TaskName;
+		}
+
+		public String TaskDetail;
+
+		public String getTaskDetail() {
+			return this.TaskDetail;
+		}
+
+		public String TaskType;
+
+		public String getTaskType() {
+			return this.TaskType;
+		}
+
+		public Integer NbFournisseur;
+
+		public Integer getNbFournisseur() {
+			return this.NbFournisseur;
+		}
+
+		public Integer ERROR_STATUT;
+
+		public Integer getERROR_STATUT() {
+			return this.ERROR_STATUT;
+		}
+
+		public Integer SUCCESS_STATUT;
+
+		public Integer getSUCCESS_STATUT() {
+			return this.SUCCESS_STATUT;
+		}
+
+		public String ERROR_MESSAGE;
+
+		public String getERROR_MESSAGE() {
+			return this.ERROR_MESSAGE;
+		}
+
+		public String FileNamePOutPut;
+
+		public String getFileNamePOutPut() {
+			return this.FileNamePOutPut;
+		}
+
+		public String SUCCESS_MESSAGE;
+
+		public String getSUCCESS_MESSAGE() {
+			return this.SUCCESS_MESSAGE;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.StartDate = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
+
+					this.EndDate = readString(dis);
+
+					this.TaskName = readString(dis);
+
+					this.TaskDetail = readString(dis);
+
+					this.TaskType = readString(dis);
+
+					this.NbFournisseur = readInteger(dis);
+
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
+
+					this.ERROR_MESSAGE = readString(dis);
+
+					this.FileNamePOutPut = readString(dis);
+
+					this.SUCCESS_MESSAGE = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.StartDate = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Duration = null;
+					} else {
+						this.Duration = dis.readLong();
+					}
+
+					this.EndDate = readString(dis);
+
+					this.TaskName = readString(dis);
+
+					this.TaskDetail = readString(dis);
+
+					this.TaskType = readString(dis);
+
+					this.NbFournisseur = readInteger(dis);
+
+					this.ERROR_STATUT = readInteger(dis);
+
+					this.SUCCESS_STATUT = readInteger(dis);
+
+					this.ERROR_MESSAGE = readString(dis);
+
+					this.FileNamePOutPut = readString(dis);
+
+					this.SUCCESS_MESSAGE = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// Long
+
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
+
+				// String
+
+				writeString(this.EndDate, dos);
+
+				// String
+
+				writeString(this.TaskName, dos);
+
+				// String
+
+				writeString(this.TaskDetail, dos);
+
+				// String
+
+				writeString(this.TaskType, dos);
+
+				// Integer
+
+				writeInteger(this.NbFournisseur, dos);
+
+				// Integer
+
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
+				// String
+
+				writeString(this.ERROR_MESSAGE, dos);
+
+				// String
+
+				writeString(this.FileNamePOutPut, dos);
+
+				// String
+
+				writeString(this.SUCCESS_MESSAGE, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// Long
+
+				if (this.Duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Duration);
+				}
+
+				// String
+
+				writeString(this.EndDate, dos);
+
+				// String
+
+				writeString(this.TaskName, dos);
+
+				// String
+
+				writeString(this.TaskDetail, dos);
+
+				// String
+
+				writeString(this.TaskType, dos);
+
+				// Integer
+
+				writeInteger(this.NbFournisseur, dos);
+
+				// Integer
+
+				writeInteger(this.ERROR_STATUT, dos);
+
+				// Integer
+
+				writeInteger(this.SUCCESS_STATUT, dos);
+
+				// String
+
+				writeString(this.ERROR_MESSAGE, dos);
+
+				// String
+
+				writeString(this.FileNamePOutPut, dos);
+
+				// String
+
+				writeString(this.SUCCESS_MESSAGE, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("StartDate=" + StartDate);
+			sb.append(",Duration=" + String.valueOf(Duration));
+			sb.append(",EndDate=" + EndDate);
+			sb.append(",TaskName=" + TaskName);
+			sb.append(",TaskDetail=" + TaskDetail);
+			sb.append(",TaskType=" + TaskType);
+			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
+			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
+			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
+			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
+			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
+			sb.append(",SUCCESS_MESSAGE=" + SUCCESS_MESSAGE);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (StartDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(StartDate);
+			}
+
+			sb.append("|");
+
+			if (Duration == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(Duration);
+			}
+
+			sb.append("|");
+
+			if (EndDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(EndDate);
+			}
+
+			sb.append("|");
+
+			if (TaskName == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskName);
+			}
+
+			sb.append("|");
+
+			if (TaskDetail == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskDetail);
+			}
+
+			sb.append("|");
+
+			if (TaskType == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(TaskType);
+			}
+
+			sb.append("|");
+
+			if (NbFournisseur == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(NbFournisseur);
+			}
+
+			sb.append("|");
+
+			if (ERROR_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(ERROR_STATUT);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_STATUT == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_STATUT);
+			}
+
+			sb.append("|");
+
+			if (ERROR_MESSAGE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(ERROR_MESSAGE);
+			}
+
+			sb.append("|");
+
+			if (FileNamePOutPut == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(FileNamePOutPut);
+			}
+
+			sb.append("|");
+
+			if (SUCCESS_MESSAGE == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(SUCCESS_MESSAGE);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(after_tFixedFlowInput_1Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFixedFlowInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				tFlowMeterCatcher_1Process(globalMap);
+
+				row9Struct row9 = new row9Struct();
+				Log_OutStruct Log_Out = new Log_OutStruct();
+
+				/**
+				 * [tLogRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_1", false);
+				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_1";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "Log_Out");
+
+				int tos_count_tLogRow_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tLogRow_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tLogRow_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tLogRow_1 = new StringBuilder();
+							log4jParamters_tLogRow_1.append("Parameters:");
+							log4jParamters_tLogRow_1.append("BASIC_MODE" + " = " + "false");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("TABLE_PRINT" + " = " + "false");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("VERTICAL" + " = " + "true");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("PRINT_UNIQUE" + " = " + "false");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("PRINT_LABEL" + " = " + "false");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("PRINT_UNIQUE_LABEL" + " = " + "true");
+							log4jParamters_tLogRow_1.append(" | ");
+							log4jParamters_tLogRow_1.append("PRINT_CONTENT_WITH_LOG4J" + " = " + "true");
+							log4jParamters_tLogRow_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tLogRow_1 - " + (log4jParamters_tLogRow_1));
+						}
+					}
+					new BytesLimit65535_tLogRow_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tLogRow_1", "tLogRow_1", "tLogRow");
+					talendJobLogProcess(globalMap);
+				}
+
+				///////////////////////
+
+				class Util_tLogRow_1 {
+
+					String[] des_top = { ".", "-" };
+
+					String[] des_data = { "-", "+" };
+
+					String[] des_frame = { "|" };
+
+					public void printLine(StringBuilder sb, int titleWidth, int dataWidth) {
+
+						sb.append("+");
+						for (int i = 0; i < titleWidth + 2; i++)
+							sb.append("-");
+						sb.append("+");
+						for (int i = 0; i < dataWidth + 2; i++)
+							sb.append("-");
+						sb.append("+" + "\n");
+					}
+
+					public String print(String[] row, int nbLine) {
+
+						StringBuilder sb = new StringBuilder();
+
+						String title = "#" + nbLine + ". " + "tLogRow_1--tLogRow_1";
+
+						// step 1: get the max length of all the row[] member;
+						int dataWidth = 5; // the length of the string "value"
+						for (int i = 0; i < row.length; i++) {
+							if (row[i] == null && 4 > dataWidth) {
+								dataWidth = 4;
+							} else if (row[i] != null && row[i].length() > dataWidth)
+								dataWidth = row[i].length();
+						}
+
+						int titleWidth = 15;
+
+						int totalWidth = dataWidth + titleWidth + 5;
+
+						// step 2: print the header with line number
+						sb.append(".");
+						for (int i = 0; i < totalWidth; i++)
+							sb.append("-");
+						sb.append("." + "\n" + "|");
+
+						int emptyCenterWidth = (totalWidth - title.length()) / 2;
+						for (int i = 0; i < emptyCenterWidth; i++)
+							sb.append(" ");
+						sb.append(title);
+						for (int i = 0; i < totalWidth - emptyCenterWidth - title.length(); i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// step 3: print "key" and "value"
+						printLine(sb, titleWidth, dataWidth);
+
+						sb.append("|" + " key");
+						for (int i = 0; i < titleWidth - 2; i++)
+							sb.append(" ");
+						sb.append("|" + " value");
+						for (int i = 0; i < dataWidth - 4; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						printLine(sb, titleWidth, dataWidth);
+
+						// step 4: print dataset
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "TaskName");
+						for (int i = 0; i < titleWidth - "TaskName".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[0]);
+						for (int i = 0; row[0] == null && i < dataWidth - 3
+								|| row[0] != null && i < dataWidth - row[0].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "TaskDetail");
+						for (int i = 0; i < titleWidth - "TaskDetail".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[1]);
+						for (int i = 0; row[1] == null && i < dataWidth - 3
+								|| row[1] != null && i < dataWidth - row[1].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "TaskType");
+						for (int i = 0; i < titleWidth - "TaskType".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[2]);
+						for (int i = 0; row[2] == null && i < dataWidth - 3
+								|| row[2] != null && i < dataWidth - row[2].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "StartDate");
+						for (int i = 0; i < titleWidth - "StartDate".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[3]);
+						for (int i = 0; row[3] == null && i < dataWidth - 3
+								|| row[3] != null && i < dataWidth - row[3].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "Duration");
+						for (int i = 0; i < titleWidth - "Duration".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[4]);
+						for (int i = 0; row[4] == null && i < dataWidth - 3
+								|| row[4] != null && i < dataWidth - row[4].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "EndDate");
+						for (int i = 0; i < titleWidth - "EndDate".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[5]);
+						for (int i = 0; row[5] == null && i < dataWidth - 3
+								|| row[5] != null && i < dataWidth - row[5].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "NbFournisseur");
+						for (int i = 0; i < titleWidth - "NbFournisseur".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[6]);
+						for (int i = 0; row[6] == null && i < dataWidth - 3
+								|| row[6] != null && i < dataWidth - row[6].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "ERROR_STATUT");
+						for (int i = 0; i < titleWidth - "ERROR_STATUT".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[7]);
+						for (int i = 0; row[7] == null && i < dataWidth - 3
+								|| row[7] != null && i < dataWidth - row[7].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "SUCCESS_STATUT");
+						for (int i = 0; i < titleWidth - "SUCCESS_STATUT".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[8]);
+						for (int i = 0; row[8] == null && i < dataWidth - 3
+								|| row[8] != null && i < dataWidth - row[8].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "ERROR_MESSAGE");
+						for (int i = 0; i < titleWidth - "ERROR_MESSAGE".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[9]);
+						for (int i = 0; row[9] == null && i < dataWidth - 3
+								|| row[9] != null && i < dataWidth - row[9].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "FileNamePOutPut");
+						for (int i = 0; i < titleWidth - "FileNamePOutPut".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[10]);
+						for (int i = 0; row[10] == null && i < dataWidth - 3
+								|| row[10] != null && i < dataWidth - row[10].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "SUCCESS_MESSAGE");
+						for (int i = 0; i < titleWidth - "SUCCESS_MESSAGE".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[11]);
+						for (int i = 0; row[11] == null && i < dataWidth - 3
+								|| row[11] != null && i < dataWidth - row[11].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "count");
+						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[12]);
+						for (int i = 0; row[12] == null && i < dataWidth - 3
+								|| row[12] != null && i < dataWidth - row[12].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// step 5: print a line gap
+						printLine(sb, titleWidth, dataWidth);
+						return sb.toString();
+
+					}
+
+				}
+
+				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
+
+				java.io.PrintStream consoleOut_tLogRow_1 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
+				}
+
+				StringBuilder strBuffer_tLogRow_1 = null;
+				int nb_line_tLogRow_1 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_4 begin ] start
+				 */
+
+				ok_Hash.put("tMap_4", false);
+				start_Hash.put("tMap_4", System.currentTimeMillis());
+
+				currentComponent = "tMap_4";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row9");
+
+				int tos_count_tMap_4 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tMap_4 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tMap_4 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tMap_4 = new StringBuilder();
+							log4jParamters_tMap_4.append("Parameters:");
+							log4jParamters_tMap_4.append("LINK_STYLE" + " = " + "AUTO");
+							log4jParamters_tMap_4.append(" | ");
+							log4jParamters_tMap_4.append("TEMPORARY_DATA_DIRECTORY" + " = " + "");
+							log4jParamters_tMap_4.append(" | ");
+							log4jParamters_tMap_4.append("ROWS_BUFFER_SIZE" + " = " + "2000000");
+							log4jParamters_tMap_4.append(" | ");
+							log4jParamters_tMap_4.append("CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" + " = " + "true");
+							log4jParamters_tMap_4.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tMap_4 - " + (log4jParamters_tMap_4));
+						}
+					}
+					new BytesLimit65535_tMap_4().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tMap_4", "tMap_4", "tMap");
+					talendJobLogProcess(globalMap);
+				}
+
+// ###############################
+// # Lookup's keys initialization
+				int count_row9_tMap_4 = 0;
+
+				int count_row11_tMap_4 = 0;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct> tHash_Lookup_row11 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct>) globalMap
+						.get("tHash_Lookup_row11"));
+
+				tHash_Lookup_row11.initGet();
+
+				row11Struct row11HashKey = new row11Struct();
+				row11Struct row11Default = new row11Struct();
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_4__Struct {
+				}
+				Var__tMap_4__Struct Var__tMap_4 = new Var__tMap_4__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				int count_Log_Out_tMap_4 = 0;
+
+				Log_OutStruct Log_Out_tmp = new Log_OutStruct();
+// ###############################
+
+				/**
+				 * [tMap_4 begin ] stop
+				 */
+
+				/**
+				 * [tFixedFlowInput_1 begin ] start
+				 */
+
+				ok_Hash.put("tFixedFlowInput_1", false);
+				start_Hash.put("tFixedFlowInput_1", System.currentTimeMillis());
+
+				currentComponent = "tFixedFlowInput_1";
+
+				int tos_count_tFixedFlowInput_1 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tFixedFlowInput_1", "", "tFixedFlowInput");
+					talendJobLogProcess(globalMap);
+				}
+
+				for (int i_tFixedFlowInput_1 = 0; i_tFixedFlowInput_1 < 1; i_tFixedFlowInput_1++) {
+
+					row9.StartDate = ((String) globalMap.get("CurrentDate"));
+
+					row9.Duration = ((Long) globalMap.get("tChronometerStop_1_DURATION"));
+
+					row9.EndDate = ((String) globalMap.get("CurrentDate2"));
+
+					row9.TaskName = ((String) globalMap.get("TaskName"));
+
+					row9.TaskDetail = ((String) globalMap.get("TaskDetail"));
+
+					row9.TaskType = ((String) globalMap.get("TaskType"));
+
+					row9.NbFournisseur = ((Integer) globalMap.get("tDBInput_3_NB_LINE"));
+
+					row9.ERROR_STATUT = ((Integer) globalMap.get("tDie_1_DIE_CODE"));
+
+					row9.SUCCESS_STATUT = ((Integer) globalMap.get("tWarn_1_WARN_CODE"));
+
+					row9.ERROR_MESSAGE = ((String) globalMap.get("tDie_1_ERROR_MESSAGE"));
+
+					row9.FileNamePOutPut = ((String) globalMap.get("tFileOutputDelimited_1_FILE_NAME"));
+
+					row9.SUCCESS_MESSAGE = ((String) globalMap.get("tWarn_1_WARN_MESSAGES"));
+
+					/**
+					 * [tFixedFlowInput_1 begin ] stop
+					 */
+
+					/**
+					 * [tFixedFlowInput_1 main ] start
+					 */
+
+					currentComponent = "tFixedFlowInput_1";
+
+					tos_count_tFixedFlowInput_1++;
+
+					/**
+					 * [tFixedFlowInput_1 main ] stop
+					 */
+
+					/**
+					 * [tFixedFlowInput_1 process_data_begin ] start
+					 */
+
+					currentComponent = "tFixedFlowInput_1";
+
+					/**
+					 * [tFixedFlowInput_1 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tMap_4 main ] start
+					 */
+
+					currentComponent = "tMap_4";
+
+					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+							, "row9", "tFixedFlowInput_1", "", "tFixedFlowInput", "tMap_4", "tMap_4", "tMap"
+
+					)) {
+						talendJobLogProcess(globalMap);
+					}
+
+					if (log.isTraceEnabled()) {
+						log.trace("row9 - " + (row9 == null ? "" : row9.toLogString()));
+					}
+
+					boolean hasCasePrimitiveKeyWithNull_tMap_4 = false;
+
+					// ###############################
+					// # Input tables (lookups)
+					boolean rejectedInnerJoin_tMap_4 = false;
+					boolean mainRowRejected_tMap_4 = false;
+
+					///////////////////////////////////////////////
+					// Starting Lookup Table "row11"
+					///////////////////////////////////////////////
+
+					boolean forceLooprow11 = false;
+
+					row11Struct row11ObjectFromLookup = null;
+
+					if (!rejectedInnerJoin_tMap_4) { // G_TM_M_020
+
+						tHash_Lookup_row11.lookup(row11HashKey);
+
+						if (!tHash_Lookup_row11.hasNext()) { // G_TM_M_090
+
+							forceLooprow11 = true;
+
+						} // G_TM_M_090
+
+					} // G_TM_M_020
+
+					else { // G 20 - G 21
+						forceLooprow11 = true;
+					} // G 21
+
+					row11Struct row11 = null;
+
+					while ((tHash_Lookup_row11 != null && tHash_Lookup_row11.hasNext()) || forceLooprow11) { // G_TM_M_043
+
+						// CALL close loop of lookup 'row11'
+
+						row11Struct fromLookup_row11 = null;
+						row11 = row11Default;
+
+						if (!forceLooprow11) { // G 46
+
+							fromLookup_row11 = tHash_Lookup_row11.next();
+
+							if (fromLookup_row11 != null) {
+								row11 = fromLookup_row11;
+							}
+
+						} // G 46
+
+						forceLooprow11 = false;
+
+						// ###############################
+						{ // start of Var scope
+
+							// ###############################
+							// # Vars tables
+
+							Var__tMap_4__Struct Var = Var__tMap_4;// ###############################
+							// ###############################
+							// # Output tables
+
+							Log_Out = null;
+
+// # Output table : 'Log_Out'
+							count_Log_Out_tMap_4++;
+
+							Log_Out_tmp.TaskName = row9.TaskName;
+							Log_Out_tmp.TaskDetail = row9.TaskDetail;
+							Log_Out_tmp.TaskType = row9.TaskType;
+							Log_Out_tmp.StartDate = row9.StartDate;
+							Log_Out_tmp.Duration = String.valueOf(row9.Duration / 1000 + "s");
+							Log_Out_tmp.EndDate = row9.EndDate;
+							Log_Out_tmp.NbFournisseur = row9.NbFournisseur;
+							Log_Out_tmp.ERROR_STATUT = row9.ERROR_STATUT;
+							Log_Out_tmp.SUCCESS_STATUT = row9.SUCCESS_STATUT;
+							Log_Out_tmp.ERROR_MESSAGE = row9.ERROR_MESSAGE;
+							Log_Out_tmp.FileNamePOutPut = row9.FileNamePOutPut;
+							Log_Out_tmp.SUCCESS_MESSAGE = row9.SUCCESS_MESSAGE;
+							Log_Out_tmp.count = row11.count;
+							Log_Out = Log_Out_tmp;
+							log.debug("tMap_4 - Outputting the record " + count_Log_Out_tMap_4
+									+ " of the output table 'Log_Out'.");
+
+// ###############################
+
+						} // end of Var scope
+
+						rejectedInnerJoin_tMap_4 = false;
+
+						tos_count_tMap_4++;
+
+						/**
+						 * [tMap_4 main ] stop
+						 */
+
+						/**
+						 * [tMap_4 process_data_begin ] start
+						 */
+
+						currentComponent = "tMap_4";
+
+						/**
+						 * [tMap_4 process_data_begin ] stop
+						 */
+// Start of branch "Log_Out"
+						if (Log_Out != null) {
+
+							/**
+							 * [tLogRow_1 main ] start
+							 */
+
+							currentComponent = "tLogRow_1";
+
+							if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+									, "Log_Out", "tMap_4", "tMap_4", "tMap", "tLogRow_1", "tLogRow_1", "tLogRow"
+
+							)) {
+								talendJobLogProcess(globalMap);
+							}
+
+							if (log.isTraceEnabled()) {
+								log.trace("Log_Out - " + (Log_Out == null ? "" : Log_Out.toLogString()));
+							}
+
+///////////////////////		
+
+							strBuffer_tLogRow_1 = new StringBuilder();
+
+							if (Log_Out.TaskName != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskName));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.TaskDetail != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskDetail));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.TaskType != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskType));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.StartDate != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.StartDate));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.Duration != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.Duration));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.EndDate != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.EndDate));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.NbFournisseur != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.NbFournisseur));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.ERROR_STATUT != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.ERROR_STATUT));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.SUCCESS_STATUT != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.SUCCESS_STATUT));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.ERROR_MESSAGE != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.ERROR_MESSAGE));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.FileNamePOutPut != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.FileNamePOutPut));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.SUCCESS_MESSAGE != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.SUCCESS_MESSAGE));
+
+							} //
+
+							strBuffer_tLogRow_1.append("|");
+
+							if (Log_Out.count != null) { //
+
+								strBuffer_tLogRow_1.append(String.valueOf(Log_Out.count));
+
+							} //
+
+							String[] row_tLogRow_1 = new String[13];
+
+							if (Log_Out.TaskName != null) { //
+								row_tLogRow_1[0] = String.valueOf(Log_Out.TaskName);
+
+							} //
+
+							if (Log_Out.TaskDetail != null) { //
+								row_tLogRow_1[1] = String.valueOf(Log_Out.TaskDetail);
+
+							} //
+
+							if (Log_Out.TaskType != null) { //
+								row_tLogRow_1[2] = String.valueOf(Log_Out.TaskType);
+
+							} //
+
+							if (Log_Out.StartDate != null) { //
+								row_tLogRow_1[3] = String.valueOf(Log_Out.StartDate);
+
+							} //
+
+							if (Log_Out.Duration != null) { //
+								row_tLogRow_1[4] = String.valueOf(Log_Out.Duration);
+
+							} //
+
+							if (Log_Out.EndDate != null) { //
+								row_tLogRow_1[5] = String.valueOf(Log_Out.EndDate);
+
+							} //
+
+							if (Log_Out.NbFournisseur != null) { //
+								row_tLogRow_1[6] = String.valueOf(Log_Out.NbFournisseur);
+
+							} //
+
+							if (Log_Out.ERROR_STATUT != null) { //
+								row_tLogRow_1[7] = String.valueOf(Log_Out.ERROR_STATUT);
+
+							} //
+
+							if (Log_Out.SUCCESS_STATUT != null) { //
+								row_tLogRow_1[8] = String.valueOf(Log_Out.SUCCESS_STATUT);
+
+							} //
+
+							if (Log_Out.ERROR_MESSAGE != null) { //
+								row_tLogRow_1[9] = String.valueOf(Log_Out.ERROR_MESSAGE);
+
+							} //
+
+							if (Log_Out.FileNamePOutPut != null) { //
+								row_tLogRow_1[10] = String.valueOf(Log_Out.FileNamePOutPut);
+
+							} //
+
+							if (Log_Out.SUCCESS_MESSAGE != null) { //
+								row_tLogRow_1[11] = String.valueOf(Log_Out.SUCCESS_MESSAGE);
+
+							} //
+
+							if (Log_Out.count != null) { //
+								row_tLogRow_1[12] = String.valueOf(Log_Out.count);
+
+							} //
+
+							nb_line_tLogRow_1++;
+							consoleOut_tLogRow_1.println(util_tLogRow_1.print(row_tLogRow_1, nb_line_tLogRow_1));
+							consoleOut_tLogRow_1.flush();
+							log.info("tLogRow_1 - Content of row " + nb_line_tLogRow_1 + ": "
+									+ TalendString.unionString("|", row_tLogRow_1));
+//////
+
+//////                    
+
+///////////////////////    			
+
+							tos_count_tLogRow_1++;
+
+							/**
+							 * [tLogRow_1 main ] stop
+							 */
+
+							/**
+							 * [tLogRow_1 process_data_begin ] start
+							 */
+
+							currentComponent = "tLogRow_1";
+
+							/**
+							 * [tLogRow_1 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tLogRow_1 process_data_end ] start
+							 */
+
+							currentComponent = "tLogRow_1";
+
+							/**
+							 * [tLogRow_1 process_data_end ] stop
+							 */
+
+						} // End of branch "Log_Out"
+
+					} // close loop of lookup 'row11' // G_TM_M_043
+
+					/**
+					 * [tMap_4 process_data_end ] start
+					 */
+
+					currentComponent = "tMap_4";
+
+					/**
+					 * [tMap_4 process_data_end ] stop
+					 */
+
+					/**
+					 * [tFixedFlowInput_1 process_data_end ] start
+					 */
+
+					currentComponent = "tFixedFlowInput_1";
+
+					/**
+					 * [tFixedFlowInput_1 process_data_end ] stop
+					 */
+
+					/**
+					 * [tFixedFlowInput_1 end ] start
+					 */
+
+					currentComponent = "tFixedFlowInput_1";
+
+				}
+				globalMap.put("tFixedFlowInput_1_NB_LINE", 1);
+
+				ok_Hash.put("tFixedFlowInput_1", true);
+				end_Hash.put("tFixedFlowInput_1", System.currentTimeMillis());
+
+				/**
+				 * [tFixedFlowInput_1 end ] stop
+				 */
+
+				/**
+				 * [tMap_4 end ] start
+				 */
+
+				currentComponent = "tMap_4";
+
+// ###############################
+// # Lookup hashes releasing
+				if (tHash_Lookup_row11 != null) {
+					tHash_Lookup_row11.endGet();
+				}
+				globalMap.remove("tHash_Lookup_row11");
+
+// ###############################      
+				log.debug("tMap_4 - Written records count in the table 'Log_Out': " + count_Log_Out_tMap_4 + ".");
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row9", 2, 0,
+						"tFixedFlowInput_1", "", "tFixedFlowInput", "tMap_4", "tMap_4", "tMap", "output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				if (log.isDebugEnabled())
+					log.debug("tMap_4 - " + ("Done."));
+
+				ok_Hash.put("tMap_4", true);
+				end_Hash.put("tMap_4", System.currentTimeMillis());
+
+				/**
+				 * [tMap_4 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 end ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+//////
+//////
+				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+				if (log.isInfoEnabled())
+					log.info("tLogRow_1 - " + ("Printed row count: ") + (nb_line_tLogRow_1) + ("."));
+
+///////////////////////    			
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "Log_Out", 2, 0,
+						"tMap_4", "tMap_4", "tMap", "tLogRow_1", "tLogRow_1", "tLogRow", "output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				if (log.isDebugEnabled())
+					log.debug("tLogRow_1 - " + ("Done."));
+
+				ok_Hash.put("tLogRow_1", true);
+				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_1 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			// free memory for "tMap_4"
+			globalMap.remove("tHash_Lookup_row11");
+
+			try {
+
+				/**
+				 * [tFixedFlowInput_1 finally ] start
+				 */
+
+				currentComponent = "tFixedFlowInput_1";
+
+				/**
+				 * [tFixedFlowInput_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_4 finally ] start
+				 */
+
+				currentComponent = "tMap_4";
+
+				/**
+				 * [tMap_4 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_1 finally ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+				/**
+				 * [tLogRow_1 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row11Struct implements routines.system.IPersistableRow<row11Struct> {
+		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
+
+		public java.util.Date moment;
+
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
+
+		public String pid;
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String father_pid;
+
+		public String getFather_pid() {
+			return this.father_pid;
+		}
+
+		public String root_pid;
+
+		public String getRoot_pid() {
+			return this.root_pid;
+		}
+
+		public Long system_pid;
+
+		public Long getSystem_pid() {
+			return this.system_pid;
+		}
+
+		public String project;
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String job_repository_id;
+
+		public String getJob_repository_id() {
+			return this.job_repository_id;
+		}
+
+		public String job_version;
+
+		public String getJob_version() {
+			return this.job_version;
+		}
+
+		public String context;
+
+		public String getContext() {
+			return this.context;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String label;
+
+		public String getLabel() {
+			return this.label;
+		}
+
+		public Integer count;
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public Integer reference;
+
+		public Integer getReference() {
+			return this.reference;
+		}
+
+		public String thresholds;
+
+		public String getThresholds() {
+			return this.thresholds;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
+					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
+					} else {
+						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
+				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.father_pid = readString(dis);
+
+					this.root_pid = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.system_pid = null;
+					} else {
+						this.system_pid = dis.readLong();
+					}
+
+					this.project = readString(dis);
+
+					this.job = readString(dis);
+
+					this.job_repository_id = readString(dis);
+
+					this.job_version = readString(dis);
+
+					this.context = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.label = readString(dis);
+
+					this.count = readInteger(dis);
+
+					this.reference = readInteger(dis);
+
+					this.thresholds = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.father_pid = readString(dis);
+
+					this.root_pid = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.system_pid = null;
+					} else {
+						this.system_pid = dis.readLong();
+					}
+
+					this.project = readString(dis);
+
+					this.job = readString(dis);
+
+					this.job_repository_id = readString(dis);
+
+					this.job_version = readString(dis);
+
+					this.context = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.label = readString(dis);
+
+					this.count = readInteger(dis);
+
+					this.reference = readInteger(dis);
+
+					this.thresholds = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// Long
+
+				if (this.system_pid == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.system_pid);
+				}
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.job_repository_id, dos);
+
+				// String
+
+				writeString(this.job_version, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.label, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+				// Integer
+
+				writeInteger(this.reference, dos);
+
+				// String
+
+				writeString(this.thresholds, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// Long
+
+				if (this.system_pid == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.system_pid);
+				}
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.job_repository_id, dos);
+
+				// String
+
+				writeString(this.job_version, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.label, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+				// Integer
+
+				writeInteger(this.reference, dos);
+
+				// String
+
+				writeString(this.thresholds, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",father_pid=" + father_pid);
+			sb.append(",root_pid=" + root_pid);
+			sb.append(",system_pid=" + String.valueOf(system_pid));
+			sb.append(",project=" + project);
+			sb.append(",job=" + job);
+			sb.append(",job_repository_id=" + job_repository_id);
+			sb.append(",job_version=" + job_version);
+			sb.append(",context=" + context);
+			sb.append(",origin=" + origin);
+			sb.append(",label=" + label);
+			sb.append(",count=" + String.valueOf(count));
+			sb.append(",reference=" + String.valueOf(reference));
+			sb.append(",thresholds=" + thresholds);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		public String toLogString() {
+			StringBuilder sb = new StringBuilder();
+
+			if (moment == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(moment);
+			}
+
+			sb.append("|");
+
+			if (pid == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(pid);
+			}
+
+			sb.append("|");
+
+			if (father_pid == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(father_pid);
+			}
+
+			sb.append("|");
+
+			if (root_pid == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(root_pid);
+			}
+
+			sb.append("|");
+
+			if (system_pid == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(system_pid);
+			}
+
+			sb.append("|");
+
+			if (project == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(project);
+			}
+
+			sb.append("|");
+
+			if (job == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(job);
+			}
+
+			sb.append("|");
+
+			if (job_repository_id == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(job_repository_id);
+			}
+
+			sb.append("|");
+
+			if (job_version == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(job_version);
+			}
+
+			sb.append("|");
+
+			if (context == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(context);
+			}
+
+			sb.append("|");
+
+			if (origin == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(origin);
+			}
+
+			sb.append("|");
+
+			if (label == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(label);
+			}
+
+			sb.append("|");
+
+			if (count == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(count);
+			}
+
+			sb.append("|");
+
+			if (reference == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(reference);
+			}
+
+			sb.append("|");
+
+			if (thresholds == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(thresholds);
+			}
+
+			sb.append("|");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row11Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFlowMeterCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFlowMeterCatcher_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row11Struct row11 = new row11Struct();
+
+				/**
+				 * [tAdvancedHash_row11 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row11", false);
+				start_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row11";
+
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row11");
+
+				int tos_count_tAdvancedHash_row11 = 0;
+
+				if (enableLogStash) {
+					talendJobLog.addCM("tAdvancedHash_row11", "tAdvancedHash_row11", "tAdvancedHash");
+					talendJobLogProcess(globalMap);
+				}
+
+				// connection name:row11
+				// source node:tFlowMeterCatcher_1 - inputs:(after_tFixedFlowInput_1)
+				// outputs:(row11,row11) | target node:tAdvancedHash_row11 - inputs:(row11)
+				// outputs:()
+				// linked node: tMap_4 - inputs:(row9,row11) outputs:(Log_Out)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row11 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_ROWS;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct> tHash_Lookup_row11 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row11Struct>getLookup(matchingModeEnum_row11);
+
+				globalMap.put("tHash_Lookup_row11", tHash_Lookup_row11);
+
+				/**
+				 * [tAdvancedHash_row11 begin ] stop
+				 */
+
+				/**
+				 * [tFlowMeterCatcher_1 begin ] start
+				 */
+
+				ok_Hash.put("tFlowMeterCatcher_1", false);
+				start_Hash.put("tFlowMeterCatcher_1", System.currentTimeMillis());
+
+				currentComponent = "tFlowMeterCatcher_1";
+
+				int tos_count_tFlowMeterCatcher_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tFlowMeterCatcher_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tFlowMeterCatcher_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tFlowMeterCatcher_1 = new StringBuilder();
+							log4jParamters_tFlowMeterCatcher_1.append("Parameters:");
+							if (log.isDebugEnabled())
+								log.debug("tFlowMeterCatcher_1 - " + (log4jParamters_tFlowMeterCatcher_1));
+						}
+					}
+					new BytesLimit65535_tFlowMeterCatcher_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tFlowMeterCatcher_1", "tFlowMeterCatcher_1", "tFlowMeterCatcher");
+					talendJobLogProcess(globalMap);
+				}
+
+				for (MetterCatcherUtils.MetterCatcherMessage mcm : tFlowMeterCatcher_1.getMessages()) {
+					row11.pid = pid;
+					row11.root_pid = rootPid;
+					row11.father_pid = fatherPid;
+					row11.project = projectName;
+					row11.job = jobName;
+					row11.context = contextStr;
+					row11.origin = (mcm.getOrigin() == null || mcm.getOrigin().length() < 1 ? null : mcm.getOrigin());
+					row11.moment = mcm.getMoment();
+					row11.job_version = mcm.getJobVersion();
+					row11.job_repository_id = mcm.getJobId();
+					row11.system_pid = mcm.getSystemPid();
+					row11.label = mcm.getLabel();
+					row11.count = mcm.getCount();
+					row11.reference = tFlowMeterCatcher_1.getConnLinesCount(mcm.getReferense() + "_count");
+					row11.thresholds = mcm.getThresholds();
+
+					/**
+					 * [tFlowMeterCatcher_1 begin ] stop
+					 */
+
+					/**
+					 * [tFlowMeterCatcher_1 main ] start
+					 */
+
+					currentComponent = "tFlowMeterCatcher_1";
+
+					tos_count_tFlowMeterCatcher_1++;
+
+					/**
+					 * [tFlowMeterCatcher_1 main ] stop
+					 */
+
+					/**
+					 * [tFlowMeterCatcher_1 process_data_begin ] start
+					 */
+
+					currentComponent = "tFlowMeterCatcher_1";
+
+					/**
+					 * [tFlowMeterCatcher_1 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row11 main ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row11";
+
+					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+
+							, "row11", "tFlowMeterCatcher_1", "tFlowMeterCatcher_1", "tFlowMeterCatcher",
+							"tAdvancedHash_row11", "tAdvancedHash_row11", "tAdvancedHash"
+
+					)) {
+						talendJobLogProcess(globalMap);
+					}
+
+					if (log.isTraceEnabled()) {
+						log.trace("row11 - " + (row11 == null ? "" : row11.toLogString()));
+					}
+
+					row11Struct row11_HashRow = new row11Struct();
+
+					row11_HashRow.moment = row11.moment;
+
+					row11_HashRow.pid = row11.pid;
+
+					row11_HashRow.father_pid = row11.father_pid;
+
+					row11_HashRow.root_pid = row11.root_pid;
+
+					row11_HashRow.system_pid = row11.system_pid;
+
+					row11_HashRow.project = row11.project;
+
+					row11_HashRow.job = row11.job;
+
+					row11_HashRow.job_repository_id = row11.job_repository_id;
+
+					row11_HashRow.job_version = row11.job_version;
+
+					row11_HashRow.context = row11.context;
+
+					row11_HashRow.origin = row11.origin;
+
+					row11_HashRow.label = row11.label;
+
+					row11_HashRow.count = row11.count;
+
+					row11_HashRow.reference = row11.reference;
+
+					row11_HashRow.thresholds = row11.thresholds;
+
+					tHash_Lookup_row11.put(row11_HashRow);
+
+					tos_count_tAdvancedHash_row11++;
+
+					/**
+					 * [tAdvancedHash_row11 main ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row11 process_data_begin ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row11";
+
+					/**
+					 * [tAdvancedHash_row11 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tAdvancedHash_row11 process_data_end ] start
+					 */
+
+					currentComponent = "tAdvancedHash_row11";
+
+					/**
+					 * [tAdvancedHash_row11 process_data_end ] stop
+					 */
+
+					/**
+					 * [tFlowMeterCatcher_1 process_data_end ] start
+					 */
+
+					currentComponent = "tFlowMeterCatcher_1";
+
+					/**
+					 * [tFlowMeterCatcher_1 process_data_end ] stop
+					 */
+
+					/**
+					 * [tFlowMeterCatcher_1 end ] start
+					 */
+
+					currentComponent = "tFlowMeterCatcher_1";
+
+				}
+
+				if (log.isDebugEnabled())
+					log.debug("tFlowMeterCatcher_1 - " + ("Done."));
+
+				ok_Hash.put("tFlowMeterCatcher_1", true);
+				end_Hash.put("tFlowMeterCatcher_1", System.currentTimeMillis());
+
+				/**
+				 * [tFlowMeterCatcher_1 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row11 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row11";
+
+				tHash_Lookup_row11.endPut();
+
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row11", 2, 0,
+						"tFlowMeterCatcher_1", "tFlowMeterCatcher_1", "tFlowMeterCatcher", "tAdvancedHash_row11",
+						"tAdvancedHash_row11", "tAdvancedHash", "output")) {
+					talendJobLogProcess(globalMap);
+				}
+
+				ok_Hash.put("tAdvancedHash_row11", true);
+				end_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row11 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tFlowMeterCatcher_1 finally ] start
+				 */
+
+				currentComponent = "tFlowMeterCatcher_1";
+
+				/**
+				 * [tFlowMeterCatcher_1 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row11 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row11";
+
+				/**
+				 * [tAdvancedHash_row11 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tFlowMeterCatcher_1_SUBPROCESS_STATE", 1);
 	}
 
 	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
@@ -15793,1980 +19450,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 		}
 
 		globalMap.put("tHashInput_3_SUBPROCESS_STATE", 1);
-	}
-
-	public static class Log_OutStruct implements routines.system.IPersistableRow<Log_OutStruct> {
-		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
-		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
-
-		public String TaskName;
-
-		public String getTaskName() {
-			return this.TaskName;
-		}
-
-		public String TaskDetail;
-
-		public String getTaskDetail() {
-			return this.TaskDetail;
-		}
-
-		public String TaskType;
-
-		public String getTaskType() {
-			return this.TaskType;
-		}
-
-		public String StartDate;
-
-		public String getStartDate() {
-			return this.StartDate;
-		}
-
-		public String Duration;
-
-		public String getDuration() {
-			return this.Duration;
-		}
-
-		public String EndDate;
-
-		public String getEndDate() {
-			return this.EndDate;
-		}
-
-		public Integer NbFournisseur;
-
-		public Integer getNbFournisseur() {
-			return this.NbFournisseur;
-		}
-
-		public Integer ERROR_STATUT;
-
-		public Integer getERROR_STATUT() {
-			return this.ERROR_STATUT;
-		}
-
-		public Integer SUCCESS_STATUT;
-
-		public Integer getSUCCESS_STATUT() {
-			return this.SUCCESS_STATUT;
-		}
-
-		public String ERROR_MESSAGE;
-
-		public String getERROR_MESSAGE() {
-			return this.ERROR_MESSAGE;
-		}
-
-		public String FileNamePOutPut;
-
-		public String getFileNamePOutPut() {
-			return this.FileNamePOutPut;
-		}
-
-		public String SUCCESS_MESSAGE;
-
-		public String getSUCCESS_MESSAGE() {
-			return this.SUCCESS_MESSAGE;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
-					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
-					} else {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
-				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
-					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
-					} else {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
-				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
-
-				try {
-
-					int length = 0;
-
-					this.TaskName = readString(dis);
-
-					this.TaskDetail = readString(dis);
-
-					this.TaskType = readString(dis);
-
-					this.StartDate = readString(dis);
-
-					this.Duration = readString(dis);
-
-					this.EndDate = readString(dis);
-
-					this.NbFournisseur = readInteger(dis);
-
-					this.ERROR_STATUT = readInteger(dis);
-
-					this.SUCCESS_STATUT = readInteger(dis);
-
-					this.ERROR_MESSAGE = readString(dis);
-
-					this.FileNamePOutPut = readString(dis);
-
-					this.SUCCESS_MESSAGE = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
-
-				try {
-
-					int length = 0;
-
-					this.TaskName = readString(dis);
-
-					this.TaskDetail = readString(dis);
-
-					this.TaskType = readString(dis);
-
-					this.StartDate = readString(dis);
-
-					this.Duration = readString(dis);
-
-					this.EndDate = readString(dis);
-
-					this.NbFournisseur = readInteger(dis);
-
-					this.ERROR_STATUT = readInteger(dis);
-
-					this.SUCCESS_STATUT = readInteger(dis);
-
-					this.ERROR_MESSAGE = readString(dis);
-
-					this.FileNamePOutPut = readString(dis);
-
-					this.SUCCESS_MESSAGE = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.TaskName, dos);
-
-				// String
-
-				writeString(this.TaskDetail, dos);
-
-				// String
-
-				writeString(this.TaskType, dos);
-
-				// String
-
-				writeString(this.StartDate, dos);
-
-				// String
-
-				writeString(this.Duration, dos);
-
-				// String
-
-				writeString(this.EndDate, dos);
-
-				// Integer
-
-				writeInteger(this.NbFournisseur, dos);
-
-				// Integer
-
-				writeInteger(this.ERROR_STATUT, dos);
-
-				// Integer
-
-				writeInteger(this.SUCCESS_STATUT, dos);
-
-				// String
-
-				writeString(this.ERROR_MESSAGE, dos);
-
-				// String
-
-				writeString(this.FileNamePOutPut, dos);
-
-				// String
-
-				writeString(this.SUCCESS_MESSAGE, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.TaskName, dos);
-
-				// String
-
-				writeString(this.TaskDetail, dos);
-
-				// String
-
-				writeString(this.TaskType, dos);
-
-				// String
-
-				writeString(this.StartDate, dos);
-
-				// String
-
-				writeString(this.Duration, dos);
-
-				// String
-
-				writeString(this.EndDate, dos);
-
-				// Integer
-
-				writeInteger(this.NbFournisseur, dos);
-
-				// Integer
-
-				writeInteger(this.ERROR_STATUT, dos);
-
-				// Integer
-
-				writeInteger(this.SUCCESS_STATUT, dos);
-
-				// String
-
-				writeString(this.ERROR_MESSAGE, dos);
-
-				// String
-
-				writeString(this.FileNamePOutPut, dos);
-
-				// String
-
-				writeString(this.SUCCESS_MESSAGE, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("TaskName=" + TaskName);
-			sb.append(",TaskDetail=" + TaskDetail);
-			sb.append(",TaskType=" + TaskType);
-			sb.append(",StartDate=" + StartDate);
-			sb.append(",Duration=" + Duration);
-			sb.append(",EndDate=" + EndDate);
-			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
-			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
-			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
-			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
-			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
-			sb.append(",SUCCESS_MESSAGE=" + SUCCESS_MESSAGE);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (TaskName == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TaskName);
-			}
-
-			sb.append("|");
-
-			if (TaskDetail == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TaskDetail);
-			}
-
-			sb.append("|");
-
-			if (TaskType == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TaskType);
-			}
-
-			sb.append("|");
-
-			if (StartDate == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(StartDate);
-			}
-
-			sb.append("|");
-
-			if (Duration == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(Duration);
-			}
-
-			sb.append("|");
-
-			if (EndDate == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(EndDate);
-			}
-
-			sb.append("|");
-
-			if (NbFournisseur == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(NbFournisseur);
-			}
-
-			sb.append("|");
-
-			if (ERROR_STATUT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(ERROR_STATUT);
-			}
-
-			sb.append("|");
-
-			if (SUCCESS_STATUT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(SUCCESS_STATUT);
-			}
-
-			sb.append("|");
-
-			if (ERROR_MESSAGE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(ERROR_MESSAGE);
-			}
-
-			sb.append("|");
-
-			if (FileNamePOutPut == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FileNamePOutPut);
-			}
-
-			sb.append("|");
-
-			if (SUCCESS_MESSAGE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(SUCCESS_MESSAGE);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(Log_OutStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public static class row9Struct implements routines.system.IPersistableRow<row9Struct> {
-		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
-		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
-
-		public String StartDate;
-
-		public String getStartDate() {
-			return this.StartDate;
-		}
-
-		public Long Duration;
-
-		public Long getDuration() {
-			return this.Duration;
-		}
-
-		public String EndDate;
-
-		public String getEndDate() {
-			return this.EndDate;
-		}
-
-		public String TaskName;
-
-		public String getTaskName() {
-			return this.TaskName;
-		}
-
-		public String TaskDetail;
-
-		public String getTaskDetail() {
-			return this.TaskDetail;
-		}
-
-		public String TaskType;
-
-		public String getTaskType() {
-			return this.TaskType;
-		}
-
-		public Integer NbFournisseur;
-
-		public Integer getNbFournisseur() {
-			return this.NbFournisseur;
-		}
-
-		public Integer ERROR_STATUT;
-
-		public Integer getERROR_STATUT() {
-			return this.ERROR_STATUT;
-		}
-
-		public Integer SUCCESS_STATUT;
-
-		public Integer getSUCCESS_STATUT() {
-			return this.SUCCESS_STATUT;
-		}
-
-		public String ERROR_MESSAGE;
-
-		public String getERROR_MESSAGE() {
-			return this.ERROR_MESSAGE;
-		}
-
-		public String FileNamePOutPut;
-
-		public String getFileNamePOutPut() {
-			return this.FileNamePOutPut;
-		}
-
-		public String SUCCESS_MESSAGE;
-
-		public String getSUCCESS_MESSAGE() {
-			return this.SUCCESS_MESSAGE;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
-					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
-					} else {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
-				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = unmarshaller.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length) {
-					if (length < 1024 && commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND.length == 0) {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[1024];
-					} else {
-						commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[2 * length];
-					}
-				}
-				unmarshaller.readFully(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length);
-				strReturn = new String(commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (str == null) {
-				marshaller.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				marshaller.writeInt(byteArray.length);
-				marshaller.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
-			if (intNum == null) {
-				marshaller.writeByte(-1);
-			} else {
-				marshaller.writeByte(0);
-				marshaller.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
-
-				try {
-
-					int length = 0;
-
-					this.StartDate = readString(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.Duration = null;
-					} else {
-						this.Duration = dis.readLong();
-					}
-
-					this.EndDate = readString(dis);
-
-					this.TaskName = readString(dis);
-
-					this.TaskDetail = readString(dis);
-
-					this.TaskType = readString(dis);
-
-					this.NbFournisseur = readInteger(dis);
-
-					this.ERROR_STATUT = readInteger(dis);
-
-					this.SUCCESS_STATUT = readInteger(dis);
-
-					this.ERROR_MESSAGE = readString(dis);
-
-					this.FileNamePOutPut = readString(dis);
-
-					this.SUCCESS_MESSAGE = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-			synchronized (commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND) {
-
-				try {
-
-					int length = 0;
-
-					this.StartDate = readString(dis);
-
-					length = dis.readByte();
-					if (length == -1) {
-						this.Duration = null;
-					} else {
-						this.Duration = dis.readLong();
-					}
-
-					this.EndDate = readString(dis);
-
-					this.TaskName = readString(dis);
-
-					this.TaskDetail = readString(dis);
-
-					this.TaskType = readString(dis);
-
-					this.NbFournisseur = readInteger(dis);
-
-					this.ERROR_STATUT = readInteger(dis);
-
-					this.SUCCESS_STATUT = readInteger(dis);
-
-					this.ERROR_MESSAGE = readString(dis);
-
-					this.FileNamePOutPut = readString(dis);
-
-					this.SUCCESS_MESSAGE = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.StartDate, dos);
-
-				// Long
-
-				if (this.Duration == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Duration);
-				}
-
-				// String
-
-				writeString(this.EndDate, dos);
-
-				// String
-
-				writeString(this.TaskName, dos);
-
-				// String
-
-				writeString(this.TaskDetail, dos);
-
-				// String
-
-				writeString(this.TaskType, dos);
-
-				// Integer
-
-				writeInteger(this.NbFournisseur, dos);
-
-				// Integer
-
-				writeInteger(this.ERROR_STATUT, dos);
-
-				// Integer
-
-				writeInteger(this.SUCCESS_STATUT, dos);
-
-				// String
-
-				writeString(this.ERROR_MESSAGE, dos);
-
-				// String
-
-				writeString(this.FileNamePOutPut, dos);
-
-				// String
-
-				writeString(this.SUCCESS_MESSAGE, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public void writeData(org.jboss.marshalling.Marshaller dos) {
-			try {
-
-				// String
-
-				writeString(this.StartDate, dos);
-
-				// Long
-
-				if (this.Duration == null) {
-					dos.writeByte(-1);
-				} else {
-					dos.writeByte(0);
-					dos.writeLong(this.Duration);
-				}
-
-				// String
-
-				writeString(this.EndDate, dos);
-
-				// String
-
-				writeString(this.TaskName, dos);
-
-				// String
-
-				writeString(this.TaskDetail, dos);
-
-				// String
-
-				writeString(this.TaskType, dos);
-
-				// Integer
-
-				writeInteger(this.NbFournisseur, dos);
-
-				// Integer
-
-				writeInteger(this.ERROR_STATUT, dos);
-
-				// Integer
-
-				writeInteger(this.SUCCESS_STATUT, dos);
-
-				// String
-
-				writeString(this.ERROR_MESSAGE, dos);
-
-				// String
-
-				writeString(this.FileNamePOutPut, dos);
-
-				// String
-
-				writeString(this.SUCCESS_MESSAGE, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("StartDate=" + StartDate);
-			sb.append(",Duration=" + String.valueOf(Duration));
-			sb.append(",EndDate=" + EndDate);
-			sb.append(",TaskName=" + TaskName);
-			sb.append(",TaskDetail=" + TaskDetail);
-			sb.append(",TaskType=" + TaskType);
-			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
-			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
-			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
-			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
-			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
-			sb.append(",SUCCESS_MESSAGE=" + SUCCESS_MESSAGE);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (StartDate == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(StartDate);
-			}
-
-			sb.append("|");
-
-			if (Duration == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(Duration);
-			}
-
-			sb.append("|");
-
-			if (EndDate == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(EndDate);
-			}
-
-			sb.append("|");
-
-			if (TaskName == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TaskName);
-			}
-
-			sb.append("|");
-
-			if (TaskDetail == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TaskDetail);
-			}
-
-			sb.append("|");
-
-			if (TaskType == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TaskType);
-			}
-
-			sb.append("|");
-
-			if (NbFournisseur == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(NbFournisseur);
-			}
-
-			sb.append("|");
-
-			if (ERROR_STATUT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(ERROR_STATUT);
-			}
-
-			sb.append("|");
-
-			if (SUCCESS_STATUT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(SUCCESS_STATUT);
-			}
-
-			sb.append("|");
-
-			if (ERROR_MESSAGE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(ERROR_MESSAGE);
-			}
-
-			sb.append("|");
-
-			if (FileNamePOutPut == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(FileNamePOutPut);
-			}
-
-			sb.append("|");
-
-			if (SUCCESS_MESSAGE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(SUCCESS_MESSAGE);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row9Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tFixedFlowInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				row9Struct row9 = new row9Struct();
-				Log_OutStruct Log_Out = new Log_OutStruct();
-
-				/**
-				 * [tLogRow_1 begin ] start
-				 */
-
-				ok_Hash.put("tLogRow_1", false);
-				start_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				currentComponent = "tLogRow_1";
-
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "Log_Out");
-
-				int tos_count_tLogRow_1 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tLogRow_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tLogRow_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tLogRow_1 = new StringBuilder();
-							log4jParamters_tLogRow_1.append("Parameters:");
-							log4jParamters_tLogRow_1.append("BASIC_MODE" + " = " + "false");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("TABLE_PRINT" + " = " + "false");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("VERTICAL" + " = " + "true");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_UNIQUE" + " = " + "false");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_LABEL" + " = " + "false");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_UNIQUE_LABEL" + " = " + "true");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_CONTENT_WITH_LOG4J" + " = " + "true");
-							log4jParamters_tLogRow_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tLogRow_1 - " + (log4jParamters_tLogRow_1));
-						}
-					}
-					new BytesLimit65535_tLogRow_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tLogRow_1", "tLogRow_1", "tLogRow");
-					talendJobLogProcess(globalMap);
-				}
-
-				///////////////////////
-
-				class Util_tLogRow_1 {
-
-					String[] des_top = { ".", "-" };
-
-					String[] des_data = { "-", "+" };
-
-					String[] des_frame = { "|" };
-
-					public void printLine(StringBuilder sb, int titleWidth, int dataWidth) {
-
-						sb.append("+");
-						for (int i = 0; i < titleWidth + 2; i++)
-							sb.append("-");
-						sb.append("+");
-						for (int i = 0; i < dataWidth + 2; i++)
-							sb.append("-");
-						sb.append("+" + "\n");
-					}
-
-					public String print(String[] row, int nbLine) {
-
-						StringBuilder sb = new StringBuilder();
-
-						String title = "#" + nbLine + ". " + "tLogRow_1--tLogRow_1";
-
-						// step 1: get the max length of all the row[] member;
-						int dataWidth = 5; // the length of the string "value"
-						for (int i = 0; i < row.length; i++) {
-							if (row[i] == null && 4 > dataWidth) {
-								dataWidth = 4;
-							} else if (row[i] != null && row[i].length() > dataWidth)
-								dataWidth = row[i].length();
-						}
-
-						int titleWidth = 15;
-
-						int totalWidth = dataWidth + titleWidth + 5;
-
-						// step 2: print the header with line number
-						sb.append(".");
-						for (int i = 0; i < totalWidth; i++)
-							sb.append("-");
-						sb.append("." + "\n" + "|");
-
-						int emptyCenterWidth = (totalWidth - title.length()) / 2;
-						for (int i = 0; i < emptyCenterWidth; i++)
-							sb.append(" ");
-						sb.append(title);
-						for (int i = 0; i < totalWidth - emptyCenterWidth - title.length(); i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// step 3: print "key" and "value"
-						printLine(sb, titleWidth, dataWidth);
-
-						sb.append("|" + " key");
-						for (int i = 0; i < titleWidth - 2; i++)
-							sb.append(" ");
-						sb.append("|" + " value");
-						for (int i = 0; i < dataWidth - 4; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						printLine(sb, titleWidth, dataWidth);
-
-						// step 4: print dataset
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskName");
-						for (int i = 0; i < titleWidth - "TaskName".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[0]);
-						for (int i = 0; row[0] == null && i < dataWidth - 3
-								|| row[0] != null && i < dataWidth - row[0].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskDetail");
-						for (int i = 0; i < titleWidth - "TaskDetail".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[1]);
-						for (int i = 0; row[1] == null && i < dataWidth - 3
-								|| row[1] != null && i < dataWidth - row[1].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskType");
-						for (int i = 0; i < titleWidth - "TaskType".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[2]);
-						for (int i = 0; row[2] == null && i < dataWidth - 3
-								|| row[2] != null && i < dataWidth - row[2].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "StartDate");
-						for (int i = 0; i < titleWidth - "StartDate".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[3]);
-						for (int i = 0; row[3] == null && i < dataWidth - 3
-								|| row[3] != null && i < dataWidth - row[3].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "Duration");
-						for (int i = 0; i < titleWidth - "Duration".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[4]);
-						for (int i = 0; row[4] == null && i < dataWidth - 3
-								|| row[4] != null && i < dataWidth - row[4].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "EndDate");
-						for (int i = 0; i < titleWidth - "EndDate".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[5]);
-						for (int i = 0; row[5] == null && i < dataWidth - 3
-								|| row[5] != null && i < dataWidth - row[5].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "NbFournisseur");
-						for (int i = 0; i < titleWidth - "NbFournisseur".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[6]);
-						for (int i = 0; row[6] == null && i < dataWidth - 3
-								|| row[6] != null && i < dataWidth - row[6].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "ERROR_STATUT");
-						for (int i = 0; i < titleWidth - "ERROR_STATUT".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[7]);
-						for (int i = 0; row[7] == null && i < dataWidth - 3
-								|| row[7] != null && i < dataWidth - row[7].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "SUCCESS_STATUT");
-						for (int i = 0; i < titleWidth - "SUCCESS_STATUT".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[8]);
-						for (int i = 0; row[8] == null && i < dataWidth - 3
-								|| row[8] != null && i < dataWidth - row[8].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "ERROR_MESSAGE");
-						for (int i = 0; i < titleWidth - "ERROR_MESSAGE".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[9]);
-						for (int i = 0; row[9] == null && i < dataWidth - 3
-								|| row[9] != null && i < dataWidth - row[9].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "FileNamePOutPut");
-						for (int i = 0; i < titleWidth - "FileNamePOutPut".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[10]);
-						for (int i = 0; row[10] == null && i < dataWidth - 3
-								|| row[10] != null && i < dataWidth - row[10].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "SUCCESS_MESSAGE");
-						for (int i = 0; i < titleWidth - "SUCCESS_MESSAGE".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[11]);
-						for (int i = 0; row[11] == null && i < dataWidth - 3
-								|| row[11] != null && i < dataWidth - row[11].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// step 5: print a line gap
-						printLine(sb, titleWidth, dataWidth);
-						return sb.toString();
-
-					}
-
-				}
-
-				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-
-				java.io.PrintStream consoleOut_tLogRow_1 = null;
-				if (globalMap.get("tLogRow_CONSOLE") != null) {
-					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-				} else {
-					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
-				}
-
-				StringBuilder strBuffer_tLogRow_1 = null;
-				int nb_line_tLogRow_1 = 0;
-///////////////////////    			
-
-				/**
-				 * [tLogRow_1 begin ] stop
-				 */
-
-				/**
-				 * [tMap_4 begin ] start
-				 */
-
-				ok_Hash.put("tMap_4", false);
-				start_Hash.put("tMap_4", System.currentTimeMillis());
-
-				currentComponent = "tMap_4";
-
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row9");
-
-				int tos_count_tMap_4 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tMap_4 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tMap_4 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tMap_4 = new StringBuilder();
-							log4jParamters_tMap_4.append("Parameters:");
-							log4jParamters_tMap_4.append("LINK_STYLE" + " = " + "AUTO");
-							log4jParamters_tMap_4.append(" | ");
-							log4jParamters_tMap_4.append("TEMPORARY_DATA_DIRECTORY" + " = " + "");
-							log4jParamters_tMap_4.append(" | ");
-							log4jParamters_tMap_4.append("ROWS_BUFFER_SIZE" + " = " + "2000000");
-							log4jParamters_tMap_4.append(" | ");
-							log4jParamters_tMap_4.append("CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" + " = " + "true");
-							log4jParamters_tMap_4.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tMap_4 - " + (log4jParamters_tMap_4));
-						}
-					}
-					new BytesLimit65535_tMap_4().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tMap_4", "tMap_4", "tMap");
-					talendJobLogProcess(globalMap);
-				}
-
-// ###############################
-// # Lookup's keys initialization
-				int count_row9_tMap_4 = 0;
-
-// ###############################        
-
-// ###############################
-// # Vars initialization
-				class Var__tMap_4__Struct {
-				}
-				Var__tMap_4__Struct Var__tMap_4 = new Var__tMap_4__Struct();
-// ###############################
-
-// ###############################
-// # Outputs initialization
-				int count_Log_Out_tMap_4 = 0;
-
-				Log_OutStruct Log_Out_tmp = new Log_OutStruct();
-// ###############################
-
-				/**
-				 * [tMap_4 begin ] stop
-				 */
-
-				/**
-				 * [tFixedFlowInput_1 begin ] start
-				 */
-
-				ok_Hash.put("tFixedFlowInput_1", false);
-				start_Hash.put("tFixedFlowInput_1", System.currentTimeMillis());
-
-				currentComponent = "tFixedFlowInput_1";
-
-				int tos_count_tFixedFlowInput_1 = 0;
-
-				if (enableLogStash) {
-					talendJobLog.addCM("tFixedFlowInput_1", "", "tFixedFlowInput");
-					talendJobLogProcess(globalMap);
-				}
-
-				for (int i_tFixedFlowInput_1 = 0; i_tFixedFlowInput_1 < 1; i_tFixedFlowInput_1++) {
-
-					row9.StartDate = ((String) globalMap.get("CurrentDate"));
-
-					row9.Duration = ((Long) globalMap.get("tChronometerStop_1_DURATION"));
-
-					row9.EndDate = ((String) globalMap.get("CurrentDate2"));
-
-					row9.TaskName = ((String) globalMap.get("TaskName"));
-
-					row9.TaskDetail = ((String) globalMap.get("TaskDetail"));
-
-					row9.TaskType = ((String) globalMap.get("TaskType"));
-
-					row9.NbFournisseur = ((Integer) globalMap.get("tDBInput_3_NB_LINE"));
-
-					row9.ERROR_STATUT = ((Integer) globalMap.get("tDie_1_DIE_CODE"));
-
-					row9.SUCCESS_STATUT = ((Integer) globalMap.get("tWarn_1_WARN_CODE"));
-
-					row9.ERROR_MESSAGE = ((String) globalMap.get("tDie_1_ERROR_MESSAGE"));
-
-					row9.FileNamePOutPut = ((String) globalMap.get("tFileOutputDelimited_1_FILE_NAME"));
-
-					row9.SUCCESS_MESSAGE = ((String) globalMap.get("tWarn_1_WARN_MESSAGES"));
-
-					/**
-					 * [tFixedFlowInput_1 begin ] stop
-					 */
-
-					/**
-					 * [tFixedFlowInput_1 main ] start
-					 */
-
-					currentComponent = "tFixedFlowInput_1";
-
-					tos_count_tFixedFlowInput_1++;
-
-					/**
-					 * [tFixedFlowInput_1 main ] stop
-					 */
-
-					/**
-					 * [tFixedFlowInput_1 process_data_begin ] start
-					 */
-
-					currentComponent = "tFixedFlowInput_1";
-
-					/**
-					 * [tFixedFlowInput_1 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tMap_4 main ] start
-					 */
-
-					currentComponent = "tMap_4";
-
-					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
-
-							, "row9", "tFixedFlowInput_1", "", "tFixedFlowInput", "tMap_4", "tMap_4", "tMap"
-
-					)) {
-						talendJobLogProcess(globalMap);
-					}
-
-					if (log.isTraceEnabled()) {
-						log.trace("row9 - " + (row9 == null ? "" : row9.toLogString()));
-					}
-
-					boolean hasCasePrimitiveKeyWithNull_tMap_4 = false;
-
-					// ###############################
-					// # Input tables (lookups)
-					boolean rejectedInnerJoin_tMap_4 = false;
-					boolean mainRowRejected_tMap_4 = false;
-
-					// ###############################
-					{ // start of Var scope
-
-						// ###############################
-						// # Vars tables
-
-						Var__tMap_4__Struct Var = Var__tMap_4;// ###############################
-						// ###############################
-						// # Output tables
-
-						Log_Out = null;
-
-// # Output table : 'Log_Out'
-						count_Log_Out_tMap_4++;
-
-						Log_Out_tmp.TaskName = row9.TaskName;
-						Log_Out_tmp.TaskDetail = row9.TaskDetail;
-						Log_Out_tmp.TaskType = row9.TaskType;
-						Log_Out_tmp.StartDate = row9.StartDate;
-						Log_Out_tmp.Duration = String.valueOf(row9.Duration / 1000 + "s");
-						Log_Out_tmp.EndDate = row9.EndDate;
-						Log_Out_tmp.NbFournisseur = row9.NbFournisseur;
-						Log_Out_tmp.ERROR_STATUT = row9.ERROR_STATUT;
-						Log_Out_tmp.SUCCESS_STATUT = row9.SUCCESS_STATUT;
-						Log_Out_tmp.ERROR_MESSAGE = row9.ERROR_MESSAGE;
-						Log_Out_tmp.FileNamePOutPut = row9.FileNamePOutPut;
-						Log_Out_tmp.SUCCESS_MESSAGE = row9.SUCCESS_MESSAGE;
-						Log_Out = Log_Out_tmp;
-						log.debug("tMap_4 - Outputting the record " + count_Log_Out_tMap_4
-								+ " of the output table 'Log_Out'.");
-
-// ###############################
-
-					} // end of Var scope
-
-					rejectedInnerJoin_tMap_4 = false;
-
-					tos_count_tMap_4++;
-
-					/**
-					 * [tMap_4 main ] stop
-					 */
-
-					/**
-					 * [tMap_4 process_data_begin ] start
-					 */
-
-					currentComponent = "tMap_4";
-
-					/**
-					 * [tMap_4 process_data_begin ] stop
-					 */
-// Start of branch "Log_Out"
-					if (Log_Out != null) {
-
-						/**
-						 * [tLogRow_1 main ] start
-						 */
-
-						currentComponent = "tLogRow_1";
-
-						if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
-
-								, "Log_Out", "tMap_4", "tMap_4", "tMap", "tLogRow_1", "tLogRow_1", "tLogRow"
-
-						)) {
-							talendJobLogProcess(globalMap);
-						}
-
-						if (log.isTraceEnabled()) {
-							log.trace("Log_Out - " + (Log_Out == null ? "" : Log_Out.toLogString()));
-						}
-
-///////////////////////		
-
-						strBuffer_tLogRow_1 = new StringBuilder();
-
-						if (Log_Out.TaskName != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskName));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.TaskDetail != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskDetail));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.TaskType != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskType));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.StartDate != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.StartDate));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.Duration != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.Duration));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.EndDate != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.EndDate));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.NbFournisseur != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.NbFournisseur));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.ERROR_STATUT != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.ERROR_STATUT));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.SUCCESS_STATUT != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.SUCCESS_STATUT));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.ERROR_MESSAGE != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.ERROR_MESSAGE));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.FileNamePOutPut != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.FileNamePOutPut));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.SUCCESS_MESSAGE != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.SUCCESS_MESSAGE));
-
-						} //
-
-						String[] row_tLogRow_1 = new String[12];
-
-						if (Log_Out.TaskName != null) { //
-							row_tLogRow_1[0] = String.valueOf(Log_Out.TaskName);
-
-						} //
-
-						if (Log_Out.TaskDetail != null) { //
-							row_tLogRow_1[1] = String.valueOf(Log_Out.TaskDetail);
-
-						} //
-
-						if (Log_Out.TaskType != null) { //
-							row_tLogRow_1[2] = String.valueOf(Log_Out.TaskType);
-
-						} //
-
-						if (Log_Out.StartDate != null) { //
-							row_tLogRow_1[3] = String.valueOf(Log_Out.StartDate);
-
-						} //
-
-						if (Log_Out.Duration != null) { //
-							row_tLogRow_1[4] = String.valueOf(Log_Out.Duration);
-
-						} //
-
-						if (Log_Out.EndDate != null) { //
-							row_tLogRow_1[5] = String.valueOf(Log_Out.EndDate);
-
-						} //
-
-						if (Log_Out.NbFournisseur != null) { //
-							row_tLogRow_1[6] = String.valueOf(Log_Out.NbFournisseur);
-
-						} //
-
-						if (Log_Out.ERROR_STATUT != null) { //
-							row_tLogRow_1[7] = String.valueOf(Log_Out.ERROR_STATUT);
-
-						} //
-
-						if (Log_Out.SUCCESS_STATUT != null) { //
-							row_tLogRow_1[8] = String.valueOf(Log_Out.SUCCESS_STATUT);
-
-						} //
-
-						if (Log_Out.ERROR_MESSAGE != null) { //
-							row_tLogRow_1[9] = String.valueOf(Log_Out.ERROR_MESSAGE);
-
-						} //
-
-						if (Log_Out.FileNamePOutPut != null) { //
-							row_tLogRow_1[10] = String.valueOf(Log_Out.FileNamePOutPut);
-
-						} //
-
-						if (Log_Out.SUCCESS_MESSAGE != null) { //
-							row_tLogRow_1[11] = String.valueOf(Log_Out.SUCCESS_MESSAGE);
-
-						} //
-
-						nb_line_tLogRow_1++;
-						consoleOut_tLogRow_1.println(util_tLogRow_1.print(row_tLogRow_1, nb_line_tLogRow_1));
-						consoleOut_tLogRow_1.flush();
-						log.info("tLogRow_1 - Content of row " + nb_line_tLogRow_1 + ": "
-								+ TalendString.unionString("|", row_tLogRow_1));
-//////
-
-//////                    
-
-///////////////////////    			
-
-						tos_count_tLogRow_1++;
-
-						/**
-						 * [tLogRow_1 main ] stop
-						 */
-
-						/**
-						 * [tLogRow_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tLogRow_1";
-
-						/**
-						 * [tLogRow_1 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tLogRow_1 process_data_end ] start
-						 */
-
-						currentComponent = "tLogRow_1";
-
-						/**
-						 * [tLogRow_1 process_data_end ] stop
-						 */
-
-					} // End of branch "Log_Out"
-
-					/**
-					 * [tMap_4 process_data_end ] start
-					 */
-
-					currentComponent = "tMap_4";
-
-					/**
-					 * [tMap_4 process_data_end ] stop
-					 */
-
-					/**
-					 * [tFixedFlowInput_1 process_data_end ] start
-					 */
-
-					currentComponent = "tFixedFlowInput_1";
-
-					/**
-					 * [tFixedFlowInput_1 process_data_end ] stop
-					 */
-
-					/**
-					 * [tFixedFlowInput_1 end ] start
-					 */
-
-					currentComponent = "tFixedFlowInput_1";
-
-				}
-				globalMap.put("tFixedFlowInput_1_NB_LINE", 1);
-
-				ok_Hash.put("tFixedFlowInput_1", true);
-				end_Hash.put("tFixedFlowInput_1", System.currentTimeMillis());
-
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk24", 0, "ok");
-				}
-				tChronometerStop_1Process(globalMap);
-
-				/**
-				 * [tFixedFlowInput_1 end ] stop
-				 */
-
-				/**
-				 * [tMap_4 end ] start
-				 */
-
-				currentComponent = "tMap_4";
-
-// ###############################
-// # Lookup hashes releasing
-// ###############################      
-				log.debug("tMap_4 - Written records count in the table 'Log_Out': " + count_Log_Out_tMap_4 + ".");
-
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row9", 2, 0,
-						"tFixedFlowInput_1", "", "tFixedFlowInput", "tMap_4", "tMap_4", "tMap", "output")) {
-					talendJobLogProcess(globalMap);
-				}
-
-				if (log.isDebugEnabled())
-					log.debug("tMap_4 - " + ("Done."));
-
-				ok_Hash.put("tMap_4", true);
-				end_Hash.put("tMap_4", System.currentTimeMillis());
-
-				/**
-				 * [tMap_4 end ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 end ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-//////
-//////
-				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
-				if (log.isInfoEnabled())
-					log.info("tLogRow_1 - " + ("Printed row count: ") + (nb_line_tLogRow_1) + ("."));
-
-///////////////////////    			
-
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "Log_Out", 2, 0,
-						"tMap_4", "tMap_4", "tMap", "tLogRow_1", "tLogRow_1", "tLogRow", "output")) {
-					talendJobLogProcess(globalMap);
-				}
-
-				if (log.isDebugEnabled())
-					log.debug("tLogRow_1 - " + ("Done."));
-
-				ok_Hash.put("tLogRow_1", true);
-				end_Hash.put("tLogRow_1", System.currentTimeMillis());
-
-				/**
-				 * [tLogRow_1 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tFixedFlowInput_1 finally ] start
-				 */
-
-				currentComponent = "tFixedFlowInput_1";
-
-				/**
-				 * [tFixedFlowInput_1 finally ] stop
-				 */
-
-				/**
-				 * [tMap_4 finally ] start
-				 */
-
-				currentComponent = "tMap_4";
-
-				/**
-				 * [tMap_4 finally ] stop
-				 */
-
-				/**
-				 * [tLogRow_1 finally ] start
-				 */
-
-				currentComponent = "tLogRow_1";
-
-				/**
-				 * [tLogRow_1 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 1);
 	}
 
 	public void tPostjob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -19354,7 +21037,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 	public int portTraces = 4334;
 	public String clientHost;
 	public String defaultClientHost = "localhost";
-	public String contextStr = "KLIF";
+	public String contextStr = "DEV";
 	public boolean isDefaultContext = true;
 	public String pid = "0";
 	public String rootPid = null;
@@ -19943,18 +21626,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 			e_tChronometerStart_1.printStackTrace();
 
 		}
-		try {
-			errorCode = null;
-			tFixedFlowInput_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (TalendException e_tFixedFlowInput_1) {
-			globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", -1);
-
-			e_tFixedFlowInput_1.printStackTrace();
-
-		}
 
 		this.globalResumeTicket = true;// to run tPostJob
 
@@ -20167,6 +21838,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 627848 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 11:08:19 WEST
+ * 672409 characters generated by Talend Cloud Data Management Platform on the
+ * 27 juillet 2022 à 11:23:10 WEST
  ************************************************************************************************/
