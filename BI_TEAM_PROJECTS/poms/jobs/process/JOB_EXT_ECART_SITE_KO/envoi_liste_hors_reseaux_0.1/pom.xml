@@ -23,7 +23,7 @@
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
     <talend.job.git.author>nabil.ouriniche@marjane.co.ma</talend.job.git.author>
-    <talend.job.jvmargs>-Xms256M -Xmx1024M </talend.job.jvmargs>
+    <talend.job.jvmargs>-Xms256M -Xmx1024M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
     <talend.job.id>_rs1Z4BrhEeyr8JHfQ7Qjrw</talend.job.id>
     <talend.job.version>0.1</talend.job.version>
     <talend.job.framework></talend.job.framework>
@@ -50,17 +50,6 @@
       <groupId>net.minidev</groupId>
       <artifactId>accessors-smart</artifactId>
       <version>2.4.7</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>*</artifactId>
-          <groupId>*</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
-      <artifactId>activation</artifactId>
-      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -138,17 +127,6 @@
       <groupId>org.talend.libraries</groupId>
       <artifactId>jakarta-oro-2.0.8</artifactId>
       <version>6.0.0</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>*</artifactId>
-          <groupId>*</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.sun.mail</groupId>
-      <artifactId>javax.mail</artifactId>
-      <version>1.6.2</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -463,9 +441,6 @@
     </profile>
     <profile>
       <id>include-running-log4j</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
       <properties>
         <log4j.running.dir>${current.resources.dir}/</log4j.running.dir>
       </properties>
