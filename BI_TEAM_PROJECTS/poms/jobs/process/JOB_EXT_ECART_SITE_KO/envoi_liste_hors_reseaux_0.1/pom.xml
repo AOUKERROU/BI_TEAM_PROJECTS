@@ -19,7 +19,7 @@
     <talend.job.folder>job_ext_ecart_site_ko/</talend.job.folder>
     <talend.job.context>Default</talend.job.context>
     <talend.job.path>bi_team_projects</talend.job.path>
-    <talend.job.git.commit.id>68c540a183bfbbcc46abaa489d4942f9993f60a4</talend.job.git.commit.id>
+    <talend.job.git.commit.id>1ecaff8476b3285b582326138be08b4503c10e7a</talend.job.git.commit.id>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
     <talend.job.git.author>nabil.ouriniche@marjane.co.ma</talend.job.git.author>
@@ -39,7 +39,7 @@
     <talend.product.version>8.0.1.20220623_1359-patch</talend.product.version>
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
-    <talend.job.git.commit.date>1658924992000</talend.job.git.commit.date>
+    <talend.job.git.commit.date>1658939071000</talend.job.git.commit.date>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
     <talend.job.name>ENVOI_LISTE_HORS_RESEAUX</talend.job.name>
@@ -50,6 +50,17 @@
       <groupId>net.minidev</groupId>
       <artifactId>accessors-smart</artifactId>
       <version>2.4.7</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>activation</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -127,6 +138,17 @@
       <groupId>org.talend.libraries</groupId>
       <artifactId>jakarta-oro-2.0.8</artifactId>
       <version>6.0.0</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.2</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
