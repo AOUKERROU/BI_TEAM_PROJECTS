@@ -3908,7 +3908,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 	}
 
-	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+	public static class Nbr_lignes_goldStruct implements routines.system.IPersistableRow<Nbr_lignes_goldStruct> {
 		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
 		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
 
@@ -4557,7 +4557,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row1Struct other) {
+		public int compareTo(Nbr_lignes_goldStruct other) {
 
 			int returnValue = -1;
 
@@ -5289,7 +5289,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				tHashInput_2Process(globalMap);
 
-				row1Struct row1 = new row1Struct();
+				Nbr_lignes_goldStruct Nbr_lignes_gold = new Nbr_lignes_goldStruct();
 				out1Struct out1 = new out1Struct();
 				fouciStruct fouci = new fouciStruct();
 				row4Struct row4 = new row4Struct();
@@ -5709,7 +5709,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				currentComponent = "tMap_1";
 
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row1");
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "Nbr_lignes_gold");
 
 				int tos_count_tMap_1 = 0;
 
@@ -5741,7 +5741,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 // ###############################
 // # Lookup's keys initialization
-				int count_row1_tMap_1 = 0;
+				int count_Nbr_lignes_gold_tMap_1 = 0;
 
 				int count_row5_tMap_1 = 0;
 
@@ -5915,120 +5915,120 @@ public class TEMPLATE_TALEND implements TalendJob {
 						nb_line_tDBInput_1++;
 
 						if (colQtyInRs_tDBInput_1 < 1) {
-							row1.CODE_INTERNE_ARTICLE = null;
+							Nbr_lignes_gold.CODE_INTERNE_ARTICLE = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(1) != null) {
-								row1.CODE_INTERNE_ARTICLE = rs_tDBInput_1.getLong(1);
+								Nbr_lignes_gold.CODE_INTERNE_ARTICLE = rs_tDBInput_1.getLong(1);
 							} else {
 
-								row1.CODE_INTERNE_ARTICLE = null;
+								Nbr_lignes_gold.CODE_INTERNE_ARTICLE = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 2) {
-							row1.CODESITE = null;
+							Nbr_lignes_gold.CODESITE = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(2) != null) {
-								row1.CODESITE = rs_tDBInput_1.getLong(2);
+								Nbr_lignes_gold.CODESITE = rs_tDBInput_1.getLong(2);
 							} else {
 
-								row1.CODESITE = null;
+								Nbr_lignes_gold.CODESITE = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 3) {
-							row1.EAN = null;
+							Nbr_lignes_gold.EAN = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(3) != null) {
-								row1.EAN = rs_tDBInput_1.getLong(3);
+								Nbr_lignes_gold.EAN = rs_tDBInput_1.getLong(3);
 							} else {
 
-								row1.EAN = null;
+								Nbr_lignes_gold.EAN = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 4) {
-							row1.DATE_DEBUT = null;
+							Nbr_lignes_gold.DATE_DEBUT = null;
 						} else {
 
-							row1.DATE_DEBUT = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
+							Nbr_lignes_gold.DATE_DEBUT = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
 						}
 						if (colQtyInRs_tDBInput_1 < 5) {
-							row1.DATE_FIN = null;
+							Nbr_lignes_gold.DATE_FIN = null;
 						} else {
 
-							row1.DATE_FIN = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
+							Nbr_lignes_gold.DATE_FIN = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
 						}
 						if (colQtyInRs_tDBInput_1 < 6) {
-							row1.CODEENSEIGNE = null;
+							Nbr_lignes_gold.CODEENSEIGNE = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(6) != null) {
-								row1.CODEENSEIGNE = rs_tDBInput_1.getLong(6);
+								Nbr_lignes_gold.CODEENSEIGNE = rs_tDBInput_1.getLong(6);
 							} else {
 
-								row1.CODEENSEIGNE = null;
+								Nbr_lignes_gold.CODEENSEIGNE = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 7) {
-							row1.CODE_ARTICLE = null;
+							Nbr_lignes_gold.CODE_ARTICLE = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(7) != null) {
-								row1.CODE_ARTICLE = rs_tDBInput_1.getLong(7);
+								Nbr_lignes_gold.CODE_ARTICLE = rs_tDBInput_1.getLong(7);
 							} else {
 
-								row1.CODE_ARTICLE = null;
+								Nbr_lignes_gold.CODE_ARTICLE = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 8) {
-							row1.QTE = null;
+							Nbr_lignes_gold.QTE = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(8) != null) {
-								row1.QTE = rs_tDBInput_1.getBigDecimal(8);
+								Nbr_lignes_gold.QTE = rs_tDBInput_1.getBigDecimal(8);
 							} else {
 
-								row1.QTE = null;
+								Nbr_lignes_gold.QTE = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 9) {
-							row1.CA_TTC = null;
+							Nbr_lignes_gold.CA_TTC = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(9) != null) {
-								row1.CA_TTC = rs_tDBInput_1.getBigDecimal(9);
+								Nbr_lignes_gold.CA_TTC = rs_tDBInput_1.getBigDecimal(9);
 							} else {
 
-								row1.CA_TTC = null;
+								Nbr_lignes_gold.CA_TTC = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 10) {
-							row1.CA_HT = null;
+							Nbr_lignes_gold.CA_HT = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(10) != null) {
-								row1.CA_HT = rs_tDBInput_1.getBigDecimal(10);
+								Nbr_lignes_gold.CA_HT = rs_tDBInput_1.getBigDecimal(10);
 							} else {
 
-								row1.CA_HT = null;
+								Nbr_lignes_gold.CA_HT = null;
 							}
 						}
 						if (colQtyInRs_tDBInput_1 < 11) {
-							row1.DateLastUpdateWebJob = null;
+							Nbr_lignes_gold.DateLastUpdateWebJob = null;
 						} else {
 
-							row1.DateLastUpdateWebJob = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 11);
+							Nbr_lignes_gold.DateLastUpdateWebJob = routines.system.JDBCUtil.getDate(rs_tDBInput_1, 11);
 						}
 						if (colQtyInRs_tDBInput_1 < 12) {
-							row1.FOUCIN = null;
+							Nbr_lignes_gold.FOUCIN = null;
 						} else {
 
 							if (rs_tDBInput_1.getObject(12) != null) {
-								row1.FOUCIN = rs_tDBInput_1.getInt(12);
+								Nbr_lignes_gold.FOUCIN = rs_tDBInput_1.getInt(12);
 							} else {
 
-								row1.FOUCIN = null;
+								Nbr_lignes_gold.FOUCIN = null;
 							}
 						}
 
@@ -6064,20 +6064,22 @@ public class TEMPLATE_TALEND implements TalendJob {
 						 * [tMap_1 main ] start
 						 */
 
-						tFlowMeterCatcher_1.addLineToRow("row1_count");
+						tFlowMeterCatcher_1.addLineToRow("Nbr_lignes_gold_count");
 
 						currentComponent = "tMap_1";
 
 						if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
 
-								, "row1", "tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1", "tMap_1", "tMap"
+								, "Nbr_lignes_gold", "tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1", "tMap_1",
+								"tMap"
 
 						)) {
 							talendJobLogProcess(globalMap);
 						}
 
 						if (log.isTraceEnabled()) {
-							log.trace("row1 - " + (row1 == null ? "" : row1.toLogString()));
+							log.trace("Nbr_lignes_gold - "
+									+ (Nbr_lignes_gold == null ? "" : Nbr_lignes_gold.toLogString()));
 						}
 
 						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
@@ -6099,7 +6101,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 							hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-							row5HashKey.FOUCFIN = row1.FOUCIN;
+							row5HashKey.FOUCFIN = Nbr_lignes_gold.FOUCIN;
 
 							row5HashKey.hashCodeDirty = true;
 
@@ -6158,17 +6160,18 @@ public class TEMPLATE_TALEND implements TalendJob {
 // # Output table : 'out1'
 									count_out1_tMap_1++;
 
-									out1_tmp.CODE_INTERNE_ARTICLE = row1.CODE_INTERNE_ARTICLE;
-									out1_tmp.CODESITE = row1.CODESITE;
-									out1_tmp.EAN = row1.EAN;
-									out1_tmp.DATE_DEBUT = TalendDate.parseDate("yyyy-MM-dd", row1.DATE_DEBUT);
-									out1_tmp.DATE_FIN = TalendDate.parseDate("yyyy-MM-dd", row1.DATE_FIN);
-									out1_tmp.CODEENSEIGNE = row1.CODEENSEIGNE;
-									out1_tmp.CODE_ARTICLE = row1.CODE_ARTICLE;
-									out1_tmp.QTE = row1.QTE;
-									out1_tmp.CA_TTC = row1.CA_TTC;
-									out1_tmp.CA_HT = row1.CA_HT;
-									out1_tmp.DateLastUpdateWebJob = row1.DateLastUpdateWebJob;
+									out1_tmp.CODE_INTERNE_ARTICLE = Nbr_lignes_gold.CODE_INTERNE_ARTICLE;
+									out1_tmp.CODESITE = Nbr_lignes_gold.CODESITE;
+									out1_tmp.EAN = Nbr_lignes_gold.EAN;
+									out1_tmp.DATE_DEBUT = TalendDate.parseDate("yyyy-MM-dd",
+											Nbr_lignes_gold.DATE_DEBUT);
+									out1_tmp.DATE_FIN = TalendDate.parseDate("yyyy-MM-dd", Nbr_lignes_gold.DATE_FIN);
+									out1_tmp.CODEENSEIGNE = Nbr_lignes_gold.CODEENSEIGNE;
+									out1_tmp.CODE_ARTICLE = Nbr_lignes_gold.CODE_ARTICLE;
+									out1_tmp.QTE = Nbr_lignes_gold.QTE;
+									out1_tmp.CA_TTC = Nbr_lignes_gold.CA_TTC;
+									out1_tmp.CA_HT = Nbr_lignes_gold.CA_HT;
+									out1_tmp.DateLastUpdateWebJob = Nbr_lignes_gold.DateLastUpdateWebJob;
 									out1 = out1_tmp;
 									log.debug("tMap_1 - Outputting the record " + count_out1_tMap_1
 											+ " of the output table 'out1'.");
@@ -6509,7 +6512,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 				log.debug("tMap_1 - Written records count in the table 'out1': " + count_out1_tMap_1 + ".");
 				log.debug("tMap_1 - Written records count in the table 'fouci': " + count_fouci_tMap_1 + ".");
 
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row1", 2, 0,
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "Nbr_lignes_gold", 2, 0,
 						"tDBInput_1", "ORACLE_GOLD", "tOracleInput", "tMap_1", "tMap_1", "tMap", "output")) {
 					talendJobLogProcess(globalMap);
 				}
@@ -7837,7 +7840,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 	}
 
-	public static class row8Struct implements routines.system.IPersistableRow<row8Struct> {
+	public static class nbr_lignes_portail_frnsStruct
+			implements routines.system.IPersistableRow<nbr_lignes_portail_frnsStruct> {
 		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
 		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
 
@@ -8417,7 +8421,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(row8Struct other) {
+		public int compareTo(nbr_lignes_portail_frnsStruct other) {
 
 			int returnValue = -1;
 
@@ -9689,8 +9693,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				row2Struct row2 = new row2Struct();
 				OUT_AZUREStruct OUT_AZURE = new OUT_AZUREStruct();
-				row8Struct row8 = new row8Struct();
-				row8Struct row10 = row8;
+				nbr_lignes_portail_frnsStruct nbr_lignes_portail_frns = new nbr_lignes_portail_frnsStruct();
+				nbr_lignes_portail_frnsStruct row10 = nbr_lignes_portail_frns;
 
 				/**
 				 * [tDBOutput_2 begin ] start
@@ -9873,7 +9877,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				currentComponent = "tFlowMeter_15";
 
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row8");
+				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0,
+						"nbr_lignes_portail_frns");
 
 				int tos_count_tFlowMeter_15 = 0;
 
@@ -9890,7 +9895,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 							log4jParamters_tFlowMeter_15.append(" | ");
 							log4jParamters_tFlowMeter_15.append("ABSOLUTE" + " = " + "Relative");
 							log4jParamters_tFlowMeter_15.append(" | ");
-							log4jParamters_tFlowMeter_15.append("CONNECTIONS" + " = " + "row1");
+							log4jParamters_tFlowMeter_15.append("CONNECTIONS" + " = " + "Nbr_lignes_gold");
 							log4jParamters_tFlowMeter_15.append(" | ");
 							log4jParamters_tFlowMeter_15.append("THRESHLODS" + " = " + "[]");
 							log4jParamters_tFlowMeter_15.append(" | ");
@@ -10489,7 +10494,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 								log.trace("OUT_AZURE - " + (OUT_AZURE == null ? "" : OUT_AZURE.toLogString()));
 							}
 
-							row8 = null;
+							nbr_lignes_portail_frns = null;
 							finder_tUniqRow_1.CODE_INTERNE_ARTICLE = OUT_AZURE.CODE_INTERNE_ARTICLE;
 							finder_tUniqRow_1.CODESITE = OUT_AZURE.CODESITE;
 							finder_tUniqRow_1.EAN = OUT_AZURE.EAN;
@@ -10522,24 +10527,24 @@ public class TEMPLATE_TALEND implements TalendJob {
 								}
 
 								keystUniqRow_1.add(new_tUniqRow_1);
-								if (row8 == null) {
+								if (nbr_lignes_portail_frns == null) {
 
 									log.trace("tUniqRow_1 - Writing the unique record " + (nb_uniques_tUniqRow_1 + 1)
-											+ " into row8.");
+											+ " into nbr_lignes_portail_frns.");
 
-									row8 = new row8Struct();
+									nbr_lignes_portail_frns = new nbr_lignes_portail_frnsStruct();
 								}
-								row8.CODE_INTERNE_ARTICLE = OUT_AZURE.CODE_INTERNE_ARTICLE;
-								row8.CODESITE = OUT_AZURE.CODESITE;
-								row8.EAN = OUT_AZURE.EAN;
-								row8.DATE_DEBUT = OUT_AZURE.DATE_DEBUT;
-								row8.DATE_FIN = OUT_AZURE.DATE_FIN;
-								row8.CODEENSEIGNE = OUT_AZURE.CODEENSEIGNE;
-								row8.CODE_ARTICLE = OUT_AZURE.CODE_ARTICLE;
-								row8.QTE = OUT_AZURE.QTE;
-								row8.CA_TTC = OUT_AZURE.CA_TTC;
-								row8.CA_HT = OUT_AZURE.CA_HT;
-								row8.DateLastUpdateWebJob = OUT_AZURE.DateLastUpdateWebJob;
+								nbr_lignes_portail_frns.CODE_INTERNE_ARTICLE = OUT_AZURE.CODE_INTERNE_ARTICLE;
+								nbr_lignes_portail_frns.CODESITE = OUT_AZURE.CODESITE;
+								nbr_lignes_portail_frns.EAN = OUT_AZURE.EAN;
+								nbr_lignes_portail_frns.DATE_DEBUT = OUT_AZURE.DATE_DEBUT;
+								nbr_lignes_portail_frns.DATE_FIN = OUT_AZURE.DATE_FIN;
+								nbr_lignes_portail_frns.CODEENSEIGNE = OUT_AZURE.CODEENSEIGNE;
+								nbr_lignes_portail_frns.CODE_ARTICLE = OUT_AZURE.CODE_ARTICLE;
+								nbr_lignes_portail_frns.QTE = OUT_AZURE.QTE;
+								nbr_lignes_portail_frns.CA_TTC = OUT_AZURE.CA_TTC;
+								nbr_lignes_portail_frns.CA_HT = OUT_AZURE.CA_HT;
+								nbr_lignes_portail_frns.DateLastUpdateWebJob = OUT_AZURE.DateLastUpdateWebJob;
 								nb_uniques_tUniqRow_1++;
 							} else {
 								nb_duplicates_tUniqRow_1++;
@@ -10560,8 +10565,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 							/**
 							 * [tUniqRow_1 process_data_begin ] stop
 							 */
-// Start of branch "row8"
-							if (row8 != null) {
+// Start of branch "nbr_lignes_portail_frns"
+							if (nbr_lignes_portail_frns != null) {
 
 								/**
 								 * [tFlowMeter_15 main ] start
@@ -10571,20 +10576,21 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 								if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
 
-										, "row8", "tUniqRow_1", "tUniqRow_1", "tUniqRow", "tFlowMeter_15",
-										"tFlowMeter_15", "tFlowMeter"
+										, "nbr_lignes_portail_frns", "tUniqRow_1", "tUniqRow_1", "tUniqRow",
+										"tFlowMeter_15", "tFlowMeter_15", "tFlowMeter"
 
 								)) {
 									talendJobLogProcess(globalMap);
 								}
 
 								if (log.isTraceEnabled()) {
-									log.trace("row8 - " + (row8 == null ? "" : row8.toLogString()));
+									log.trace("nbr_lignes_portail_frns - " + (nbr_lignes_portail_frns == null ? ""
+											: nbr_lignes_portail_frns.toLogString()));
 								}
 
 								count_tFlowMeter_15++;
 
-								row10 = row8;
+								row10 = nbr_lignes_portail_frns;
 
 								tos_count_tFlowMeter_15++;
 
@@ -10800,7 +10806,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 								 * [tFlowMeter_15 process_data_end ] stop
 								 */
 
-							} // End of branch "row8"
+							} // End of branch "nbr_lignes_portail_frns"
 
 							/**
 							 * [tUniqRow_1 process_data_end ] start
@@ -10923,12 +10929,12 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				if (log.isDebugEnabled())
 					log.debug("tFlowMeter_15 - " + ("Sending message to tFlowMeterCatcher_1."));
-				tFlowMeterCatcher_1.addMessage("Nbr_Fournisseur", new Integer(count_tFlowMeter_15), "row1", "",
-						"tFlowMeter_15");
+				tFlowMeterCatcher_1.addMessage("Nbr_Fournisseur", new Integer(count_tFlowMeter_15), "Nbr_lignes_gold",
+						"", "tFlowMeter_15");
 
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row8", 2, 0,
-						"tUniqRow_1", "tUniqRow_1", "tUniqRow", "tFlowMeter_15", "tFlowMeter_15", "tFlowMeter",
-						"output")) {
+				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId,
+						"nbr_lignes_portail_frns", 2, 0, "tUniqRow_1", "tUniqRow_1", "tUniqRow", "tFlowMeter_15",
+						"tFlowMeter_15", "tFlowMeter", "output")) {
 					talendJobLogProcess(globalMap);
 				}
 
@@ -15635,7 +15641,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 					new BytesLimit65535_tLogRow_1().limitLog4jByte();
 				}
 				if (enableLogStash) {
-					talendJobLog.addCM("tLogRow_1", "tLogRow_1", "tLogRow");
+					talendJobLog.addCM("tLogRow_1", "Job_Log", "tLogRow");
 					talendJobLogProcess(globalMap);
 				}
 
@@ -15664,7 +15670,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						StringBuilder sb = new StringBuilder();
 
-						String title = "#" + nbLine + ". " + "tLogRow_1--tLogRow_1";
+						String title = "#" + nbLine + ". " + "tLogRow_1--Job_Log";
 
 						// step 1: get the max length of all the row[] member;
 						int dataWidth = 5; // the length of the string "value"
@@ -16110,7 +16116,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
 
-								, "Log_Out", "tMap_4", "tMap_4", "tMap", "tLogRow_1", "tLogRow_1", "tLogRow"
+								, "Log_Out", "tMap_4", "tMap_4", "tMap", "tLogRow_1", "Job_Log", "tLogRow"
 
 						)) {
 							talendJobLogProcess(globalMap);
@@ -16409,7 +16415,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 ///////////////////////    			
 
 				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "Log_Out", 2, 0,
-						"tMap_4", "tMap_4", "tMap", "tLogRow_1", "tLogRow_1", "tLogRow", "output")) {
+						"tMap_4", "tMap_4", "tMap", "tLogRow_1", "Job_Log", "tLogRow", "output")) {
 					talendJobLogProcess(globalMap);
 				}
 
@@ -16907,7 +16913,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 				// connection name:row5
 				// source node:tHashInput_2 - inputs:(after_tDBInput_1) outputs:(row5,row5) |
 				// target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row5) outputs:(out1,fouci)
+				// linked node: tMap_1 - inputs:(Nbr_lignes_gold,row5) outputs:(out1,fouci)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
 
@@ -18600,7 +18606,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 					new BytesLimit65535_tLogRow_2().limitLog4jByte();
 				}
 				if (enableLogStash) {
-					talendJobLog.addCM("tLogRow_2", "tLogRow_2", "tLogRow");
+					talendJobLog.addCM("tLogRow_2", "Meter_Log", "tLogRow");
 					talendJobLogProcess(globalMap);
 				}
 
@@ -18674,8 +18680,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// step 4: print dataset
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "moment");
-						for (int i = 0; i < titleWidth - "moment".length() + 1; i++)
+						sb.append("| " + "reference");
+						for (int i = 0; i < titleWidth - "reference".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[0]);
 						for (int i = 0; row[0] == null && i < dataWidth - 3
@@ -18686,36 +18692,12 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "pid");
-						for (int i = 0; i < titleWidth - "pid".length() + 1; i++)
+						sb.append("| " + "count");
+						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[1]);
 						for (int i = 0; row[1] == null && i < dataWidth - 3
 								|| row[1] != null && i < dataWidth - row[1].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "reference");
-						for (int i = 0; i < titleWidth - "reference".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[2]);
-						for (int i = 0; row[2] == null && i < dataWidth - 3
-								|| row[2] != null && i < dataWidth - row[2].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "count");
-						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[3]);
-						for (int i = 0; row[3] == null && i < dataWidth - 3
-								|| row[3] != null && i < dataWidth - row[3].length() + 1; i++)
 							sb.append(" ");
 						sb.append("|" + "\n");
 
@@ -18828,7 +18810,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
 
 							, "row11", "tFlowMeterCatcher_1", "tFlowMeterCatcher_1", "tFlowMeterCatcher", "tLogRow_2",
-							"tLogRow_2", "tLogRow"
+							"Meter_Log", "tLogRow"
 
 					)) {
 						talendJobLogProcess(globalMap);
@@ -18841,22 +18823,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 ///////////////////////		
 
 					strBuffer_tLogRow_2 = new StringBuilder();
-
-					if (row11.moment != null) { //
-
-						strBuffer_tLogRow_2.append(FormatterUtils.format_Date(row11.moment, "yyyy-MM-dd HH:mm:ss"));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.pid != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.pid));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
 
 					if (row11.reference != null) { //
 
@@ -18872,25 +18838,15 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					} //
 
-					String[] row_tLogRow_2 = new String[4];
-
-					if (row11.moment != null) { //
-						row_tLogRow_2[0] = FormatterUtils.format_Date(row11.moment, "yyyy-MM-dd HH:mm:ss");
-
-					} //
-
-					if (row11.pid != null) { //
-						row_tLogRow_2[1] = String.valueOf(row11.pid);
-
-					} //
+					String[] row_tLogRow_2 = new String[2];
 
 					if (row11.reference != null) { //
-						row_tLogRow_2[2] = String.valueOf(row11.reference);
+						row_tLogRow_2[0] = String.valueOf(row11.reference);
 
 					} //
 
 					if (row11.count != null) { //
-						row_tLogRow_2[3] = String.valueOf(row11.count);
+						row_tLogRow_2[1] = String.valueOf(row11.count);
 
 					} //
 
@@ -18974,7 +18930,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 ///////////////////////    			
 
 				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row11", 2, 0,
-						"tFlowMeterCatcher_1", "tFlowMeterCatcher_1", "tFlowMeterCatcher", "tLogRow_2", "tLogRow_2",
+						"tFlowMeterCatcher_1", "tFlowMeterCatcher_1", "tFlowMeterCatcher", "tLogRow_2", "Meter_Log",
 						"tLogRow", "output")) {
 					talendJobLogProcess(globalMap);
 				}
@@ -21426,6 +21382,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 662600 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 15:24:33 WEST
+ * 662174 characters generated by Talend Cloud Data Management Platform on the
+ * 27 juillet 2022 à 15:31:59 WEST
  ************************************************************************************************/
