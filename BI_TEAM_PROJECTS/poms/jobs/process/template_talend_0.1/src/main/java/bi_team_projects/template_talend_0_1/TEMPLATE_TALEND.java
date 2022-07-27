@@ -773,6 +773,26 @@ public class TEMPLATE_TALEND implements TalendJob {
 		tDBRow_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tWarn_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tWarn_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDie_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tDie_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tDBCommit_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -881,26 +901,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 		status = "failure";
 
 		tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tWarn_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tWarn_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDie_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDie_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tHashInput_2_error(Exception exception, String errorComponent,
@@ -1142,6 +1142,22 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 	}
 
+	public void tWarn_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tDie_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
 	public void tDBCommit_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -1191,22 +1207,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	}
 
 	public void tFixedFlowInput_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tWarn_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tDie_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -12400,13 +12400,13 @@ public class TEMPLATE_TALEND implements TalendJob {
 				end_Hash.put("tDBRow_1", System.currentTimeMillis());
 
 				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk9", 0, "ok");
-				}
-				tDBCommit_1Process(globalMap);
-				if (execStat) {
 					runStat.updateStatOnConnection("OnComponentOk25", 0, "ok");
 				}
 				tWarn_1Process(globalMap);
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk9", 0, "ok");
+				}
+				tDBCommit_1Process(globalMap);
 
 				/**
 				 * [tDBRow_1 end ] stop
@@ -12513,6 +12513,342 @@ public class TEMPLATE_TALEND implements TalendJob {
 		}
 
 		globalMap.put("tDBRow_1_SUBPROCESS_STATE", 1);
+	}
+
+	public void tWarn_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tWarn_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tWarn_1 begin ] start
+				 */
+
+				ok_Hash.put("tWarn_1", false);
+				start_Hash.put("tWarn_1", System.currentTimeMillis());
+
+				currentComponent = "tWarn_1";
+
+				int tos_count_tWarn_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tWarn_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tWarn_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tWarn_1 = new StringBuilder();
+							log4jParamters_tWarn_1.append("Parameters:");
+							log4jParamters_tWarn_1.append("MESSAGE" + " = " + "\"Job OK\"");
+							log4jParamters_tWarn_1.append(" | ");
+							log4jParamters_tWarn_1.append("CODE" + " = " + "1");
+							log4jParamters_tWarn_1.append(" | ");
+							log4jParamters_tWarn_1.append("PRIORITY" + " = " + "3");
+							log4jParamters_tWarn_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tWarn_1 - " + (log4jParamters_tWarn_1));
+						}
+					}
+					new BytesLimit65535_tWarn_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tWarn_1", "OK", "tWarn");
+					talendJobLogProcess(globalMap);
+				}
+
+				/**
+				 * [tWarn_1 begin ] stop
+				 */
+
+				/**
+				 * [tWarn_1 main ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				try {
+
+					resumeUtil.addLog("USER_DEF_LOG", "NODE:tWarn_1", "", Thread.currentThread().getId() + "", "INFO",
+							"", "Job OK", "", "");
+					if (log.isInfoEnabled())
+						log.info("tWarn_1 - " + ("Message: ") + ("Job OK") + (". Code: ") + (1));
+					globalMap.put("tWarn_1_WARN_MESSAGES", "Job OK");
+					globalMap.put("tWarn_1_WARN_PRIORITY", 3);
+					globalMap.put("tWarn_1_WARN_CODE", 1);
+
+				} catch (Exception e_tWarn_1) {
+					globalMap.put("tWarn_1_ERROR_MESSAGE", e_tWarn_1.getMessage());
+					logIgnoredError(
+							String.format("tWarn_1 - tWarn failed to log message due to internal error: %s", e_tWarn_1),
+							e_tWarn_1);
+				}
+
+				tos_count_tWarn_1++;
+
+				/**
+				 * [tWarn_1 main ] stop
+				 */
+
+				/**
+				 * [tWarn_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				/**
+				 * [tWarn_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tWarn_1 process_data_end ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				/**
+				 * [tWarn_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tWarn_1 end ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				if (log.isDebugEnabled())
+					log.debug("tWarn_1 - " + ("Done."));
+
+				ok_Hash.put("tWarn_1", true);
+				end_Hash.put("tWarn_1", System.currentTimeMillis());
+
+				/**
+				 * [tWarn_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tWarn_1 finally ] start
+				 */
+
+				currentComponent = "tWarn_1";
+
+				/**
+				 * [tWarn_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tWarn_1_SUBPROCESS_STATE", 1);
+	}
+
+	public void tDie_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tDie_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tDie_1 begin ] start
+				 */
+
+				ok_Hash.put("tDie_1", false);
+				start_Hash.put("tDie_1", System.currentTimeMillis());
+
+				currentComponent = "tDie_1";
+
+				int tos_count_tDie_1 = 0;
+
+				if (log.isDebugEnabled())
+					log.debug("tDie_1 - " + ("Start to work."));
+				if (log.isDebugEnabled()) {
+					class BytesLimit65535_tDie_1 {
+						public void limitLog4jByte() throws Exception {
+							StringBuilder log4jParamters_tDie_1 = new StringBuilder();
+							log4jParamters_tDie_1.append("Parameters:");
+							log4jParamters_tDie_1.append("MESSAGE" + " = " + "\"Job KO\"");
+							log4jParamters_tDie_1.append(" | ");
+							log4jParamters_tDie_1.append("CODE" + " = " + "1");
+							log4jParamters_tDie_1.append(" | ");
+							log4jParamters_tDie_1.append("PRIORITY" + " = " + "5");
+							log4jParamters_tDie_1.append(" | ");
+							log4jParamters_tDie_1.append("EXIT_JVM" + " = " + "false");
+							log4jParamters_tDie_1.append(" | ");
+							if (log.isDebugEnabled())
+								log.debug("tDie_1 - " + (log4jParamters_tDie_1));
+						}
+					}
+					new BytesLimit65535_tDie_1().limitLog4jByte();
+				}
+				if (enableLogStash) {
+					talendJobLog.addCM("tDie_1", "KO", "tDie");
+					talendJobLogProcess(globalMap);
+				}
+
+				/**
+				 * [tDie_1 begin ] stop
+				 */
+
+				/**
+				 * [tDie_1 main ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				try {
+					globalMap.put("tDie_1_DIE_PRIORITY", 5);
+					System.err.println("Job KO");
+
+					log.error("tDie_1 - The die message: " + "Job KO");
+
+					globalMap.put("tDie_1_DIE_MESSAGE", "Job KO");
+					globalMap.put("tDie_1_DIE_MESSAGES", "Job KO");
+
+				} catch (Exception | Error e_tDie_1) {
+					globalMap.put("tDie_1_ERROR_MESSAGE", e_tDie_1.getMessage());
+					logIgnoredError(
+							String.format("tDie_1 - tDie failed to log message due to internal error: %s", e_tDie_1),
+							e_tDie_1);
+				}
+
+				currentComponent = "tDie_1";
+				status = "failure";
+				errorCode = new Integer(1);
+				globalMap.put("tDie_1_DIE_CODE", errorCode);
+
+				if (true) {
+					throw new TDieException();
+				}
+
+				tos_count_tDie_1++;
+
+				/**
+				 * [tDie_1 main ] stop
+				 */
+
+				/**
+				 * [tDie_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				/**
+				 * [tDie_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tDie_1 process_data_end ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				/**
+				 * [tDie_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tDie_1 end ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				if (log.isDebugEnabled())
+					log.debug("tDie_1 - " + ("Done."));
+
+				ok_Hash.put("tDie_1", true);
+				end_Hash.put("tDie_1", System.currentTimeMillis());
+
+				/**
+				 * [tDie_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			if (!(e instanceof TalendException)) {
+				log.fatal(currentComponent + " " + e.getMessage(), e);
+			}
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tDie_1 finally ] start
+				 */
+
+				currentComponent = "tDie_1";
+
+				/**
+				 * [tDie_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tDie_1_SUBPROCESS_STATE", 1);
 	}
 
 	public void tDBCommit_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -17089,342 +17425,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 		}
 
 		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 1);
-	}
-
-	public void tWarn_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tWarn_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tWarn_1 begin ] start
-				 */
-
-				ok_Hash.put("tWarn_1", false);
-				start_Hash.put("tWarn_1", System.currentTimeMillis());
-
-				currentComponent = "tWarn_1";
-
-				int tos_count_tWarn_1 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tWarn_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tWarn_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tWarn_1 = new StringBuilder();
-							log4jParamters_tWarn_1.append("Parameters:");
-							log4jParamters_tWarn_1.append("MESSAGE" + " = " + "\"Job OK\"");
-							log4jParamters_tWarn_1.append(" | ");
-							log4jParamters_tWarn_1.append("CODE" + " = " + "1");
-							log4jParamters_tWarn_1.append(" | ");
-							log4jParamters_tWarn_1.append("PRIORITY" + " = " + "3");
-							log4jParamters_tWarn_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tWarn_1 - " + (log4jParamters_tWarn_1));
-						}
-					}
-					new BytesLimit65535_tWarn_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tWarn_1", "OK", "tWarn");
-					talendJobLogProcess(globalMap);
-				}
-
-				/**
-				 * [tWarn_1 begin ] stop
-				 */
-
-				/**
-				 * [tWarn_1 main ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				try {
-
-					resumeUtil.addLog("USER_DEF_LOG", "NODE:tWarn_1", "", Thread.currentThread().getId() + "", "INFO",
-							"", "Job OK", "", "");
-					if (log.isInfoEnabled())
-						log.info("tWarn_1 - " + ("Message: ") + ("Job OK") + (". Code: ") + (1));
-					globalMap.put("tWarn_1_WARN_MESSAGES", "Job OK");
-					globalMap.put("tWarn_1_WARN_PRIORITY", 3);
-					globalMap.put("tWarn_1_WARN_CODE", 1);
-
-				} catch (Exception e_tWarn_1) {
-					globalMap.put("tWarn_1_ERROR_MESSAGE", e_tWarn_1.getMessage());
-					logIgnoredError(
-							String.format("tWarn_1 - tWarn failed to log message due to internal error: %s", e_tWarn_1),
-							e_tWarn_1);
-				}
-
-				tos_count_tWarn_1++;
-
-				/**
-				 * [tWarn_1 main ] stop
-				 */
-
-				/**
-				 * [tWarn_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				/**
-				 * [tWarn_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tWarn_1 process_data_end ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				/**
-				 * [tWarn_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tWarn_1 end ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				if (log.isDebugEnabled())
-					log.debug("tWarn_1 - " + ("Done."));
-
-				ok_Hash.put("tWarn_1", true);
-				end_Hash.put("tWarn_1", System.currentTimeMillis());
-
-				/**
-				 * [tWarn_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tWarn_1 finally ] start
-				 */
-
-				currentComponent = "tWarn_1";
-
-				/**
-				 * [tWarn_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tWarn_1_SUBPROCESS_STATE", 1);
-	}
-
-	public void tDie_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDie_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tDie_1 begin ] start
-				 */
-
-				ok_Hash.put("tDie_1", false);
-				start_Hash.put("tDie_1", System.currentTimeMillis());
-
-				currentComponent = "tDie_1";
-
-				int tos_count_tDie_1 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tDie_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tDie_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tDie_1 = new StringBuilder();
-							log4jParamters_tDie_1.append("Parameters:");
-							log4jParamters_tDie_1.append("MESSAGE" + " = " + "\"Job KO\"");
-							log4jParamters_tDie_1.append(" | ");
-							log4jParamters_tDie_1.append("CODE" + " = " + "1");
-							log4jParamters_tDie_1.append(" | ");
-							log4jParamters_tDie_1.append("PRIORITY" + " = " + "5");
-							log4jParamters_tDie_1.append(" | ");
-							log4jParamters_tDie_1.append("EXIT_JVM" + " = " + "false");
-							log4jParamters_tDie_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tDie_1 - " + (log4jParamters_tDie_1));
-						}
-					}
-					new BytesLimit65535_tDie_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tDie_1", "KO", "tDie");
-					talendJobLogProcess(globalMap);
-				}
-
-				/**
-				 * [tDie_1 begin ] stop
-				 */
-
-				/**
-				 * [tDie_1 main ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				try {
-					globalMap.put("tDie_1_DIE_PRIORITY", 5);
-					System.err.println("Job KO");
-
-					log.error("tDie_1 - The die message: " + "Job KO");
-
-					globalMap.put("tDie_1_DIE_MESSAGE", "Job KO");
-					globalMap.put("tDie_1_DIE_MESSAGES", "Job KO");
-
-				} catch (Exception | Error e_tDie_1) {
-					globalMap.put("tDie_1_ERROR_MESSAGE", e_tDie_1.getMessage());
-					logIgnoredError(
-							String.format("tDie_1 - tDie failed to log message due to internal error: %s", e_tDie_1),
-							e_tDie_1);
-				}
-
-				currentComponent = "tDie_1";
-				status = "failure";
-				errorCode = new Integer(1);
-				globalMap.put("tDie_1_DIE_CODE", errorCode);
-
-				if (true) {
-					throw new TDieException();
-				}
-
-				tos_count_tDie_1++;
-
-				/**
-				 * [tDie_1 main ] stop
-				 */
-
-				/**
-				 * [tDie_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				/**
-				 * [tDie_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tDie_1 process_data_end ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				/**
-				 * [tDie_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tDie_1 end ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				if (log.isDebugEnabled())
-					log.debug("tDie_1 - " + ("Done."));
-
-				ok_Hash.put("tDie_1", true);
-				end_Hash.put("tDie_1", System.currentTimeMillis());
-
-				/**
-				 * [tDie_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tDie_1 finally ] start
-				 */
-
-				currentComponent = "tDie_1";
-
-				/**
-				 * [tDie_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tDie_1_SUBPROCESS_STATE", 1);
 	}
 
 	public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
@@ -22320,5 +22320,5 @@ public class TEMPLATE_TALEND implements TalendJob {
 }
 /************************************************************************************************
  * 695097 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 16:57:59 WEST
+ * 27 juillet 2022 à 17:02:56 WEST
  ************************************************************************************************/
