@@ -5800,7 +5800,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 							log4jParamters_tDBInput_1.append("QUERYSTORE" + " = " + "\"\"");
 							log4jParamters_tDBInput_1.append(" | ");
 							log4jParamters_tDBInput_1.append("QUERY" + " = "
-									+ "\"With VTEVMVT AS  (SELECT T.STMCINL,               T.STMSITE SOCSITE,               S.SOCCHAIN,               -NVL(SUM(STMVAL), 0) QTE,               -NVL(SUM(STMVPV), 0) CA_TTC,               -NVL(SUM(STMVPV - STMTVA), 0) CA_HT          FROM SITDGENE S, STOMVT T         WHERE S.SOCCMAG = 10           AND T.STMSITE = S.SOCSITE           AND STMTMVT BETWEEN 150 AND 174           AND TRUNC(T.STMDMVT) BETWEEN               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'dd/MM/yyyy')) AND               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'dd/MM/yyyy')) + 0.99999         GROUP BY T.STMSITE, T.STMCINL, S.SOCCHAIN        HAVING - NVL(SUM(STMVAL), 0) <> 0)    SELECT U.ARVCINR CODE_INTERNE_ARTICLE,         VV.SOCSITE CODESITE,         PKARTCOCA.GET_CLOSESTEAN(U.ARVCINV) EAN,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'yyyy-MM-dd') DATE_DEBUT,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,         VV.SOCCHAIN CODEENSEIGNE,         U.ARVCEXR CODE_ARTICLE,         QTE,         CA_TTC,         CA_HT,         TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELASTUPDATEWEBJOB,         F.FCLCFIN FOUCIN    FROM ARTUV U, FOUCATALOG F, VTEVMVT VV   WHERE F.FCLCINV = U.ARVCINV     AND TRUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN     AND VV.STMCINL = U.ARVCINV   AND ROWNUM<1000\"");
+									+ "\"With VTEVMVT AS  (SELECT T.STMCINL,               T.STMSITE SOCSITE,               S.SOCCHAIN,               -NVL(SUM(STMVAL), 0) QTE,               -NVL(SUM(STMVPV), 0) CA_TTC,               -NVL(SUM(STMVPV - STMTVA), 0) CA_HT          FROM SITDGENE S, STOMVT T         WHERE S.SOCCMAG = 10           AND T.STMSITE = S.SOCSITE           AND STMTMVT BETWEEN 150 AND 174           AND TRUNC(T.STMDMVT) BETWEEN               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'dd/MM/yyyy')) AND               TO_DATE(TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'dd/MM/yyyy')) + 0.99999         GROUP BY T.STMSITE, T.STMCINL, S.SOCCHAIN        HAVING - NVL(SUM(STMVAL), 0) <> 0)    SELECT U.ARVCINR CODE_INTERNE_ARTICLE,         VV.SOCSITE CODESITE,         PKARTCOCA.GET_CLOSESTEAN(U.ARVCINV) EAN,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 7, 'yyyy-MM-dd') DATE_DEBUT,         TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,         VV.SOCCHAIN CODEENSEIGNE,         U.ARVCEXR CODE_ARTICLE,         QTE,         CA_TTC,         CA_HT,         TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELASTUPDATEWEBJOB,         F.FCLCFIN FOUCIN    FROM ARTUV U, FOUCATALOG F, VTEVMVT VV   WHERE F.FCLCINV = U.ARVCINV     AND TRUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN     AND VV.STMCINL = U.ARVCINV   AND ROWNUM<100\"");
 							log4jParamters_tDBInput_1.append(" | ");
 							log4jParamters_tDBInput_1.append("IS_CONVERT_XMLTYPE" + " = " + "false");
 							log4jParamters_tDBInput_1.append(" | ");
@@ -5895,7 +5895,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 						+ "EBUT,\n       TO_CHAR(TRUNC(SYSDATE, 'IW') - 1, 'yyyy-MM-dd') DATE_FIN,\n       VV.SOCCHAIN CODEENSEIGNE,\n       U.ARVC"
 						+ "EXR CODE_ARTICLE,\n       QTE,\n       CA_TTC,\n       CA_HT,\n       TO_CHAR(SYSDATE, 'yyyy-MM-dd Hh24:mm:ss') DATELAST"
 						+ "UPDATEWEBJOB,\n       F.FCLCFIN FOUCIN\n  FROM ARTUV U, FOUCATALOG F, VTEVMVT VV\n WHERE F.FCLCINV = U.ARVCINV\n   AND T"
-						+ "RUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN\n   AND VV.STMCINL = U.ARVCINV\n AND ROWNUM<1000";
+						+ "RUNC(SYSDATE) BETWEEN F.FCLDDEB AND F.FCLDFIN\n   AND VV.STMCINL = U.ARVCINV\n AND ROWNUM<100";
 
 				log.debug("tDBInput_1 - Executing the query: '" + dbquery_tDBInput_1 + "'.");
 
@@ -9884,7 +9884,9 @@ public class TEMPLATE_TALEND implements TalendJob {
 						public void limitLog4jByte() throws Exception {
 							StringBuilder log4jParamters_tFlowMeter_15 = new StringBuilder();
 							log4jParamters_tFlowMeter_15.append("Parameters:");
-							log4jParamters_tFlowMeter_15.append("USEROWLABEL" + " = " + "true");
+							log4jParamters_tFlowMeter_15.append("USEROWLABEL" + " = " + "false");
+							log4jParamters_tFlowMeter_15.append(" | ");
+							log4jParamters_tFlowMeter_15.append("METTERLABEL" + " = " + "\"Nbr_Fournisseur\"");
 							log4jParamters_tFlowMeter_15.append(" | ");
 							log4jParamters_tFlowMeter_15.append("ABSOLUTE" + " = " + "Relative");
 							log4jParamters_tFlowMeter_15.append(" | ");
@@ -10921,7 +10923,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				if (log.isDebugEnabled())
 					log.debug("tFlowMeter_15 - " + ("Sending message to tFlowMeterCatcher_1."));
-				tFlowMeterCatcher_1.addMessage("row8", new Integer(count_tFlowMeter_15), "row1", "", "tFlowMeter_15");
+				tFlowMeterCatcher_1.addMessage("Nbr_Fournisseur", new Integer(count_tFlowMeter_15), "row1", "",
+						"tFlowMeter_15");
 
 				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row8", 2, 0,
 						"tUniqRow_1", "tUniqRow_1", "tUniqRow", "tFlowMeter_15", "tFlowMeter_15", "tFlowMeter",
@@ -18637,7 +18640,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 								dataWidth = row[i].length();
 						}
 
-						int titleWidth = 23;
+						int titleWidth = 9;
 
 						int totalWidth = dataWidth + titleWidth + 5;
 
@@ -18695,8 +18698,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "father_pid");
-						for (int i = 0; i < titleWidth - "father_pid".length() + 1; i++)
+						sb.append("| " + "reference");
+						for (int i = 0; i < titleWidth - "reference".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[2]);
 						for (int i = 0; row[2] == null && i < dataWidth - 3
@@ -18707,36 +18710,12 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "root_pid");
-						for (int i = 0; i < titleWidth - "root_pid".length() + 1; i++)
+						sb.append("| " + "count");
+						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[3]);
 						for (int i = 0; row[3] == null && i < dataWidth - 3
 								|| row[3] != null && i < dataWidth - row[3].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "Nbr_lignes_Gold");
-						for (int i = 0; i < titleWidth - "Nbr_lignes_Gold".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[4]);
-						for (int i = 0; row[4] == null && i < dataWidth - 3
-								|| row[4] != null && i < dataWidth - row[4].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "Nbr_lignes_Portail_Frns");
-						for (int i = 0; i < titleWidth - "Nbr_lignes_Portail_Frns".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[5]);
-						for (int i = 0; row[5] == null && i < dataWidth - 3
-								|| row[5] != null && i < dataWidth - row[5].length() + 1; i++)
 							sb.append(" ");
 						sb.append("|" + "\n");
 
@@ -18879,37 +18858,21 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					strBuffer_tLogRow_2.append("|");
 
-					if (row11.father_pid != null) { //
+					if (row11.reference != null) { //
 
-						strBuffer_tLogRow_2.append(String.valueOf(row11.father_pid));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.root_pid != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.root_pid));
+						strBuffer_tLogRow_2.append(String.valueOf(row11.reference));
 
 					} //
 
 					strBuffer_tLogRow_2.append("|");
 
-					if (row11.Nbr_lignes_Gold != null) { //
+					if (row11.count != null) { //
 
-						strBuffer_tLogRow_2.append(String.valueOf(row11.Nbr_lignes_Gold));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.Nbr_lignes_Portail_Frns != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.Nbr_lignes_Portail_Frns));
+						strBuffer_tLogRow_2.append(String.valueOf(row11.count));
 
 					} //
 
-					String[] row_tLogRow_2 = new String[6];
+					String[] row_tLogRow_2 = new String[4];
 
 					if (row11.moment != null) { //
 						row_tLogRow_2[0] = FormatterUtils.format_Date(row11.moment, "yyyy-MM-dd HH:mm:ss");
@@ -18921,23 +18884,13 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					} //
 
-					if (row11.father_pid != null) { //
-						row_tLogRow_2[2] = String.valueOf(row11.father_pid);
+					if (row11.reference != null) { //
+						row_tLogRow_2[2] = String.valueOf(row11.reference);
 
 					} //
 
-					if (row11.root_pid != null) { //
-						row_tLogRow_2[3] = String.valueOf(row11.root_pid);
-
-					} //
-
-					if (row11.Nbr_lignes_Gold != null) { //
-						row_tLogRow_2[4] = String.valueOf(row11.Nbr_lignes_Gold);
-
-					} //
-
-					if (row11.Nbr_lignes_Portail_Frns != null) { //
-						row_tLogRow_2[5] = String.valueOf(row11.Nbr_lignes_Portail_Frns);
+					if (row11.count != null) { //
+						row_tLogRow_2[3] = String.valueOf(row11.count);
 
 					} //
 
@@ -20672,7 +20625,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 	public int portTraces = 4334;
 	public String clientHost;
 	public String defaultClientHost = "localhost";
-	public String contextStr = "DEV";
+	public String contextStr = "KLIF";
 	public boolean isDefaultContext = true;
 	public String pid = "0";
 	public String rootPid = null;
@@ -21473,6 +21426,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 664316 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 15:20:03 WEST
+ * 662600 characters generated by Talend Cloud Data Management Platform on the
+ * 27 juillet 2022 à 15:24:33 WEST
  ************************************************************************************************/
