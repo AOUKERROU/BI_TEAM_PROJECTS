@@ -18576,21 +18576,17 @@ public class TEMPLATE_TALEND implements TalendJob {
 						public void limitLog4jByte() throws Exception {
 							StringBuilder log4jParamters_tLogRow_2 = new StringBuilder();
 							log4jParamters_tLogRow_2.append("Parameters:");
-							log4jParamters_tLogRow_2.append("BASIC_MODE" + " = " + "true");
+							log4jParamters_tLogRow_2.append("BASIC_MODE" + " = " + "false");
 							log4jParamters_tLogRow_2.append(" | ");
 							log4jParamters_tLogRow_2.append("TABLE_PRINT" + " = " + "false");
 							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("VERTICAL" + " = " + "false");
+							log4jParamters_tLogRow_2.append("VERTICAL" + " = " + "true");
 							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("FIELDSEPARATOR" + " = " + "\"|\"");
+							log4jParamters_tLogRow_2.append("PRINT_UNIQUE" + " = " + "true");
 							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("PRINT_HEADER" + " = " + "false");
+							log4jParamters_tLogRow_2.append("PRINT_LABEL" + " = " + "false");
 							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("PRINT_UNIQUE_NAME" + " = " + "false");
-							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("PRINT_COLNAMES" + " = " + "false");
-							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("USE_FIXED_LENGTH" + " = " + "false");
+							log4jParamters_tLogRow_2.append("PRINT_UNIQUE_LABEL" + " = " + "false");
 							log4jParamters_tLogRow_2.append(" | ");
 							log4jParamters_tLogRow_2.append("PRINT_CONTENT_WITH_LOG4J" + " = " + "true");
 							log4jParamters_tLogRow_2.append(" | ");
@@ -18607,8 +18603,270 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				///////////////////////
 
-				final String OUTPUT_FIELD_SEPARATOR_tLogRow_2 = "|";
+				class Util_tLogRow_2 {
+
+					String[] des_top = { ".", "-" };
+
+					String[] des_data = { "-", "+" };
+
+					String[] des_frame = { "|" };
+
+					public void printLine(StringBuilder sb, int titleWidth, int dataWidth) {
+
+						sb.append("+");
+						for (int i = 0; i < titleWidth + 2; i++)
+							sb.append("-");
+						sb.append("+");
+						for (int i = 0; i < dataWidth + 2; i++)
+							sb.append("-");
+						sb.append("+" + "\n");
+					}
+
+					public String print(String[] row, int nbLine) {
+
+						StringBuilder sb = new StringBuilder();
+
+						String title = "#" + nbLine + ". " + "tLogRow_2";
+
+						// step 1: get the max length of all the row[] member;
+						int dataWidth = 5; // the length of the string "value"
+						for (int i = 0; i < row.length; i++) {
+							if (row[i] == null && 4 > dataWidth) {
+								dataWidth = 4;
+							} else if (row[i] != null && row[i].length() > dataWidth)
+								dataWidth = row[i].length();
+						}
+
+						int titleWidth = 17;
+
+						int totalWidth = dataWidth + titleWidth + 5;
+
+						// step 2: print the header with line number
+						sb.append(".");
+						for (int i = 0; i < totalWidth; i++)
+							sb.append("-");
+						sb.append("." + "\n" + "|");
+
+						int emptyCenterWidth = (totalWidth - title.length()) / 2;
+						for (int i = 0; i < emptyCenterWidth; i++)
+							sb.append(" ");
+						sb.append(title);
+						for (int i = 0; i < totalWidth - emptyCenterWidth - title.length(); i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// step 3: print "key" and "value"
+						printLine(sb, titleWidth, dataWidth);
+
+						sb.append("|" + " key");
+						for (int i = 0; i < titleWidth - 2; i++)
+							sb.append(" ");
+						sb.append("|" + " value");
+						for (int i = 0; i < dataWidth - 4; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						printLine(sb, titleWidth, dataWidth);
+
+						// step 4: print dataset
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "moment");
+						for (int i = 0; i < titleWidth - "moment".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[0]);
+						for (int i = 0; row[0] == null && i < dataWidth - 3
+								|| row[0] != null && i < dataWidth - row[0].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "pid");
+						for (int i = 0; i < titleWidth - "pid".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[1]);
+						for (int i = 0; row[1] == null && i < dataWidth - 3
+								|| row[1] != null && i < dataWidth - row[1].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "father_pid");
+						for (int i = 0; i < titleWidth - "father_pid".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[2]);
+						for (int i = 0; row[2] == null && i < dataWidth - 3
+								|| row[2] != null && i < dataWidth - row[2].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "root_pid");
+						for (int i = 0; i < titleWidth - "root_pid".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[3]);
+						for (int i = 0; row[3] == null && i < dataWidth - 3
+								|| row[3] != null && i < dataWidth - row[3].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "system_pid");
+						for (int i = 0; i < titleWidth - "system_pid".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[4]);
+						for (int i = 0; row[4] == null && i < dataWidth - 3
+								|| row[4] != null && i < dataWidth - row[4].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "project");
+						for (int i = 0; i < titleWidth - "project".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[5]);
+						for (int i = 0; row[5] == null && i < dataWidth - 3
+								|| row[5] != null && i < dataWidth - row[5].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "job");
+						for (int i = 0; i < titleWidth - "job".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[6]);
+						for (int i = 0; row[6] == null && i < dataWidth - 3
+								|| row[6] != null && i < dataWidth - row[6].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "job_repository_id");
+						for (int i = 0; i < titleWidth - "job_repository_id".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[7]);
+						for (int i = 0; row[7] == null && i < dataWidth - 3
+								|| row[7] != null && i < dataWidth - row[7].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "job_version");
+						for (int i = 0; i < titleWidth - "job_version".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[8]);
+						for (int i = 0; row[8] == null && i < dataWidth - 3
+								|| row[8] != null && i < dataWidth - row[8].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "context");
+						for (int i = 0; i < titleWidth - "context".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[9]);
+						for (int i = 0; row[9] == null && i < dataWidth - 3
+								|| row[9] != null && i < dataWidth - row[9].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "origin");
+						for (int i = 0; i < titleWidth - "origin".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[10]);
+						for (int i = 0; row[10] == null && i < dataWidth - 3
+								|| row[10] != null && i < dataWidth - row[10].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "label");
+						for (int i = 0; i < titleWidth - "label".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[11]);
+						for (int i = 0; row[11] == null && i < dataWidth - 3
+								|| row[11] != null && i < dataWidth - row[11].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "count");
+						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[12]);
+						for (int i = 0; row[12] == null && i < dataWidth - 3
+								|| row[12] != null && i < dataWidth - row[12].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "reference");
+						for (int i = 0; i < titleWidth - "reference".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[13]);
+						for (int i = 0; row[13] == null && i < dataWidth - 3
+								|| row[13] != null && i < dataWidth - row[13].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// for(int i=0; i<row.length; i++){
+						sb.append("| " + "thresholds");
+						for (int i = 0; i < titleWidth - "thresholds".length() + 1; i++)
+							sb.append(" ");
+						sb.append("| " + row[14]);
+						for (int i = 0; row[14] == null && i < dataWidth - 3
+								|| row[14] != null && i < dataWidth - row[14].length() + 1; i++)
+							sb.append(" ");
+						sb.append("|" + "\n");
+
+						// }
+
+						// step 5: print a line gap
+						printLine(sb, titleWidth, dataWidth);
+						return sb.toString();
+
+					}
+
+				}
+
+				Util_tLogRow_2 util_tLogRow_2 = new Util_tLogRow_2();
+
 				java.io.PrintStream consoleOut_tLogRow_2 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_2 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_2);
+				}
 
 				StringBuilder strBuffer_tLogRow_2 = null;
 				int nb_line_tLogRow_2 = 0;
@@ -18831,17 +19089,88 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					} //
 
-					if (globalMap.get("tLogRow_CONSOLE") != null) {
-						consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-					} else {
-						consoleOut_tLogRow_2 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-						globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_2);
-					}
-					log.info("tLogRow_2 - Content of row " + (nb_line_tLogRow_2 + 1) + ": "
-							+ strBuffer_tLogRow_2.toString());
-					consoleOut_tLogRow_2.println(strBuffer_tLogRow_2.toString());
-					consoleOut_tLogRow_2.flush();
+					String[] row_tLogRow_2 = new String[15];
+
+					if (row11.moment != null) { //
+						row_tLogRow_2[0] = FormatterUtils.format_Date(row11.moment, "yyyy-MM-dd HH:mm:ss");
+
+					} //
+
+					if (row11.pid != null) { //
+						row_tLogRow_2[1] = String.valueOf(row11.pid);
+
+					} //
+
+					if (row11.father_pid != null) { //
+						row_tLogRow_2[2] = String.valueOf(row11.father_pid);
+
+					} //
+
+					if (row11.root_pid != null) { //
+						row_tLogRow_2[3] = String.valueOf(row11.root_pid);
+
+					} //
+
+					if (row11.system_pid != null) { //
+						row_tLogRow_2[4] = String.valueOf(row11.system_pid);
+
+					} //
+
+					if (row11.project != null) { //
+						row_tLogRow_2[5] = String.valueOf(row11.project);
+
+					} //
+
+					if (row11.job != null) { //
+						row_tLogRow_2[6] = String.valueOf(row11.job);
+
+					} //
+
+					if (row11.job_repository_id != null) { //
+						row_tLogRow_2[7] = String.valueOf(row11.job_repository_id);
+
+					} //
+
+					if (row11.job_version != null) { //
+						row_tLogRow_2[8] = String.valueOf(row11.job_version);
+
+					} //
+
+					if (row11.context != null) { //
+						row_tLogRow_2[9] = String.valueOf(row11.context);
+
+					} //
+
+					if (row11.origin != null) { //
+						row_tLogRow_2[10] = String.valueOf(row11.origin);
+
+					} //
+
+					if (row11.label != null) { //
+						row_tLogRow_2[11] = String.valueOf(row11.label);
+
+					} //
+
+					if (row11.count != null) { //
+						row_tLogRow_2[12] = String.valueOf(row11.count);
+
+					} //
+
+					if (row11.reference != null) { //
+						row_tLogRow_2[13] = String.valueOf(row11.reference);
+
+					} //
+
+					if (row11.thresholds != null) { //
+						row_tLogRow_2[14] = String.valueOf(row11.thresholds);
+
+					} //
+
 					nb_line_tLogRow_2++;
+					consoleOut_tLogRow_2.println(util_tLogRow_2.print(row_tLogRow_2, nb_line_tLogRow_2));
+					consoleOut_tLogRow_2.flush();
+					log.info("tLogRow_2 - Content of row " + nb_line_tLogRow_2 + ": "
+							+ TalendString.unionString("|", row_tLogRow_2));
 //////
 
 //////                    
@@ -21369,6 +21698,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 661683 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 12:06:31 WEST
+ * 672107 characters generated by Talend Cloud Data Management Platform on the
+ * 27 juillet 2022 à 12:11:26 WEST
  ************************************************************************************************/
