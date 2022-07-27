@@ -14544,12 +14544,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 			return this.SUCCESS_MESSAGE;
 		}
 
-		public Integer count;
-
-		public Integer getCount() {
-			return this.count;
-		}
-
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -14684,8 +14678,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					this.SUCCESS_MESSAGE = readString(dis);
 
-					this.count = readInteger(dis);
-
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -14726,8 +14718,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 					this.FileNamePOutPut = readString(dis);
 
 					this.SUCCESS_MESSAGE = readString(dis);
-
-					this.count = readInteger(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -14789,10 +14779,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				writeString(this.SUCCESS_MESSAGE, dos);
 
-				// Integer
-
-				writeInteger(this.count, dos);
-
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -14850,10 +14836,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				writeString(this.SUCCESS_MESSAGE, dos);
 
-				// Integer
-
-				writeInteger(this.count, dos);
-
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -14877,7 +14859,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 			sb.append(",ERROR_MESSAGE=" + ERROR_MESSAGE);
 			sb.append(",FileNamePOutPut=" + FileNamePOutPut);
 			sb.append(",SUCCESS_MESSAGE=" + SUCCESS_MESSAGE);
-			sb.append(",count=" + String.valueOf(count));
 			sb.append("]");
 
 			return sb.toString();
@@ -14978,14 +14959,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 				sb.append("<null>");
 			} else {
 				sb.append(SUCCESS_MESSAGE);
-			}
-
-			sb.append("|");
-
-			if (count == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(count);
 			}
 
 			sb.append("|");
@@ -15628,9 +15601,9 @@ public class TEMPLATE_TALEND implements TalendJob {
 							log4jParamters_tLogRow_1.append(" | ");
 							log4jParamters_tLogRow_1.append("PRINT_UNIQUE" + " = " + "false");
 							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_LABEL" + " = " + "false");
+							log4jParamters_tLogRow_1.append("PRINT_LABEL" + " = " + "true");
 							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_UNIQUE_LABEL" + " = " + "true");
+							log4jParamters_tLogRow_1.append("PRINT_UNIQUE_LABEL" + " = " + "false");
 							log4jParamters_tLogRow_1.append(" | ");
 							log4jParamters_tLogRow_1.append("PRINT_CONTENT_WITH_LOG4J" + " = " + "true");
 							log4jParamters_tLogRow_1.append(" | ");
@@ -15670,7 +15643,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						StringBuilder sb = new StringBuilder();
 
-						String title = "#" + nbLine + ". " + "tLogRow_1--Job_Log";
+						String title = "#" + nbLine + ". " + "Job_Log";
 
 						// step 1: get the max length of all the row[] member;
 						int dataWidth = 5; // the length of the string "value"
@@ -15853,18 +15826,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 						sb.append("| " + row[11]);
 						for (int i = 0; row[11] == null && i < dataWidth - 3
 								|| row[11] != null && i < dataWidth - row[11].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "count");
-						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[12]);
-						for (int i = 0; row[12] == null && i < dataWidth - 3
-								|| row[12] != null && i < dataWidth - row[12].length() + 1; i++)
 							sb.append(" ");
 						sb.append("|" + "\n");
 
@@ -16079,7 +16040,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 						Log_Out_tmp.ERROR_MESSAGE = row9.ERROR_MESSAGE;
 						Log_Out_tmp.FileNamePOutPut = row9.FileNamePOutPut;
 						Log_Out_tmp.SUCCESS_MESSAGE = row9.SUCCESS_MESSAGE;
-						Log_Out_tmp.count = null;
 						Log_Out = Log_Out_tmp;
 						log.debug("tMap_4 - Outputting the record " + count_Log_Out_tMap_4
 								+ " of the output table 'Log_Out'.");
@@ -16224,15 +16184,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						} //
 
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.count != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.count));
-
-						} //
-
-						String[] row_tLogRow_1 = new String[13];
+						String[] row_tLogRow_1 = new String[12];
 
 						if (Log_Out.TaskName != null) { //
 							row_tLogRow_1[0] = String.valueOf(Log_Out.TaskName);
@@ -16291,11 +16243,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						if (Log_Out.SUCCESS_MESSAGE != null) { //
 							row_tLogRow_1[11] = String.valueOf(Log_Out.SUCCESS_MESSAGE);
-
-						} //
-
-						if (Log_Out.count != null) { //
-							row_tLogRow_1[12] = String.valueOf(Log_Out.count);
 
 						} //
 
@@ -18591,9 +18538,9 @@ public class TEMPLATE_TALEND implements TalendJob {
 							log4jParamters_tLogRow_2.append(" | ");
 							log4jParamters_tLogRow_2.append("VERTICAL" + " = " + "true");
 							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("PRINT_UNIQUE" + " = " + "true");
+							log4jParamters_tLogRow_2.append("PRINT_UNIQUE" + " = " + "false");
 							log4jParamters_tLogRow_2.append(" | ");
-							log4jParamters_tLogRow_2.append("PRINT_LABEL" + " = " + "false");
+							log4jParamters_tLogRow_2.append("PRINT_LABEL" + " = " + "true");
 							log4jParamters_tLogRow_2.append(" | ");
 							log4jParamters_tLogRow_2.append("PRINT_UNIQUE_LABEL" + " = " + "false");
 							log4jParamters_tLogRow_2.append(" | ");
@@ -18635,7 +18582,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						StringBuilder sb = new StringBuilder();
 
-						String title = "#" + nbLine + ". " + "tLogRow_2";
+						String title = "#" + nbLine + ". " + "Meter_Log";
 
 						// step 1: get the max length of all the row[] member;
 						int dataWidth = 5; // the length of the string "value"
@@ -21382,6 +21329,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 662174 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 15:31:59 WEST
+ * 660695 characters generated by Talend Cloud Data Management Platform on the
+ * 27 juillet 2022 à 15:48:46 WEST
  ************************************************************************************************/
