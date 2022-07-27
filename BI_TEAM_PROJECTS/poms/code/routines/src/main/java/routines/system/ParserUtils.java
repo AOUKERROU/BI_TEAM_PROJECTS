@@ -313,10 +313,14 @@ public class ParserUtils {
      */
     public static java.util.Date parseTo_Date(String dateString, String pattern) {
         // check the parameter for supporting " ","2007-09-13"," 2007-09-13 "
+        if (dateString != null) {
+            dateString = dateString.trim();
+        }
+
         if (dateString == null || dateString.length() == 0) {
             return null;
         }
-        dateString = dateString.trim();
+
         if (pattern == null) {
             pattern = Constant.dateDefaultPattern;
         }

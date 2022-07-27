@@ -91,7 +91,11 @@ public class JobStructureCatcherUtils {
 				
 		//thread uuid
 		public String tid = ProcessIdAndThreadId.getThreadId();
-
+		
+		public String extra_info;
+		
+		public Exception exception;
+		
 		public JobStructureCatcherMessage() {
 		}
 
@@ -100,6 +104,8 @@ public class JobStructureCatcherUtils {
 	public static enum LogType {
 		JOBSTART,
 		JOBEND,
+		JOBERROR,
+		
 		RUNCOMPONENT,
 		FLOWINPUT,
 		FLOWOUTPUT,
@@ -230,6 +236,31 @@ public class JobStructureCatcherUtils {
 		scm.end_time = end_time;
 		
 		scm.log_type = LogType.JOBEND;
+		
+		messages.add(scm);
+	}
+	
+	/**
+	 * 
+	 * @param currentComponentId the id of the component which exception appear
+	 * @param currentComponentLabel the label of the component which exception appear
+	 * @param extraInfo extra issue info outside of exception, for tDieExcetpion/message in tDie component 
+	 * @param exception exception object
+	 */
+	public void addJobExceptionMessage(String currentComponentId, String currentComponentLabel, String extraInfo, Exception exception) {
+		JobStructureCatcherMessage scm = new JobStructureCatcherMessage();
+		scm.moment = sdf.format(new Date());
+		
+		scm.job_name = this.job_name;
+		scm.job_id = this.job_id;
+		scm.job_version = this.job_version;
+		
+		scm.component_id = currentComponentId;
+		scm.component_label = currentComponentLabel;
+		scm.extra_info = extraInfo;
+		scm.exception = exception;
+		
+		scm.log_type = LogType.JOBERROR;
 		
 		messages.add(scm);
 	}
