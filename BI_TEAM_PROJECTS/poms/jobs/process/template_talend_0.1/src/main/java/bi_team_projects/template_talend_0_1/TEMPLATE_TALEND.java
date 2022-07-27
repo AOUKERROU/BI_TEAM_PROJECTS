@@ -18637,7 +18637,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 								dataWidth = row[i].length();
 						}
 
-						int titleWidth = 17;
+						int titleWidth = 23;
 
 						int totalWidth = dataWidth + titleWidth + 5;
 
@@ -18719,8 +18719,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "system_pid");
-						for (int i = 0; i < titleWidth - "system_pid".length() + 1; i++)
+						sb.append("| " + "Nbr_lignes_Gold");
+						for (int i = 0; i < titleWidth - "Nbr_lignes_Gold".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[4]);
 						for (int i = 0; row[4] == null && i < dataWidth - 3
@@ -18731,120 +18731,12 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "project");
-						for (int i = 0; i < titleWidth - "project".length() + 1; i++)
+						sb.append("| " + "Nbr_lignes_Portail_Frns");
+						for (int i = 0; i < titleWidth - "Nbr_lignes_Portail_Frns".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[5]);
 						for (int i = 0; row[5] == null && i < dataWidth - 3
 								|| row[5] != null && i < dataWidth - row[5].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "job");
-						for (int i = 0; i < titleWidth - "job".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[6]);
-						for (int i = 0; row[6] == null && i < dataWidth - 3
-								|| row[6] != null && i < dataWidth - row[6].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "job_repository_id");
-						for (int i = 0; i < titleWidth - "job_repository_id".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[7]);
-						for (int i = 0; row[7] == null && i < dataWidth - 3
-								|| row[7] != null && i < dataWidth - row[7].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "job_version");
-						for (int i = 0; i < titleWidth - "job_version".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[8]);
-						for (int i = 0; row[8] == null && i < dataWidth - 3
-								|| row[8] != null && i < dataWidth - row[8].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "context");
-						for (int i = 0; i < titleWidth - "context".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[9]);
-						for (int i = 0; row[9] == null && i < dataWidth - 3
-								|| row[9] != null && i < dataWidth - row[9].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "origin");
-						for (int i = 0; i < titleWidth - "origin".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[10]);
-						for (int i = 0; row[10] == null && i < dataWidth - 3
-								|| row[10] != null && i < dataWidth - row[10].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "label");
-						for (int i = 0; i < titleWidth - "label".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[11]);
-						for (int i = 0; row[11] == null && i < dataWidth - 3
-								|| row[11] != null && i < dataWidth - row[11].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "count");
-						for (int i = 0; i < titleWidth - "count".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[12]);
-						for (int i = 0; row[12] == null && i < dataWidth - 3
-								|| row[12] != null && i < dataWidth - row[12].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "reference");
-						for (int i = 0; i < titleWidth - "reference".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[13]);
-						for (int i = 0; row[13] == null && i < dataWidth - 3
-								|| row[13] != null && i < dataWidth - row[13].length() + 1; i++)
-							sb.append(" ");
-						sb.append("|" + "\n");
-
-						// }
-
-						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "thresholds");
-						for (int i = 0; i < titleWidth - "thresholds".length() + 1; i++)
-							sb.append(" ");
-						sb.append("| " + row[14]);
-						for (int i = 0; row[14] == null && i < dataWidth - 3
-								|| row[14] != null && i < dataWidth - row[14].length() + 1; i++)
 							sb.append(" ");
 						sb.append("|" + "\n");
 
@@ -19003,93 +18895,21 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					strBuffer_tLogRow_2.append("|");
 
-					if (row11.system_pid != null) { //
+					if (row11.Nbr_lignes_Gold != null) { //
 
-						strBuffer_tLogRow_2.append(String.valueOf(row11.system_pid));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.project != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.project));
+						strBuffer_tLogRow_2.append(String.valueOf(row11.Nbr_lignes_Gold));
 
 					} //
 
 					strBuffer_tLogRow_2.append("|");
 
-					if (row11.job != null) { //
+					if (row11.Nbr_lignes_Portail_Frns != null) { //
 
-						strBuffer_tLogRow_2.append(String.valueOf(row11.job));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.job_repository_id != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.job_repository_id));
+						strBuffer_tLogRow_2.append(String.valueOf(row11.Nbr_lignes_Portail_Frns));
 
 					} //
 
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.job_version != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.job_version));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.context != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.context));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.origin != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.origin));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.label != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.label));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.count != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.count));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.reference != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.reference));
-
-					} //
-
-					strBuffer_tLogRow_2.append("|");
-
-					if (row11.thresholds != null) { //
-
-						strBuffer_tLogRow_2.append(String.valueOf(row11.thresholds));
-
-					} //
-
-					String[] row_tLogRow_2 = new String[15];
+					String[] row_tLogRow_2 = new String[6];
 
 					if (row11.moment != null) { //
 						row_tLogRow_2[0] = FormatterUtils.format_Date(row11.moment, "yyyy-MM-dd HH:mm:ss");
@@ -19111,58 +18931,13 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					} //
 
-					if (row11.system_pid != null) { //
-						row_tLogRow_2[4] = String.valueOf(row11.system_pid);
+					if (row11.Nbr_lignes_Gold != null) { //
+						row_tLogRow_2[4] = String.valueOf(row11.Nbr_lignes_Gold);
 
 					} //
 
-					if (row11.project != null) { //
-						row_tLogRow_2[5] = String.valueOf(row11.project);
-
-					} //
-
-					if (row11.job != null) { //
-						row_tLogRow_2[6] = String.valueOf(row11.job);
-
-					} //
-
-					if (row11.job_repository_id != null) { //
-						row_tLogRow_2[7] = String.valueOf(row11.job_repository_id);
-
-					} //
-
-					if (row11.job_version != null) { //
-						row_tLogRow_2[8] = String.valueOf(row11.job_version);
-
-					} //
-
-					if (row11.context != null) { //
-						row_tLogRow_2[9] = String.valueOf(row11.context);
-
-					} //
-
-					if (row11.origin != null) { //
-						row_tLogRow_2[10] = String.valueOf(row11.origin);
-
-					} //
-
-					if (row11.label != null) { //
-						row_tLogRow_2[11] = String.valueOf(row11.label);
-
-					} //
-
-					if (row11.count != null) { //
-						row_tLogRow_2[12] = String.valueOf(row11.count);
-
-					} //
-
-					if (row11.reference != null) { //
-						row_tLogRow_2[13] = String.valueOf(row11.reference);
-
-					} //
-
-					if (row11.thresholds != null) { //
-						row_tLogRow_2[14] = String.valueOf(row11.thresholds);
+					if (row11.Nbr_lignes_Portail_Frns != null) { //
+						row_tLogRow_2[5] = String.valueOf(row11.Nbr_lignes_Portail_Frns);
 
 					} //
 
@@ -20897,7 +20672,7 @@ public class TEMPLATE_TALEND implements TalendJob {
 	public int portTraces = 4334;
 	public String clientHost;
 	public String defaultClientHost = "localhost";
-	public String contextStr = "KLIF";
+	public String contextStr = "DEV";
 	public boolean isDefaultContext = true;
 	public String pid = "0";
 	public String rootPid = null;
@@ -21698,6 +21473,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 672107 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 12:11:26 WEST
+ * 664316 characters generated by Talend Cloud Data Management Platform on the
+ * 27 juillet 2022 à 15:20:03 WEST
  ************************************************************************************************/
