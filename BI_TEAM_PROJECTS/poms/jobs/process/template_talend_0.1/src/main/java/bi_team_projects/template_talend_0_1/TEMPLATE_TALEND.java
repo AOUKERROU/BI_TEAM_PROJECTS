@@ -15052,24 +15052,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 		final static byte[] commonByteArrayLock_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
 		static byte[] commonByteArray_BI_TEAM_PROJECTS_TEMPLATE_TALEND = new byte[0];
 
-		public String StartDate;
-
-		public String getStartDate() {
-			return this.StartDate;
-		}
-
-		public String Duration;
-
-		public String getDuration() {
-			return this.Duration;
-		}
-
-		public String EndDate;
-
-		public String getEndDate() {
-			return this.EndDate;
-		}
-
 		public String TaskName;
 
 		public String getTaskName() {
@@ -15086,6 +15068,24 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 		public String getTaskType() {
 			return this.TaskType;
+		}
+
+		public String StartDate;
+
+		public String getStartDate() {
+			return this.StartDate;
+		}
+
+		public String Duration;
+
+		public String getDuration() {
+			return this.Duration;
+		}
+
+		public String EndDate;
+
+		public String getEndDate() {
+			return this.EndDate;
 		}
 
 		public Integer NbFournisseur;
@@ -15234,17 +15234,17 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					int length = 0;
 
-					this.StartDate = readString(dis);
-
-					this.Duration = readString(dis);
-
-					this.EndDate = readString(dis);
-
 					this.TaskName = readString(dis);
 
 					this.TaskDetail = readString(dis);
 
 					this.TaskType = readString(dis);
+
+					this.StartDate = readString(dis);
+
+					this.Duration = readString(dis);
+
+					this.EndDate = readString(dis);
 
 					this.NbFournisseur = readInteger(dis);
 
@@ -15275,17 +15275,17 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 					int length = 0;
 
-					this.StartDate = readString(dis);
-
-					this.Duration = readString(dis);
-
-					this.EndDate = readString(dis);
-
 					this.TaskName = readString(dis);
 
 					this.TaskDetail = readString(dis);
 
 					this.TaskType = readString(dis);
+
+					this.StartDate = readString(dis);
+
+					this.Duration = readString(dis);
+
+					this.EndDate = readString(dis);
 
 					this.NbFournisseur = readInteger(dis);
 
@@ -15313,18 +15313,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				// String
 
-				writeString(this.StartDate, dos);
-
-				// String
-
-				writeString(this.Duration, dos);
-
-				// String
-
-				writeString(this.EndDate, dos);
-
-				// String
-
 				writeString(this.TaskName, dos);
 
 				// String
@@ -15334,6 +15322,18 @@ public class TEMPLATE_TALEND implements TalendJob {
 				// String
 
 				writeString(this.TaskType, dos);
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// String
+
+				writeString(this.Duration, dos);
+
+				// String
+
+				writeString(this.EndDate, dos);
 
 				// Integer
 
@@ -15370,18 +15370,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 				// String
 
-				writeString(this.StartDate, dos);
-
-				// String
-
-				writeString(this.Duration, dos);
-
-				// String
-
-				writeString(this.EndDate, dos);
-
-				// String
-
 				writeString(this.TaskName, dos);
 
 				// String
@@ -15391,6 +15379,18 @@ public class TEMPLATE_TALEND implements TalendJob {
 				// String
 
 				writeString(this.TaskType, dos);
+
+				// String
+
+				writeString(this.StartDate, dos);
+
+				// String
+
+				writeString(this.Duration, dos);
+
+				// String
+
+				writeString(this.EndDate, dos);
 
 				// Integer
 
@@ -15427,12 +15427,12 @@ public class TEMPLATE_TALEND implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("StartDate=" + StartDate);
-			sb.append(",Duration=" + Duration);
-			sb.append(",EndDate=" + EndDate);
-			sb.append(",TaskName=" + TaskName);
+			sb.append("TaskName=" + TaskName);
 			sb.append(",TaskDetail=" + TaskDetail);
 			sb.append(",TaskType=" + TaskType);
+			sb.append(",StartDate=" + StartDate);
+			sb.append(",Duration=" + Duration);
+			sb.append(",EndDate=" + EndDate);
 			sb.append(",NbFournisseur=" + String.valueOf(NbFournisseur));
 			sb.append(",ERROR_STATUT=" + String.valueOf(ERROR_STATUT));
 			sb.append(",SUCCESS_STATUT=" + String.valueOf(SUCCESS_STATUT));
@@ -15446,30 +15446,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 		public String toLogString() {
 			StringBuilder sb = new StringBuilder();
-
-			if (StartDate == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(StartDate);
-			}
-
-			sb.append("|");
-
-			if (Duration == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(Duration);
-			}
-
-			sb.append("|");
-
-			if (EndDate == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(EndDate);
-			}
-
-			sb.append("|");
 
 			if (TaskName == null) {
 				sb.append("<null>");
@@ -15491,6 +15467,30 @@ public class TEMPLATE_TALEND implements TalendJob {
 				sb.append("<null>");
 			} else {
 				sb.append(TaskType);
+			}
+
+			sb.append("|");
+
+			if (StartDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(StartDate);
+			}
+
+			sb.append("|");
+
+			if (Duration == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(Duration);
+			}
+
+			sb.append("|");
+
+			if (EndDate == null) {
+				sb.append("<null>");
+			} else {
+				sb.append(EndDate);
 			}
 
 			sb.append("|");
@@ -16268,8 +16268,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// step 4: print dataset
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "StartDate");
-						for (int i = 0; i < titleWidth - "StartDate".length() + 1; i++)
+						sb.append("| " + "TaskName");
+						for (int i = 0; i < titleWidth - "TaskName".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[0]);
 						for (int i = 0; row[0] == null && i < dataWidth - 3
@@ -16280,8 +16280,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "Duration");
-						for (int i = 0; i < titleWidth - "Duration".length() + 1; i++)
+						sb.append("| " + "TaskDetail");
+						for (int i = 0; i < titleWidth - "TaskDetail".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[1]);
 						for (int i = 0; row[1] == null && i < dataWidth - 3
@@ -16292,8 +16292,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "EndDate");
-						for (int i = 0; i < titleWidth - "EndDate".length() + 1; i++)
+						sb.append("| " + "TaskType");
+						for (int i = 0; i < titleWidth - "TaskType".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[2]);
 						for (int i = 0; row[2] == null && i < dataWidth - 3
@@ -16304,8 +16304,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskName");
-						for (int i = 0; i < titleWidth - "TaskName".length() + 1; i++)
+						sb.append("| " + "StartDate");
+						for (int i = 0; i < titleWidth - "StartDate".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[3]);
 						for (int i = 0; row[3] == null && i < dataWidth - 3
@@ -16316,8 +16316,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskDetail");
-						for (int i = 0; i < titleWidth - "TaskDetail".length() + 1; i++)
+						sb.append("| " + "Duration");
+						for (int i = 0; i < titleWidth - "Duration".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[4]);
 						for (int i = 0; row[4] == null && i < dataWidth - 3
@@ -16328,8 +16328,8 @@ public class TEMPLATE_TALEND implements TalendJob {
 						// }
 
 						// for(int i=0; i<row.length; i++){
-						sb.append("| " + "TaskType");
-						for (int i = 0; i < titleWidth - "TaskType".length() + 1; i++)
+						sb.append("| " + "EndDate");
+						for (int i = 0; i < titleWidth - "EndDate".length() + 1; i++)
 							sb.append(" ");
 						sb.append("| " + row[5]);
 						for (int i = 0; row[5] == null && i < dataWidth - 3
@@ -16608,12 +16608,12 @@ public class TEMPLATE_TALEND implements TalendJob {
 // # Output table : 'Log_Out'
 						count_Log_Out_tMap_4++;
 
-						Log_Out_tmp.StartDate = row9.StartDate;
-						Log_Out_tmp.Duration = String.valueOf(row9.Duration / 1000 + "s");
-						Log_Out_tmp.EndDate = row9.EndDate;
 						Log_Out_tmp.TaskName = row9.TaskName;
 						Log_Out_tmp.TaskDetail = row9.TaskDetail;
 						Log_Out_tmp.TaskType = row9.TaskType;
+						Log_Out_tmp.StartDate = row9.StartDate;
+						Log_Out_tmp.Duration = String.valueOf(row9.Duration / 1000 + "s");
+						Log_Out_tmp.EndDate = row9.EndDate;
 						Log_Out_tmp.NbFournisseur = row9.NbFournisseur;
 						Log_Out_tmp.ERROR_STATUT = row9.ERROR_STATUT;
 						Log_Out_tmp.SUCCESS_STATUT = row9.SUCCESS_STATUT;
@@ -16670,30 +16670,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						strBuffer_tLogRow_1 = new StringBuilder();
 
-						if (Log_Out.StartDate != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.StartDate));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.Duration != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.Duration));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
-						if (Log_Out.EndDate != null) { //
-
-							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.EndDate));
-
-						} //
-
-						strBuffer_tLogRow_1.append("|");
-
 						if (Log_Out.TaskName != null) { //
 
 							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskName));
@@ -16713,6 +16689,30 @@ public class TEMPLATE_TALEND implements TalendJob {
 						if (Log_Out.TaskType != null) { //
 
 							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.TaskType));
+
+						} //
+
+						strBuffer_tLogRow_1.append("|");
+
+						if (Log_Out.StartDate != null) { //
+
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.StartDate));
+
+						} //
+
+						strBuffer_tLogRow_1.append("|");
+
+						if (Log_Out.Duration != null) { //
+
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.Duration));
+
+						} //
+
+						strBuffer_tLogRow_1.append("|");
+
+						if (Log_Out.EndDate != null) { //
+
+							strBuffer_tLogRow_1.append(String.valueOf(Log_Out.EndDate));
 
 						} //
 
@@ -16766,33 +16766,33 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 						String[] row_tLogRow_1 = new String[12];
 
-						if (Log_Out.StartDate != null) { //
-							row_tLogRow_1[0] = String.valueOf(Log_Out.StartDate);
-
-						} //
-
-						if (Log_Out.Duration != null) { //
-							row_tLogRow_1[1] = String.valueOf(Log_Out.Duration);
-
-						} //
-
-						if (Log_Out.EndDate != null) { //
-							row_tLogRow_1[2] = String.valueOf(Log_Out.EndDate);
-
-						} //
-
 						if (Log_Out.TaskName != null) { //
-							row_tLogRow_1[3] = String.valueOf(Log_Out.TaskName);
+							row_tLogRow_1[0] = String.valueOf(Log_Out.TaskName);
 
 						} //
 
 						if (Log_Out.TaskDetail != null) { //
-							row_tLogRow_1[4] = String.valueOf(Log_Out.TaskDetail);
+							row_tLogRow_1[1] = String.valueOf(Log_Out.TaskDetail);
 
 						} //
 
 						if (Log_Out.TaskType != null) { //
-							row_tLogRow_1[5] = String.valueOf(Log_Out.TaskType);
+							row_tLogRow_1[2] = String.valueOf(Log_Out.TaskType);
+
+						} //
+
+						if (Log_Out.StartDate != null) { //
+							row_tLogRow_1[3] = String.valueOf(Log_Out.StartDate);
+
+						} //
+
+						if (Log_Out.Duration != null) { //
+							row_tLogRow_1[4] = String.valueOf(Log_Out.Duration);
+
+						} //
+
+						if (Log_Out.EndDate != null) { //
+							row_tLogRow_1[5] = String.valueOf(Log_Out.EndDate);
 
 						} //
 
@@ -19421,5 +19421,5 @@ public class TEMPLATE_TALEND implements TalendJob {
 }
 /************************************************************************************************
  * 607359 characters generated by Talend Cloud Data Management Platform on the
- * 27 juillet 2022 à 10:55:25 WEST
+ * 27 juillet 2022 à 10:56:29 WEST
  ************************************************************************************************/
