@@ -12022,583 +12022,743 @@ public class TEMPLATE_TALEND implements TalendJob {
 
 	}
 
-	public void tDBRow_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBRow_1_SUBPROCESS_STATE", 0);
+public void tDBRow_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBRow_1_SUBPROCESS_STATE", 0);
 
-		final boolean execStat = this.execStat;
-
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				row1Struct row1 = new row1Struct();
 
-				/**
-				 * [tFileOutputDelimited_2 begin ] start
-				 */
 
-				ok_Hash.put("tFileOutputDelimited_2", false);
-				start_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
+		row1Struct row1 = new row1Struct();
 
-				currentComponent = "tFileOutputDelimited_2";
 
-				runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, 0, 0, "row1");
 
-				int tos_count_tFileOutputDelimited_2 = 0;
 
-				if (log.isDebugEnabled())
-					log.debug("tFileOutputDelimited_2 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tFileOutputDelimited_2 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tFileOutputDelimited_2 = new StringBuilder();
-							log4jParamters_tFileOutputDelimited_2.append("Parameters:");
-							log4jParamters_tFileOutputDelimited_2.append("USESTREAM" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("FILENAME" + " = "
-									+ "context.REJET +\"/REJET_\"+((String)globalMap.get(\"CurrentDate\"))+\".csv\"");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("ROWSEPARATOR" + " = " + "\"\\n\"");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("FIELDSEPARATOR" + " = " + "\";\"");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("APPEND" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("INCLUDEHEADER" + " = " + "true");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("COMPRESS" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("ADVANCED_SEPARATOR" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("CSV_OPTION" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("CREATE" + " = " + "true");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("SPLIT" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("FLUSHONROW" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("ROW_MODE" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("ENCODING" + " = " + "\"ISO-8859-15\"");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("DELETE_EMPTYFILE" + " = " + "false");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							log4jParamters_tFileOutputDelimited_2.append("FILE_EXIST_EXCEPTION" + " = " + "true");
-							log4jParamters_tFileOutputDelimited_2.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tFileOutputDelimited_2 - " + (log4jParamters_tFileOutputDelimited_2));
-						}
+	
+	/**
+	 * [tFileOutputDelimited_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_2", false);
+		start_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+			runStat.updateStatAndLog(execStat,enableLogStash,resourceMap,iterateId,0,0,"row1");
+			
+		int tos_count_tFileOutputDelimited_2 = 0;
+		
+                if(log.isDebugEnabled())
+            log.debug("tFileOutputDelimited_2 - "  + ("Start to work.") );
+            if (log.isDebugEnabled()) {
+                class BytesLimit65535_tFileOutputDelimited_2{
+                    public void limitLog4jByte() throws Exception{
+                    StringBuilder log4jParamters_tFileOutputDelimited_2 = new StringBuilder();
+                    log4jParamters_tFileOutputDelimited_2.append("Parameters:");
+                            log4jParamters_tFileOutputDelimited_2.append("USESTREAM" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("FILENAME" + " = " + "C:/out");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("ROWSEPARATOR" + " = " + "\"\\n\"");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("FIELDSEPARATOR" + " = " + "\";\"");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("APPEND" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("INCLUDEHEADER" + " = " + "true");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("COMPRESS" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("ADVANCED_SEPARATOR" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("CSV_OPTION" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("CREATE" + " = " + "true");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("SPLIT" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("FLUSHONROW" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("ROW_MODE" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("ENCODING" + " = " + "\"ISO-8859-15\"");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("DELETE_EMPTYFILE" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                            log4jParamters_tFileOutputDelimited_2.append("FILE_EXIST_EXCEPTION" + " = " + "false");
+                        log4jParamters_tFileOutputDelimited_2.append(" | ");
+                if(log.isDebugEnabled())
+            log.debug("tFileOutputDelimited_2 - "  + (log4jParamters_tFileOutputDelimited_2) );
+                    } 
+                } 
+            new BytesLimit65535_tFileOutputDelimited_2().limitLog4jByte();
+            }
+			if(enableLogStash) {
+				talendJobLog.addCM("tFileOutputDelimited_2", "tFileOutputDelimited_2", "tFileOutputDelimited");
+				talendJobLogProcess(globalMap);
+			}
+			
+
+String fileName_tFileOutputDelimited_2 = "";
+    fileName_tFileOutputDelimited_2 = (new java.io.File(C:/out)).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_2 = null;
+    String extension_tFileOutputDelimited_2 = null;
+    String directory_tFileOutputDelimited_2 = null;
+    if((fileName_tFileOutputDelimited_2.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_2.lastIndexOf(".") < fileName_tFileOutputDelimited_2.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
+            extension_tFileOutputDelimited_2 = "";
+        } else {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0, fileName_tFileOutputDelimited_2.lastIndexOf("."));
+            extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0, fileName_tFileOutputDelimited_2.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_2.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0, fileName_tFileOutputDelimited_2.lastIndexOf("."));
+            extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
+            extension_tFileOutputDelimited_2 = "";
+        }
+        directory_tFileOutputDelimited_2 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_2 = true;
+    java.io.File filetFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
+    globalMap.put("tFileOutputDelimited_2_FILE_NAME",fileName_tFileOutputDelimited_2);
+            int nb_line_tFileOutputDelimited_2 = 0;
+            int splitedFileNo_tFileOutputDelimited_2 = 0;
+            int currentRow_tFileOutputDelimited_2 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_2 = /** Start field tFileOutputDelimited_2:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_2:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_2 = /** Start field tFileOutputDelimited_2:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_2:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_2 != null && directory_tFileOutputDelimited_2.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_2 = new java.io.File(directory_tFileOutputDelimited_2);
+                        if(!dir_tFileOutputDelimited_2.exists()) {
+                                log.info("tFileOutputDelimited_2 - Creating directory '" + dir_tFileOutputDelimited_2.getCanonicalPath() +"'.");
+                            dir_tFileOutputDelimited_2.mkdirs();
+                                log.info("tFileOutputDelimited_2 - The directory '"+ dir_tFileOutputDelimited_2.getCanonicalPath() + "' has been created successfully.");
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_2 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
+                        if(fileToDelete_tFileOutputDelimited_2.exists()) {
+                            fileToDelete_tFileOutputDelimited_2.delete();
+                        }
+                        outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_2.length()==0){
+                                        outtFileOutputDelimited_2.write("CODE_INTERNE_ARTICLE");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("CODESITE");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("EAN");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("DATE_DEBUT");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("DATE_FIN");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("CODEENSEIGNE");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("CODE_ARTICLE");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("QTE");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("CA_TTC");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("CA_HT");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("DateLastUpdateWebJob");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("errorCode");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("errorMessage");
+                                        outtFileOutputDelimited_2.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_2", outtFileOutputDelimited_2);
+resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBRow_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBRow_1", false);
+		start_Hash.put("tDBRow_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBRow_1";
+
+	
+		int tos_count_tDBRow_1 = 0;
+		
+                if(log.isDebugEnabled())
+            log.debug("tDBRow_1 - "  + ("Start to work.") );
+            if (log.isDebugEnabled()) {
+                class BytesLimit65535_tDBRow_1{
+                    public void limitLog4jByte() throws Exception{
+                    StringBuilder log4jParamters_tDBRow_1 = new StringBuilder();
+                    log4jParamters_tDBRow_1.append("Parameters:");
+                            log4jParamters_tDBRow_1.append("USE_EXISTING_CONNECTION" + " = " + "true");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("CONNECTION" + " = " + "tDBConnection_1");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("IDENTITY_INSERT" + " = " + "false");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("QUERYSTORE" + " = " + "\"\"");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("QUERY" + " = " + "\"MERGE VenteHebdoTest AS T  USING VenteHebdoTTest As S  ON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_INTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN  WHEN NOT MATCHED THEN      INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdateWebJob)       VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S.QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())  WHEN MATCHED THEN UPDATE SET      T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T.CA_TTC= S.CA_TTC,      T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE,   	DateLastUpdateWebJob= SYSDATETIME();\"");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("DIE_ON_ERROR" + " = " + "false");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("PROPAGATE_RECORD_SET" + " = " + "false");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("USE_PREPAREDSTATEMENT" + " = " + "false");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("SET_QUERY_TIMEOUT" + " = " + "false");
+                        log4jParamters_tDBRow_1.append(" | ");
+                            log4jParamters_tDBRow_1.append("UNIFIED_COMPONENTS" + " = " + "tMSSqlRow");
+                        log4jParamters_tDBRow_1.append(" | ");
+                if(log.isDebugEnabled())
+            log.debug("tDBRow_1 - "  + (log4jParamters_tDBRow_1) );
+                    } 
+                } 
+            new BytesLimit65535_tDBRow_1().limitLog4jByte();
+            }
+			if(enableLogStash) {
+				talendJobLog.addCM("tDBRow_1", "tDBRow_1", "tMSSqlRow");
+				talendJobLogProcess(globalMap);
+			}
+			
+
+	java.sql.Connection conn_tDBRow_1 = null;
+	String query_tDBRow_1 = "";
+	boolean whetherReject_tDBRow_1 = false;
+				conn_tDBRow_1 = (java.sql.Connection)globalMap.get("conn_tDBConnection_1");
+			
+				if(conn_tDBRow_1 != null) {
+					if(conn_tDBRow_1.getMetaData() != null) {
+						
+							log.debug("tDBRow_1 - Uses an existing connection with username '" + conn_tDBRow_1.getMetaData().getUserName() + "'. Connection URL: " + conn_tDBRow_1.getMetaData().getURL() + ".");
+						
 					}
-					new BytesLimit65535_tFileOutputDelimited_2().limitLog4jByte();
 				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tFileOutputDelimited_2", "tFileOutputDelimited_2", "tFileOutputDelimited");
-					talendJobLogProcess(globalMap);
-				}
+			
+        resourceMap.put("conn_tDBRow_1", conn_tDBRow_1);
+        java.sql.Statement stmt_tDBRow_1 = conn_tDBRow_1.createStatement();
+        resourceMap.put("stmt_tDBRow_1", stmt_tDBRow_1);
 
-				String fileName_tFileOutputDelimited_2 = "";
-				fileName_tFileOutputDelimited_2 = (new java.io.File(
-						context.REJET + "/REJET_" + ((String) globalMap.get("CurrentDate")) + ".csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_2 = null;
-				String extension_tFileOutputDelimited_2 = null;
-				String directory_tFileOutputDelimited_2 = null;
-				if ((fileName_tFileOutputDelimited_2.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_2.lastIndexOf(".") < fileName_tFileOutputDelimited_2
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
-						extension_tFileOutputDelimited_2 = "";
-					} else {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0,
-								fileName_tFileOutputDelimited_2.lastIndexOf("."));
-						extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2
-								.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
-					}
-					directory_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0,
-							fileName_tFileOutputDelimited_2.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_2.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0,
-								fileName_tFileOutputDelimited_2.lastIndexOf("."));
-						extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2
-								.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
-						extension_tFileOutputDelimited_2 = "";
-					}
-					directory_tFileOutputDelimited_2 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_2 = true;
-				java.io.File filetFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
-				globalMap.put("tFileOutputDelimited_2_FILE_NAME", fileName_tFileOutputDelimited_2);
-				if (filetFileOutputDelimited_2.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_2.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_2 = 0;
-				int splitedFileNo_tFileOutputDelimited_2 = 0;
-				int currentRow_tFileOutputDelimited_2 = 0;
+ 
 
-				final String OUT_DELIM_tFileOutputDelimited_2 = /** Start field tFileOutputDelimited_2:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_2:FIELDSEPARATOR */
-				;
 
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_2 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_2:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_2:ROWSEPARATOR */
-				;
 
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_2 != null && directory_tFileOutputDelimited_2.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_2 = new java.io.File(directory_tFileOutputDelimited_2);
-					if (!dir_tFileOutputDelimited_2.exists()) {
-						log.info("tFileOutputDelimited_2 - Creating directory '"
-								+ dir_tFileOutputDelimited_2.getCanonicalPath() + "'.");
-						dir_tFileOutputDelimited_2.mkdirs();
-						log.info("tFileOutputDelimited_2 - The directory '"
-								+ dir_tFileOutputDelimited_2.getCanonicalPath() + "' has been created successfully.");
-					}
-				}
+/**
+ * [tDBRow_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBRow_1 main ] start
+	 */
 
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_2 = null;
+	
 
-				java.io.File fileToDelete_tFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
-				if (fileToDelete_tFileOutputDelimited_2.exists()) {
-					fileToDelete_tFileOutputDelimited_2.delete();
-				}
-				outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_2.length() == 0) {
-					outtFileOutputDelimited_2.write("CODE_INTERNE_ARTICLE");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("CODESITE");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("EAN");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("DATE_DEBUT");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("DATE_FIN");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("CODEENSEIGNE");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("CODE_ARTICLE");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("QTE");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("CA_TTC");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("CA_HT");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("DateLastUpdateWebJob");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("errorCode");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("errorMessage");
-					outtFileOutputDelimited_2.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.flush();
-				}
+	
+	
+	currentComponent="tDBRow_1";
 
-				resourceMap.put("out_tFileOutputDelimited_2", outtFileOutputDelimited_2);
-				resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
+	
 
-				/**
-				 * [tFileOutputDelimited_2 begin ] stop
-				 */
+		row1 = null;
+		
+query_tDBRow_1 = "MERGE VenteHebdoTest AS T\nUSING VenteHebdoTTest As S\nON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_I"
++"NTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN\nWHEN NOT MATCHED THEN\n   "
++" INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdat"
++"eWebJob) \n    VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S."
++"QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())\nWHEN MATCHED THEN UPDATE SET\n    T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T"
++".CA_TTC= S.CA_TTC,\n    T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE, \n	DateLastUpdateWebJob= SYSDATETIME();";
+whetherReject_tDBRow_1 = false;
+	    		log.debug("tDBRow_1 - Executing the query: '" + query_tDBRow_1 + "'.");
+			
+globalMap.put("tDBRow_1_QUERY",query_tDBRow_1);
+try {
+		stmt_tDBRow_1.execute(query_tDBRow_1);
+		
+	    		log.debug("tDBRow_1 - Execute the query: '" + query_tDBRow_1 + "' has finished.");
+			
+	} catch (java.lang.Exception e) {
+		whetherReject_tDBRow_1 = true;
+		
+				row1 = new row1Struct();
+				
+				row1.errorCode = ((java.sql.SQLException)e).getSQLState();
+				row1.errorMessage = e.getMessage() + " - Line: " + tos_count_tDBRow_1;
+				
+	}
+	
+	if(!whetherReject_tDBRow_1) {
+		
+	}
+	
 
-				/**
-				 * [tDBRow_1 begin ] start
-				 */
+ 
 
-				ok_Hash.put("tDBRow_1", false);
-				start_Hash.put("tDBRow_1", System.currentTimeMillis());
 
-				currentComponent = "tDBRow_1";
+	tos_count_tDBRow_1++;
 
-				int tos_count_tDBRow_1 = 0;
+/**
+ * [tDBRow_1 main ] stop
+ */
+	
+	/**
+	 * [tDBRow_1 process_data_begin ] start
+	 */
 
-				if (log.isDebugEnabled())
-					log.debug("tDBRow_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tDBRow_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tDBRow_1 = new StringBuilder();
-							log4jParamters_tDBRow_1.append("Parameters:");
-							log4jParamters_tDBRow_1.append("USE_EXISTING_CONNECTION" + " = " + "true");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("CONNECTION" + " = " + "tDBConnection_1");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("IDENTITY_INSERT" + " = " + "false");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("QUERYSTORE" + " = " + "\"\"");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("QUERY" + " = "
-									+ "\"MERGE VenteHebdoTest AS T  USING VenteHebdoTTest As S  ON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_INTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN  WHEN NOT MATCHED THEN      INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdateWebJob)       VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S.QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())  WHEN MATCHED THEN UPDATE SET      T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T.CA_TTC= S.CA_TTC,      T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE,   	DateLastUpdateWebJob= SYSDATETIME();\"");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("DIE_ON_ERROR" + " = " + "false");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("PROPAGATE_RECORD_SET" + " = " + "false");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("USE_PREPAREDSTATEMENT" + " = " + "false");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("SET_QUERY_TIMEOUT" + " = " + "false");
-							log4jParamters_tDBRow_1.append(" | ");
-							log4jParamters_tDBRow_1.append("UNIFIED_COMPONENTS" + " = " + "tMSSqlRow");
-							log4jParamters_tDBRow_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tDBRow_1 - " + (log4jParamters_tDBRow_1));
-						}
-					}
-					new BytesLimit65535_tDBRow_1().limitLog4jByte();
-				}
-				if (enableLogStash) {
-					talendJobLog.addCM("tDBRow_1", "tDBRow_1", "tMSSqlRow");
-					talendJobLogProcess(globalMap);
-				}
+	
 
-				java.sql.Connection conn_tDBRow_1 = null;
-				String query_tDBRow_1 = "";
-				boolean whetherReject_tDBRow_1 = false;
-				conn_tDBRow_1 = (java.sql.Connection) globalMap.get("conn_tDBConnection_1");
+	
+	
+	currentComponent="tDBRow_1";
 
-				if (conn_tDBRow_1 != null) {
-					if (conn_tDBRow_1.getMetaData() != null) {
+	
 
-						log.debug("tDBRow_1 - Uses an existing connection with username '"
-								+ conn_tDBRow_1.getMetaData().getUserName() + "'. Connection URL: "
-								+ conn_tDBRow_1.getMetaData().getURL() + ".");
+ 
 
-					}
-				}
 
-				resourceMap.put("conn_tDBRow_1", conn_tDBRow_1);
-				java.sql.Statement stmt_tDBRow_1 = conn_tDBRow_1.createStatement();
-				resourceMap.put("stmt_tDBRow_1", stmt_tDBRow_1);
 
-				/**
-				 * [tDBRow_1 begin ] stop
-				 */
-
-				/**
-				 * [tDBRow_1 main ] start
-				 */
-
-				currentComponent = "tDBRow_1";
-
-				row1 = null;
-
-				query_tDBRow_1 = "MERGE VenteHebdoTest AS T\nUSING VenteHebdoTTest As S\nON S.CODESITE = T.CODESITE and S.CODE_INTERNE_ARTICLE = T.CODE_I"
-						+ "NTERNE_ARTICLE and S.DATE_DEBUT = T.DATE_DEBUT and S.DATE_FIN = T.DATE_FIN AND S.EAN = T.EAN\nWHEN NOT MATCHED THEN\n   "
-						+ " INSERT (CODE_INTERNE_ARTICLE,CODESITE,EAN,DATE_DEBUT,DATE_FIN,CODEENSEIGNE,CODE_ARTICLE, QTE,CA_TTC,CA_HT,DateLastUpdat"
-						+ "eWebJob) \n    VALUES (S.CODE_INTERNE_ARTICLE,S.CODESITE,S.EAN,S.DATE_DEBUT,S.DATE_FIN,S.CODEENSEIGNE,S.CODE_ARTICLE, S."
-						+ "QTE,S.CA_TTC,S.CA_HT,SYSDATETIME())\nWHEN MATCHED THEN UPDATE SET\n    T.QTE = S.QTE, T.CODEENSEIGNE = S.CODEENSEIGNE, T"
-						+ ".CA_TTC= S.CA_TTC,\n    T.CA_HT	= S.CA_HT, T.CODE_ARTICLE= S.CODE_ARTICLE, \n	DateLastUpdateWebJob= SYSDATETIME();";
-				whetherReject_tDBRow_1 = false;
-				log.debug("tDBRow_1 - Executing the query: '" + query_tDBRow_1 + "'.");
-
-				globalMap.put("tDBRow_1_QUERY", query_tDBRow_1);
-				try {
-					stmt_tDBRow_1.execute(query_tDBRow_1);
-
-					log.debug("tDBRow_1 - Execute the query: '" + query_tDBRow_1 + "' has finished.");
-
-				} catch (java.lang.Exception e) {
-					whetherReject_tDBRow_1 = true;
-
-					row1 = new row1Struct();
-
-					row1.errorCode = ((java.sql.SQLException) e).getSQLState();
-					row1.errorMessage = e.getMessage() + " - Line: " + tos_count_tDBRow_1;
-
-				}
-
-				if (!whetherReject_tDBRow_1) {
-
-				}
-
-				tos_count_tDBRow_1++;
-
-				/**
-				 * [tDBRow_1 main ] stop
-				 */
-
-				/**
-				 * [tDBRow_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tDBRow_1";
-
-				/**
-				 * [tDBRow_1 process_data_begin ] stop
-				 */
+/**
+ * [tDBRow_1 process_data_begin ] stop
+ */
 // Start of branch "row1"
-				if (row1 != null) {
+if(row1 != null) { 
 
-					/**
-					 * [tFileOutputDelimited_2 main ] start
-					 */
 
-					currentComponent = "tFileOutputDelimited_2";
 
-					if (runStat.update(execStat, enableLogStash, iterateId, 1, 1
+	
+	/**
+	 * [tFileOutputDelimited_2 main ] start
+	 */
 
-							, "row1", "tDBRow_1", "tDBRow_1", "tMSSqlRow", "tFileOutputDelimited_2",
-							"tFileOutputDelimited_2", "tFileOutputDelimited"
+	
 
-					)) {
-						talendJobLogProcess(globalMap);
-					}
+	
+	
+	currentComponent="tFileOutputDelimited_2";
 
-					if (log.isTraceEnabled()) {
-						log.trace("row1 - " + (row1 == null ? "" : row1.toLogString()));
-					}
+	
+			if(runStat.update(execStat,enableLogStash,iterateId,1,1
+				
+					,"row1","tDBRow_1","tDBRow_1","tMSSqlRow","tFileOutputDelimited_2","tFileOutputDelimited_2","tFileOutputDelimited"
+				
+			)) {
+				talendJobLogProcess(globalMap);
+			}
+			
+    			if(log.isTraceEnabled()){
+    				log.trace("row1 - " + (row1==null? "": row1.toLogString()));
+    			}
+    		
 
-					StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
-					if (row1.CODE_INTERNE_ARTICLE != null) {
-						sb_tFileOutputDelimited_2.append(row1.CODE_INTERNE_ARTICLE);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.CODESITE != null) {
-						sb_tFileOutputDelimited_2.append(row1.CODESITE);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.EAN != null) {
-						sb_tFileOutputDelimited_2.append(row1.EAN);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.DATE_DEBUT != null) {
-						sb_tFileOutputDelimited_2.append(row1.DATE_DEBUT);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.DATE_FIN != null) {
-						sb_tFileOutputDelimited_2.append(row1.DATE_FIN);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.CODEENSEIGNE != null) {
-						sb_tFileOutputDelimited_2.append(row1.CODEENSEIGNE);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.CODE_ARTICLE != null) {
-						sb_tFileOutputDelimited_2.append(row1.CODE_ARTICLE);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.QTE != null) {
-						sb_tFileOutputDelimited_2
-								.append(row1.QTE.setScale(4, java.math.RoundingMode.HALF_UP).toPlainString());
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.CA_TTC != null) {
-						sb_tFileOutputDelimited_2
-								.append(row1.CA_TTC.setScale(4, java.math.RoundingMode.HALF_UP).toPlainString());
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.CA_HT != null) {
-						sb_tFileOutputDelimited_2
-								.append(row1.CA_HT.setScale(4, java.math.RoundingMode.HALF_UP).toPlainString());
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.DateLastUpdateWebJob != null) {
-						sb_tFileOutputDelimited_2
-								.append(FormatterUtils.format_Date(row1.DateLastUpdateWebJob, "yyyy-MM-dd Hh24:mm:ss"));
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.errorCode != null) {
-						sb_tFileOutputDelimited_2.append(row1.errorCode);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row1.errorMessage != null) {
-						sb_tFileOutputDelimited_2.append(row1.errorMessage);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
 
-					nb_line_tFileOutputDelimited_2++;
-					resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
+                    StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
+                            if(row1.CODE_INTERNE_ARTICLE != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.CODE_INTERNE_ARTICLE
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.CODESITE != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.CODESITE
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.EAN != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.EAN
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.DATE_DEBUT != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.DATE_DEBUT
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.DATE_FIN != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.DATE_FIN
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.CODEENSEIGNE != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.CODEENSEIGNE
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.CODE_ARTICLE != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.CODE_ARTICLE
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.QTE != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.QTE.setScale(4, java.math.RoundingMode.HALF_UP).toPlainString()
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.CA_TTC != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.CA_TTC.setScale(4, java.math.RoundingMode.HALF_UP).toPlainString()
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.CA_HT != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.CA_HT.setScale(4, java.math.RoundingMode.HALF_UP).toPlainString()
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.DateLastUpdateWebJob != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            FormatterUtils.format_Date(row1.DateLastUpdateWebJob, "yyyy-MM-dd Hh24:mm:ss")
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.errorCode != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.errorCode
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.errorMessage != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row1.errorMessage
+                        );
+                            }
+                    sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
 
-					outtFileOutputDelimited_2.write(sb_tFileOutputDelimited_2.toString());
-					log.debug("tFileOutputDelimited_2 - Writing the record " + nb_line_tFileOutputDelimited_2 + ".");
 
-					tos_count_tFileOutputDelimited_2++;
+                    nb_line_tFileOutputDelimited_2++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
 
-					/**
-					 * [tFileOutputDelimited_2 main ] stop
-					 */
+                        outtFileOutputDelimited_2.write(sb_tFileOutputDelimited_2.toString());
+                        log.debug("tFileOutputDelimited_2 - Writing the record " + nb_line_tFileOutputDelimited_2 + ".");
 
-					/**
-					 * [tFileOutputDelimited_2 process_data_begin ] start
-					 */
 
-					currentComponent = "tFileOutputDelimited_2";
 
-					/**
-					 * [tFileOutputDelimited_2 process_data_begin ] stop
-					 */
 
-					/**
-					 * [tFileOutputDelimited_2 process_data_end ] start
-					 */
+ 
 
-					currentComponent = "tFileOutputDelimited_2";
 
-					/**
-					 * [tFileOutputDelimited_2 process_data_end ] stop
-					 */
+	tos_count_tFileOutputDelimited_2++;
 
-				} // End of branch "row1"
+/**
+ * [tFileOutputDelimited_2 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_2 process_data_begin ] start
+	 */
 
-				/**
-				 * [tDBRow_1 process_data_end ] start
-				 */
+	
 
-				currentComponent = "tDBRow_1";
+	
+	
+	currentComponent="tFileOutputDelimited_2";
 
-				/**
-				 * [tDBRow_1 process_data_end ] stop
-				 */
+	
 
-				/**
-				 * [tDBRow_1 end ] start
-				 */
+ 
 
-				currentComponent = "tDBRow_1";
 
-				stmt_tDBRow_1.close();
-				resourceMap.remove("stmt_tDBRow_1");
-				resourceMap.put("statementClosed_tDBRow_1", true);
-				resourceMap.put("finish_tDBRow_1", true);
 
-				if (log.isDebugEnabled())
-					log.debug("tDBRow_1 - " + ("Done."));
+/**
+ * [tFileOutputDelimited_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_2 process_data_end ] start
+	 */
 
-				ok_Hash.put("tDBRow_1", true);
-				end_Hash.put("tDBRow_1", System.currentTimeMillis());
+	
 
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk25", 0, "ok");
+	
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_2 process_data_end ] stop
+ */
+
+} // End of branch "row1"
+
+
+
+
+	
+	/**
+	 * [tDBRow_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBRow_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBRow_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBRow_1";
+
+	
+
+	
+        stmt_tDBRow_1.close();
+        resourceMap.remove("stmt_tDBRow_1");
+    resourceMap.put("statementClosed_tDBRow_1", true);
+    resourceMap.put("finish_tDBRow_1", true);
+ 
+                if(log.isDebugEnabled())
+            log.debug("tDBRow_1 - "  + ("Done.") );
+
+ok_Hash.put("tDBRow_1", true);
+end_Hash.put("tDBRow_1", System.currentTimeMillis());
+
+				if(execStat){   
+   	 				runStat.updateStatOnConnection("OnComponentOk25", 0, "ok");
 				}
 				tWarn_1Process(globalMap);
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk9", 0, "ok");
+				if(execStat){   
+   	 				runStat.updateStatOnConnection("OnComponentOk9", 0, "ok");
 				}
 				tDBCommit_1Process(globalMap);
 
-				/**
-				 * [tDBRow_1 end ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_2 end ] start
-				 */
 
-				currentComponent = "tFileOutputDelimited_2";
+/**
+ * [tDBRow_1 end ] stop
+ */
 
-				if (outtFileOutputDelimited_2 != null) {
-					outtFileOutputDelimited_2.flush();
-					outtFileOutputDelimited_2.close();
-				}
+	
+	/**
+	 * [tFileOutputDelimited_2 end ] start
+	 */
 
-				globalMap.put("tFileOutputDelimited_2_NB_LINE", nb_line_tFileOutputDelimited_2);
-				globalMap.put("tFileOutputDelimited_2_FILE_NAME", fileName_tFileOutputDelimited_2);
+	
 
-				resourceMap.put("finish_tFileOutputDelimited_2", true);
+	
+	
+	currentComponent="tFileOutputDelimited_2";
 
-				log.debug("tFileOutputDelimited_2 - Written records count: " + nb_line_tFileOutputDelimited_2 + " .");
+	
 
-				if (runStat.updateStatAndLog(execStat, enableLogStash, resourceMap, iterateId, "row1", 2, 0, "tDBRow_1",
-						"tDBRow_1", "tMSSqlRow", "tFileOutputDelimited_2", "tFileOutputDelimited_2",
-						"tFileOutputDelimited", "reject")) {
-					talendJobLogProcess(globalMap);
-				}
 
-				if (log.isDebugEnabled())
-					log.debug("tFileOutputDelimited_2 - " + ("Done."));
 
-				ok_Hash.put("tFileOutputDelimited_2", true);
-				end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_2 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tDBRow_1 finally ] start
-				 */
-
-				currentComponent = "tDBRow_1";
-
-				if (resourceMap.get("statementClosed_tDBRow_1") == null) {
-					java.sql.Statement stmtToClose_tDBRow_1 = null;
-					if ((stmtToClose_tDBRow_1 = (java.sql.Statement) resourceMap.remove("stmt_tDBRow_1")) != null) {
-						stmtToClose_tDBRow_1.close();
-					}
-				}
-
-				/**
-				 * [tDBRow_1 finally ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_2 finally ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_2";
-
-				if (resourceMap.get("finish_tFileOutputDelimited_2") == null) {
-
-					java.io.Writer outtFileOutputDelimited_2 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_2");
-					if (outtFileOutputDelimited_2 != null) {
+		
+			
+					if(outtFileOutputDelimited_2!=null) {
 						outtFileOutputDelimited_2.flush();
 						outtFileOutputDelimited_2.close();
 					}
+				
+				globalMap.put("tFileOutputDelimited_2_NB_LINE",nb_line_tFileOutputDelimited_2);
+				globalMap.put("tFileOutputDelimited_2_FILE_NAME",fileName_tFileOutputDelimited_2);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_2", true);
+	
+				log.debug("tFileOutputDelimited_2 - Written records count: " + nb_line_tFileOutputDelimited_2 + " .");
+			
 
-				}
+			 		if(runStat.updateStatAndLog(execStat,enableLogStash,resourceMap,iterateId,"row1",2,0,
+			 			"tDBRow_1","tDBRow_1","tMSSqlRow","tFileOutputDelimited_2","tFileOutputDelimited_2","tFileOutputDelimited","reject")) {
+						talendJobLogProcess(globalMap);
+					}
+				
+ 
+                if(log.isDebugEnabled())
+            log.debug("tFileOutputDelimited_2 - "  + ("Done.") );
 
-				/**
-				 * [tFileOutputDelimited_2 finally ] stop
-				 */
+ok_Hash.put("tFileOutputDelimited_2", true);
+end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
+
+
+
+/**
+ * [tFileOutputDelimited_2 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				    if(!(e instanceof TalendException)){
+					   log.fatal(currentComponent + " " + e.getMessage(),e);
+					}
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBRow_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBRow_1";
+
+	
+
+    if (resourceMap.get("statementClosed_tDBRow_1") == null) {
+            java.sql.Statement stmtToClose_tDBRow_1 = null;
+            if ((stmtToClose_tDBRow_1 = (java.sql.Statement) resourceMap.remove("stmt_tDBRow_1")) != null) {
+                stmtToClose_tDBRow_1.close();
+            }
+    }
+ 
+
+
+
+/**
+ * [tDBRow_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_2") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_2 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_2");
+						if(outtFileOutputDelimited_2!=null) {
+							outtFileOutputDelimited_2.flush();
+							outtFileOutputDelimited_2.close();
+						}
+					
+				
+			
 		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_2 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tDBRow_1_SUBPROCESS_STATE", 1);
 	}
@@ -23001,6 +23161,6 @@ public class TEMPLATE_TALEND implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 715030 characters generated by Talend Cloud Data Management Platform on the
- * 28 juillet 2022 à 16:52:27 WEST
+ * 714546 characters generated by Talend Cloud Data Management Platform on the
+ * 28 juillet 2022 à 18:25:33 WEST
  ************************************************************************************************/
