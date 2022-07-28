@@ -31,6 +31,9 @@ import java.util.Comparator;
 
 
 
+	//the import part of tJava_2
+	//import java.util.List;
+
 
 @SuppressWarnings("unused")
 
@@ -823,6 +826,15 @@ private class TalendException extends Exception {
 					tFixedFlowInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tJava_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tJava_2_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tHashInput_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -1059,6 +1071,11 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tFixedFlowInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tJava_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -17643,6 +17660,10 @@ end_Hash.put("tSendMail_1", System.currentTimeMillis());
    	 				runStat.updateStatOnConnection("OnComponentOk10", 0, "ok");
 				}
 				tChronometerStop_1Process(globalMap);
+				if(execStat){   
+   	 				runStat.updateStatOnConnection("OnComponentOk28", 0, "ok");
+				}
+				tJava_2Process(globalMap);
 
 
 
@@ -18038,6 +18059,30 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
 					return this.SUCCESS_MESSAGE;
 				}
 				
+			    public Integer Nb_Insert;
+
+				public Integer getNb_Insert () {
+					return this.Nb_Insert;
+				}
+				
+			    public Integer Nb_Update;
+
+				public Integer getNb_Update () {
+					return this.Nb_Update;
+				}
+				
+			    public Integer Nb_Delete;
+
+				public Integer getNb_Delete () {
+					return this.Nb_Delete;
+				}
+				
+			    public Integer Nb_Rejets;
+
+				public Integer getNb_Rejets () {
+					return this.Nb_Rejets;
+				}
+				
 
 
 
@@ -18174,6 +18219,14 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
 					
 					this.SUCCESS_MESSAGE = readString(dis);
 					
+						this.Nb_Insert = readInteger(dis);
+					
+						this.Nb_Update = readInteger(dis);
+					
+						this.Nb_Delete = readInteger(dis);
+					
+						this.Nb_Rejets = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -18219,6 +18272,14 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
 					this.FileNamePOutPut = readString(dis);
 					
 					this.SUCCESS_MESSAGE = readString(dis);
+					
+						this.Nb_Insert = readInteger(dis);
+					
+						this.Nb_Update = readInteger(dis);
+					
+						this.Nb_Delete = readInteger(dis);
+					
+						this.Nb_Rejets = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -18286,6 +18347,22 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
 				
 						writeString(this.SUCCESS_MESSAGE,dos);
 					
+					// Integer
+				
+						writeInteger(this.Nb_Insert,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Update,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Delete,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Rejets,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -18345,6 +18422,22 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
 				
 						writeString(this.SUCCESS_MESSAGE,dos);
 					
+					// Integer
+				
+						writeInteger(this.Nb_Insert,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Update,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Delete,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Rejets,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -18370,6 +18463,10 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
 		sb.append(",ERROR_MESSAGE="+ERROR_MESSAGE);
 		sb.append(",FileNamePOutPut="+FileNamePOutPut);
 		sb.append(",SUCCESS_MESSAGE="+SUCCESS_MESSAGE);
+		sb.append(",Nb_Insert="+String.valueOf(Nb_Insert));
+		sb.append(",Nb_Update="+String.valueOf(Nb_Update));
+		sb.append(",Nb_Delete="+String.valueOf(Nb_Delete));
+		sb.append(",Nb_Rejets="+String.valueOf(Nb_Rejets));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -18469,6 +18566,38 @@ public static class Log_OutStruct implements routines.system.IPersistableRow<Log
         					sb.append("<null>");
         				}else{
             				sb.append(SUCCESS_MESSAGE);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Insert == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Insert);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Update == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Update);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Delete == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Delete);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Rejets == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Rejets);
             			}
             		
         			sb.append("|");
@@ -18588,6 +18717,30 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
 					return this.SUCCESS_MESSAGE;
 				}
 				
+			    public Integer Nb_Rejets;
+
+				public Integer getNb_Rejets () {
+					return this.Nb_Rejets;
+				}
+				
+			    public Integer Nb_Insert;
+
+				public Integer getNb_Insert () {
+					return this.Nb_Insert;
+				}
+				
+			    public Integer Nb_Update;
+
+				public Integer getNb_Update () {
+					return this.Nb_Update;
+				}
+				
+			    public Integer Nb_Delete;
+
+				public Integer getNb_Delete () {
+					return this.Nb_Delete;
+				}
+				
 
 
 
@@ -18729,6 +18882,14 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
 					
 					this.SUCCESS_MESSAGE = readString(dis);
 					
+						this.Nb_Rejets = readInteger(dis);
+					
+						this.Nb_Insert = readInteger(dis);
+					
+						this.Nb_Update = readInteger(dis);
+					
+						this.Nb_Delete = readInteger(dis);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
@@ -18779,6 +18940,14 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
 					this.FileNamePOutPut = readString(dis);
 					
 					this.SUCCESS_MESSAGE = readString(dis);
+					
+						this.Nb_Rejets = readInteger(dis);
+					
+						this.Nb_Insert = readInteger(dis);
+					
+						this.Nb_Update = readInteger(dis);
+					
+						this.Nb_Delete = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -18851,6 +19020,22 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
 				
 						writeString(this.SUCCESS_MESSAGE,dos);
 					
+					// Integer
+				
+						writeInteger(this.Nb_Rejets,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Insert,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Update,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Delete,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -18915,6 +19100,22 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
 				
 						writeString(this.SUCCESS_MESSAGE,dos);
 					
+					// Integer
+				
+						writeInteger(this.Nb_Rejets,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Insert,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Update,dos);
+					
+					// Integer
+				
+						writeInteger(this.Nb_Delete,dos);
+					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
         }
@@ -18940,6 +19141,10 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
 		sb.append(",ERROR_MESSAGE="+ERROR_MESSAGE);
 		sb.append(",FileNamePOutPut="+FileNamePOutPut);
 		sb.append(",SUCCESS_MESSAGE="+SUCCESS_MESSAGE);
+		sb.append(",Nb_Rejets="+String.valueOf(Nb_Rejets));
+		sb.append(",Nb_Insert="+String.valueOf(Nb_Insert));
+		sb.append(",Nb_Update="+String.valueOf(Nb_Update));
+		sb.append(",Nb_Delete="+String.valueOf(Nb_Delete));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -19039,6 +19244,38 @@ public static class row9Struct implements routines.system.IPersistableRow<row9St
         					sb.append("<null>");
         				}else{
             				sb.append(SUCCESS_MESSAGE);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Rejets == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Rejets);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Insert == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Insert);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Update == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Update);
+            			}
+            		
+        			sb.append("|");
+        		
+        				if(Nb_Delete == null){
+        					sb.append("<null>");
+        				}else{
+            				sb.append(Nb_Delete);
             			}
             		
         			sb.append("|");
@@ -19380,6 +19617,54 @@ Log_OutStruct Log_Out = new Log_OutStruct();
 			//}
 
 			
+			//for(int i=0; i<row.length; i++){
+				sb.append("| " + "Nb_Insert");
+				for(int i=0; i<titleWidth -"Nb_Insert".length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("| " + row[12]);
+				for(int i=0; row[12] == null && i<dataWidth - 3 || row[12] != null && i<dataWidth -row[12].length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("|" + "\n");
+			
+			//}
+
+			
+			//for(int i=0; i<row.length; i++){
+				sb.append("| " + "Nb_Update");
+				for(int i=0; i<titleWidth -"Nb_Update".length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("| " + row[13]);
+				for(int i=0; row[13] == null && i<dataWidth - 3 || row[13] != null && i<dataWidth -row[13].length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("|" + "\n");
+			
+			//}
+
+			
+			//for(int i=0; i<row.length; i++){
+				sb.append("| " + "Nb_Delete");
+				for(int i=0; i<titleWidth -"Nb_Delete".length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("| " + row[14]);
+				for(int i=0; row[14] == null && i<dataWidth - 3 || row[14] != null && i<dataWidth -row[14].length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("|" + "\n");
+			
+			//}
+
+			
+			//for(int i=0; i<row.length; i++){
+				sb.append("| " + "Nb_Rejets");
+				for(int i=0; i<titleWidth -"Nb_Rejets".length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("| " + row[15]);
+				for(int i=0; row[15] == null && i<dataWidth - 3 || row[15] != null && i<dataWidth -row[15].length()+ 1 ;i++)
+					sb.append(" ");
+				sb.append("|" + "\n");
+			
+			//}
+
+			
 			//step 5: print a line gap
 			printLine(sb,titleWidth,dataWidth);
 			return sb.toString();
@@ -19562,6 +19847,14 @@ Log_OutStruct Log_Out_tmp = new Log_OutStruct();
     	            		row9.FileNamePOutPut = ((String)globalMap.get("tFileOutputDelimited_1_FILE_NAME"));
     	            	        	            	
     	            		row9.SUCCESS_MESSAGE = ((String)globalMap.get("tWarn_1_WARN_MESSAGES"));
+    	            	        	            	
+    	            		row9.Nb_Rejets = ((Integer)globalMap.get("tFileOutputDelimited_2_NB_LINE"));
+    	            	        	            	
+    	            		row9.Nb_Insert = ((Integer)globalMap.get("tDBOutput_2_NB_LINE_INSERTED"));
+    	            	        	            	
+    	            		row9.Nb_Update = ((Integer)globalMap.get("tDBOutput_2_NB_LINE_UPDATED"));
+    	            	        	            	
+    	            		row9.Nb_Delete = ((Integer)globalMap.get("tDBOutput_2_NB_LINE_DELETED"));
     	            	
 
  
@@ -19676,6 +19969,10 @@ Log_Out_tmp.SUCCESS_STATUT = row9.SUCCESS_STATUT;
 Log_Out_tmp.ERROR_MESSAGE = row9.ERROR_MESSAGE ;
 Log_Out_tmp.FileNamePOutPut = row9.FileNamePOutPut ;
 Log_Out_tmp.SUCCESS_MESSAGE = row9.SUCCESS_MESSAGE ;
+Log_Out_tmp.Nb_Insert = row9.Nb_Insert ;
+Log_Out_tmp.Nb_Update = row9.Nb_Update ;
+Log_Out_tmp.Nb_Delete = row9.Nb_Delete ;
+Log_Out_tmp.Nb_Rejets = row9.Nb_Rejets ;
 Log_Out = Log_Out_tmp;
 log.debug("tMap_4 - Outputting the record " + count_Log_Out_tMap_4 + " of the output table 'Log_Out'.");
 
@@ -19949,8 +20246,72 @@ if(Log_Out != null) {
 							
 	    		} //  			
 
+    			strBuffer_tLogRow_1.append("|");
+    			
+
+
+   				
+	    		if(Log_Out.Nb_Insert != null) { //              
+                    							
+       
+				strBuffer_tLogRow_1.append(
+				                String.valueOf(Log_Out.Nb_Insert)							
+				);
+
+
+							
+	    		} //  			
+
+    			strBuffer_tLogRow_1.append("|");
+    			
+
+
+   				
+	    		if(Log_Out.Nb_Update != null) { //              
+                    							
+       
+				strBuffer_tLogRow_1.append(
+				                String.valueOf(Log_Out.Nb_Update)							
+				);
+
+
+							
+	    		} //  			
+
+    			strBuffer_tLogRow_1.append("|");
+    			
+
+
+   				
+	    		if(Log_Out.Nb_Delete != null) { //              
+                    							
+       
+				strBuffer_tLogRow_1.append(
+				                String.valueOf(Log_Out.Nb_Delete)							
+				);
+
+
+							
+	    		} //  			
+
+    			strBuffer_tLogRow_1.append("|");
+    			
+
+
+   				
+	    		if(Log_Out.Nb_Rejets != null) { //              
+                    							
+       
+				strBuffer_tLogRow_1.append(
+				                String.valueOf(Log_Out.Nb_Rejets)							
+				);
+
+
+							
+	    		} //  			
+
 				
-				String[] row_tLogRow_1 = new String[12];
+				String[] row_tLogRow_1 = new String[16];
    				
 	    		if(Log_Out.TaskName != null) { //              
                  row_tLogRow_1[0]=    						    
@@ -20032,6 +20393,34 @@ if(Log_Out != null) {
 	    		if(Log_Out.SUCCESS_MESSAGE != null) { //              
                  row_tLogRow_1[11]=    						    
 				                String.valueOf(Log_Out.SUCCESS_MESSAGE)			
+					          ;	
+							
+	    		} //			
+    			   				
+	    		if(Log_Out.Nb_Insert != null) { //              
+                 row_tLogRow_1[12]=    						    
+				                String.valueOf(Log_Out.Nb_Insert)			
+					          ;	
+							
+	    		} //			
+    			   				
+	    		if(Log_Out.Nb_Update != null) { //              
+                 row_tLogRow_1[13]=    						    
+				                String.valueOf(Log_Out.Nb_Update)			
+					          ;	
+							
+	    		} //			
+    			   				
+	    		if(Log_Out.Nb_Delete != null) { //              
+                 row_tLogRow_1[14]=    						    
+				                String.valueOf(Log_Out.Nb_Delete)			
+					          ;	
+							
+	    		} //			
+    			   				
+	    		if(Log_Out.Nb_Rejets != null) { //              
+                 row_tLogRow_1[15]=    						    
+				                String.valueOf(Log_Out.Nb_Rejets)			
 					          ;	
 							
 	    		} //			
@@ -20362,6 +20751,211 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 		
 
 		globalMap.put("tFixedFlowInput_1_SUBPROCESS_STATE", 1);
+	}
+	
+
+public void tJava_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tJava_2_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
+		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+	try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { //start the resume
+				globalResumeTicket = true;
+
+
+
+
+
+	
+	/**
+	 * [tJava_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tJava_2", false);
+		start_Hash.put("tJava_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tJava_2";
+
+	
+		int tos_count_tJava_2 = 0;
+		
+			if(enableLogStash) {
+				talendJobLog.addCM("tJava_2", "tJava_2", "tJava");
+				talendJobLogProcess(globalMap);
+			}
+			
+
+
+String var = "Mail envoyé: ";
+String var1 = "Lignes";
+var = var + ((Integer)globalMap.get("tFileOutputDelimited_1_NB_LINE")) + var1;
+System.out.println(var);
+
+ 
+
+
+
+/**
+ * [tJava_2 begin ] stop
+ */
+	
+	/**
+	 * [tJava_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+	tos_count_tJava_2++;
+
+/**
+ * [tJava_2 main ] stop
+ */
+	
+	/**
+	 * [tJava_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tJava_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_2 process_data_end ] stop
+ */
+	
+	/**
+	 * [tJava_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+ok_Hash.put("tJava_2", true);
+end_Hash.put("tJava_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tJava_2 end ] stop
+ */
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				    if(!(e instanceof TalendException)){
+					   log.fatal(currentComponent + " " + e.getMessage(),e);
+					}
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tJava_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tJava_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tJava_2 finally ] stop
+ */
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
+
+		globalMap.put("tJava_2_SUBPROCESS_STATE", 1);
 	}
 	
 
@@ -26476,6 +27070,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     697876 characters generated by Talend Cloud Data Management Platform 
- *     on the 28 juillet 2022 à 14:14:36 WEST
+ *     710792 characters generated by Talend Cloud Data Management Platform 
+ *     on the 28 juillet 2022 à 15:03:46 WEST
  ************************************************************************************************/
