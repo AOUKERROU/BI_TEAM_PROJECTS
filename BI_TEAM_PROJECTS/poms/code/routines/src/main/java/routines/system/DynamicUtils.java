@@ -273,7 +273,8 @@ public class DynamicUtils {
                 } else {
                     column.addColumnValue(rs.getTimestamp(fixedColumnCount + i + 1));
                 }
-            } else if ("id_Integer".equals(dcm.getType()) || "id_Long".equals(dcm.getType()) || "id_Double".equals(dcm.getType())) {
+            } else if ("id_Integer".equals(dcm.getType()) || "id_Long".equals(dcm.getType()) || "id_Double".equals(dcm.getType()) 
+                || ("id_Byte".equals(dcm.getType()) && "BIT".equalsIgnoreCase(dcm.getDbType()))) {
                 if (rs.getObject(fixedColumnCount + i + 1) == null) {
                     column.addColumnValue(null);
                     continue;
@@ -284,6 +285,8 @@ public class DynamicUtils {
                     column.addColumnValue(rs.getLong(fixedColumnCount + i + 1));
                 } else if ("id_Double".equals(dcm.getType())) {
                     column.addColumnValue(rs.getDouble(fixedColumnCount + i + 1));
+                } else {
+                    column.addColumnValue(rs.getByte(fixedColumnCount + i + 1));
                 }
             } else {
                 column.addColumnValue(rs.getObject(fixedColumnCount + i + 1));

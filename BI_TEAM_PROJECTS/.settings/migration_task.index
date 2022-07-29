@@ -205,6 +205,11 @@
     "version" : "5.6.0",
     "status" : "noimpact"
   }, {
+    "id" : "org.talend.repository.generic.model.migration.ChangeDbmsIdMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.repository.generic.model.migration.NewSalesforceMigrationTask",
     "breaks" : "6.2.0",
     "version" : "6.2.0",
@@ -669,6 +674,11 @@
     "breaks" : "7.0.1",
     "version" : "7.0.2",
     "status" : "noimpact"
+  }, {
+    "id" : "org.talend.repository.model.migration.AddUseScientificNotationCheckboxTWriteJSONField",
+    "breaks" : "8.0.0",
+    "version" : "8.0.1",
+    "status" : "ok"
   }, {
     "id" : "org.talend.repository.model.migration.ApplySecurityAfterAdvancedKafkaProperties",
     "breaks" : "8.0.0",
@@ -1219,6 +1229,11 @@
     "version" : "7.4.1",
     "status" : "noimpact"
   }, {
+    "id" : "org.talend.repository.model.migration.EncryptClientSecretMicrosoftCRMMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.repository.model.migration.EncryptDbPasswordMigrationTask",
     "breaks" : "5.1.1",
     "version" : "5.1.2",
@@ -1423,6 +1438,11 @@
     "version" : "7.2.1",
     "status" : "noimpact"
   }, {
+    "id" : "org.talend.repository.model.migration.RedshiftVersion2MigrationTask",
+    "breaks" : "8.0.0",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.repository.model.migration.RelationShipIndexMigrationTask",
     "breaks" : "5.1.1",
     "version" : "5.1.2",
@@ -1436,6 +1456,11 @@
     "id" : "org.talend.repository.model.migration.RemoveDefaultProxyIPTask",
     "breaks" : "7.3.0",
     "version" : "7.3.1",
+    "status" : "noimpact"
+  }, {
+    "id" : "org.talend.repository.model.migration.RemoveDestinationPropertyExtractJSONFieldsMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
     "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.RemoveDuplicatedContextGroupMigrationTask",
@@ -1568,6 +1593,11 @@
     "version" : "7.2.1",
     "status" : "noimpact"
   }, {
+    "id" : "org.talend.repository.model.migration.RenameTimeoutParameterstRESTClient",
+    "breaks" : "8.0.0",
+    "version" : "8.0.1",
+    "status" : "ok"
+  }, {
     "id" : "org.talend.repository.model.migration.RenameVersionParametersForPigMigrationTask",
     "breaks" : "5.1.1",
     "version" : "5.1.2",
@@ -1661,6 +1691,11 @@
     "id" : "org.talend.repository.model.migration.ReplaceInheritCredentialCheckBoxWithDropDownListTaskForRedshift",
     "breaks" : "7.3.0",
     "version" : "7.3.1",
+    "status" : "noimpact"
+  }, {
+    "id" : "org.talend.repository.model.migration.ReplaceMappingForGreenplumDatabaseMigrationTask",
+    "breaks" : "8.0.0",
+    "version" : "8.0.1",
     "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.ReplaceMultiFlowBytReplicateMigrationTask",
@@ -1795,6 +1830,11 @@
     "id" : "org.talend.repository.model.migration.SetForceCopyFortFileCopy",
     "breaks" : "7.3.0",
     "version" : "7.3.1",
+    "status" : "noimpact"
+  }, {
+    "id" : "org.talend.repository.model.migration.SetKeystoreKafkaMigrationTask",
+    "breaks" : "8.0.0",
+    "version" : "8.0.1",
     "status" : "noimpact"
   }, {
     "id" : "org.talend.repository.model.migration.SetReadByJSONPathToFalse",

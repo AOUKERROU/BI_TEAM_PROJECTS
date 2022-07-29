@@ -42,6 +42,8 @@ public class DynamicMetadata implements java.io.Serializable {
     private String refFieldName = null;
     
     private String refModuleName = null;
+    
+    private String extendedConfiguration = null;
 
     public static enum sourceTypes {
         unknown,
@@ -189,6 +191,14 @@ public class DynamicMetadata implements java.io.Serializable {
 	public void setRefModuleName(String refModuleName) {
 		this.refModuleName = refModuleName;
 	}
+	
+    public void setExtendedConfiguration(String extendedConfiguration) {
+        this.extendedConfiguration = extendedConfiguration;
+    }
+
+    public String getExtendedConfiguration() {
+        return extendedConfiguration;
+    }
 
 	public int hashCode() {
 		return 31 * name.hashCode() + dbName != null ? dbName.hashCode() : 0 + type.hashCode()
@@ -229,6 +239,7 @@ public class DynamicMetadata implements java.io.Serializable {
         newDynamicMetadata.setRefModuleName(this.getRefModuleName());
         newDynamicMetadata.setSourceType(this.getSourceType());
         newDynamicMetadata.setType(this.getType());
+        newDynamicMetadata.setExtendedConfiguration(this.getExtendedConfiguration());
         return newDynamicMetadata;
     }
 }
