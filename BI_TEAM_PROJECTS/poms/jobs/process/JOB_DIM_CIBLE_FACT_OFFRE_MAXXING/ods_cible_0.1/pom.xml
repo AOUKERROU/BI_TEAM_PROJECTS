@@ -23,7 +23,7 @@
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
     <talend.job.git.author>nabil.ouriniche@marjane.co.ma</talend.job.git.author>
-    <talend.job.jvmargs>-Xms5120M -Xmx20480M </talend.job.jvmargs>
+    <talend.job.jvmargs>-Xms5120M -Xmx20480M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
     <talend.job.id>_95e_gNNvEeucieo8iqQXmA</talend.job.id>
     <talend.job.version>0.1</talend.job.version>
     <talend.job.framework></talend.job.framework>
@@ -35,8 +35,8 @@
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
-    <talend.project.branch.name>PREPROD_Nabil</talend.project.branch.name>
-    <talend.product.version>8.0.1.20220623_1359-patch</talend.product.version>
+    <talend.project.branch.name>PREPROD_Main</talend.project.branch.name>
+    <talend.product.version>8.0.1.20220317_0634-patch</talend.product.version>
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <talend.job.git.commit.date>1658913121000</talend.job.git.commit.date>
@@ -201,9 +201,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-bindings-soap</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-bindings-soap-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -212,9 +212,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-databinding-jaxb</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-databinding-jaxb-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -234,9 +234,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-frontend-jaxrs-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -245,9 +245,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-rs-client</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-rs-client-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -278,9 +278,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-security</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-security-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -289,9 +289,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-security-saml</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-security-saml-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -300,9 +300,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-http</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-transports-http-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -311,9 +311,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-ws-security</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-ws-security-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -322,9 +322,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-wsdl</artifactId>
-      <version>3.4.4</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cxf-rt-wsdl-3.4.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -390,7 +390,7 @@
     <dependency>
       <groupId>jakarta.jws</groupId>
       <artifactId>jakarta.jws-api</artifactId>
-      <version>2.1.0</version>
+      <version>1.1.1</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -443,9 +443,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>javax.ws.rs</groupId>
-      <artifactId>javax.ws.rs-api</artifactId>
-      <version>2.1</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>javax.ws.rs-api-2.1</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -511,7 +511,7 @@
     <dependency>
       <groupId>org.talend.components.lib</groupId>
       <artifactId>job-audit</artifactId>
-      <version>1.5</version>
+      <version>1.4</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -808,7 +808,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -819,7 +819,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -830,7 +830,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -841,7 +841,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -852,7 +852,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -863,7 +863,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -874,7 +874,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.3.20</version>
+      <version>5.3.8</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -894,9 +894,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.woodstox</groupId>
-      <artifactId>stax2-api</artifactId>
-      <version>4.2.1</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>stax2-api-3.1.4</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -949,9 +949,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.woodstox</groupId>
-      <artifactId>woodstox-core</artifactId>
-      <version>6.2.6</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>woodstox-core-asl-4.4.1</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -982,9 +982,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.wss4j</groupId>
-      <artifactId>wss4j-ws-security-common</artifactId>
-      <version>2.3.0</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>wss4j-ws-security-common-2.3.0</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -1026,9 +1026,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.ws.xmlschema</groupId>
-      <artifactId>xmlschema-core</artifactId>
-      <version>2.2.5</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>xmlschema-core-2.2.5</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -1037,9 +1037,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.santuario</groupId>
-      <artifactId>xmlsec</artifactId>
-      <version>2.2.3</version>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>xmlsec-2.2.3</artifactId>
+      <version>6.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
