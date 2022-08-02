@@ -12,7 +12,7 @@
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <encoding>UTF-8</encoding>
     <maven.deploy.skip>true</maven.deploy.skip>
-    <signer.version>8.0.1</signer.version>
+    <signer.version>8.0.3</signer.version>
   </properties>
   <build>
     <pluginManagement>
@@ -239,7 +239,7 @@
       <plugin>
         <groupId>org.talend.ci</groupId>
         <artifactId>builder-maven-plugin</artifactId>
-        <version>8.0.2</version>
+        <version>8.0.5</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
