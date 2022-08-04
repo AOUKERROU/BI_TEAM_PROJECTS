@@ -1,0 +1,25 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/TALEND/STUDIO/studio/plugins/org.eclipse.m2e.maven.runtime.slf4j.simple_1.18.0.20210402-1458/jars/slf4j-simple-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [file:/C:/TALEND/STUDIO/studio/configuration/org.eclipse.osgi/1160/0/.cp/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+[INFO] Disabling enhanced local repository: using legacy is strongly discouraged to ensure build reproducibility.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------< org.example.bi_team_projects.job:JOB_STOCK_HEBDO >----------
+[INFO] Building BI_TEAM_PROJECTS JOB_STOCK_HEBDO-0.1.0 (0.1,Jobs) 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for org.talend.ci:builder-maven-plugin:jar:8.0.5 is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.091 s
+[INFO] Finished at: 2022-08-04T10:48:17+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Plugin org.talend.ci:builder-maven-plugin:8.0.5 or one of its dependencies could not be resolved: Cannot access central (https://repo1.maven.org/maven2/) in offline mode and the artifact org.talend.ci:builder-maven-plugin:jar:8.0.5 has not been downloaded from it before. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginResolutionException
