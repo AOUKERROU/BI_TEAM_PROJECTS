@@ -755,6 +755,21 @@
     <elementParameter field="CHECK" name="REMOTE_VERIFICATION" show="false" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" value="0"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="CONFIG_CLIENT" value="true"/>
+    <elementParameter field="TABLE" name="CLIENT_PARAMETERS">
+      <elementValue elementRef="PARAMETER" value="&quot;kex&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1,curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256&quot;"/>
+      <elementValue elementRef="PARAMETER" value="&quot;server_host_key&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,rsa-sha2-512,rsa-sha2-256&quot;"/>
+      <elementValue elementRef="PARAMETER" value="&quot;cipher.s2c&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;aes128-ctr,aes128-cbc,3des-ctr,3des-cbc,blowfish-cbc,aes192-ctr,aes192-cbc,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes256-gcm@openssh.com&quot;"/>
+      <elementValue elementRef="PARAMETER" value="&quot;cipher.c2s&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;aes128-ctr,aes128-cbc,3des-ctr,3des-cbc,blowfish-cbc,aes192-ctr,aes192-cbc,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes256-gcm@openssh.com&quot;"/>
+      <elementValue elementRef="PARAMETER" value="&quot;mac.s2c&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;hmac-md5,hmac-sha1,hmac-sha2-256,hmac-sha1-96,hmac-md5-96,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,hmac-sha2-512&quot;"/>
+      <elementValue elementRef="PARAMETER" value="&quot;mac.c2s&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;hmac-md5,hmac-sha1,hmac-sha2-256,hmac-sha1-96,hmac-md5-96,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,hmac-sha2-512&quot;"/>
+    </elementParameter>
   </node>
   <node componentName="tFTPPut" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="768">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFTPPut_1"/>
@@ -1124,13 +1139,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e66fc280-7742-417b-89a9-c3f5d4def974"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wGeF9rJXsraL4fevFxSuAyYc1UPz3liH700lru1aur4je7lPm1mlgW4mGfpLsiGXErzzY98yTlAl&#13;
-ZgENP2qZKw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a3e61050-e433-459e-8cd9-49e75b66e9f8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DswXRElzO8TsOsrrK8JVxlHWCPVpq96IsSjl7Oxey56j5UHtkbMLS7aLW4l+kTiDxitMc+ux7bpV&#13;
-fBaOHlA14Q==</DigestValue></Reference></SignedInfo><SignatureValue>dfAtUGOH0c6JePyuaJjK3FNtghRhBcpf9VCqi0+2Ah1fverdwDl6UtMkhm7qX/iBwjpzRmuBxiwq&#13;
-f2tUC+/BWQS8zbbnsRD0rynh8gWgZn/QAKjsKVwAZXr2VEFeDcEgDTfql+YJtU3QwvLePliuWajY&#13;
-4MM1iHILcnQ5pTL3xAQbmMTMixQ7N/1K05PLdMr3huNvFnymwo1pW5541fr1rWwMTXXdZ1PLr7O8&#13;
-JU1soBWvn2l8E0Q9kDA/XNTbE1lxj1S0ck4tjnR5e2vHzKTatdLnqGgVxekG0I4/GCj+VBDJvsKQ&#13;
-+KwQqLXNkJ7344qre/5jnBlmbwu0+7eb0ILO3A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d56a684d-eac9-44a4-9bc7-aa399837b46d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>33ewwi38ihRtuOlkr6W0VeP1DWnxWiyxmBYuVi5l60vgPYJGUYmT7KPH0n/1vqq3GhxSa0ZbGjQA&#13;
+EmNuD29k/Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2b55df79-7255-44af-b4a7-cf4107bc85e0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wXkKAA0cd8Lel8btDEccsqCbNisw/EYPLDnMimF4yc2w0H0LNvu38YzUEFcvg2ADr7HxJZ5zYFqO&#13;
+XziFV658Gw==</DigestValue></Reference></SignedInfo><SignatureValue>Cx+Q+76m/6WGS4CKGsxAXeKht8OU3fa7XWbMxI00TCMUtkVYNrIemNoVUl8eUhR2IcCy5yEERwdX&#13;
+Eoa/3Gp2iNoaOqllP8EDuDByIql2hBg+6guq36Iv6B3PIh/+PBjg8DsfMS1QSEjv5aIt90SRfU7M&#13;
+JNXTTuouLLvirfqANk0RtX4V+ICp9MMwe9/Sgg518ZcNg4WC2stbld3fCDbOEkUvyjIuSWTtGX18&#13;
+YpjwssKpXQYVvI1wkZKsNz5UGNyt+WWSdVjOuspfYuXqV9t+737VvjWpzryY5O9EOEwziwMG2sa0&#13;
+AYMgCAKKHy0nF6YCU2yGMGudWESkEiZFttb/zA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1152,4 +1167,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a3e61050-e433-459e-8cd9-49e75b66e9f8" Target="#_e66fc280-7742-417b-89a9-c3f5d4def974"><Timestamp>2022-07-21 11:55:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2b55df79-7255-44af-b4a7-cf4107bc85e0" Target="#_d56a684d-eac9-44a4-9bc7-aa399837b46d"><Timestamp>2022-08-04 13:47:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
