@@ -3,10 +3,10 @@
 // Copyright (c) 2006-2014, Talend SA.
 //
 // Ce code source a été automatiquement généré par_Talend Cloud Data Management Platform
-// (CodeGenerator version 8.0.1.20220317_0634-patch
-// Vous pouvez trouver plus d'informations à propos des produits Talend sur https://www.talend.com/fr/.
-// Vous pouvez distribuer ce code suivant les termes de la licence GNU LGPL
-// http://www.gnu.org/licenses/lgpl.html).
+// CodeGenerator version 8.0.1.20220623_1359-patch
+// Vous pouvez trouver plus d'informations sur les produits Talend sur www.talend.com.
+// Vous pouvez distribuer ce code sous les termes de la licence GNU LGPL
+// (http://www.gnu.org/licenses/lgpl.html).
 //
 // ============================================================================
 package routines;
