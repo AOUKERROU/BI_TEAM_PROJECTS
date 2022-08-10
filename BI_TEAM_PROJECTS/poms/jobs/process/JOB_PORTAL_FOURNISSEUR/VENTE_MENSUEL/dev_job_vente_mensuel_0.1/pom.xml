@@ -19,7 +19,7 @@
     <talend.job.folder>job_portal_fournisseur/vente_mensuel/</talend.job.folder>
     <talend.job.context>Default</talend.job.context>
     <talend.job.path>bi_team_projects</talend.job.path>
-    <talend.job.git.commit.id>7176496fc54ff75f8b01a932bc2341018e185b35</talend.job.git.commit.id>
+    <talend.job.git.commit.id>e54a12bd584b9ae4afd9e5dbb2080bc79cf25539</talend.job.git.commit.id>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
     <talend.job.git.author>ayoub@marjane.co.ma</talend.job.git.author>
@@ -35,11 +35,11 @@
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
-    <talend.project.branch.name>PREPROD</talend.project.branch.name>
-    <talend.product.version>8.0.1.20220317_0634-patch</talend.product.version>
+    <talend.project.branch.name>PREPROD_NABIL</talend.project.branch.name>
+    <talend.product.version>8.0.1.20220623_1359-patch</talend.product.version>
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
-    <talend.job.git.commit.date>1658405091000</talend.job.git.commit.date>
+    <talend.job.git.commit.date>1658414522000</talend.job.git.commit.date>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
     <talend.job.name>DEV_JOB_VENTE_MENSUEL</talend.job.name>
@@ -192,7 +192,7 @@
     <dependency>
       <groupId>org.talend.components.lib</groupId>
       <artifactId>job-audit</artifactId>
-      <version>1.4</version>
+      <version>1.5</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
