@@ -35,8 +35,8 @@
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
-    <talend.project.branch.name>PREPROD</talend.project.branch.name>
-    <talend.product.version>8.0.1.20220317_0634-patch</talend.product.version>
+    <talend.project.branch.name>PREPROD_AUB</talend.project.branch.name>
+    <talend.product.version>8.0.1.20220729_0744-patch</talend.product.version>
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <talend.job.git.commit.date>1658847222000</talend.job.git.commit.date>
@@ -137,7 +137,7 @@
     <dependency>
       <groupId>org.talend.components.lib</groupId>
       <artifactId>job-audit</artifactId>
-      <version>1.4</version>
+      <version>1.5</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -146,9 +146,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>com.jcraft</groupId>
+      <groupId>com.github.mwiede</groupId>
       <artifactId>jsch</artifactId>
-      <version>0.1.55</version>
+      <version>0.2.1</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -499,6 +499,32 @@
         <contexts.running.dir>${current.resources.dir}/</contexts.running.dir>
         <microservice.running.configs.dir>${current.int-resources.dir}/</microservice.running.configs.dir>
       </properties>
+    </profile>
+    <profile>
+      <id>include-microservice-prometheus-dependencies</id>
+      <activation>
+        <property>
+          <name>studio.prometheus.metrics</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>io.micrometer</groupId>
+          <artifactId>micrometer-registry-prometheus</artifactId>
+          <version>1.8.0</version>
+        </dependency>
+        <dependency>
+          <groupId>io.prometheus.jmx</groupId>
+          <artifactId>collector</artifactId>
+          <version>0.16.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-security</artifactId>
+          <version>2.6.8</version>
+        </dependency>
+      </dependencies>
     </profile>
   </profiles>
 </project>
