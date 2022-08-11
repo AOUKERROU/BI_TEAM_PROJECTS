@@ -19,11 +19,11 @@
     <talend.job.folder>job_portal_fournisseur/stock_hebdo/</talend.job.folder>
     <talend.job.context>DEV</talend.job.context>
     <talend.job.path>bi_team_projects</talend.job.path>
-    <talend.job.git.commit.id>8e5b26201fbc0a9d20f55f45b3fadd591dd87545</talend.job.git.commit.id>
+    <talend.job.git.commit.id>77fec4d84669ca9bb9c170e7c80a24ec7fe74afc</talend.job.git.commit.id>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
     <talend.job.git.author>ayoub@marjane.co.ma</talend.job.git.author>
-    <talend.job.jvmargs>-Xms1024M -Xmx4096M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
+    <talend.job.jvmargs>-Xms1024M -Xmx4096M </talend.job.jvmargs>
     <talend.job.id>_onfRIKRrEeyC17RJB_lgug</talend.job.id>
     <talend.job.version>0.1</talend.job.version>
     <talend.job.framework></talend.job.framework>
@@ -39,7 +39,7 @@
     <talend.product.version>8.0.1.20220729_0744-patch</talend.product.version>
     <talend.project.name>BI_TEAM_PROJECTS</talend.project.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
-    <talend.job.git.commit.date>1660242250000</talend.job.git.commit.date>
+    <talend.job.git.commit.date>1660242982000</talend.job.git.commit.date>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
     <talend.job.name>JOB_STOCK_HEBDO</talend.job.name>
@@ -540,6 +540,9 @@
     </profile>
     <profile>
       <id>include-running-log4j</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <properties>
         <log4j.running.dir>${current.resources.dir}/</log4j.running.dir>
       </properties>
