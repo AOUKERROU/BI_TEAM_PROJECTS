@@ -302,9 +302,9 @@
     <elementParameter field="TABLE" name="SERVICE_ACTIVITY_MONITOR_CUSTOM_PROPERTIES" show="false"/>
     <elementParameter field="CHECK" name="DISABLE_CHUNKED_ENCODING" show="false" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" value="30"/>
-    <elementParameter field="LABEL" name="CONNECTION_TIMEOUT_DESC" value="(Studio Only, See Doc for Runtime)"/>
+    <elementParameter field="LABEL" name="CONNECTION_TIMEOUT_DESC" value=""/>
     <elementParameter field="TEXT" name="RECEIVE_TIMEOUT" value="0"/>
-    <elementParameter field="LABEL" name="RECEIVE_TIMEOUT_DESC" value="(Studio Only, See Doc for Runtime)"/>
+    <elementParameter field="LABEL" name="RECEIVE_TIMEOUT_DESC" value="(See tRESTClient doc. to configure timeouts for Talend Runtime)"/>
     <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
     <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;61.163.92.4&quot;"/>
     <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="8080"/>
@@ -580,7 +580,6 @@
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" show="false" value="_HufrQA37Eeu3Jsg6OY92sA - metadata"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="DESTINATION" show="false" value="tExtractJSONFields_1"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;UTF-8&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="UTF-8"/>
     <elementParameter field="CHECK" name="USE_LOOP_AS_ROOT" value="false"/>
@@ -946,9 +945,9 @@
     <elementParameter field="TABLE" name="SERVICE_ACTIVITY_MONITOR_CUSTOM_PROPERTIES" show="false"/>
     <elementParameter field="CHECK" name="DISABLE_CHUNKED_ENCODING" show="false" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" value="30"/>
-    <elementParameter field="LABEL" name="CONNECTION_TIMEOUT_DESC" value="(Studio Only, See Doc for Runtime)"/>
+    <elementParameter field="LABEL" name="CONNECTION_TIMEOUT_DESC" value=""/>
     <elementParameter field="TEXT" name="RECEIVE_TIMEOUT" value="3600"/>
-    <elementParameter field="LABEL" name="RECEIVE_TIMEOUT_DESC" value="(Studio Only, See Doc for Runtime)"/>
+    <elementParameter field="LABEL" name="RECEIVE_TIMEOUT_DESC" value="(See tRESTClient doc. to configure timeouts for Talend Runtime)"/>
     <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
     <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;61.163.92.4&quot;"/>
     <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="8080"/>
@@ -1224,7 +1223,6 @@
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" show="false" value="_HufrQA37Eeu3Jsg6OY92sA - metadata"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="DESTINATION" show="false" value="tExtractJSONFields_2"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;UTF-8&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="UTF-8"/>
     <elementParameter field="CHECK" name="USE_LOOP_AS_ROOT" value="false"/>
@@ -1590,9 +1588,9 @@
     <elementParameter field="TABLE" name="SERVICE_ACTIVITY_MONITOR_CUSTOM_PROPERTIES" show="false"/>
     <elementParameter field="CHECK" name="DISABLE_CHUNKED_ENCODING" show="false" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" value="30"/>
-    <elementParameter field="LABEL" name="CONNECTION_TIMEOUT_DESC" value="(Studio Only, See Doc for Runtime)"/>
+    <elementParameter field="LABEL" name="CONNECTION_TIMEOUT_DESC" value=""/>
     <elementParameter field="TEXT" name="RECEIVE_TIMEOUT" value="3600"/>
-    <elementParameter field="LABEL" name="RECEIVE_TIMEOUT_DESC" value="(Studio Only, See Doc for Runtime)"/>
+    <elementParameter field="LABEL" name="RECEIVE_TIMEOUT_DESC" value="(See tRESTClient doc. to configure timeouts for Talend Runtime)"/>
     <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
     <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;61.163.92.4&quot;"/>
     <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="8080"/>
@@ -1868,7 +1866,6 @@
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" show="false" value="_HufrQA37Eeu3Jsg6OY92sA - metadata"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="DESTINATION" show="false" value="tExtractJSONFields_3"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;UTF-8&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="UTF-8"/>
     <elementParameter field="CHECK" name="USE_LOOP_AS_ROOT" value="false"/>
@@ -2691,13 +2688,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c9b3bf6a-2c12-480b-b4ba-bda43c8f08af"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>z6CmA4jxNRub3f/6iB9TLAX6M7FaVvnc2I7VeyoAGqDo9lQWIezPPLnJYUqEvjlnhJJiIMsPSxMl&#13;
-MCBMKbHLVg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2285d318-02ca-4401-828e-b72a62e466f1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3f2locancApuCrb5EriibZAeDTCdaTvKqWFu/T/G1PbEtf0m//opvKy8nWROCvjqhUhRx2XeO5yq&#13;
-wiF+NaaNmw==</DigestValue></Reference></SignedInfo><SignatureValue>cFmoGUwLmXSYwQFkhASBjitKAFQ0e6U6MUTaHjI7Hv5PYZt/5twCfp17hnkBGIxiiaI6hws/eJri&#13;
-ZPBKyK9OYNc/vQB5+NSAMrgWv3P1w7rQAKBef89Y9mU4zcscn4Vq6Sqlov0ga/kk2GPwHvJr3noF&#13;
-hjB4rJLXgsja46IXMT3W04chq4mimsPSx00mEjrQ5mwRYtrwJyHP3mk7NnTq+7l88gZpxLyydde8&#13;
-POUxRCxG6rq0KtRMMJxAAnstihejXql02aALHlocwJvw+R4QbQCtHJCbN702DxAZUT7EAF3n2W/e&#13;
-p24AsgOcqkwkPgGqMFg0G/c5JvRt65hD+1Lm5A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_baa3c1ef-8b32-4579-84ed-c558e7ebc813"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YIU2ncUOCnwKKYW9CSFO+9j+01mVBFr5Dbf8ilTi1l9VA6KZRTFHOSwWXlSnzjC7yegJcSiziuzN&#13;
+9An5NHo1gg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a05766c2-1cf1-4c3c-82e0-42f9f870227d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yt22viSWaKMSZ5xWxvssphh6B3vGxnU0pa2b0tYiwVkOlZ4fVVdsbNNm77Kf3owiQQvtzBOye5VD&#13;
+Jt32uf2cMQ==</DigestValue></Reference></SignedInfo><SignatureValue>a0cutGUrQykbc8jmNc43UazX2PCfUcfxEWn3jVSuJh8WhdjWeTtJdRRcmkZlaASO/R8+CPuFr5de&#13;
+Q5DL95eAFeD9tOQNcVFAQsE5wiJyYr3wgxJ3C9vI8w3XAUbSWpSo174Hc32/XBlJhjSWX+u5aTLl&#13;
+OKSUUQY9WUq31RexC1AKcZYit8Zv2nIOQyN958dgXdIw+fERXYzlLTwxaKS+mJ5P/eYbSnWMlLd5&#13;
+hLunGklOuws0+4VmMqoLpcLRN7kKvC/jQKKKVga41fbTy8CgyZoqdCg9aEKmX7syalVvPELNnSw5&#13;
+m7zw0BETUNIqchHItAvyxFdHLUvEsBDqGmfO2g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2719,4 +2716,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2285d318-02ca-4401-828e-b72a62e466f1" Target="#_c9b3bf6a-2c12-480b-b4ba-bda43c8f08af"><Timestamp>2022-07-21 11:59:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a05766c2-1cf1-4c3c-82e0-42f9f870227d" Target="#_baa3c1ef-8b32-4579-84ed-c558e7ebc813"><Timestamp>2022-08-04 13:47:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
